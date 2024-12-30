@@ -1,0 +1,94 @@
+#characterListHeadersContainer {
+    margin-top: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 23px;
+    align-items: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.characterListHeaders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+#characterListHeadersUnderline {
+    height: 5px;
+    width: 80px;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+.allGuessedCharacters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.guessedCharactersContainer {
+    width: 800px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    gap: 5px;
+    padding-bottom: 25px;
+}
+
+.guessedCharacterBox {
+    height: 70px;
+    width: 70px;
+    padding: 0;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.guessedCharacterImageBox {
+    height: 70px;
+    width: 70px;
+    padding: 0;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guessedCharacterImageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.arrow{
+    width: 100px; /* Set desired width */
+    height: 100px; /* Set desired height */
+    overflow: hidden; /* Ensures any overflow is clipped */
+    position: absolute; /* Helps with layout adjustments */
+    opacity: 30%;
+}

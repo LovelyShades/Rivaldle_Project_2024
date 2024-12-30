@@ -1,0 +1,71 @@
+.headerBoxContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 150px;
+    background-image: url('../../_images/headerBackground.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border: 3px solid #000; /* Outer border for the entire box */
+    flex-direction: column;
+}
+.headerBoxTitle{
+    position: relative;
+    padding-bottom: 75px;
+    font-size: x-large;
+}
+
+.headerBoxSubtitle{
+    position: relative;
+    font-size: larger;
+}
+
+.activeHeaderBoxContainer{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: #e1e6ec;
+    background-image: url('../../_images/headerBackground.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border: 3px solid #000; /* Outer border for the entire box */
+    flex-direction: column;
+
+}
+.clueContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 75px; /* Add space between rows */
+    background-color: #e1e6ec;
+    font-size: larger;
+}
+.clueSubContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e1e6ec;
+    font-size: larger;
+}
+
+.clueSubContainer img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.clueSubContainer img:hover {
+    transform: scale(1.15); 
+}
