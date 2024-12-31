@@ -15,12 +15,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the classic mode page
 app.get('/classic', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/classic_mode_page/classic.html'));
+  res.sendFile(path.join(__dirname, '/pages/classic_mode_page/classic.html'));
 });
 
 // Serve the HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/home_page/home.html'));
+  res.sendFile(path.join(__dirname, '/pages/home_page/home.html'));
 });
 
 // Start the server and automatically open the browser
