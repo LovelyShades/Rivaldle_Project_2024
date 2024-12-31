@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,84 +10,87 @@
     <link rel="stylesheet" href="/css/classic/character_search_styles.css">
     <link rel="stylesheet" href="/css/classic/guessed_characters.css">
 </head>
+
 <body>
     <div id="background_image">
-            <div class="mode_container">
-                <div id="title_logo">
-                    <img src="/_images/page_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Logo">
-                 </div>         
-                 <div class="title_text">Guesser</div>
-                
-                 <div class="headerBoxContainer" id="headerBoxContainer">
-                    <div class="headerBoxTitle">Guess todays Marvel Rivals hero!</div>
-                    <div class="headerBoxSubtitle">Type any character to start.</div>
-                 </div>
+        <div class="mode_container">
+            <div id="title_logo">
+                <img src="/_images/page_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
+            </div>
+            <div class="title_text">Guesser</div>
 
-                 <div class="activeHeaderBoxContainer" id="activeHeaderBoxContainer">
-                    <div class="headerBoxTitle">Guess todays Marvel Rivals hero!</div>
-                    <div class="clueContainer">
-                        <div class="clueSubContainer">
-                            <img src="../_images/ultamateClueIcon.png">
-                            <div class="clue1"> Ultamate Name </div>
-                        </div>
-                        <div class="clueSubContainer">
-                            <img src="../_images/silhouetteClueIcon.png">
-                            <div class="clue2"> Silhouette </div>
-                        </div>
+            <div class="headerBoxContainer" id="headerBoxContainer">
+                <div class="headerBoxTitle">Guess today's Marvel Rivals hero!</div>
+                <div class="headerBoxSubtitle">Type any character to start.</div>
+            </div>
+
+            <div class="activeHeaderBoxContainer" id="activeHeaderBoxContainer">
+                <div class="headerBoxTitle">Guess today's Marvel Rivals hero!</div>
+                <div class="clueContainer">
+                    <div class="clueSubContainer">
+                        <img src="../_images/ultamateClueIcon.png" alt="Ultimate Ability Clue Icon">
+                        <div class="clue1">Ultimate Name</div>
                     </div>
-                 </div>
-                
-                <div class="enter_character_container">
-                    <div class="enter_character_box">
-                        <input type="text" class="enter_character" placeholder="Type character name ..." id="characterInput">
-                        <button class="enter_character_button" id="character_search_button">OK</button>
+                    <div class="clueSubContainer">
+                        <img src="../_images/silhouetteClueIcon.png" alt="Silhouette Clue Icon">
+                        <div class="clue2">Silhouette</div>
                     </div>
                 </div>
-                <div id= "suggestedCharactersContainer"></div>
+            </div>
 
-                <div id="characterListHeadersContainer">
-                    <div class="characterListHeaders">
-                        Character
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Gender
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Species
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Affiliation
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Level
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Hp
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
-                    <div class="characterListHeaders">
-                        Date of Origin
-                        <div id="characterListHeadersUnderline"></div>
-                    </div>
+            <div class="enter_character_container">
+                <div class="enter_character_box">
+                    <input type="text" class="enter_character" placeholder="Type character name ..."
+                        id="characterInput">
+                    <button class="enter_character_button" id="character_search_button">OK</button>
                 </div>
-                 
-                <div class="allGuessedCharacters">
+            </div>
+            <div id="suggestedCharactersContainer"></div>
+
+            <div id="characterListHeadersContainer">
+                <div class="characterListHeaders">
+                    Character
+                    <div id="characterListHeadersUnderline"></div>
                 </div>
+                <div class="characterListHeaders">
+                    Gender
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+                <div class="characterListHeaders">
+                    Species
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+                <div class="characterListHeaders">
+                    Affiliation
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+                <div class="characterListHeaders">
+                    Level
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+                <div class="characterListHeaders">
+                    Hp
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+                <div class="characterListHeaders">
+                    Date of Origin
+                    <div id="characterListHeadersUnderline"></div>
+                </div>
+            </div>
 
-                <div class="other_sites_box"> other sites coming soon</div>
+            <div class="allGuessedCharacters">
+            </div>
 
-                <div class = "footer_text"> rivalsguesser.com — 2024 </div>
-                <div class = "footer_text"> Marvel does not endorse or sponsor this project. </div>
-                <div class = "footer_text" id="footer"> Privacy Policy </div>
+            <div class="other_sites_box">Other sites coming soon</div>
+
+            <div class="footer_text">rivalsguesser.com — 2024</div>
+            <div class="footer_text">Marvel does not endorse or sponsor this project.</div>
+            <div class="footer_text" id="footer">Privacy Policy</div>
         </div>
     </div>
     <script type="module" src="js/character_search.js"></script>
     <script type="module" src="js/searched_characters_list.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
+
 </html>
