@@ -28,3 +28,4 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
   open(`http://localhost:${port}`);  // This will open the browser automatically
 });
+//comment
