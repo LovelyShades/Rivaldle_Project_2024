@@ -62,8 +62,8 @@ class CharacterSearch {
             // Create image element for character
             const image = document.createElement('img');
             const characterNameWithoutSpaces = character.name.replace(/\s+/g, '');
-            image.src = `/characters/_character_images/RivalsCharacterIcons/${characterNameWithoutSpaces}.png`;
-            image.alt = `${character.name} icon`; // Add descriptive alt text
+            image.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
+            image.alt = `${character.name} icon`; 
             image.className = 'suggestedCharacterImage';
 
             const charecterNameText = document.createElement('div');
