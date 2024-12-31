@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../pages/home_page/scripts/home.html'));
+  res.sendFile(path.join(__dirname, 'pages/home_page/home.html'));
 });
 
 // Start the server and automatically open the browser
