@@ -86,8 +86,8 @@
 }
 
 .arrow{
-    width: 100px; /* Set desired width */
-    height: 100px; /* Set desired height */
+    width: 90px; /* Set desired width */
+    height: 90px; /* Set desired height */
     overflow: hidden; /* Ensures any overflow is clipped */
     position: absolute; /* Helps with layout adjustments */
     opacity: 30%;
