@@ -55,7 +55,7 @@ class SearchedCharacters {
     addCharacterImageBox(parent, characterName) {
         const image = document.createElement('img');
         const sanitizedCharacterName = characterName.replace(/\s+/g, '');
-        image.src = `../../_images/character_images/character_icon_images/${sanitizedCharacterName}.png`;
+        image.src = `/_images/character_images/character_icon_images/${sanitizedCharacterName}.png`;
         image.alt = `${characterName} Icon`;
         image.className = 'guessedCharacterImageBox';
 
@@ -104,9 +104,9 @@ class SearchedCharacters {
         arrowImage.className = 'arrow';
 
         if (this.receavedCharacter[attribute] > this.dailyCharacter[attribute]) {
-            arrowImage.src = '../_images/downArrow.png';
+            arrowImage.src = '/_images/classic_mode_images/downArrow.png';
         } else if (this.receavedCharacter[attribute] < this.dailyCharacter[attribute]) {
-            arrowImage.src = '../_images/upArrow.png';
+            arrowImage.src = '/_images/classic_mode_images/upArrow.png';
         }
         box.appendChild(arrowImage);
     }
