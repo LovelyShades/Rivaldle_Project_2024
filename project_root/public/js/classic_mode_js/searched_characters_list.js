@@ -1,4 +1,4 @@
-import { marvelCharacters } from '../../../../characters/character_scripts/character_info.js';
+import { marvelCharacters } from '../character_info_js/character_info.js';
 
 class SearchedCharacters {
     constructor() {
@@ -55,7 +55,7 @@ class SearchedCharacters {
     addCharacterImageBox(parent, characterName) {
         const image = document.createElement('img');
         const sanitizedCharacterName = characterName.replace(/\s+/g, '');
-        image.src = `/characters/_character_images/RivalsCharacterIcons/${sanitizedCharacterName}.png`;
+        image.src = `../../_images/character_images/character_icon_images/${sanitizedCharacterName}.png`;
         image.alt = `${characterName} Icon`;
         image.className = 'guessedCharacterImageBox';
 

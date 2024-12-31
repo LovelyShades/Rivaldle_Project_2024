@@ -1,4 +1,4 @@
-import { marvelCharacters } from '../../../../characters/character_scripts/character_info.js';
+import { marvelCharacters } from '../character_info_js/character_info.js';
 
 class CharacterSearch {
     constructor() {
