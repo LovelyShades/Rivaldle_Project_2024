@@ -13,6 +13,11 @@ const port = 3000;
 // Serve the "public" folder as static
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve the classic mode page
+app.get('/classic', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/classic_mode_page/classic.html'));
+});
+
 // Serve the HTML file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'pages/home_page/home.html'));
