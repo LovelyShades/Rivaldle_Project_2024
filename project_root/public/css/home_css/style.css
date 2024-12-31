@@ -4,7 +4,7 @@ body {
     padding: 0;
     min-height: 150vh; /* Allows scrolling if content grows */
     background-color: #f0f0f0; /* Optional background */
-    background-image: url('../../_images/home__images/MarvelRivalsBackgroundDark.gif'); /* Corrected path */
+    background-image: url('../../_images/home_images/MarvelRivalsBackgroundDark.gif'); /* Corrected path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
