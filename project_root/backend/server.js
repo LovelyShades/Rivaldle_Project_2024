@@ -23,14 +23,17 @@ app.get('/daily_classic_character', (req, res) => {
 app.get('/character_info', (req, res) => {
   res.json(characters);
 });
-// Serve the classic mode page
-app.get('/classic', (req, res) => {
-  res.sendFile(path.join(__dirname, '../pages/classic_mode_page/classic.html'));
-});
-
 // Serve the HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../pages/home_page/home.html'));
+  res.sendFile(path.join(__dirname, '../pages/home_page/index.html'));
+});
+// Serve the classic mode page
+app.get('/classic', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/classic_mode_page/index.html'));
+});
+
+app.get('/silhouette', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/silhouette_mode_page/index.html'));
 });
 
 // Start the server and automatically open the browser
