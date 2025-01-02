@@ -2,98 +2,87 @@ class SearchedCharacters {
     constructor() {
         this.marvelCharacters = [];
         this.dailyCharacter = null;
-        this.receavedCharacter = null;
+        this.receivedCharacter = null;
 
-        // Fetch characters and initialize the class once data is ready
-        this.getMarvelCharacters();
+        // Initialize the class
+        this.initialize();
     }
 
-    getMarvelCharacters() {
-        fetch('./character_info')
-            .then(response => response.json())
-            .then(character_info => {
-                this.marvelCharacters = character_info;
-                this.getDailyClassicCharacter();
-                this.initializeEventListeners();
-                
-            });
+    async initialize() {
+        try {
+            this.marvelCharacters = await this.fetchData('./character_info');
+            this.dailyCharacter = await this.fetchData('./daily_classic_character');
+            this.initializeEventListeners();
+        } catch (error) {
+            console.error('Error during initialization:', error);
+        }
     }
 
-    getDailyClassicCharacter(){
-        fetch('./daily_classic_character')
-        .then(response => response.json())
-        .then(daily_classic_character => {
-            this.dailyCharacter = daily_classic_character
-        });
+    async fetchData(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+        return response.json();
     }
 
-    // Initialize all event listeners
     initializeEventListeners() {
         document.addEventListener('characterSelected', (event) => {
-            this.receavedCharacter = event.detail.character;
-            console.log("receaved")
-            // Execute the main functionalities
+            this.receivedCharacter = event.detail.character;
+            console.log("Character received:", this.receivedCharacter);
+            
             this.initializeSearchHeaders();
             this.activateGameHeader();
             this.addRow();
         });
     }
-        // Display the search headers
+
     initializeSearchHeaders() {
         const headersContainer = document.getElementById('characterListHeadersContainer');
-        headersContainer.style.display = 'flex';
+        if (headersContainer) headersContainer.style.display = 'flex';
     }
 
-    // Switch to the active game header
     activateGameHeader() {
         const headerBoxContainer = document.getElementById('headerBoxContainer');
         const activeHeaderBoxContainer = document.getElementById('activeHeaderBoxContainer');
 
-        headerBoxContainer.style.display = 'none';
-        activeHeaderBoxContainer.style.display = 'flex';
+        if (headerBoxContainer) headerBoxContainer.style.display = 'none';
+        if (activeHeaderBoxContainer) activeHeaderBoxContainer.style.display = 'flex';
     }
 
-    // Add a new row for the guessed character
     addRow() {
         const parentContainer = document.querySelector('.allGuessedCharacters');
+        if (!parentContainer) return;
+
         const newRow = document.createElement('div');
         newRow.className = 'guessedCharactersContainer';
-        // Add individual components to the row
-        this.addCharacterImageBox(newRow, this.receavedCharacter.name);
+
+        this.addCharacterImageBox(newRow, this.receivedCharacter.name);
         this.addCharacterAttributes(newRow);
 
-        // Prepend the new row to the container
         parentContainer.prepend(newRow);
     }
 
-    // Add the character image box
     addCharacterImageBox(parent, characterName) {
         const image = document.createElement('img');
-        const sanitizedCharacterName = characterName.replace(/\s+/g, '');
-        image.src = `/_images/character_images/character_icon_images/${sanitizedCharacterName}.png`;
+        image.src = `/_images/character_images/character_icon_images/${characterName.replace(/\s+/g, '')}.png`;
         image.alt = `${characterName} Icon`;
         image.className = 'guessedCharacterImageBox';
 
         parent.appendChild(image);
     }
 
-    // Add attribute boxes for the character
     addCharacterAttributes(row) {
         this.isCorrectCharacter();
+
         const attributes = [
-            { value: this.receavedCharacter.gender, key: 'gender' },
-            { value: this.receavedCharacter.species, key: 'species' },
-            { value: this.receavedCharacter.affiliation, key: 'affiliation' },
-            { value: this.receavedCharacter.level, key: 'level' },
-            { value: this.receavedCharacter.type, key: 'type' },
-            { value: this.receavedCharacter.hp, key: 'hp' },
-            { value: this.receavedCharacter.dateOfOrigin, key: 'dateOfOrigin' }
+            'gender', 'species', 'affiliation', 'level', 'type', 'hp', 'dateOfOrigin'
         ];
 
-        attributes.forEach(attr => this.addCharacterBox(row, attr.value, attr.key));
+        attributes.forEach(attr => {
+            const value = this.receivedCharacter[attr];
+            this.addCharacterBox(row, value, attr);
+        });
     }
 
-    // Add a single attribute box
     addCharacterBox(row, textContent, attribute) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
@@ -105,36 +94,33 @@ class SearchedCharacters {
         row.appendChild(newBox);
     }
 
-    // Set the appearance (color) of the box
     setBoxAppearance(box, attribute) {
-        const isMatching = this.receavedCharacter[attribute] === this.dailyCharacter[attribute];
+        const isMatching = this.receivedCharacter[attribute] === this.dailyCharacter[attribute];
         box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';
     }
 
-    // Add an arrow indicator for specific attributes
     addArrowIndicator(box, attribute) {
         if (!['hp', 'dateOfOrigin'].includes(attribute)) return;
 
         const arrowImage = document.createElement('img');
         arrowImage.className = 'arrow';
 
-        if (this.receavedCharacter[attribute] > this.dailyCharacter[attribute]) {
-            arrowImage.src = '/_images/classic_mode_images/downArrow.png';
-        } else if (this.receavedCharacter[attribute] < this.dailyCharacter[attribute]) {
-            arrowImage.src = '/_images/classic_mode_images/upArrow.png';
-        }
+        const comparison = this.receivedCharacter[attribute] - this.dailyCharacter[attribute];
+        arrowImage.src = comparison > 0
+            ? '/_images/classic_mode_images/downArrow.png'
+            : '/_images/classic_mode_images/upArrow.png';
+
         box.appendChild(arrowImage);
     }
 
     isCorrectCharacter() {
-        if (this.receavedCharacter === this.dailyCharacter) {
+        if (this.receivedCharacter === this.dailyCharacter) {
             confetti({
                 particleCount: 250,
                 spread: 120,
                 origin: { y: 0.7 },
-              });
+            });
         }
-        return;
     }
 }
 

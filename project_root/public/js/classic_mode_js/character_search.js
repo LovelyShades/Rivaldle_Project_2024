@@ -9,23 +9,35 @@ class CharacterSearch {
     }
 
     async initialize() {
-        await this.getMarvelCharacters(); // Wait for data fetch
-        this.notSearchedMarvelCharacters = [...this.marvelCharacters]; // Copy characters to the searchable list
+        try {
+            this.marvelCharacters = await this.fetchMarvelCharacters();
+            this.notSearchedMarvelCharacters = [...this.marvelCharacters];
 
-        this.initializeEventListeners(); // Setup event listeners after data is ready
-        this.characterInput.addEventListener('input', this.handleInput.bind(this));
-        this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
-
+            this.setupEventListeners(); // Setup event listeners
+        } catch (error) {
+            console.error('Error initializing CharacterSearch:', error);
+        }
     }
 
-    initializeEventListeners() {
-        document.addEventListener("DOMContentLoaded", () => {
-        });
+    async fetchMarvelCharacters() {
+        try {
+            const response = await fetch('./character_info');
+            if (!response.ok) throw new Error(`Failed to fetch characters: ${response.statusText}`);
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching Marvel characters:', error);
+            return [];
+        }
     }
 
-    async getMarvelCharacters() {
-        const response = await fetch('./character_info');
-        this.marvelCharacters = await response.json();
+    setupEventListeners() {
+        if (this.characterInput) {
+            this.characterInput.addEventListener('input', this.handleInput.bind(this));
+        }
+
+        if (this.characterButton) {
+            this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
+        }
     }
 
     handleInput(event) {
@@ -35,8 +47,9 @@ class CharacterSearch {
 
     getSuggestedCharacters(typedText) {
         if (!typedText) return [];
+
         const searchText = typedText.toLowerCase();
-        return this.notSearchedMarvelCharacters.filter(character => 
+        return this.notSearchedMarvelCharacters.filter(character =>
             character.name.toLowerCase().startsWith(searchText)
         );
     }
@@ -62,24 +75,23 @@ class CharacterSearch {
         suggestedCharacters.forEach(character => {
             const elementContainer = document.createElement('div');
             elementContainer.className = 'characterElementContainer';
-    
+
             const element = document.createElement('div');
             element.className = 'suggestedCharacter';
-            element.textContent = '';
             element.addEventListener('click', () => this.handleCharacterSelection(character));
-    
+
             const image = document.createElement('img');
             const characterNameWithoutSpaces = character.name.replace(/\s+/g, '');
             image.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
-            image.alt = `${character.name} icon`; 
+            image.alt = `${character.name} icon`;
             image.className = 'suggestedCharacterImage';
 
-            const charecterNameText = document.createElement('div');
-            charecterNameText.className = 'suggestedCharacterText';
-            charecterNameText.textContent = character.name;
-    
+            const characterNameText = document.createElement('div');
+            characterNameText.className = 'suggestedCharacterText';
+            characterNameText.textContent = character.name;
+
             element.appendChild(image);
-            element.appendChild(charecterNameText);
+            element.appendChild(characterNameText);
             elementContainer.appendChild(element);
             this.suggestedCharactersContainer.appendChild(elementContainer);
         });
@@ -94,7 +106,7 @@ class CharacterSearch {
         if (matchingCharacter) {
             this.handleCharacterSelection(matchingCharacter);
         }
-        
+
         this.clearInput();
         this.clearSuggestions();
     }
@@ -113,26 +125,34 @@ class CharacterSearch {
         document.dispatchEvent(event);
     }
 
-    removeCharacterFromList(character){
+    removeCharacterFromList(character) {
         this.notSearchedMarvelCharacters = this.notSearchedMarvelCharacters.filter(
             c => c.name !== character.name
         );
     }
 
     clearInput() {
-        this.characterInput.value = '';
+        if (this.characterInput) {
+            this.characterInput.value = '';
+        }
     }
 
     clearSuggestions() {
-        this.suggestedCharactersContainer.innerHTML = '';
+        if (this.suggestedCharactersContainer) {
+            this.suggestedCharactersContainer.innerHTML = '';
+        }
     }
 
     hideSuggestionsContainer() {
-        this.suggestedCharactersContainer.style.display = 'none';
+        if (this.suggestedCharactersContainer) {
+            this.suggestedCharactersContainer.style.display = 'none';
+        }
     }
 
     showSuggestionsContainer() {
-        this.suggestedCharactersContainer.style.display = 'flex';
+        if (this.suggestedCharactersContainer) {
+            this.suggestedCharactersContainer.style.display = 'flex';
+        }
     }
 }
 
