@@ -37,7 +37,6 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
     border: 3px solid #000; /* Outer border for the entire box */
     flex-direction: column;
-
 }
 .clueContainer{
     position: relative;

@@ -1,0 +1,30 @@
+.silhouette_contaner{
+    height: 500px;
+    width: 400px;
+    position: relative;
+    display: flex;
+    background-color: white;
+    border: 3px solid #000;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.silhouette_header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-large;
+    color: #000;
+}
+
+.silhouette_footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: larger;
+    color: #000;
+}
