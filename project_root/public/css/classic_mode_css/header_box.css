@@ -5,7 +5,7 @@
     align-items: center;
     width: 400px;
     height: 150px;
-    background-image: url('../../_images/headerBackground.png'); /* Replace with your image path */
+    background-image: url('../../_images/classic_mode_images/headerBackground.png'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
