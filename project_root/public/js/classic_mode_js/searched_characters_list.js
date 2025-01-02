@@ -1,20 +1,31 @@
-import { marvelCharacters } from '../character_info_js/character_info.js';
-
 class SearchedCharacters {
     constructor() {
-        // Initialize properties
-        this.dailyCharacter = marvelCharacters[Math.floor(Math.random() * marvelCharacters.length)];
+        this.marvelCharacters = [];
+        this.dailyCharacter = null;
         this.receavedCharacter = null;
 
-        // Setup event listeners
-        this.initializeEventListeners();
+        // Fetch characters and initialize the class once data is ready
+        this.getMarvelCharacters();
+    }
+
+    getMarvelCharacters() {
+        fetch('./character_info')
+            .then(response => response.json())
+            .then(character_info => {
+                this.marvelCharacters = character_info;
+                this.dailyCharacter = this.marvelCharacters[Math.floor(Math.random() * this.marvelCharacters.length)];
+                console.log('Daily Character:', this.dailyCharacter);
+
+                // Setup event listeners
+                this.initializeEventListeners();
+            });
     }
 
     // Initialize all event listeners
     initializeEventListeners() {
         document.addEventListener('characterSelected', (event) => {
             this.receavedCharacter = event.detail.character;
-            console.log('Daily Character:', this.dailyCharacter);
+            console.log('Selected Character:', this.receavedCharacter);
 
             // Execute the main functionalities
             this.initializeSearchHeaders();
@@ -22,8 +33,7 @@ class SearchedCharacters {
             this.addRow();
         });
     }
-
-    // Display the search headers
+        // Display the search headers
     initializeSearchHeaders() {
         const headersContainer = document.getElementById('characterListHeadersContainer');
         headersContainer.style.display = 'flex';

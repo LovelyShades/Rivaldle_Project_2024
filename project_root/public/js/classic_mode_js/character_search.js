@@ -1,28 +1,33 @@
 class CharacterSearch {
     constructor() {
-        this.getMarvelCharacters();
-        this.notSearchedMarvelCharacters = this.marvelCharacters;
         this.characterInput = document.getElementById('characterInput');
         this.suggestedCharactersContainer = document.getElementById('suggestedCharactersContainer');
         this.characterButton = document.getElementById('character_search_button');
-        this.initializeEventListeners();
+
+        // Initialize asynchronously
+        this.initialize();
+    }
+
+    async initialize() {
+        await this.getMarvelCharacters(); // Wait for data fetch
+        this.notSearchedMarvelCharacters = [...this.marvelCharacters]; // Copy characters to the searchable list
+
+        this.initializeEventListeners(); // Setup event listeners after data is ready
+        this.characterInput.addEventListener('input', this.handleInput.bind(this));
+        this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
+
     }
 
     initializeEventListeners() {
         document.addEventListener("DOMContentLoaded", () => {
-            this.characterInput.addEventListener('input', this.handleInput.bind(this));
-            this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
         });
     }
 
-    getMarvelCharacters(){
-        fetch('./character_info')
-            .then(response => response.json())
-            .then(character_info => {
-                this.marvelCharacters = character_info;
-                console.log('Character Data:', this.marvelCharacters); // Log the stored data
-        })
+    async getMarvelCharacters() {
+        const response = await fetch('./character_info');
+        this.marvelCharacters = await response.json();
     }
+
     handleInput(event) {
         const suggestedCharacters = this.getSuggestedCharacters(event.target.value);
         this.displaySuggestions(suggestedCharacters);
@@ -30,7 +35,6 @@ class CharacterSearch {
 
     getSuggestedCharacters(typedText) {
         if (!typedText) return [];
-        
         const searchText = typedText.toLowerCase();
         return this.notSearchedMarvelCharacters.filter(character => 
             character.name.toLowerCase().startsWith(searchText)
@@ -56,17 +60,14 @@ class CharacterSearch {
 
     createSuggestionElements(suggestedCharacters) {
         suggestedCharacters.forEach(character => {
-            // Create container for each character suggestion
             const elementContainer = document.createElement('div');
             elementContainer.className = 'characterElementContainer';
     
-            // Create text element for character name
             const element = document.createElement('div');
             element.className = 'suggestedCharacter';
             element.textContent = '';
             element.addEventListener('click', () => this.handleCharacterSelection(character));
     
-            // Create image element for character
             const image = document.createElement('img');
             const characterNameWithoutSpaces = character.name.replace(/\s+/g, '');
             image.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
@@ -76,17 +77,13 @@ class CharacterSearch {
             const charecterNameText = document.createElement('div');
             charecterNameText.className = 'suggestedCharacterText';
             charecterNameText.textContent = character.name;
-
     
-            // Append elements to the container
             element.appendChild(image);
             element.appendChild(charecterNameText);
             elementContainer.appendChild(element);
-
-            // Append container to the suggestions container
             this.suggestedCharactersContainer.appendChild(elementContainer);
         });
-    }    
+    }
 
     handleButtonClick() {
         const inputValue = this.characterInput.value.toLowerCase();
@@ -121,7 +118,7 @@ class CharacterSearch {
             c => c.name !== character.name
         );
     }
-    // Utility methods
+
     clearInput() {
         this.characterInput.value = '';
     }
@@ -140,6 +137,6 @@ class CharacterSearch {
 }
 
 // Initialize the character search
-const characterSearch = new CharacterSearch();
-
-export default CharacterSearch;
+(async () => {
+    const characterSearch = new CharacterSearch();
+})();
