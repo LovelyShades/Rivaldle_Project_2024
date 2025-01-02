@@ -7,6 +7,8 @@
     <title>Marvel Rivals Guesser</title>
     <link rel="stylesheet" type="text/css" href="/css/silhouette_mode_css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/silhouette_mode_css/silhouette_box.css">
+    <link rel="stylesheet" href="/css/character_search_css/character_search.css">
+
 </head>
 
 <body>
@@ -27,6 +29,15 @@
                 <div class="silhouette_footer">Each try zooms out a bit</div>
             </div>
 
+            <div class="enter_character_container">
+                <div class="enter_character_box">
+                    <input type="text" class="enter_character" placeholder="Type character name ..."
+                        id="characterInput">
+                    <button class="enter_character_button" id="character_search_button">OK</button>
+                </div>
+            </div>
+            <div id="suggestedCharactersContainer"></div>
+
             <div class="other_sites_box">Other sites coming soon</div>
 
             <div class="footer_text">rivalsguesser.com — 2024</div>
@@ -34,6 +45,7 @@
             <div class="footer_text" id="footer">Privacy Policy</div>
         </div>
     </div>
+    <script type="module" src="/js/search_functions/character_search.js"></script>
 </body>
 
 </html>
