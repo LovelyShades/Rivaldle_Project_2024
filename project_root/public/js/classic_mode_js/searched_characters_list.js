@@ -114,7 +114,8 @@ class SearchedCharacters {
     }
 
     isCorrectCharacter() {
-        if (this.receivedCharacter === this.dailyCharacter) {
+        if (this.receivedCharacter.name === this.dailyCharacter.name) {
+            this.broadcastCorrectCharacter();
             confetti({
                 particleCount: 250,
                 spread: 120,
@@ -122,6 +123,12 @@ class SearchedCharacters {
             });
         }
     }
+
+    broadcastCorrectCharacter() {
+        const event = new CustomEvent('correctCharacterGuessed');
+        document.dispatchEvent(event);
+    }
+
 }
 
 // Instantiate and export the class

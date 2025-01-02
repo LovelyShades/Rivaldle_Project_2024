@@ -9,14 +9,9 @@ class CharacterSearch {
     }
 
     async initialize() {
-        try {
-            this.marvelCharacters = await this.fetchMarvelCharacters();
-            this.notSearchedMarvelCharacters = [...this.marvelCharacters];
-
-            this.setupEventListeners(); // Setup event listeners
-        } catch (error) {
-            console.error('Error initializing CharacterSearch:', error);
-        }
+        this.marvelCharacters = await this.fetchMarvelCharacters();
+        this.notSearchedMarvelCharacters = [...this.marvelCharacters];
+        this.setupEventListeners(); // Setup event listeners
     }
 
     async fetchMarvelCharacters() {
@@ -31,14 +26,10 @@ class CharacterSearch {
     }
 
     setupEventListeners() {
-        if (this.characterInput) {
-            this.characterInput.addEventListener('input', this.handleInput.bind(this));
+        this.characterInput.addEventListener('input', this.handleInput.bind(this));
+        this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
+        document.addEventListener('correctCharacterGuessed', () => {this.notSearchedMarvelCharacters = []});
         }
-
-        if (this.characterButton) {
-            this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
-        }
-    }
 
     handleInput(event) {
         const suggestedCharacters = this.getSuggestedCharacters(event.target.value);
@@ -124,7 +115,7 @@ class CharacterSearch {
         });
         document.dispatchEvent(event);
     }
-
+    
     removeCharacterFromList(character) {
         this.notSearchedMarvelCharacters = this.notSearchedMarvelCharacters.filter(
             c => c.name !== character.name
