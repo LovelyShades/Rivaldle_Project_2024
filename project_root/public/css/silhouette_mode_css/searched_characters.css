@@ -1,0 +1,26 @@
+.searched_characters_container {
+    position: relative;          /* Positioning relative to allow child positioning if needed */
+    display: flex;               /* Enable Flexbox */
+    flex-direction: column;      /* Stack items vertically */
+    align-items: center;         /* Center items horizontally */
+    justify-content: flex-start; /* Align items at the top */
+    width: 100%;                 /* Full width of the parent container */
+    gap: 15px;                   /* Space between child elements */
+}
+
+.searched_character_box {
+    position: relative;
+    display: flex;               /* Enable Flexbox for internal content alignment */
+    justify-content: center;     /* Center content horizontally */
+    align-items: center;         /* Center content vertically */
+    height: 100px;                /* Fixed height */
+    width: 350px;                /* Fixed width */
+    border: 3px solid black;     /* Define solid black border */
+    border-radius: 5px;          /* Rounded corners */
+    background-color: white;     /* White background color */
+    text-align: center;          /* Align text in the center */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better design */
+    font-family: Arial, sans-serif; /* Consistent font */
+    font-size: 16px;             /* Adjust font size */
+    color: #333;                 /* Text color */
+}
