@@ -13,20 +13,25 @@ class SearchedCharacters {
             .then(response => response.json())
             .then(character_info => {
                 this.marvelCharacters = character_info;
-                this.dailyCharacter = this.marvelCharacters[Math.floor(Math.random() * this.marvelCharacters.length)];
-                console.log('Daily Character:', this.dailyCharacter);
-
-                // Setup event listeners
+                this.getDailyClassicCharacter();
                 this.initializeEventListeners();
+                
             });
+    }
+
+    getDailyClassicCharacter(){
+        fetch('./daily_classic_character')
+        .then(response => response.json())
+        .then(daily_classic_character => {
+            this.dailyCharacter = daily_classic_character
+        });
     }
 
     // Initialize all event listeners
     initializeEventListeners() {
         document.addEventListener('characterSelected', (event) => {
             this.receavedCharacter = event.detail.character;
-            console.log('Selected Character:', this.receavedCharacter);
-
+            console.log("receaved")
             // Execute the main functionalities
             this.initializeSearchHeaders();
             this.activateGameHeader();

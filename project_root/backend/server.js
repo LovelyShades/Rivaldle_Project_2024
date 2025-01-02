@@ -11,8 +11,14 @@ const __dirname = dirname(__filename); // Get the directory name
 const app = express();
 const port = 3000;
 
-// Serve the "public" folder as static
+let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
+console.log(daily_classic_character)
+
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/daily_classic_character', (req, res) => {
+  res.json(daily_classic_character);
+})
 
 app.get('/character_info', (req, res) => {
   res.json(characters);
