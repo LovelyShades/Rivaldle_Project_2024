@@ -1,23 +1,27 @@
-import express from 'express'; // Use import syntax
+import express from 'express'; 
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import open from 'open';  // Correct import for the `open` module
-import { characters } from './data/character_info.js'; // Correct relative import
+import open from 'open';  
+import { characters } from './data/character_info.js';
 
-const __filename = fileURLToPath(import.meta.url); // Get the filename
-const __dirname = dirname(__filename); // Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename); 
 
 const app = express();
 const port = 3000;
 
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
-console.log(daily_classic_character)
+let daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
 
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/daily_classic_character', (req, res) => {
   res.json(daily_classic_character);
+})
+
+app.get('/daily_silhouette_character', (req, res) => {
+  res.json(daily_silhouette_character);
 })
 
 app.get('/character_info', (req, res) => {
@@ -41,4 +45,3 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
   open(`http://localhost:${port}`);  // This will open the browser automatically
 });
-//comment
