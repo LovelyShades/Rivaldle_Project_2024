@@ -1,8 +1,7 @@
-import { marvelCharacters } from '../character_info_js/character_info.js';
-
 class CharacterSearch {
     constructor() {
-        this.notSearchedMarvelCharacters = marvelCharacters;
+        this.getMarvelCharacters();
+        this.notSearchedMarvelCharacters = this.marvelCharacters;
         this.characterInput = document.getElementById('characterInput');
         this.suggestedCharactersContainer = document.getElementById('suggestedCharactersContainer');
         this.characterButton = document.getElementById('character_search_button');
@@ -16,6 +15,14 @@ class CharacterSearch {
         });
     }
 
+    getMarvelCharacters(){
+        fetch('./character_info')
+            .then(response => response.json())
+            .then(character_info => {
+                this.marvelCharacters = character_info;
+                console.log('Character Data:', this.marvelCharacters); // Log the stored data
+        })
+    }
     handleInput(event) {
         const suggestedCharacters = this.getSuggestedCharacters(event.target.value);
         this.displaySuggestions(suggestedCharacters);
