@@ -3,7 +3,8 @@ class AppendSearchedCharacter{
         this.initialize();
     }
 
-    initialize(){
+    async initialize(){
+        this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
         this.listenForCharacterSelect();
     }
 
@@ -12,6 +13,16 @@ class AppendSearchedCharacter{
             this.receivedCharacter = event.detail.character;
             this.appendSearchedCharacterBox();
         });
+    }
+    async fetchData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+            return response.json();
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return null; // Return null if fetch fails
+        }
     }
 
     appendSearchedCharacterBox(){
@@ -27,10 +38,41 @@ class AppendSearchedCharacter{
         newBoxImg.className = 'searched_character_image';
         newBoxImg.src = `/_images/character_images/character_icon_images/${this.receivedCharacter.name.replace(/\s+/g, '')}.png`;
 
-
+        this.isCorrectCharacter(newBox);
         this.searchedCharacterBoxContainer.prepend(newBox);
         newBox.append(newBoxImg);
         newBox.append(newBoxText);
+    }
+
+    isCorrectCharacter(newBox) {
+        if (this.receivedCharacter.name === this.dailyCharacter.name) {
+            this.broadcastCorrectCharacter();
+            this.appendConfetti();
+            newBox.style.backgroundColor = '#4caf50';
+            newBox.style.border = '3px solid #7aff6f'; 
+        } else {
+            newBox.style.backgroundColor = '#d32f2f'; 
+            newBox.style.border = '3px solid #ff3c3b'; 
+            newBox.classList.add('shake');
+
+            // Remove the shake class after the animation completes
+            setTimeout(() => {
+                newBox.classList.remove('shake');
+            }, 500); // Match the duration of the animation (0.5s)
+        }
+    }
+
+    broadcastCorrectCharacter(){
+        const event = new CustomEvent('correctCharacterGuessed');
+        document.dispatchEvent(event);
+    }
+
+    appendConfetti(){
+        confetti({
+            particleCount: 250,
+            spread: 120,
+            origin: { y: 0.7 },
+        });
     }
 }
 
