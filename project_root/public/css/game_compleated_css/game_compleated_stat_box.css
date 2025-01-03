@@ -1,0 +1,25 @@
+.stat_box_container{
+    margin: 30px;
+    position: relative;
+    display: flex;
+    height: 1000px;
+    width: 500px;
+    background-color: aliceblue;
+    border: black;
+    border-radius: 15px;
+    border-width: 4px;
+    border-color: black;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.stat_box_header{
+    position: relative;
+    display: flex;
+    color: black;
+    font-size: xx-large;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+}

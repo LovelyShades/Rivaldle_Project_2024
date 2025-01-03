@@ -1,6 +1,7 @@
 class GetSilhouette {
     constructor() {
         // Initialize the class
+        this.imageScale = 4;
         this.initialize();
     }
 
@@ -10,6 +11,7 @@ class GetSilhouette {
             this.removeSpaces(this.dailyCharacter)
             this.getImageBox();
             this.addSilhouetteImage(this.removedSpacesCharacterName);
+            this.listenForCharacterSelect(this.silhouetteImage)
         } catch (error) {
             console.error('Error initializing GetSilhouette:', error);
         }
@@ -22,19 +24,18 @@ class GetSilhouette {
             return response.json();
         } catch (error) {
             console.error('Error fetching data:', error);
-            return null; // Return null if fetch fails
+            return null; 
         }
     }
 
     getImageBox() {
         this.silhouetteImage = document.getElementById('silhouette_image');
-        if (!this.silhouetteImage) {
-            console.error('Silhouette image element not found in the DOM.');
-        }
     }
+
 
     addSilhouetteImage(character) {
         if (this.silhouetteImage && character) {
+            this.silhouetteImage.style.transform = `scale(${this.imageScale})`;     
             this.silhouetteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${character}.png`;
         } else {
             console.error('Unable to add silhouette image. Character or image box is missing.');
@@ -44,6 +45,16 @@ class GetSilhouette {
     removeSpaces(character){
         this.removedSpacesCharacterName = character.name.replace(/\s+/g, '');
     }
+
+    listenForCharacterSelect(image) {
+        document.addEventListener('characterSelected', (event) => {
+            if(this.imageScale - 0.3 > 1){
+                this.imageScale -= 0.3; 
+                image.style.transform = `scale(${this.imageScale})`;     
+            }
+        });
+    }
+    
 }
 
 // Instantiate the class

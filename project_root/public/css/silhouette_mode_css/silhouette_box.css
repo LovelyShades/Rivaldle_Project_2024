@@ -41,10 +41,13 @@
     width: 300px;              /* Set container width */
     height: 300px;             /* Set container height */
     overflow: hidden;          /* Prevent image overflow */
-    background-color: #f0f0f0; /* Optional background for testing */
+    background-color: #f7ff04; /* Optional background for testing */
     border-radius: 50%;        /* Optional: Circular container */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
 }
 .silhouette_image {
+    transform: scale(3); /* Adjust the scale value for the zoom level */
+    transform-origin: center; /* Ensure the zoom effect is centered */
     width: auto;               /* Maintain aspect ratio */
     height: auto;              /* Maintain aspect ratio */
     max-width: 100%;           /* Scale down to fit container width */
@@ -52,5 +55,9 @@
     object-fit: cover;         /* Ensure the image fills the space */
     display: block;            /* Ensure proper block-level rendering */
     position: relative;        /* Relative positioning for flexibility */
+}
+
+.silhouette_image_container:hover{
+    transform: scale(1.02); /* Adjust the scale value for the zoom level */
 }
 
