@@ -10,9 +10,28 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
+const now = new Date();
+
 
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
+let lastUpdatedDate = new Date().toDateString(); 
+
+// Function to check if the date has changed
+function checkAndResetCharacters() {
+  const today = new Date().toDateString();
+  if (today !== lastUpdatedDate) {
+    daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
+    daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
+    lastUpdatedDate = today; 
+    console.log('Daily characters reset for the new day!');
+  }
+}
+
+app.use((req, res, next) => {
+  checkAndResetCharacters();
+  next(); 
+});
 
 app.use(express.static(path.join(__dirname, '../public')));
 

@@ -5,6 +5,7 @@ class AppendSearchedCharacter{
 
     async initialize(){
         this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
+        console.log(this.dailyCharacter);
         this.listenForCharacterSelect();
     }
 
