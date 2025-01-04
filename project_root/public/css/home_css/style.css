@@ -127,24 +127,50 @@ body {
     position: relative;
     height: 75px;
     width: 200px;
-    background-color: #ffffff;
-    border-radius: 3px;
-    border: 3px solid #000;
+    background-color: #0000001b;
+    border-radius: 0px;
+    border: 3px solid #ffffff2d;
     /* Outer border for the entire box */
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 16px;
-    font-family: Arial, sans-serif;
-    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
-    /* Smooth transitions */
+    font-family: MarvelFont, sans-serif;
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out, border 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for the box */
 }
 
 .mode_link_box:hover {
     transform: scale(1.02);
-    background-color: rgb(119, 183, 181);
+    background-color: rgba(152, 171, 215, 0.507);
 }
 
+/* Custom border effect on hover */
+.mode_link_box::after {
+    content: '';
+    position: absolute;
+    top: -24px;
+    /* Adjust as needed */
+    left: -36px;
+    /* Adjust as needed */
+    width: 260px;
+    /* Adjust width to fit your design */
+    height: 125px;
+    /* Adjust height to fit your design */
+    background-image: url('../../_images/home_images/border.png');
+    background-size: cover;
+    opacity: 0;
+    /* Make it invisible initially */
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+    /* Ensure the custom border appears behind the box */
+}
+
+.mode_link_box:hover::after {
+    opacity: 1;
+    /* Make the custom border visible on hover */
+}
 /* Other sites box */
 .other_sites_box {
     width: 400px;
