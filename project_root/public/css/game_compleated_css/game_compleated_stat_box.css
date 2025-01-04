@@ -31,7 +31,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
-.guessed_character_stat_image {
+.guessed_character_stat_icon {
     width: 50px;                /* Set fixed width */
     height: 50px;               /* Set fixed height */
     border: 2px solid black;    /* Black border */
@@ -41,7 +41,7 @@
     transition: transform 0.1s ease; /* Smooth transition for transform */
 }
 
-.guessed_character_stat_image:hover{
+.guessed_character_stat_icon:hover{
     transform: scale(1.02); /* Adjust the scale value for the zoom level */
 }
 
@@ -55,4 +55,21 @@
     text-align: center;         /* Ensure text is centered */
     width: auto;
     flex-grow: 1;               /* Allow text to grow and take available space */
+}
+
+.guessed_character_full_image{
+    width: 250px;                /* Set fixed width */
+    height: 250px;               /* Set fixed height */
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    transition: transform 0.1s ease; /* Smooth transition for transform */
+}
+
+.footer_line{
+    position: relative;
+    width: 350px;                /* Set fixed width */
+    height: 15px;               /* Set fixed height */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    border-radius: 5px;
+    background-color: black;
 }

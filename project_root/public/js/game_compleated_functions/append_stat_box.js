@@ -64,6 +64,8 @@ class StatBox{
         this.appendTries(container);
         this.appendTimeHeader(container);
         this.appendTime(container);
+        this.appendFullCharacterImage(container);
+        this.appendFooterLine(container);
     }
 
     appendHeaderText(container){
@@ -80,7 +82,7 @@ class StatBox{
         container.append(characterImageContainer);
 
         const characterImage = document.createElement('img');
-        characterImage.className = 'guessed_character_stat_image'
+        characterImage.className = 'guessed_character_stat_icon'
         const characterNameWithoutSpaces = this.dailyCharacter.name.replace(/\s+/g, '');
         characterImage.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
         characterImageContainer.append(characterImage);
@@ -120,6 +122,21 @@ class StatBox{
     
         updateTime();
         setInterval(updateTime, 1000);
+    }
+
+    appendFullCharacterImage(container){
+        const fullCharacterImage = document.createElement('img');
+        fullCharacterImage.className = 'guessed_character_full_image'
+        const characterNameWithoutSpaces = this.dailyCharacter.name.replace(/\s+/g, '');
+        fullCharacterImage.src = `/_images/character_images/hero_profile_images/character_image/${characterNameWithoutSpaces}.png`;
+        container.append(fullCharacterImage);
+
+    }
+
+    appendFooterLine(container){
+        const footerLine = document.createElement('div');
+        footerLine.className = 'footer_line';
+        container.append(footerLine);
     }
 }
 

@@ -10,7 +10,6 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
-const now = new Date();
 
 
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
