@@ -68,7 +68,7 @@
 .footer_line{
     position: relative;
     width: 350px;                /* Set fixed width */
-    height: 15px;               /* Set fixed height */
+    height: 5px;               /* Set fixed height */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
     border-radius: 5px;
     background-color: black;
