@@ -23,10 +23,12 @@
 <body>
     <!-- Video Background -->
     <div class="video-background">
-        <video autoplay loop muted>
+        <video autoplay loop muted id="background-video">
             <source src="/_images/home_images/HighMarvelRivalsBackground.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <!-- Fallback Image -->
+        <img id="fallback-image" src="/_images/home_images/fallback_image.jpg" alt="Fallback Image">
     </div>
 
     <!-- Dark Overlay -->
@@ -57,6 +59,28 @@
             <div class="footer_text" id="footer">Privacy Policy</div>
         </div>
     </div>
+
+    <!-- Include internet check script -->
+    <script src="/js/internet_check/internet_check.js"></script>
+
+    <!-- JavaScript to manage video fallback -->
+    <script>
+        window.onload = function () {
+            var video = document.getElementById('background-video');
+            var fallbackImage = document.getElementById('fallback-image');
+
+            // Check if video is loaded, if not, show fallback image
+            video.onerror = function () {
+                video.style.display = 'none'; // Hide the video
+                fallbackImage.style.display = 'block'; // Show fallback image
+            };
+
+            // If video is playing, hide fallback image
+            video.onplay = function () {
+                fallbackImage.style.display = 'none';
+            };
+        };
+    </script>
 </body>
 
 </html>
