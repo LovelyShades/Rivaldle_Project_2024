@@ -15,7 +15,6 @@ class StatBox{
     }
 
     appendStatBoxContainter(){
-
         const gameCompleatedContainer = document.getElementById('game_compleated_container');
         this.statBoxContainter = document.createElement('div');
         this.statBoxContainter.className = 'stat_box_container'

@@ -23,3 +23,21 @@
     align-content: center;
     margin: 15px;
 }
+
+.game_compleated_image_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+}
+
+.game_compleated_image{
+    width: auto;               /* Maintain aspect ratio */
+    height: auto;              /* Maintain aspect ratio */
+    max-width: 100%;           /* Scale down to fit container width */
+    max-height: 100%;          /* Scale down to fit container height */
+    object-fit: cover;         /* Ensure the image fills the space */
+    display: block;            /* Ensure proper block-level rendering */
+    position: relative;        /* Relative positioning for flexibility */
+}
