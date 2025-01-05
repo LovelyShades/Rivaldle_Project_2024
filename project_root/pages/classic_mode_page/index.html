@@ -27,7 +27,24 @@
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+<!-- header.html -->
+<div class="custom-image-overlay"></div>
+
+<div class="video-background">
+    <video autoplay loop muted id="background-video">
+        <source src="../../_images/home_images/HighMarvelRivalsBackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img id="fallback-image" src="../../_images/home_images/fallback_image.jpg" alt="Fallback Image">
+
+</div>
+
+<div class="overlay"></div>
+
+<div id="title_logo">
+    <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
+</div>
+
 
     <div id="background_image">
         <div class="mode_container">
@@ -112,21 +129,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
+<script src="/js/internet_check/internet_check.js"></script>
+<div class="footer_text">rivalsguesser.com — 2024</div>
+<div class="footer_text">Marvel does not endorse or sponsor this project.</div>
+<div class="footer_text" id="footer">Privacy Policy</div>
 
-<div id="footer-placeholder"></div>
-
-<script>
-    // Load shared header and footer dynamically
-    fetch('/header/header.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('header-placeholder').innerHTML = html)
-        .catch(err => console.error('Failed to load header:', err));
-
-    fetch('/footer/footer.html')
-        .then(response => response.text())
-        .then(html => document.getElementById('footer-placeholder').innerHTML = html)
-        .catch(err => console.error('Failed to load footer:', err));
-</script>
 </body>
 
 </html>
