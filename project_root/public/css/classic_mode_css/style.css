@@ -1,25 +1,4 @@
-/* General styles for body */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 150vh; /* Allows scrolling if content grows */
-    background-color: #f0f0f0; /* Optional background */
-    background-image: url('../../_images/classic_mode_images/MarvelRivalsBackgroundDark.gif'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background image fixed */
-}
 
-/* Background container */
-#background_image {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items at the top */
-    align-items: center; /* Center items horizontally */
-    width: 100%;
-    padding-top: 20px; /* Add padding to create space from the top */
-}
 
 /* Title logo */
 #title_logo {
@@ -40,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: x-large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'MarvelFont', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 10px; /* Space between text and next element */
 }
 
@@ -67,7 +46,7 @@ body {
     align-items: center;
     color: black;
     font-size: 16px;
-    font-family: Arial, sans-serif;
+    font-family: MarvelFont, sans-serif;
 }
 
 /* Footer text */

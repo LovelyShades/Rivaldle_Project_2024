@@ -9,21 +9,24 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/_images/home_images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/_images/home_images/favicon/site.webmanifest" />
 
-    <!-- Meta Information -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title of the Web Page -->
-    <title>Marvel Rivals Guesser</title>
-
     <!-- Stylesheets for Classic Mode -->
     <link rel="stylesheet" href="/css/classic_mode_css/style.css">
     <link rel="stylesheet" href="/css/classic_mode_css/header_box.css">
+    <link rel="stylesheet" href="/css/global_css/global.css">
     <link rel="stylesheet" href="/css/character_search_css/character_search.css">
     <link rel="stylesheet" href="/css/classic_mode_css/guessed_characters.css">
+
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the Web Page -->
+    <title>Marvel Rivals Guesser</title>
 </head>
 
 <body>
+    <div id="header-placeholder"></div>
+
     <div id="background_image">
         <div class="mode_container">
             <div id="title_logo">
@@ -89,19 +92,32 @@
                 </div>
             </div>
 
-            <div class="allGuessedCharacters">
-            </div>
+            <div class="allGuessedCharacters"></div>
 
             <div class="other_sites_box">Other sites coming soon</div>
-
-            <div class="footer_text">rivalsguesser.com — 2024</div>
-            <div class="footer_text">Marvel does not endorse or sponsor this project.</div>
-            <div class="footer_text" id="footer">Privacy Policy</div>
         </div>
     </div>
+
+    <!-- Scripts -->
     <script type="module" src="/js/search_functions/character_search.js"></script>
     <script type="module" src="/js/classic_mode_js/searched_characters_list.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+
+<div id="footer-placeholder"></div>
+
+<script>
+    // Load shared header and footer dynamically
+    fetch('/header/header.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('header-placeholder').innerHTML = html)
+        .catch(err => console.error('Failed to load header:', err));
+
+    fetch('/footer/footer.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+        .catch(err => console.error('Failed to load footer:', err));
+</script>
 </body>
 
 </html>
