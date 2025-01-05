@@ -1,26 +1,64 @@
+/* CONTENTS
+- Header box with border (before)
+- Header container (actual box)
+- Header title ("Guess Todays marvel rivals hero!"
+- Header subtitle ("Type any character to start")
+- Active Header box (when in use)
+- Clue icons
+*/
+.headerBoxContainer::before {
+    content: '';
+    position: absolute;
+    top: -43px;
+        /* Adjust to position the border closer or further */
+    left: -65px;
+        /* Adjust to position the border closer or further */
+    width: 520px;
+    /* Match the width of the border image */
+    height: 250px;
+    /* Match the height of the border image */
+    background-image: url('../../_images/home_images/skinnyborder.png');
+    background-size: cover;
+    /* Ensures the image scales correctly */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    pointer-events: none;
+    /* Allow clicks to pass through to the content */
+    z-index: 1;
+    /* Places the border behind the content */
+}
+
 .headerBoxContainer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 150px;
-    background-image: url('../../_images/classic_mode_images/headerBackground.png'); /* Replace with your image path */
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    border: 3px solid #000; /* Outer border for the entire box */
+    width: 410px;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #00000052;
+    /* Outer border for the entire box */
     flex-direction: column;
 }
 .headerBoxTitle{
     position: relative;
-    padding-bottom: 75px;
-    font-size: x-large;
+        padding-bottom: 20px;
+        font-size: x-large;
+        font-family: 'MarvelFont', sans-serif;
+        /* Custom font */
+        text-transform: uppercase;
+        /* Make the text uppercase */
+        color: #ffffff;
+        /* Change the text color to a custom color (Hex code) */
 }
 
 .headerBoxSubtitle{
     position: relative;
+    font-family: 'MarvelFont', sans-serif;
     font-size: larger;
+    color: #ffffff;
 }
 
 .activeHeaderBoxContainer{

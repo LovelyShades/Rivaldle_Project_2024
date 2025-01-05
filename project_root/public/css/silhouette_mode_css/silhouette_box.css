@@ -19,6 +19,7 @@
     flex-direction: column;
     font-size: x-large;
     color: #000;
+    font-family: 'MarvelFont', Arial;
 }
 
 .silhouette_footer{
@@ -29,6 +30,7 @@
     flex-direction: column;
     font-size: larger;
     color: #000;
+    font-family: 'MarvelFont', Arial;
 }
 
 .silhouette_image_container {
