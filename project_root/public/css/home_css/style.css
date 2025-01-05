@@ -65,8 +65,8 @@
     display: flex;
     position: relative;
     /* Needed for layering the border image */
-    height: 75px;
-    width: 200px;
+    height: 80px;
+    width: 205px;
     background-color: #00000052;
     /* Inner background color */
     border: none;
@@ -84,9 +84,9 @@
 .mode_link_box::before {
     content: '';
     position: absolute;
-    top: -24px;
+    top: -22px;
     /* Position the border image relative to the box */
-    left: -36px;
+    left: -34px;
     /* Adjust these values to center the border */
     width: 260px;
     /* Match your border image size */
@@ -97,8 +97,7 @@
     background-repeat: no-repeat;
     pointer-events: none;
     /* Allow clicks to pass through to the content */
-    z-index: -1;
-    /* Place the border behind the content */
+ 
 }
 
 .mode_link_box:hover {

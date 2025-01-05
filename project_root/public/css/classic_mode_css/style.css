@@ -27,7 +27,7 @@
 .mode_container {
     display: flex;
     flex-direction: column; /* Stack the rectangles vertically */
-    gap: 15px; /* Space between the rectangles */
+    gap: 30px; /* Space between the rectangles */
     justify-content: flex-start; /* Align items at the top */
     align-items: center; /* Center horizontally */
     margin-top: 20px; /* Space between mode container and above elements */
