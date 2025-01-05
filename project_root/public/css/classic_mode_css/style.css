@@ -1,29 +1,8 @@
+/* CONTENTS
+- Container for center spacing
+*/
 
-
-/* Title logo */
-#title_logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Space between logo and next element */
-}
-
-.logo {
-    height: 50%; 
-    width: 50%; 
-}
-
-/* Title text */
-.title_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
-    font-family: 'MarvelFont', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 10px; /* Space between text and next element */
-}
-
-/* Mode container */
+/* Centers containers */
 .mode_container {
     display: flex;
     flex-direction: column; /* Stack the rectangles vertically */
@@ -31,32 +10,4 @@
     justify-content: flex-start; /* Align items at the top */
     align-items: center; /* Center horizontally */
     margin-top: 20px; /* Space between mode container and above elements */
-}
-
-/* Other sites box */
-.other_sites_box {
-    width: 400px;
-    height: 150px;
-    background-color: #00000052;
-    border: 2px solid #dce1f4b6;
-    border-radius: 0px;
-    margin-top: 140px;
-    /* Space between mode container and footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-family: MarvelFont, sans-serif;
-}
-
-/* Footer text */
-.footer_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: small;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #ffffff;
-    margin-top: 20px; 
 }

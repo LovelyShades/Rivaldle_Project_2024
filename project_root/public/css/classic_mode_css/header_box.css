@@ -1,3 +1,11 @@
+/* CONTENTS
+- Header box with border (before)
+- Header container (actual box)
+- Header title ("Guess Todays marvel rivals hero!"
+- Header subtitle ("Type any character to start")
+- Active Header box (when in use)
+- Clue icons
+*/
 .headerBoxContainer::before {
     content: '';
     position: absolute;

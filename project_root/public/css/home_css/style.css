@@ -1,6 +1,11 @@
+/* CONTENTS
+- Content center container
+- Title header
+- Mode container
+- Mode effects (hover, before, ect.)
+*/
 
-
-/* content container that holds modes */
+/* Center Container */
 #content_container {
     display: flex;
     flex-direction: column;
@@ -12,20 +17,6 @@
     width: 100%;
     padding-top: 20px;
     /* Add padding to create space from the top */
-}
-
-/* RIVALDLE logo */
-#title_logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0px;
-    /* Space between logo and next element */
-}
-
-.logo {
-    height: 40%;
-    width: 40%;
 }
 
 /* Title header "Guess the Marvel Rivals Character" */
@@ -113,33 +104,4 @@
  
     /* Slightly scale the border image */
     transition: transform 0.3s ease-in-out;
-}
-/* Other sites box */
-.other_sites_box {
-    width: 400px;
-    height: 150px;
-    background-color: #00000052;
-    border: 2px solid #dce1f4b6;
-    border-radius: 0px;
-    margin-top: 140px;
-    /* Space between mode container and footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-family: MarvelFont, sans-serif;
-}
-
-/* Footer text */
-.footer_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: small;
-    font-family: 'MarvelFont', 'Franklin Gothic Medium';
-    color: #ffffff;
-    margin-top: 20px;
-    /* Space above footer */
-    letter-spacing: 0px;
 }

@@ -1,3 +1,27 @@
+/* CONTENTS
+- RIVALDLE Logo
+- Marvel Font Creation
+- Video background
+- Video background border
+- Video background darken overlay
+- Other sites stylling
+- Footer
+*/
+
+/* Title logo */
+#title_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Space between logo and next element */
+}
+
+.logo {
+    height: 50%;
+    width: 50%;
+}
+
 /* Marvel Font */
 @font-face {
     font-family: 'MarvelFont';
@@ -77,4 +101,34 @@ body {
     /* Adjust last value to change darkness */
     z-index: -1;
     /* Place it above the video but behind the content */
+}
+
+/* Other sites box */
+.other_sites_box {
+    width: 400px;
+    height: 150px;
+    background-color: #00000052;
+    border: 2px solid #dce1f4b6;
+    border-radius: 0px;
+    margin-top: 140px;
+    /* Space between mode container and footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-family: MarvelFont, sans-serif;
+}
+
+/* Footer text */
+.footer_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-family: 'MarvelFont', 'Franklin Gothic Medium';
+    color: #ffffff;
+    margin-top: 20px;
+    /* Space above footer */
+    letter-spacing: 0px;
 }
