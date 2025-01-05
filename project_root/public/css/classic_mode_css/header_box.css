@@ -5,22 +5,30 @@
     align-items: center;
     width: 400px;
     height: 150px;
-    background-image: url('../../_images/classic_mode_images/headerBackground.png'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the entire container */
+    background-color: #00000052;
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    border: 3px solid #000; /* Outer border for the entire box */
+    border: 1px solid #DCE1F4; /* Outer border for the entire box */
     flex-direction: column;
 }
 .headerBoxTitle{
     position: relative;
-    padding-bottom: 75px;
-    font-size: x-large;
+        padding-bottom: 20px;
+        font-size: x-large;
+        font-family: 'MarvelFont', sans-serif;
+        /* Custom font */
+        text-transform: uppercase;
+        /* Make the text uppercase */
+        color: #ffffff;
+        /* Change the text color to a custom color (Hex code) */
 }
 
 .headerBoxSubtitle{
     position: relative;
+    font-family: 'MarvelFont', sans-serif;
     font-size: larger;
+    color: #ffffff;
 }
 
 .activeHeaderBoxContainer{

@@ -16,6 +16,7 @@
     z-index: -1;
     /* Keep the video behind the content */
     overflow: hidden;
+
 }
 
 .video-background video {
@@ -23,6 +24,22 @@
     height: 100%;
     object-fit: cover;
     /* Ensures the video covers the entire viewport */
+}
+
+/* Image overlay on top of the video */
+.custom-image-overlay {
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../../_images/home_images/HomeBorder.png') no-repeat center center;
+        background-size: 100% 100%;
+        /* Stretch the image to fill the whole viewport */
+        pointer-events: none;
+        /* Make sure the image doesn't interfere with user interaction */
+        z-index: 1;
+        /* Ensures the image is on top of the video */
 }
 
 /* Fallback image */

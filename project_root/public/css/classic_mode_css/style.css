@@ -35,16 +35,17 @@
 
 /* Other sites box */
 .other_sites_box {
-    width: 400px; 
+    width: 400px;
     height: 150px;
-    background-color: #ffffff;
-    border: 5px solid #000;
-    border-radius: 25px;
-    margin-top: 40px; /* Space between mode container and footer */
+    background-color: #00000052;
+    border: 2px solid #dce1f4b6;
+    border-radius: 0px;
+    margin-top: 140px;
+    /* Space between mode container and footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     font-family: MarvelFont, sans-serif;
 }
