@@ -58,6 +58,15 @@ app.get('/silhouette', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/silhouette_mode_page/index.html'));
 });
 
+app.get('/emoji', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/emoji_mode_page/index.html'));
+});
+
+app.get('/voice_line', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/voice_line_mode_page/index.html'));
+});
+
+
 // Start the server and automatically open the browser
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
