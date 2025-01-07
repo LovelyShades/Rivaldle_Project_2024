@@ -68,12 +68,24 @@
     font-family: MarvelFont, sans-serif;
 }
 
-.guessed_character_full_image{
+.guessed_character_full_image {
     width: 250px;                /* Set fixed width */
     height: 250px;               /* Set fixed height */
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    transition: transform 0.1s ease; /* Smooth transition for transform */
+    transition: transform 0.5s ease; /* Smooth transition for transform */
+    animation: hoverUpDown 3s ease-in-out infinite; /* Infinite animation */
+}
+
+/* Hover effect: move up */
+
+@keyframes hoverUpDown {
+    0%, 100% {
+        transform: translateY(-10px); /* Moves up */
+    }
+    50% {
+        transform: translateY(0); /* Returns to original position */
+    }
 }
 
 .footer_line{
