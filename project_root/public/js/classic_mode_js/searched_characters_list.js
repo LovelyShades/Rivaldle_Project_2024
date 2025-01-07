@@ -70,30 +70,44 @@ class SearchedCharacters {
         parent.appendChild(image);
     }
 
-    addCharacterAttributes(row) {
-        this.isCorrectCharacter();
-
+    addCharacterAttributes(row) {        
         const attributes = [
             'gender', 'species', 'affiliation', 'level', 'type', 'hp', 'dateOfOrigin'
         ];
-
+        
+        // Add all boxes immediately with only a border initially
         attributes.forEach(attr => {
             const value = this.receivedCharacter[attr];
-            this.addCharacterBox(row, value, attr);
+            const box = this.addCharacterBox(row, value, attr);
+            box.classList.add('hidden'); // Add a hidden class to hide the content and background
         });
+        
+        // Reveal each box with a delay
+        attributes.forEach((attr, index) => {
+            setTimeout(() => {
+                const box = row.querySelector(`.guessedCharacterBox[data-attribute="${attr}"]`);
+                box.classList.remove('hidden'); // Remove the hidden class to reveal the content and background
+            }, 500 * (index + 1)); // Delay each reveal by 500ms
+        });
+        setTimeout(() => {
+            this.isCorrectCharacter();
+        }, 500 * attributes.length + 500); // Total delay: 500ms per attribute
     }
-
+    
     addCharacterBox(row, textContent, attribute) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
         newBox.textContent = textContent;
-
+    
+        newBox.setAttribute('data-attribute', attribute); // Add attribute identifier
+    
         this.setBoxAppearance(newBox, attribute);
         this.addArrowIndicator(newBox, attribute);
-
+    
         row.appendChild(newBox);
+        return newBox; // Return the created box for further manipulation
     }
-
+    
     setBoxAppearance(box, attribute) {
         const isMatching = this.receivedCharacter[attribute] === this.dailyCharacter[attribute];
         box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';

@@ -1,6 +1,5 @@
-/* CONTENTS
-- Guessed charachter CSS
-*/
+/* CONTENTS - Guessed character CSS */
+
 #characterListHeadersContainer {
     margin-top: 40px;
     display: none;
@@ -8,7 +7,6 @@
     align-items: center;
     position: relative;
     gap: 10px;
-    align-items: center;
     font-family: Arial, sans-serif;
 }
 
@@ -64,11 +62,46 @@
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    opacity: 1; /* Default state is fully visible */
+    transform: scale(1); /* Normal size */
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth transition */
 }
 
+.hidden {
+    border: 2px solid #000000; /* Only the border is visible */
+    background-color: transparent !important; /* No background */
+    color: transparent !important; /* Hide text */
+    opacity: 0; /* Fully transparent */
+    transform: scale(0.8); /* Slightly smaller size for animation effect */
+    position: relative; /* Ensure child elements are properly positioned */
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth easing transition */
+}
+
+.guessedCharacterBox:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Arrow styles */
+.arrow {
+    width: 90px; /* Set desired width */
+    height: 90px; /* Set desired height */
+    overflow: hidden; /* Ensures any overflow is clipped */
+    position: absolute; /* Helps with layout adjustments */
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.5) rotate(-20deg); /* Start small and rotated */
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; /* Smooth fade and scale with rotation */
+}
+
+.guessedCharacterBox:not(.hidden) .arrow {
+    opacity: 0.4; /* Partially visible */
+    transform: scale(1) rotate(0deg); /* Normal size and alignment */
+}
+
+/* Guessed character image box */
 .guessedCharacterImageBox {
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
     padding: 0;
     text-align: center;
     background-color: #ffffff;
@@ -77,7 +110,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center; /* Set desired width */
+    align-items: center;
 }
 
 .guessedCharacterImageBox img {
@@ -85,12 +118,4 @@
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
-}
-
-.arrow{
-    width: 90px; /* Set desired width */
-    height: 90px; /* Set desired height */
-    overflow: hidden; /* Ensures any overflow is clipped */
-    position: absolute; /* Helps with layout adjustments */
-    opacity: 30%;
 }
