@@ -1,12 +1,10 @@
 class AppendSearchedCharacter{
     constructor(){
         this.initialize();
-        console.log("working")
     }
 
     async initialize(){
         this.dailyCharacter = await this.fetchData('./daily_emoji_character');
-        console.log(this.dailyCharacter);
         this.listenForCharacterSelect();
     }
 
