@@ -63,8 +63,10 @@ class AppendSearchedCharacter{
     }
 
     broadcastCorrectCharacter(){
-        const event = new CustomEvent('correctCharacterGuessed');
-        document.dispatchEvent(event);
+        const event = new CustomEvent('correctCharacterGuessed', {
+            detail: { character: this.dailyCharacter } // Replace with the actual character
+        });
+        document.dispatchEvent(event);    
     }
 
     appendConfetti(){

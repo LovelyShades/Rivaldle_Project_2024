@@ -27,8 +27,9 @@ class StatBox{
     }
 
     isGameCompleated(){
-        document.addEventListener('correctCharacterGuessed', async () => {
-            this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
+        document.addEventListener('correctCharacterGuessed', async (event) => {
+            this.dailyCharacter = event.detail.character; // Access the correct character    
+            // Fetch data or perform actions based on the correct character
             this.appendStatBoxContainter();
             this.appendStatBoxItems(this.statBoxContainter)
         });
