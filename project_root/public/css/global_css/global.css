@@ -93,9 +93,8 @@ body {
     margin: 0;
     padding: 0;
     min-height: 150vh;
-    /* Allows scrolling if content grows */
     background-color: #f0f0f0;
-    /* Optional background */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Dark overlay on video */
