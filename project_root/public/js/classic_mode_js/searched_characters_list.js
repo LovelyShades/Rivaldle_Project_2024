@@ -125,8 +125,13 @@ class SearchedCharacters {
     }
 
     broadcastCorrectCharacter() {
-        const event = new CustomEvent('correctCharacterGuessed');
-        document.dispatchEvent(event);
+        const event = new CustomEvent('correctCharacterGuessed', {
+            detail: {
+                character: this.dailyCharacter, // Replace with the actual character
+                mode: 'silhouette' // Replace with the actual mode
+            }
+        });
+        document.dispatchEvent(event); // Dispatch the event with both character and mode
     }
 
 }

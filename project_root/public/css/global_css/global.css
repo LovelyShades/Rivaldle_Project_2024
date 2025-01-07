@@ -140,3 +140,57 @@ body {
     /* Space above footer */
     letter-spacing: 0px;
 }
+
+.mode_link_box {
+    display: flex;
+    position: relative;
+    /* Needed for layering the border image */
+    height: 80px;
+    width: 205px;
+    background-color: #00000052;
+    /* Inner background color */
+    border: none;
+    /* Remove default border */
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: MarvelFont, sans-serif;
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+    z-index: 1;
+    /* Ensure the content stays on top */
+}
+
+.mode_link_box::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    /* Position the border image relative to the box */
+    left: -34px;
+    /* Adjust these values to center the border */
+    width: 260px;
+    /* Match your border image size */
+    height: 125px;
+    background-image: url('../../_images/home_images/skinnyborder.png');
+    background-size: cover;
+    /* Ensure the image scales correctly */
+    background-repeat: no-repeat;
+    pointer-events: none;
+    /* Allow clicks to pass through to the content */
+ 
+}
+
+.mode_link_box:hover {
+    transform: scale(1.02);
+    background-color: rgba(0, 0, 0, 0);
+    /* Change inner background color on hover */
+}
+
+.mode_link_box:hover::before {
+    background-image: url('../../_images/home_images/border.png');
+        /* Hover border image */
+    /* Optional: Add effects for the border on hover */
+ 
+    /* Slightly scale the border image */
+    transition: transform 0.3s ease-in-out;
+}

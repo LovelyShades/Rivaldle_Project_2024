@@ -63,13 +63,16 @@ class AppendSearchedCharacter{
         }
     }
 
-    broadcastCorrectCharacter(){
+    broadcastCorrectCharacter() {
         const event = new CustomEvent('correctCharacterGuessed', {
-            detail: { character: this.dailyCharacter } // Replace with the actual character
+            detail: {
+                character: this.dailyCharacter, // Replace with the actual character
+                mode: 'emoji' // Replace with the actual mode
+            }
         });
-        document.dispatchEvent(event);    
+        document.dispatchEvent(event); // Dispatch the event with both character and mode
     }
-
+    
     appendConfetti(){
         confetti({
             particleCount: 250,

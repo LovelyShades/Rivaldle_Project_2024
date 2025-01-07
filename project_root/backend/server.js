@@ -48,7 +48,6 @@ app.get('/daily_emoji_character', (req, res) => {
   res.json(daily_emoji_character);
 })
 
-
 app.get('/character_info', (req, res) => {
   res.json(characters);
 });

@@ -5,9 +5,9 @@
     flex-direction: column;     /* Stack items vertically */
     height: auto;               /* Allow dynamic height based on content */
     width: 500px;
-    background-color: aliceblue;
-    border: 4px solid black;    /* Corrected border shorthand */
-    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.759);
+    border: 3px solid rgb(255, 255, 255);    /* Corrected border shorthand */
+    border-radius: 5px;
     justify-content: space-between; /* Distribute items evenly */
     align-items: center;        /* Center items horizontally */
     gap: 20px;                  /* Add spacing between items */
@@ -55,6 +55,7 @@
     text-align: center;         /* Ensure text is centered */
     width: auto;
     flex-grow: 1;               /* Allow text to grow and take available space */
+    color: #ffffff;
 }
 
 .guessed_character_full_image{
@@ -71,5 +72,5 @@
     height: 5px;               /* Set fixed height */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }

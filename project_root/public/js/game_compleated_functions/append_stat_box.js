@@ -29,10 +29,12 @@ class StatBox{
     isGameCompleated(){
         document.addEventListener('correctCharacterGuessed', async (event) => {
             this.dailyCharacter = event.detail.character; // Access the correct character    
+            this.nextMode = event.detail.mode;
             // Fetch data or perform actions based on the correct character
             this.appendStatBoxContainter();
             this.appendStatBoxItems(this.statBoxContainter)
         });
+  
     }
 
     getTime() {
@@ -67,6 +69,7 @@ class StatBox{
         this.appendTime(container);
         this.appendFullCharacterImage(container);
         this.appendFooterLine(container);
+        this.appendModeLink(container);
     }
 
     appendHeaderText(container){
@@ -91,6 +94,7 @@ class StatBox{
         const characterText = document.createElement('div');
         characterText.className = 'stat_box_text'
         characterText.innerHTML = `You Guessed ${this.dailyCharacter.name}`;
+        characterText.style.color = 'black';
         characterImageContainer.append(characterText);
     }
 
@@ -138,6 +142,16 @@ class StatBox{
         const footerLine = document.createElement('div');
         footerLine.className = 'footer_line';
         container.append(footerLine);
+    }
+
+    appendModeLink(container) {
+        const modeLink = document.createElement('a'); // Create an anchor element
+        modeLink.className = 'mode_link_box';
+        modeLink.innerHTML = 'Next Mode'; // Set the link text
+        modeLink.href = `/${this.nextMode}`; // Set the URL to the `/emoji` endpoint
+        modeLink.target = '_self'; // Open in the same tab (default behavior)
+    
+        container.append(modeLink); // Append the link to the container
     }
 }
 
