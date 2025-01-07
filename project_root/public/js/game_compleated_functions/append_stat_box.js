@@ -56,6 +56,7 @@ class StatBox{
     appendStatBoxContainter(){
         const gameCompleatedContainer = document.getElementById('game_compleated_container');
         this.statBoxContainter = document.createElement('div');
+        this.statBoxContainter.id = 'stat_box_container'
         this.statBoxContainter.className = 'stat_box_container'
         gameCompleatedContainer.append(this.statBoxContainter)
 
@@ -70,6 +71,8 @@ class StatBox{
         this.appendFullCharacterImage(container);
         this.appendFooterLine(container);
         this.appendModeLink(container);
+
+        this.scrollToStatBox();
     }
 
     appendHeaderText(container){
@@ -77,6 +80,7 @@ class StatBox{
         headerText.className = 'stat_box_text'
         headerText.style.fontSize = "xx-large";
         headerText.innerHTML = 'Victory!'
+        headerText.id = 'header_text'
         container.append(headerText);
     }
 
@@ -110,6 +114,7 @@ class StatBox{
         timeHeader.className = 'stat_box_text';
         timeHeader.style.fontSize = 'x-large'
         timeHeader.innerHTML = 'New hero in:'
+        timeHeader.id = 'time_header';
         container.append(timeHeader);
     }
 
@@ -152,6 +157,16 @@ class StatBox{
         modeLink.target = '_self'; // Open in the same tab (default behavior)
     
         container.append(modeLink); // Append the link to the container
+    }
+
+    scrollToStatBox() {
+        const victoryStats = document.getElementById('stat_box_container');
+        setTimeout(() => {
+            victoryStats.scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling effect
+                block: 'start' // Scroll to the top of the element
+            });
+        }, 1000); // Delay of 1 second (1000 milliseconds)
     }
 }
 

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MarvelFont';
+    src: url('../../fonts/MarvelFont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .stat_box_container {
     margin: 30px auto;          /* Center container horizontally and add spacing */
     position: relative;
@@ -13,6 +20,7 @@
     gap: 20px;                  /* Add spacing between items */
     padding: 20px;              /* Add padding inside the container */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+    font-family: MarvelFont, sans-serif;
 }
 
 .guessed_character_stat_container {
@@ -29,6 +37,7 @@
     border-radius: 10px;        /* Optional rounding for better design */
     background-color: #ffffff;  /* Background for the stat container */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    font-family: MarvelFont, sans-serif;
 }
 
 .guessed_character_stat_icon {
@@ -56,6 +65,7 @@
     width: auto;
     flex-grow: 1;               /* Allow text to grow and take available space */
     color: #ffffff;
+    font-family: MarvelFont, sans-serif;
 }
 
 .guessed_character_full_image{

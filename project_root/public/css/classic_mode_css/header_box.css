@@ -68,8 +68,7 @@
     align-items: center;
     width: 400px;
     height: 200px;
-    background-color: #e1e6ec;
-    background-image: url('../../_images/headerBackground.png'); /* Replace with your image path */
+    background-color: #000000b4;
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
