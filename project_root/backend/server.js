@@ -15,6 +15,10 @@ const port = 3000;
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
+
+let daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
+let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
+
 let lastUpdatedDate = new Date().toDateString(); 
 
 // Function to check if the date has changed
@@ -24,6 +28,8 @@ function checkAndResetCharacters() {
     daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
     daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
     daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
+    daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
+    daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
     lastUpdatedDate = today; 
     console.log('Daily characters reset for the new day!');
   }
@@ -47,6 +53,15 @@ app.get('/daily_silhouette_character', (req, res) => {
 app.get('/daily_emoji_character', (req, res) => {
   res.json(daily_emoji_character);
 })
+
+app.get('/daily_ability_character', (req, res) => {
+  res.json(daily_ability_character);
+})
+
+app.get('/daily_character_ability', (req, res) => {
+  res.json(daily_character_ability);
+})
+
 
 app.get('/character_info', (req, res) => {
   res.json(characters);
