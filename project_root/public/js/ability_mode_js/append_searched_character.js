@@ -66,7 +66,7 @@ class AppendSearchedCharacter{
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
                 character: this.dailyCharacter, // Replace with the actual character
-                mode: 'voice_line' // Replace with the actual mode
+                mode: 'classic' // Replace with the actual mode
             }
         });
         document.dispatchEvent(event); // Dispatch the event with both character and mode
