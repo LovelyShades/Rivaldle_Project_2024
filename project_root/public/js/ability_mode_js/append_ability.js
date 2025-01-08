@@ -6,8 +6,7 @@ class AppendAbility{
     async initialize(){
         this.dailyCharacter = await this.fetchData('./daily_ability_character');
         this.dailyCharacterAbility = await this.fetchData('./daily_character_ability');
-        console.log(this.dailyCharacterAbility)
-
+        this.appendAbility()
     }
 
     async fetchData(url) {
@@ -21,7 +20,13 @@ class AppendAbility{
         }
     }
 
-    
+    appendAbility(){
+        const abilityTextContainer = document.getElementById('ability_text_container')
+        const abilityText = document.createElement('div')
+        abilityText.className = 'ability_text';
+        abilityText.innerHTML = this.dailyCharacterAbility
+        abilityTextContainer.append(abilityText);
+    }
 }
 
 const appendAbility = new AppendAbility();
