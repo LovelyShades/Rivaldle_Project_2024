@@ -120,6 +120,7 @@ class SearchedCharacters {
         arrowImage.className = 'arrow';
 
         const comparison = this.receivedCharacter[attribute] - this.dailyCharacter[attribute];
+        if(comparison == 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'
             : '/_images/classic_mode_images/upArrow.png';
