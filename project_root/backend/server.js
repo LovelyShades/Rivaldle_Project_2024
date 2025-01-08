@@ -68,8 +68,8 @@ app.get('/emoji', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/emoji_mode_page/index.html'));
 });
 
-app.get('/voice_line', (req, res) => {
-  res.sendFile(path.join(__dirname, '../pages/voice_line_mode_page/index.html'));
+app.get('/character_ability', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/character_ability_mode_page/index.html'));
 });
 
 
