@@ -1,19 +1,22 @@
-class AppendSearchedCharacter{
-    constructor(){
+class AppendSearchedCharacter {
+    constructor() {
         this.initialize();
     }
 
-    async initialize(){
+    async initialize() {
         this.dailyCharacter = await this.fetchData('./daily_ability_character');
+        this.loadStoredCharacters(); // Load stored characters on initialization
         this.listenForCharacterSelect();
     }
 
-    listenForCharacterSelect(){
+    listenForCharacterSelect() {
         document.addEventListener('characterSelected', (event) => {
             this.receivedCharacter = event.detail.character;
             this.appendSearchedCharacterBox();
+            this.saveCharacterToLocalStorage(this.receivedCharacter); // Save the character
         });
     }
+
     async fetchData(url) {
         try {
             const response = await fetch(url);
@@ -21,31 +24,31 @@ class AppendSearchedCharacter{
             return response.json();
         } catch (error) {
             console.error('Error fetching data:', error);
-            return null; // Return null if fetch fails
+            return null;
         }
     }
 
-    appendSearchedCharacterBox(){
+    appendSearchedCharacterBox(character = this.receivedCharacter) {
         this.searchedCharacterBoxContainer = document.getElementById('searched_characters_container');
         const newBox = document.createElement('div');
         newBox.className = 'searched_character_box';
 
         const newBoxText = document.createElement('div');
         newBoxText.className = 'searched_character_text';
-        newBoxText.innerHTML = this.receivedCharacter.name
+        newBoxText.innerHTML = character.name;
 
         const newBoxImg = document.createElement('img');
         newBoxImg.className = 'searched_character_image';
-        newBoxImg.src = `/_images/character_images/character_icon_images/${this.receivedCharacter.name.replace(/\s+/g, '')}.png`;
+        newBoxImg.src = `/_images/character_images/character_icon_images/${character.name.replace(/\s+/g, '')}.png`;
 
-        this.isCorrectCharacter(newBox);
+        this.isCorrectCharacter(newBox, character);
         this.searchedCharacterBoxContainer.prepend(newBox);
         newBox.append(newBoxImg);
         newBox.append(newBoxText);
     }
 
-    isCorrectCharacter(newBox) {
-        if (this.receivedCharacter.name === this.dailyCharacter.name) {
+    isCorrectCharacter(newBox, character = this.receivedCharacter) {
+        if (character.name === this.dailyCharacter.name) {
             this.broadcastCorrectCharacter();
             this.appendConfetti();
             newBox.style.backgroundColor = '#4caf50';
@@ -55,29 +58,39 @@ class AppendSearchedCharacter{
             newBox.style.border = '3px solid #ff3c3b'; 
             newBox.classList.add('shake');
 
-            // Remove the shake class after the animation completes
             setTimeout(() => {
                 newBox.classList.remove('shake');
-            }, 500); // Match the duration of the animation (0.5s)
+            }, 500);
         }
     }
 
     broadcastCorrectCharacter() {
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
-                character: this.dailyCharacter, // Replace with the actual character
-                mode: 'classic' // Replace with the actual mode
+                character: this.dailyCharacter,
+                mode: 'classic'
             }
         });
-        document.dispatchEvent(event); // Dispatch the event with both character and mode
+        document.dispatchEvent(event);
     }
 
-    appendConfetti(){
+    appendConfetti() {
         confetti({
             particleCount: 250,
             spread: 120,
             origin: { y: 0.7 },
         });
+    }
+
+    saveCharacterToLocalStorage(character) {
+        const storedCharacters = JSON.parse(localStorage.getItem('searched_ability_characters')) || [];
+        storedCharacters.push(character);
+        localStorage.setItem('searched_ability_characters', JSON.stringify(storedCharacters));
+    }
+
+    loadStoredCharacters() {
+        const storedCharacters = JSON.parse(localStorage.getItem('searched_ability_characters')) || [];
+        storedCharacters.forEach((character) => this.appendSearchedCharacterBox(character));
     }
 }
 
