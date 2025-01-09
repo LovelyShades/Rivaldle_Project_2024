@@ -12,9 +12,10 @@
     flex-direction: column;     /* Stack items vertically */
     height: auto;               /* Allow dynamic height based on content */
     width: 500px;
-    background-color: rgba(0, 0, 0, 0.759);
-    border: 3px solid rgb(255, 255, 255);    /* Corrected border shorthand */
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.751);
+    border-style: solid; 
+    border-color: white;
+    border-width: 2px;
     justify-content: space-between; /* Distribute items evenly */
     align-items: center;        /* Center items horizontally */
     gap: 20px;                  /* Add spacing between items */

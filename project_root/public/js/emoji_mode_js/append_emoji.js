@@ -1,9 +1,11 @@
-class AppendEmoji{
-    constructor(){
+class AppendEmoji {
+    constructor() {
+        this.initializeEmojiStorage(); // Initialize storage first
+        this.numGuesses = parseInt(localStorage.getItem('numEmojisViewed'), 10) || 0; // Load stored guesses
         this.initialize();
-        this.numGuesses = 0;
     }
-    async initialize(){
+
+    async initialize() {
         this.dailyCharacter = await this.fetchData('./daily_emoji_character');
         this.getCharacterEmojis();
         this.appendEmojis();
@@ -21,39 +23,43 @@ class AppendEmoji{
         }
     }
 
-    listenForCharacterSelect(){
-        document.addEventListener('characterSelected', (event) => {
+    listenForCharacterSelect() {
+        document.addEventListener('characterSelected', () => {
             this.updateEmojis();
         });
     }
 
-    getCharacterEmojis(){
+    getCharacterEmojis() {
         this.dailyCharacterEmojis = this.dailyCharacter.emoji;
     }
 
     appendEmojis() {
         const emojiContainer = document.getElementById('emoji_container');
-        this.emojis = [
-            document.createElement('div'),
-            document.createElement('div'),
-            document.createElement('div'),
-            document.createElement('div')
-        ];
-        
+        this.emojis = [document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div')];
+
         this.emojis.forEach((emoji, index) => {
             emoji.className = 'emoji'; // Add the class 'emoji' to each element
-            emoji.textContent = '?';// Add some text or emoji content
-            if(index==0){
-                emoji.textContent = this.dailyCharacterEmojis[0]
-            }
+            emoji.textContent = index <= this.numGuesses ? this.dailyCharacterEmojis[index] : '?'; // Set emoji based on storage
             emojiContainer.append(emoji); // Append the element to the container
         });
-    }        
+    }
 
-    updateEmojis(){
+    updateEmojis() {
+        if (this.numGuesses >= 3) return; // Limit updates to 4 emojis
         this.numGuesses += 1;
-        if(this.numGuesses > 3) return;
-        this.emojis[this.numGuesses].innerHTML = this.dailyCharacterEmojis[this.numGuesses]
+        this.saveEmojisToLocalStorage(); // Save updated guesses to localStorage
+        this.emojis[this.numGuesses].innerHTML = this.dailyCharacterEmojis[this.numGuesses]; // Update emoji display
+    }
+
+    saveEmojisToLocalStorage() {
+        localStorage.setItem('numEmojisViewed', this.numGuesses);
+    }
+
+    initializeEmojiStorage() {
+        const storedValue = localStorage.getItem('numEmojisViewed');
+        if (storedValue === null) {
+            localStorage.setItem('numEmojisViewed', 0);
+        }
     }
 }
 

@@ -1,0 +1,43 @@
+.ability_box_container{
+    height: 300px;
+    width: 450px;
+    position: relative;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.751);
+    justify-content: top;  
+    align-items: center;      
+    flex-direction: column;
+    border-style: solid; 
+    border-color: white;
+    border-width: 2px;
+    gap: 50px;
+}
+
+.ability_box_header{
+    position: relative;
+    display: flex;
+    justify-content: top;  
+    align-items: top;
+    color: white;     
+    font-family: 'MarvelFont', Arial;  
+    font-size: x-large;
+    margin-top: 15px;
+}
+
+.ability_box_container{
+    position: relative;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+}
+
+.ability_text{
+    position: relative;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    color: white;     
+    font-family: 'MarvelFont', Arial;  
+    font-size: xx-large;
+    margin-top: 15px;
+}

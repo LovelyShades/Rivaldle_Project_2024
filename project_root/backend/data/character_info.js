@@ -1,5 +1,5 @@
 class Person {
-    constructor(name, gender, species, affiliation, type, level, hp, dateOfOrigin, emoji) {
+    constructor(name, gender, species, affiliation, type, level, hp, dateOfOrigin, emoji, abilities, ult) {
         this.name = name;
         this.gender = gender;
         this.species = species;
@@ -9,6 +9,8 @@ class Person {
         this.hp = hp;
         this.dateOfOrigin = dateOfOrigin;
         this.emoji = emoji;
+        this.abilities = abilities;
+        this.ult = ult;
     }
 }
 
@@ -23,7 +25,9 @@ export const characters = [
         "science",
         650,
         1941,
-        ["⭐", "🕰️", "🛡️", "🇺🇸"]
+        ["⭐", "🕰️", "🛡️", "🇺🇸"],
+        ["SENTINEL STRIKE","FREEDOM CHARGE","LEADING DASH","VIBRANIUM ENERGY SAW","LIBERTY RUSH","SUPER-SOLDIER SLAM","LIVING LEGEND"],
+        "FREEDOM CHARGE"
     ),
     new Person(
         "Doctor Strange",
@@ -35,6 +39,8 @@ export const characters = [
         650,
         1963,
         ["📖", "🌀", "✨", "🧙‍♂️"]
+        ["DAGGERS OF DENAK","EYE OF AGAMOTTO","CLOAK OF LEVITATION","MAELSTROM OF MADNESS","PENTAGRAM OF FARALLAH","SHIELD OF THE SERAPHIM"],
+        "EYE OF AGAMOTTO"
     ),
     new Person(
         "Groot",
@@ -45,7 +51,9 @@ export const characters = [
         "cosmic",
         700,
         1960,
-        ["🌱", "🌌", "🌳", "🪵"]
+        ["🌱", "🌌", "🌳", "🪵"],
+        ["VINE STRIKE", "STRANGLING PRISON", "THORNLASH WALL", "IRONWOOD WALL", "SPORE BOMB"],
+        "STRANGLING PRISON"
     ),
     new Person(
         "Hulk",
@@ -56,7 +64,9 @@ export const characters = [
         "science",
         200,
         1962,
-        ["🧪", "💥", "💪", "💚"]
+        ["🧪", "💥", "💪", "💚"],
+        ["GAMMA RAY GUN","PUNY BANNER","GAMMA GRENADE"],
+        "PUNY BANNER"
     ),
     new Person(
         "Thor",
@@ -67,7 +77,9 @@ export const characters = [
         "cosmic",
         500,
         1962,
-        ["☁️", "👑", "⚡", "🔨"]
+        ["☁️", "👑", "⚡", "🔨"],
+        ["Mjolnir Bash", "Hammer Throw", "Lightning Realm", "Storm Surge", "Awakening Rune", "God of Thunder"],
+        "God of Thunder"
     ),
     new Person(
         "Magneto",
@@ -78,7 +90,9 @@ export const characters = [
         "mutant",
         650,
         1963,
-        ["🎩", "🌀", "🧲", "👨‍🎤"]
+        ["🎩", "🌀", "🧲", "👨‍🎤"],
+        ["IRON VOLLEY", "METEOR M", "METALLIC CURTAIN", "METAL BULWARK", "IRON BULWARK", "MAG-CANNON", "MAGNETIC DESCENT"],
+        "METEOR M"
     ),
     new Person(
         "Peni Parker",
@@ -89,7 +103,9 @@ export const characters = [
         "science",
         650,
         2014,
-        ["📓", "🤖", "🕸️", "🕷️"]
+        ["📓", "🤖", "🕸️", "🕷️"],
+        ["CYBER-WEB CLUSTER", "SPIDER-SWEEPER", "BIONIC SPIDER-NEST", "ARACHNO-MINE", "CYBER-BOND", "WALL CRAWL", "CYBER-WEB SNARE"],
+        "SPIDER-SWEEPER"
     ),
     new Person(
         "Venom",
@@ -100,7 +116,9 @@ export const characters = [
         "cosmic",
         650,
         1988,
-        ["👄", "🧪", "👅", "🖤"]
+        ["👄", "🧪", "👅", "🖤"],
+        ["Dark Predation", "Cellular Corrosion", "Symbiotic Resilience", "Frenzied Arrival", "Feast of the Abyss"],
+        "Feast of the Abyss"
     ),
     // Duelists
     new Person(
@@ -112,7 +130,9 @@ export const characters = [
         "fighting",
         300,
         1966,
-        ["🌍", "👑", "🐾", "🖤"]
+        ["🌍", "👑", "🐾", "🖤"],
+        ["VIBRANIUM CLAWS", "BAST'S DESCENT", "SPIRIT REND", "SUBTLE STEP", "SPEAR TOSS"],
+        "BAST'S DESCENT"
     ),
     new Person(
         "Black Widow",
@@ -123,7 +143,9 @@ export const characters = [
         "fighting",
         250,
         1964,
-        ["🧣", "💋", "🕸️", "🕷️"]
+        ["🧣", "💋", "🕸️", "🕷️"],
+        ["WIDOW'S BITE BATON", "RED ROOM RIFLE", "ELECTRO-PLASMA EXPLOSION", "FLEET FOOT", "EDGE DANCER", "STRAIGHT SHOOTER"],
+        "ELECTRO-PLASMA EXPLOSION"
     ),
     new Person(
         "Hawkeye",
@@ -134,7 +156,9 @@ export const characters = [
         "fighting",
         250,
         1964,
-        ["🔍", "🎯", "🏹", "🦅"]
+        ["🔍", "🎯", "🏹", "🦅"],
+        ["PIERCING ARROW", "BLAST ARROW", "HUNTER'S SIGHT", "CRESCENT SLASH", "HYPERSONIC ARROW", "RONIN SLASH", "SKYWARD LEAP"],
+        "HUNTER'S SIGHT"
     ),
     new Person(
         "Hela",
@@ -145,7 +169,9 @@ export const characters = [
         "magic",
         275,
         1964,
-        ["🕯️", "🖤", "👑", "💀"]
+        ["🕯️", "🖤", "👑", "💀"],
+        ["NIGHTSWORD THORN", "GODDESS OF DEATH", "ASTRAL FLOCK", "SOUL DRAINER", "PIERCING NIGHT"],
+        "GODDESS OF DEATH"
     ),
     new Person(
         "Iron Fist",
@@ -156,7 +182,9 @@ export const characters = [
         "magic",
         250,
         1974,
-        ["🌀", "🔥", "👊", "⚡"]
+        ["🌀", "🔥", "👊", "⚡"],
+        ["JEET KUNE DO", "YAT JEE CHUNG KUEN", "LIVING CHI", "K'UN-LUN KICK", "HARMONY RECOVERY", "CRANE LEAP", "DRAGON'S DEFENSE", "WALL RUNNER"],
+        "LIVING CHI"
     ),
     new Person(
         "Iron Man",
@@ -167,7 +195,9 @@ export const characters = [
         "science",
         250,
         1963,
-        ["🔧", "💡", "🤖", "🛡️"]
+        ["🔧", "💡", "🤖", "🛡️"],
+        ["REPULSOR BLAST", "UNIBEAM", "INVINCIBLE PULSE CANNON", "HYPER-VELOCITY", "ARMOR OVERDRIVE", "MICRO-MISSILE BARRAGE"],
+        "INVINCIBLE PULSE CANNON"
     ),
     new Person(
         "Magik",
@@ -178,7 +208,9 @@ export const characters = [
         "magic",
         250,
         1975,
-        ["🧘‍♀️", "⚔️", "✨", "🌌"]
+        ["🧘‍♀️", "⚔️", "✨", "🌌"],
+        ["SOULSWORD", "DARKCHILD", "STEPPING DISCS", "UMBRAL INCURSION", "ELDRITCH WHIRL", "MAGIK SLASH", "DEMON'S RAGE"],
+        "DARKCHILD"
     ),
     new Person(
         "Moon Knight",
@@ -189,7 +221,9 @@ export const characters = [
         "magic",
         250,
         1975,
-        ["🔮", "🌙", "🩸", "⚔️"]
+        ["🔮", "🌙", "🩸", "⚔️"],
+        ["CRESCENT DART", "HAND OF KHONSHU", "NIGHT GLIDER", "ANCIENT ANKH", "MOONLIGHT HOOK", "RISING LEAP", "MOON BLADE", "TRIPLE ECLIPSE"],
+        "HAND OF KHONSHU"
     ),
     new Person(
         "Namor",
@@ -200,7 +234,9 @@ export const characters = [
         "cosmic",
         275,
         1939,
-        ["🌊", "👑", "💪", "🐠"]
+        ["🌊", "👑", "💪", "🐠"],
+        ["TRIDENT OF NEPTUNE", "HORN OF PROTEUS", "BLESSING OF THE DEEP", "AQUATIC DOMINION", "WRATH OF THE SEVEN SEAS"],
+        "HORN OF PROTEUS"
     ),
     new Person(
         "Psylocke",
@@ -211,7 +247,9 @@ export const characters = [
         "mutant",
         250,
         1976,
-        ["🎭", "🌀", "⚔️", "💜"]
+        ["🎭", "🌀", "⚔️", "💜"],
+        ["PSIONIC CROSSBOW", "DANCE OF THE BUTTERFLY", "PSI-BLADE DASH", "PSYCHIC STEALTH", "WING SHURIKENS"],
+        "DANCE OF THE BUTTERFLY"
     ),
     new Person(
         "Scarlet Witch",
@@ -222,7 +260,9 @@ export const characters = [
         "magic",
         250,
         1964,
-        ["📜", "✨", "🌀", "🧙‍♀️"]
+        ["📜", "✨", "🌀", "🧙‍♀️"],
+        ["CHAOS CONTROL", "REALITY ERASURE", "MYSTIC PROJECTION", "DARK SEAL", "TELEKINESIS", "CHTHONIAN BURST"],
+        "REALITY ERASURE"
     ),
     new Person(
         "Spider Man",
@@ -233,7 +273,9 @@ export const characters = [
         "science",
         250,
         1962,
-        ["🧪", "🏙️", "🕸️", "🕷️"]
+        ["🧪", "🏙️", "🕸️", "🕷️"],
+        ["Spider-Power", "Cyber-Web Cluster", "Thwip and Flip", "Wall Crawl", "Web-Swing", "Amazing Combo", "Get Over Here!", "Spectacular Spin"],
+        "Spectacular Spin"
     ),
     new Person(
         "Squirrel Girl",
@@ -244,7 +286,9 @@ export const characters = [
         "mutant",
         275,
         1992,
-        ["🍂", "🐿️", "💪", "😂"]
+        ["🍂", "🐿️", "💪", "😂"],
+        ["Burst Acorn", "Squirrel Blockade", "Tail Bounce", "Mammal Bond", "Unbeatable Squirrel Tsunami"],
+        "Unbeatable Squirrel Tsunami"
     ),
     new Person(
         "Star Lord",
@@ -255,7 +299,9 @@ export const characters = [
         "science",
         250,
         1976,
-        ["🎶", "🔫", "🌌", "😎"]
+        ["🎶", "🔫", "🌌", "😎"],
+        ["Element Guns", "Stellar Shift", "Blaster Barrage", "Rocket Propulsion", "Galactic Legend"],
+        "Galactic Legend"
     ),
     new Person(
         "Storm",
@@ -266,7 +312,9 @@ export const characters = [
         "mutant",
         250,
         1975,
-        ["🌧️", "☁️", "⚡", "🌪️"]
+        ["🌧️", "☁️", "⚡", "🌪️"],
+        ["Wind Blade", "Bolt Rush", "Goddess Boost", "Weather Control", "Omega Hurricane"],
+        "Omega Hurricane"
     ),
     new Person(
         "The Punisher",
@@ -277,7 +325,9 @@ export const characters = [
         "fighting",
         275,
         1974,
-        ["⚖️", "💀", "🔫", "🏴‍☠️"]
+        ["⚖️", "💀", "🔫", "🏴‍☠️"],
+        ["Adjudication", "Deliverance", "Scourge Grenade", "Culling Turret", "Vantage Connection", "Final Judgement", "Warrior's Gaze"],
+        "Final Judgement"
     ),
     new Person(
         "Winter Soldier",
@@ -288,7 +338,9 @@ export const characters = [
         "science",
         250,
         1941,
-        ["❄️", "🔧", "🛡️", "🧑‍🎤"]
+        ["❄️", "🔧", "🛡️", "🧑‍🎤"],
+        ["Roterstern", "Bionic Hook", "Tainted Voltage", "Trooper's Fist", "Ceaseless Charge", "Kraken Impact", "Infinite Grit"],
+        "Kraken Impact"
     ),
     new Person(
         "Wolverine",
@@ -299,7 +351,9 @@ export const characters = [
         "mutant",
         300,
         1974,
-        ["🌲", "🩸", "💪", "⚔️"]
+        ["🌲", "🩸", "💪", "⚔️"],
+        ["Savage Claw", "Feral Leap", "Undying Animal", "Vicious Rampage", "Regenerative Healing Factor", "Berserker Rage", "Last Stand"],
+        "Last Stand"
     ),
     // Strategists
     new Person(
@@ -311,7 +365,9 @@ export const characters = [
         "cosmic",
         250,
         1967,
-        ["🪞", "✨", "🌌", "👑"]
+        ["🪞", "✨", "🌌", "👑"],
+        ["QUANTUM MAGIC", "KARMIC REVIVAL", "SOUL BOND", "AVATAR LIFE STREAM", "COSMIC CLUSTER"],
+        "KARMIC REVIVAL"
     ),
     new Person(
         "Rocket",
@@ -322,7 +378,9 @@ export const characters = [
         "cosmic",
         250,
         1976,
-        ["🔧", "😂", "🦝", "🔫"]
+        ["🔧", "😂", "🦝", "🔫"],
+        ["BOMBARD MODE", "REPAIR MODE", "C.Y.A.", "JETPACK DASH", "B.R.B.", "WILD CRAWL", "FLYING ACE"],
+        "C.Y.A."
     ),
     new Person(
         "Loki",
@@ -333,7 +391,9 @@ export const characters = [
         "magic",
         250,
         1949,
-        ["🃏", "🔥", "👑", "🪄"]
+        ["🃏", "🔥", "👑", "🪄"],
+        ["MYSTICAL MISSILE", "GOD OF MISCHIEF", "REGENERATION DOMAIN", "DOPPELGANGER", "DEVIOUS EXCHANGE", "BACKSTAB", "DECEPTION"],
+        "GOD OF MISCHIEF"
     ),
     new Person(
         "Luna Snow",
@@ -344,7 +404,9 @@ export const characters = [
         "magic",
         275,
         2018,
-        ["❄️", "🎤", "✨", "🌙"]
+        ["❄️", "🎤", "✨", "🌙"],
+        ["LIGHT & DARK ICE", "FATE OF BOTH WORLDS", "ICE ARTS", "SHARE THE STAGE", "ABSOLUTE ZERO", "CRYO HEART", "SMOOTH SKATE"],
+        "FATE OF BOTH WORLDS"
     ),
     new Person(
         "Mantis",
@@ -355,7 +417,9 @@ export const characters = [
         "cosmic",
         275,
         1973,
-        ["🌸", "😌", "👾", "🌌"]
+        ["🌸", "😌", "👾", "🌌"],
+        ["LIFE ENERGY BLAST", "SOUL RESURGENCE", "SPORE SLUMBER", "ALLIED INSPIRATION", "NATURAL ANGER", "HEALING FLOWER", "NATURE'S FAVOR", "NATURE'S SOUL"],
+        "SOUL RESURGENCE"
     ),
     new Person(
         "Cloak and Dagger",
@@ -366,7 +430,9 @@ export const characters = [
         "mutant",
         250,
         1982,
-        ["🌘", "🔗", "⚡", "🧙‍♂️"]
+        ["🌘", "🔗", "⚡", "🧙‍♂️"],
+        ["DARKFORCE CLOAK", "ETERNAL BOND", "LIGHT'S EMBRACE", "TERROR CAPE", "DARK TELEPORTATION"],
+        "ETERNAL BOND"
     ),
     new Person(
         "Jeff the Land Shark",
@@ -377,6 +443,8 @@ export const characters = [
         "science",
         250,
         2019,
-        ["🌊", "🐟", "🦈", "😂"]
+        ["🌊", "🐟", "🦈", "😂"],
+        ["JOYFUL SPLASH", "AQUA BURST", "IT'S JEFF!", "HIDE AND SEEK", "HEALING BUBBLE", "OBLIVIOUS CUTENESS"],
+        "IT'S JEFF!"
     )
 ];

@@ -15,6 +15,10 @@ const port = 3000;
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
+
+let daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
+let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
+
 let lastUpdatedDate = new Date().toDateString(); 
 
 // Function to check if the date has changed
@@ -24,17 +28,23 @@ function checkAndResetCharacters() {
     daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
     daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
     daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
+    daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
+    daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
     lastUpdatedDate = today; 
     console.log('Daily characters reset for the new day!');
   }
 }
-
+console.log(lastUpdatedDate)
 app.use((req, res, next) => {
   checkAndResetCharacters();
   next(); 
 });
 
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/date', (req, res) => {
+  res.json(lastUpdatedDate);
+})
 
 app.get('/daily_classic_character', (req, res) => {
   res.json(daily_classic_character);
@@ -47,6 +57,15 @@ app.get('/daily_silhouette_character', (req, res) => {
 app.get('/daily_emoji_character', (req, res) => {
   res.json(daily_emoji_character);
 })
+
+app.get('/daily_ability_character', (req, res) => {
+  res.json(daily_ability_character);
+})
+
+app.get('/daily_character_ability', (req, res) => {
+  res.json(daily_character_ability);
+})
+
 
 app.get('/character_info', (req, res) => {
   res.json(characters);
@@ -68,8 +87,8 @@ app.get('/emoji', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/emoji_mode_page/index.html'));
 });
 
-app.get('/voice_line', (req, res) => {
-  res.sendFile(path.join(__dirname, '../pages/voice_line_mode_page/index.html'));
+app.get('/character_ability', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/character_ability_mode_page/index.html'));
 });
 
 

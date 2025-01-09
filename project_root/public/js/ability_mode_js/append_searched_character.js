@@ -4,20 +4,16 @@ class AppendSearchedCharacter {
     }
 
     async initialize() {
-        this.dailyCharacter = await this.fetchData('./daily_emoji_character');
-        if (!this.dailyCharacter) {
-            console.error('Failed to load dailyCharacter.');
-            return;
-        }
-        this.loadStoredCharacters();
+        this.dailyCharacter = await this.fetchData('./daily_ability_character');
+        this.loadStoredCharacters(); // Load stored characters on initialization
         this.listenForCharacterSelect();
     }
 
     listenForCharacterSelect() {
         document.addEventListener('characterSelected', (event) => {
             this.receivedCharacter = event.detail.character;
-            this.saveCharacterToLocalStorage(this.receivedCharacter);
             this.appendSearchedCharacterBox();
+            this.saveCharacterToLocalStorage(this.receivedCharacter); // Save the character
         });
     }
 
@@ -34,11 +30,6 @@ class AppendSearchedCharacter {
 
     appendSearchedCharacterBox(character = this.receivedCharacter) {
         this.searchedCharacterBoxContainer = document.getElementById('searched_characters_container');
-        if (!this.searchedCharacterBoxContainer) {
-            console.error('Container element not found.');
-            return;
-        }
-
         const newBox = document.createElement('div');
         newBox.className = 'searched_character_box';
 
@@ -61,10 +52,10 @@ class AppendSearchedCharacter {
             this.broadcastCorrectCharacter();
             this.appendConfetti();
             newBox.style.backgroundColor = '#4caf50';
-            newBox.style.border = '3px solid #7aff6f';
+            newBox.style.border = '3px solid #7aff6f'; 
         } else {
-            newBox.style.backgroundColor = '#d32f2f';
-            newBox.style.border = '3px solid #ff3c3b';
+            newBox.style.backgroundColor = '#d32f2f'; 
+            newBox.style.border = '3px solid #ff3c3b'; 
             newBox.classList.add('shake');
 
             setTimeout(() => {
@@ -77,10 +68,18 @@ class AppendSearchedCharacter {
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
                 character: this.dailyCharacter,
-                mode: 'character_ability',
-            },
+                mode: 'classic'
+            }
         });
         document.dispatchEvent(event);
+    }
+
+    appendConfetti() {
+        confetti({
+            particleCount: 250,
+            spread: 120,
+            origin: { y: 0.7 },
+        });
     }
 
     getCurrentPageKey() {
@@ -98,18 +97,12 @@ class AppendSearchedCharacter {
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        console.log('Loaded stored characters:', storedCharacters);
         storedCharacters.forEach((character) => {
             if (character && character.name) this.appendSearchedCharacterBox(character);
         });
     }
 
-    appendConfetti() {
-        confetti({
-            particleCount: 250,
-            spread: 120,
-            origin: { y: 0.7 },
-        });
-    }
 }
 
 const appendSearchedCharacter = new AppendSearchedCharacter();

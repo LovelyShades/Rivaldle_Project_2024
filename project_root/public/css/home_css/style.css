@@ -15,11 +15,9 @@
     align-items: center;
     /* Center items horizontally */
     width: 100%;
-    padding-top: 20px;
     /* Add padding to create space from the top */
 }
 
-/* Title header "Guess the Marvel Rivals Character" */
 .title_header {
     display: flex;
     justify-content: center;
@@ -27,8 +25,6 @@
     font-size: xx-large;
     font-family: 'MarvelFont', 'Franklin Gothic Medium';
     color: #ffffff;
-    margin-bottom: 10px;
-    /* Space between header and next element */
     letter-spacing: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
@@ -37,15 +33,9 @@
 .mode_container {
     display: flex;
     flex-direction: column;
-    /* Stack the rectangles vertically */
     gap: 50px;
-    /* Space between the rectangles */
     justify-content: flex-start;
-    /* Align items at the top */
     align-items: center;
-    /* Center horizontally */
-    margin-top: 20px;
-    /* Space between mode container and above elements */
 }
 
 .mode_container a {

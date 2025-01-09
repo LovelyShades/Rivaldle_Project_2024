@@ -43,7 +43,7 @@
     width: 300px;              /* Set container width */
     height: 300px;             /* Set container height */
     overflow: hidden;          /* Prevent image overflow */
-    background-color: #f7ff04; /* Optional background for testing */
+    background-color: #a057f4; /* Optional background for testing */
     border-radius: 50%;        /* Optional: Circular container */
     transition: transform 0.3s ease; /* Smooth transition for transform */
 }
