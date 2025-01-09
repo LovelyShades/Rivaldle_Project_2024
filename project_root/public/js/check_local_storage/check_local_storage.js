@@ -6,13 +6,13 @@ async function checkAndClearLocalStorage() {
         const data = await response.json();
 
         // Assuming the backend sends the date as a string (e.g., "Tue Jan 08 2025")
-        const backendDate = data.lastUpdatedDate;
+        const backendDate = data;
 
         // Get the stored date from localStorage
         const storedDate = localStorage.getItem('lastUpdatedDate');
 
         // Handle first-time setup
-        if (!storedDate) {
+        if (storedDate == undefined) {
             console.log('First-time setup: initializing localStorage with the current date.');
             localStorage.setItem('lastUpdatedDate', backendDate);
             return; // Exit since no clearing is needed
@@ -37,4 +37,4 @@ async function checkAndClearLocalStorage() {
     }
 }
 
-//checkAndClearLocalStorage();
+checkAndClearLocalStorage();
