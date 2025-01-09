@@ -36,47 +36,50 @@ class Clues {
         localStorage.setItem(this.key, JSON.stringify(this.storedTries)); 
     }
 
-    appendClueTries(){
+    appendClueTries() {
         this.appendNumTriesUntilSilhoutte();
         this.appendNumTriesUntilUlt();
-
     }
 
-    appendNumTriesUntilSilhoutte(){
-        const clueContainer = document.getElementById('clueSilhoutteSubContainer')
+    appendNumTriesUntilSilhoutte() {
+        const clueContainer = document.getElementById('clueSilhoutteSubContainer');
         this.numTriesLeftUntilSulhoutteClue = 5;
-        if(this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0){
+
+        if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
             this.numTriesLeftUntilSulhoutte = document.createElement('div');
             this.numTriesLeftUntilSulhoutte.className = 'clue2';
-            this.numTriesLeftUntilSulhoutte.style.fontSize = 'large'
-            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhoutte: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`
+            this.numTriesLeftUntilSulhoutte.style.fontSize = 'large';
+            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilSulhoutte);
-        } 
+        }
     }
 
-    appendNumTriesUntilUlt(){
-        const clueContainer = document.getElementById('clueUltSubContainer')
+    appendNumTriesUntilUlt() {
+        const clueContainer = document.getElementById('clueUltSubContainer');
         this.numTriesUntilUltClue = 3;
-        if(this.numTriesUntilUltClue - this.storedTries > 0){
+
+        if (this.numTriesUntilUltClue - this.storedTries > 0) {
             this.numTriesLeftUntilUlt = document.createElement('div');
             this.numTriesLeftUntilUlt.className = 'clue2';
-            this.numTriesLeftUntilUlt.style.fontSize = 'large'
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhoutte: ${this.numTriesUntilUltClue - this.storedTries}`
+            this.numTriesLeftUntilUlt.style.fontSize = 'large';
+            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilUlt);
-        } 
+        }
     }
 
-    updateTries(){
-        if(this.numTriesLeftUntilSulhoutteClue - this.storedTries >0){
-            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhoutte: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`
-        } else {
-            this.numTriesLeftUntilSulhoutte.innerHTML = ''
+    updateTries() {
+        if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
+            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
+        } else if (this.numTriesLeftUntilSulhoutte) {
+            this.numTriesLeftUntilSulhoutte.remove(); // Remove the element when it reaches zero
+            this.numTriesLeftUntilSulhoutte = null; // Reset the reference
         }
 
-        if(this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0){
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhoutte: ${this.numTriesUntilUltClue - this.storedTries}`
-        } else {
-            this.numTriesLeftUntilUlt.innerHTML = '';
+        if (this.numTriesUntilUltClue - this.storedTries > 0) {
+            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
+        } else if (this.numTriesLeftUntilUlt) {
+            this.numTriesLeftUntilUlt.remove(); // Remove the element when it reaches zero
+            this.numTriesLeftUntilUlt = null; // Reset the reference
         }
     }
 }
