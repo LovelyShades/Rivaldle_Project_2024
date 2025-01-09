@@ -44,11 +44,9 @@ class GetSilhouette {
     checkForBigCharacters() {
         const bigCharacters = ["Doctor Strange", "Cloak and Dagger", "The Punisher"];
         if (bigCharacters.includes(this.dailyCharacter.name)) {
-            console.log('Scaled for big character');
             this.imageScale = 25;
             this.imageScaleRate = 2;
         } else {
-            console.log('Default scale for regular character');
             this.imageScale = 35;
             this.imageScaleRate = 3;
         }
