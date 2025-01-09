@@ -4,7 +4,12 @@
 - Mode container
 - Mode effects (hover, before, ect.)
 */
-
+body{
+    background-image: url('/_images/home_images/fallback_image.jpg'); /* Replace with the correct image path */
+    background-size: cover; /* Makes the image cover the entire body */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
 /* Center Container */
 #content_container {
     display: flex;

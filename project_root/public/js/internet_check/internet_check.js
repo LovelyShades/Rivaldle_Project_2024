@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Check for slow network conditions
             if (['slow-2g', '2g', '3g'].includes(connection.effectiveType)) {
+                console.log("internet slow")
                 video.style.display = 'none';
                 fallbackImage.style.display = 'block';
             } else {
+                console.log("internet fast")
                 video.style.display = 'block';
                 fallbackImage.style.display = 'none';
 
