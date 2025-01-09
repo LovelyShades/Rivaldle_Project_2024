@@ -105,3 +105,16 @@
 .clueSubContainer img:hover {
     transform: scale(1.15); 
 }
+
+.activeImage{
+    transition: transform 0.5s ease; 
+    animation: hoverUpDown 2s ease-in-out infinite; 
+}
+@keyframes hoverUpDown {
+    0%, 100% {
+        transform: translateY(-2px); /* Moves up */
+    }
+    50% {
+        transform: translateY(0); /* Returns to original position */
+    }
+}

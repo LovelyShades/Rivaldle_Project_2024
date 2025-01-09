@@ -51,6 +51,8 @@ class Clues {
             this.numTriesLeftUntilSulhoutte.style.fontSize = 'large';
             this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilSulhoutte);
+        } else {
+            this.activateSilhoutteImage();
         }
     }
 
@@ -64,6 +66,8 @@ class Clues {
             this.numTriesLeftUntilUlt.style.fontSize = 'large';
             this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilUlt);
+        } else {
+            this.activateUltImage();
         }
     }
 
@@ -71,6 +75,7 @@ class Clues {
         if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
             this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
         } else if (this.numTriesLeftUntilSulhoutte) {
+            this.activateSilhoutteImage();
             this.numTriesLeftUntilSulhoutte.remove(); // Remove the element when it reaches zero
             this.numTriesLeftUntilSulhoutte = null; // Reset the reference
         }
@@ -78,10 +83,21 @@ class Clues {
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
             this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
         } else if (this.numTriesLeftUntilUlt) {
+            this.activateUltImage();
             this.numTriesLeftUntilUlt.remove(); // Remove the element when it reaches zero
             this.numTriesLeftUntilUlt = null; // Reset the reference
         }
     }
+
+    activateSilhoutteImage(){
+        this.silhoutteImageIcon = document.getElementById('silhoutteImg');
+        this.silhoutteImageIcon.className += 'activeImage'
+    }
+    activateUltImage(){
+        this.ultImgIcon = document.getElementById('ultImg');
+        this.ultImgIcon.className += 'activeImage'
+    }
+
 }
 
 const clues = new Clues();
