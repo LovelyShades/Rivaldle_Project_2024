@@ -34,7 +34,7 @@ function checkAndResetCharacters() {
     console.log('Daily characters reset for the new day!');
   }
 }
-
+console.log(lastUpdatedDate)
 app.use((req, res, next) => {
   checkAndResetCharacters();
   next(); 
