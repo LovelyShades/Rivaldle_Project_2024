@@ -3,10 +3,13 @@ class Clues {
         this.initialize();
     }
 
-    initialize() {
+    async initialize() {
         this.getNumTries();
         this.appendClueTries();
         this.listenForCharacterSelect();
+        this.dailyCharacter = await this.fetchData('./daily_classic_character');
+        this.silhoutteActive = false;
+        this.ultActive = false;
     }
 
     listenForCharacterSelect() {
@@ -14,6 +17,17 @@ class Clues {
             this.updateStorage();
             this.updateTries();
         });
+    }
+
+    async fetchData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+            return response.json();
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            return null; 
+        }
     }
 
     getNumTries() {
@@ -92,12 +106,49 @@ class Clues {
     activateSilhoutteImage(){
         this.silhoutteImageIcon = document.getElementById('silhoutteImg');
         this.silhoutteImageIcon.className += 'activeImage'
+        this.addSilhoutteListener();
     }
     activateUltImage(){
         this.ultImgIcon = document.getElementById('ultImg');
         this.ultImgIcon.className += 'activeImage'
+        this.addUltListener();
     }
 
+    addSilhoutteListener(){
+        const silhouetteIcon = document.getElementById('silhoutteImg');
+
+        if (silhouetteIcon) {
+            silhouetteIcon.addEventListener('click', () => {
+                this.onSilhouetteClick();
+            });
+        }
+
+    }
+    addUltListener() {
+        const ultIcon = document.getElementById('ultImg');
+
+        if (ultIcon) {
+            ultIcon.addEventListener('click', () => {
+                this.onUltClick();
+            });
+        }
+    }
+
+    onSilhouetteClick() {
+        if(this.silhoutteActive == true) return;
+        const clueBoxContainer = document.getElementById('activeHeaderBoxContainer');
+        this.silhoutteImage = document.createElement('img');
+        this.silhoutteImage.className = 'characterSilhoutteImg'
+        console.log(this.dailyCharacter.name.replace(/\s+/g, ''))
+        this.silhoutteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${this.dailyCharacter.name.replace(/\s+/g, '')}.png`;
+        clueBoxContainer.append(this.silhoutteImage)
+        this.silhoutteActive = true;
+    }
+
+    onUltClick() {
+        // Add your custom logic for ult icon click
+        alert('Ultimate clue revealed!');
+    }
 }
 
 const clues = new Clues();

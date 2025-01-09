@@ -61,20 +61,25 @@
     color: #ffffff;
 }
 
-.activeHeaderBoxContainer{
+.activeHeaderBoxContainer {
     position: relative;
-    display: none;
+    display: none; /* Set to flex when you want it visible */
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 200px;
+    width: auto; /* Dynamically adjust width based on content */
+    height: auto; /* Dynamically adjust height based on content */
+    padding: 10px; /* Optional: Add padding for spacing around the content */
     background-color: #000000b4;
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the background image covers the content */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
     border: 3px solid #000; /* Outer border for the entire box */
     flex-direction: column;
+    max-width: 100%; /* Prevents the container from growing beyond the viewport width */
+    max-height: 100%; /* Prevents the container from growing beyond the viewport height */
+    overflow: auto; /* Ensures scrollability if content overflows */
 }
+
 .clueContainer{
     position: relative;
     display: flex;
@@ -108,6 +113,15 @@
 .activeImage{
     transition: transform 0.5s ease; 
     animation: hoverUpDown 2s ease-in-out infinite; 
+}
+
+.characterSilhoutteImg{
+    position: relative;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
 }
 @keyframes hoverUpDown {
     0%, 100% {
