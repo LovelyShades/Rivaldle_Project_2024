@@ -83,14 +83,21 @@ class AppendSearchedCharacter {
         document.dispatchEvent(event);
     }
 
-    saveCharacterToLocalStorage(character) {
-        const storedCharacters = JSON.parse(localStorage.getItem('searched_emoji_characters')) || [];
-        storedCharacters.push(character);
-        localStorage.setItem('searched_emoji_characters', JSON.stringify(storedCharacters));
+    getCurrentPageKey() {
+        const path = window.location.pathname; // Get the current page path
+        return `searched_characters_${path}`; // Use the path as part of the key
     }
 
+    saveCharacterToLocalStorage(character) {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        storedCharacters.push(character);
+        localStorage.setItem(pageKey, JSON.stringify(storedCharacters));
+    }
+    
     loadStoredCharacters() {
-        const storedCharacters = JSON.parse(localStorage.getItem('searched_emoji_characters')) || [];
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
         console.log('Loaded stored characters:', storedCharacters);
         storedCharacters.forEach((character) => {
             if (character && character.name) this.appendSearchedCharacterBox(character);

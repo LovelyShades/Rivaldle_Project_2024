@@ -82,16 +82,27 @@ class AppendSearchedCharacter {
         });
     }
 
-    saveCharacterToLocalStorage(character) {
-        const storedCharacters = JSON.parse(localStorage.getItem('searched_ability_characters')) || [];
-        storedCharacters.push(character);
-        localStorage.setItem('searched_ability_characters', JSON.stringify(storedCharacters));
+    getCurrentPageKey() {
+        const path = window.location.pathname; // Get the current page path
+        return `searched_characters_${path}`; // Use the path as part of the key
     }
 
-    loadStoredCharacters() {
-        const storedCharacters = JSON.parse(localStorage.getItem('searched_ability_characters')) || [];
-        storedCharacters.forEach((character) => this.appendSearchedCharacterBox(character));
+    saveCharacterToLocalStorage(character) {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        storedCharacters.push(character);
+        localStorage.setItem(pageKey, JSON.stringify(storedCharacters));
     }
+    
+    loadStoredCharacters() {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        console.log('Loaded stored characters:', storedCharacters);
+        storedCharacters.forEach((character) => {
+            if (character && character.name) this.appendSearchedCharacterBox(character);
+        });
+    }
+
 }
 
 const appendSearchedCharacter = new AppendSearchedCharacter();

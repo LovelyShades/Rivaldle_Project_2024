@@ -12,6 +12,7 @@ class SearchedCharacters {
         try {
             this.marvelCharacters = await this.fetchData('./character_info');
             this.dailyCharacter = await this.fetchData('./daily_classic_character');
+            this.loadStoredCharacters();
             this.initializeEventListeners();
         } catch (error) {
             console.error('Error during initialization:', error);
@@ -31,7 +32,8 @@ class SearchedCharacters {
             
             this.initializeSearchHeaders();
             this.activateGameHeader();
-            this.addRow();
+            this.addRow(this.receivedCharacter); // Pass the character to addRow
+            this.saveCharacterToLocalStorage(this.receivedCharacter); // Save to localStorage
         });
     }
 
@@ -48,15 +50,15 @@ class SearchedCharacters {
         if (activeHeaderBoxContainer) activeHeaderBoxContainer.style.display = 'flex';
     }
 
-    addRow() {
+    addRow(character) {
         const parentContainer = document.querySelector('.allGuessedCharacters');
         if (!parentContainer) return;
 
         const newRow = document.createElement('div');
         newRow.className = 'guessedCharactersContainer';
 
-        this.addCharacterImageBox(newRow, this.receivedCharacter.name);
-        this.addCharacterAttributes(newRow);
+        this.addCharacterImageBox(newRow, character.name);
+        this.addCharacterAttributes(newRow, character);
 
         parentContainer.prepend(newRow);
     }
@@ -70,19 +72,17 @@ class SearchedCharacters {
         parent.appendChild(image);
     }
 
-    addCharacterAttributes(row) {        
+    addCharacterAttributes(row, character) {        
         const attributes = [
             'gender', 'species', 'affiliation', 'level', 'type', 'hp', 'dateOfOrigin'
         ];
         
-        // Add all boxes immediately with only a border initially
         attributes.forEach(attr => {
-            const value = this.receivedCharacter[attr];
-            const box = this.addCharacterBox(row, value, attr);
+            const value = character[attr];
+            const box = this.addCharacterBox(row, value, attr, character);
             box.classList.add('hidden'); // Add a hidden class to hide the content and background
         });
         
-        // Reveal each box with a delay
         attributes.forEach((attr, index) => {
             setTimeout(() => {
                 const box = row.querySelector(`.guessedCharacterBox[data-attribute="${attr}"]`);
@@ -90,37 +90,37 @@ class SearchedCharacters {
             }, 500 * (index + 1)); // Delay each reveal by 500ms
         });
         setTimeout(() => {
-            this.isCorrectCharacter();
+            this.isCorrectCharacter(character);
         }, 500 * attributes.length + 500); // Total delay: 500ms per attribute
     }
     
-    addCharacterBox(row, textContent, attribute) {
+    addCharacterBox(row, textContent, attribute, character) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
         newBox.textContent = textContent;
     
         newBox.setAttribute('data-attribute', attribute); // Add attribute identifier
     
-        this.setBoxAppearance(newBox, attribute);
-        this.addArrowIndicator(newBox, attribute);
+        this.setBoxAppearance(newBox, attribute, character);
+        this.addArrowIndicator(newBox, attribute, character);
     
         row.appendChild(newBox);
         return newBox; // Return the created box for further manipulation
     }
     
-    setBoxAppearance(box, attribute) {
-        const isMatching = this.receivedCharacter[attribute] === this.dailyCharacter[attribute];
+    setBoxAppearance(box, attribute, character) {
+        const isMatching = character[attribute] === this.dailyCharacter[attribute];
         box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';
     }
 
-    addArrowIndicator(box, attribute) {
+    addArrowIndicator(box, attribute, character) {
         if (!['hp', 'dateOfOrigin'].includes(attribute)) return;
 
         const arrowImage = document.createElement('img');
         arrowImage.className = 'arrow';
 
-        const comparison = this.receivedCharacter[attribute] - this.dailyCharacter[attribute];
-        if(comparison == 0) return;
+        const comparison = character[attribute] - this.dailyCharacter[attribute];
+        if(comparison === 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'
             : '/_images/classic_mode_images/upArrow.png';
@@ -128,8 +128,8 @@ class SearchedCharacters {
         box.appendChild(arrowImage);
     }
 
-    isCorrectCharacter() {
-        if (this.receivedCharacter.name === this.dailyCharacter.name) {
+    isCorrectCharacter(character) {
+        if (character.name === this.dailyCharacter.name) {
             this.broadcastCorrectCharacter();
             confetti({
                 particleCount: 250,
@@ -142,15 +142,36 @@ class SearchedCharacters {
     broadcastCorrectCharacter() {
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
-                character: this.dailyCharacter, // Replace with the actual character
-                mode: 'silhouette' // Replace with the actual mode
+                character: this.dailyCharacter,
+                mode: 'silhouette'
             }
         });
-        document.dispatchEvent(event); // Dispatch the event with both character and mode
+        document.dispatchEvent(event);
+    }
+    
+    getCurrentPageKey() {
+        const path = window.location.pathname; // Get the current page path
+        return `searched_characters_${path}`; // Use the path as part of the key
+    }
+
+    saveCharacterToLocalStorage(character) {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        storedCharacters.push(character);
+        localStorage.setItem(pageKey, JSON.stringify(storedCharacters));
+    }
+    
+    loadStoredCharacters() {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        console.log('Loaded stored characters:', storedCharacters);
+        storedCharacters.forEach((character) => {
+            if (character && character.name) this.addRow(character);
+        });
     }
 
 }
 
-// Instantiate and export the class
+// Instantiate the class
 const searchedCharacters = new SearchedCharacters();
 export default SearchedCharacters;

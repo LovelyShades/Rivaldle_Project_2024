@@ -10,8 +10,26 @@ class CharacterSearch {
 
     async initialize() {
         this.marvelCharacters = await this.fetchMarvelCharacters();
-        this.notSearchedMarvelCharacters = [...this.marvelCharacters];
+        const storedCharacters = this.getStoredCharacters(); // Fetch stored characters from localStorage
+
+        // Filter out the stored characters from the marvelCharacters list
+        this.notSearchedMarvelCharacters = this.marvelCharacters.filter(
+            character => !storedCharacters.some(stored => stored.name === character.name)
+        );
+
+        console.log(this.notSearchedMarvelCharacters)
+
         this.setupEventListeners(); // Setup event listeners
+    }
+    
+    getCurrentPageKey() {
+        const path = window.location.pathname; // Get the current page path
+        return `searched_characters_${path}`; // Use the path as part of the key
+    }
+
+    getStoredCharacters() {
+        const pageKey = this.getCurrentPageKey();
+        return JSON.parse(localStorage.getItem(pageKey)) || [];
     }
 
     async fetchMarvelCharacters() {
