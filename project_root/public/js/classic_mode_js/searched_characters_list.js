@@ -85,11 +85,11 @@ class SearchedCharacters {
             setTimeout(() => {
                 const box = row.querySelector(`.guessedCharacterBox[data-attribute="${attr}"]`);
                 box.classList.remove('hidden'); // Remove the hidden class to reveal the content and background
-            }, 500 * (index + 1)); // Delay each reveal by 500ms
+            }, 250 * (index + 1)); // Delay each reveal by 500ms
         });
         setTimeout(() => {
             this.isCorrectCharacter(character);
-        }, 500 * attributes.length + 500); // Total delay: 500ms per attribute
+        }, 250 * attributes.length + 250); // Total delay: 500ms per attribute
     }
     
     addCharacterBox(row, textContent, attribute, character) {
