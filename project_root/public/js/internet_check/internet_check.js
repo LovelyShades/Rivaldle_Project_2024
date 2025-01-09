@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const video = document.getElementById('background-video');
     const fallbackImage = document.getElementById('fallback-image');
 
+    if (!video || !fallbackImage) {
+        console.error('Required elements not found in the DOM.');
+        return;
+    }
+
     function checkNetworkAndSetMedia() {
         if (navigator.connection) {
             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;

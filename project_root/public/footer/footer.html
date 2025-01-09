@@ -5,19 +5,3 @@
 <div class="footer_text">Marvel does not endorse or sponsor this project.</div>
 <div class="footer_text" id="footer">Privacy Policy</div>
 
-<script src="/js/internet_check/internet_check.js"></script>
-<script>
-    window.onload = function () {
-        var video = document.getElementById('background-video');
-        var fallbackImage = document.getElementById('fallback-image');
-
-        video.onerror = function () {
-            video.style.display = 'none';
-            fallbackImage.style.display = 'block';
-        };
-
-        video.onplay = function () {
-            fallbackImage.style.display = 'none';
-        };
-    };
-</script>
