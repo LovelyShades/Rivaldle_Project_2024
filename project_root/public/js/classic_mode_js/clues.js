@@ -135,7 +135,12 @@ class Clues {
     }
 
     onSilhouetteClick() {
-        if(this.silhoutteActive == true) return;
+        if(this.silhoutteActive) return;
+        if(this.ultName){
+            this.ultName.remove();
+            this.ultName = null;
+            this.ultActive = false;
+        }
         const clueBoxContainer = document.getElementById('activeHeaderBoxContainer');
         this.silhoutteImage = document.createElement('img');
         this.silhoutteImage.className = 'characterSilhoutteImg'
@@ -146,8 +151,20 @@ class Clues {
     }
 
     onUltClick() {
-        // Add your custom logic for ult icon click
-        alert('Ultimate clue revealed!');
+        if(this.ultActive) return;
+        if(this.silhoutteImage){
+            this.silhoutteImage.remove();
+            this.silhoutteImage = null;
+            this.silhoutteActive = false;
+        }
+        const clueBoxContainer = document.getElementById('activeHeaderBoxContainer');
+        this.ultName = document.createElement('div');
+        this.ultName.className = 'clueContainer';
+        this.ultName.style.fontSize = 'xx-large'
+        this.ultName.innerHTML = this.dailyCharacter.ult
+        clueBoxContainer.append(this.ultName);
+
+        this.ultActive = true;
     }
 }
 

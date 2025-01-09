@@ -78,6 +78,7 @@
     max-width: 100%; /* Prevents the container from growing beyond the viewport width */
     max-height: 100%; /* Prevents the container from growing beyond the viewport height */
     overflow: auto; /* Ensures scrollability if content overflows */
+    gap: 50px;
 }
 
 .clueContainer{
@@ -89,6 +90,7 @@
     gap: 75px; /* Add space between rows */
     font-size: larger;
     color: #ffffff;
+    font-family: 'MarvelFont', sans-serif;
 }
 .clueSubContainer{
     position: relative;
