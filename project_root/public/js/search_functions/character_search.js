@@ -16,12 +16,9 @@ class CharacterSearch {
         this.notSearchedMarvelCharacters = this.marvelCharacters.filter(
             character => !storedCharacters.some(stored => stored.name === character.name)
         );
-
-        console.log(this.notSearchedMarvelCharacters)
-
         this.setupEventListeners(); // Setup event listeners
     }
-    
+
     getCurrentPageKey() {
         const path = window.location.pathname; // Get the current page path
         return `searched_characters_${path}`; // Use the path as part of the key

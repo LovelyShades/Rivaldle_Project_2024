@@ -27,9 +27,7 @@ class SearchedCharacters {
 
     initializeEventListeners() {
         document.addEventListener('characterSelected', (event) => {
-            this.receivedCharacter = event.detail.character;
-            console.log("Character received:", this.receivedCharacter);
-            
+            this.receivedCharacter = event.detail.character;            
             this.initializeSearchHeaders();
             this.activateGameHeader();
             this.addRow(this.receivedCharacter); // Pass the character to addRow
@@ -164,7 +162,6 @@ class SearchedCharacters {
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
-        console.log('Loaded stored characters:', storedCharacters);
         storedCharacters.forEach((character) => {
             if (character && character.name) this.addRow(character);
         });

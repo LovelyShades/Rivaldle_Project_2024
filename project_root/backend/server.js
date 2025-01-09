@@ -42,6 +42,10 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.get('/date', (req, res) => {
+  res.json(lastUpdatedDate);
+})
+
 app.get('/daily_classic_character', (req, res) => {
   res.json(daily_classic_character);
 })

@@ -98,7 +98,6 @@ class AppendSearchedCharacter {
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
-        console.log('Loaded stored characters:', storedCharacters);
         storedCharacters.forEach((character) => {
             if (character && character.name) this.appendSearchedCharacterBox(character);
         });

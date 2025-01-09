@@ -9,14 +9,12 @@ class AppendSearchedCharacter {
             console.error('Failed to load dailyCharacter data.');
             return;
         }
-        console.log(this.dailyCharacter);
         this.loadStoredCharacters();
         this.listenForCharacterSelect();
     }
 
     listenForCharacterSelect() {
         document.addEventListener('characterSelected', (event) => {
-            console.log('Character selected:', event.detail.character);
             this.receivedCharacter = event.detail.character;
             this.saveCharacterToLocalStorage(this.receivedCharacter);
             this.appendSearchedCharacterBox();
@@ -100,7 +98,6 @@ class AppendSearchedCharacter {
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
-        console.log('Loaded stored characters:', storedCharacters);
         storedCharacters.forEach((character) => {
             if (character && character.name) this.appendSearchedCharacterBox(character);
         });
