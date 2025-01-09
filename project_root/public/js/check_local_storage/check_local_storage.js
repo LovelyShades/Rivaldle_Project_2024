@@ -18,8 +18,6 @@ async function checkAndClearLocalStorage() {
             return; // Exit since no clearing is needed
         }
 
-        console.log('Backend Date:', backendDate);
-        console.log('Stored Date:', storedDate);
         // Compare dates
         if (backendDate !== storedDate) {
             console.log('New day detected, clearing local storage...');
