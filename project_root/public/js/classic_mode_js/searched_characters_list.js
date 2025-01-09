@@ -162,11 +162,16 @@ class SearchedCharacters {
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        
+        if (storedCharacters.length > 0) {
+            this.initializeSearchHeaders(); // Show the headers if characters are present
+            this.activateGameHeader(); // Activate the game headers
+        }
+    
         storedCharacters.forEach((character) => {
             if (character && character.name) this.addRow(character);
         });
-    }
-
+    }    
 }
 
 // Instantiate the class
