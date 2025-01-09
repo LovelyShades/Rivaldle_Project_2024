@@ -69,11 +69,11 @@
     width: auto; /* Dynamically adjust width based on content */
     height: auto; /* Dynamically adjust height based on content */
     padding: 10px; /* Optional: Add padding for spacing around the content */
-    background-color: #000000b4;
+    background-color: #dce1f479;
     background-size: cover; /* Ensures the background image covers the content */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the background image from repeating */
-    border: 3px solid #000; /* Outer border for the entire box */
+    border: 3px solid #DCE1F4; /* Outer border for the entire box */
     flex-direction: column;
     max-width: 100%; /* Prevents the container from growing beyond the viewport width */
     max-height: 100%; /* Prevents the container from growing beyond the viewport height */
