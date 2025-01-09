@@ -1,27 +1,55 @@
-// Check network type using the Connection API (if available)
-if (navigator.connection) {
-    let connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('background-video');
+    const fallbackImage = document.getElementById('fallback-image');
 
-    // Check for 3G or slower network conditions
-    if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g' || connection.effectiveType === '3g') {
-        // If the network is slow, hide the video and show the image
-        document.getElementById('background-video').style.display = 'none';
-        document.getElementById('fallback-image').style.display = 'block';
+    function checkNetworkAndSetMedia() {
+        if (navigator.connection) {
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+            // Check for slow network conditions
+            if (['slow-2g', '2g', '3g'].includes(connection.effectiveType)) {
+                video.style.display = 'none';
+                fallbackImage.style.display = 'block';
+            } else {
+                video.style.display = 'block';
+                fallbackImage.style.display = 'none';
+
+                // Attempt to play the video
+                video.play().catch((error) => {
+                    console.error('Video playback failed:', error);
+                    video.style.display = 'none';
+                    fallbackImage.style.display = 'block';
+                });
+            }
+        } else {
+            console.log('Connection API not supported.');
+            // Default to showing the video
+            video.style.display = 'block';
+            fallbackImage.style.display = 'none';
+            video.play().catch((error) => {
+                console.error('Video playback failed:', error);
+                video.style.display = 'none';
+                fallbackImage.style.display = 'block';
+            });
+        }
     }
-} else {
-    console.log('Connection API not supported.');
-}
 
-// Detect if video is playing, if not, show the image
-let video = document.getElementById('background-video');
-video.oncanplay = function() {
-    // If video is ready to play, show the video
-    document.getElementById('background-video').style.display = 'block';
-    document.getElementById('fallback-image').style.display = 'none';
-};
+    // Initial check on page load
+    checkNetworkAndSetMedia();
 
-video.onerror = function() {
-    // If the video fails to load, show the image
-    document.getElementById('background-video').style.display = 'none';
-    document.getElementById('fallback-image').style.display = 'block';
-};
+    // Listen for network changes
+    if (navigator.connection) {
+        navigator.connection.addEventListener('change', checkNetworkAndSetMedia);
+    }
+
+    // Fallback for video errors
+    video.onerror = function () {
+        console.error('Video loading error.');
+        video.style.display = 'none';
+        fallbackImage.style.display = 'block';
+    };
+
+    video.onplay = function () {
+        fallbackImage.style.display = 'none';
+    };
+});
