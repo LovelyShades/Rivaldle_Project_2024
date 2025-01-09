@@ -48,7 +48,7 @@ class Clues {
         if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
             this.numTriesLeftUntilSulhoutte = document.createElement('div');
             this.numTriesLeftUntilSulhoutte.className = 'clue2';
-            this.numTriesLeftUntilSulhoutte.style.fontSize = 'large';
+            this.numTriesLeftUntilSulhoutte.style.fontSize = 'medium';
             this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilSulhoutte);
         } else {
@@ -63,7 +63,7 @@ class Clues {
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
             this.numTriesLeftUntilUlt = document.createElement('div');
             this.numTriesLeftUntilUlt.className = 'clue2';
-            this.numTriesLeftUntilUlt.style.fontSize = 'large';
+            this.numTriesLeftUntilUlt.style.fontSize = 'medium';
             this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilUlt);
         } else {
