@@ -66,19 +66,20 @@
     display: none; /* Set to flex when you want it visible */
     justify-content: center;
     align-items: center;
-    width: auto; /* Dynamically adjust width based on content */
-    height: auto; /* Dynamically adjust height based on content */
+    width: 400px; /* Dynamically adjust width based on content */
+    height: 200px; /* Dynamically adjust height based on content */
     padding: 10px; /* Optional: Add padding for spacing around the content */
-    background-color: #dce1f479;
+    background-color: rgba(0, 0, 0, 0.751);
     background-size: cover; /* Ensures the background image covers the content */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the background image from repeating */
-    border: 3px solid #DCE1F4; /* Outer border for the entire box */
+    border: 3px solid #ffffff; /* Outer border for the entire box */
     flex-direction: column;
     max-width: 100%; /* Prevents the container from growing beyond the viewport width */
     max-height: 100%; /* Prevents the container from growing beyond the viewport height */
     overflow: auto; /* Ensures scrollability if content overflows */
     gap: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
 }
 
 .clueContainer{
