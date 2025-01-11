@@ -97,3 +97,24 @@
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
 }
+
+@media (max-width: 768px) {
+    .stat_box_container {
+        margin: 30px auto;          /* Center container horizontally and add spacing */
+        position: relative;
+        display: flex;
+        flex-direction: column;     /* Stack items vertically */
+        height: auto;               /* Allow dynamic height based on content */
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.751);
+        border-style: solid; 
+        border-color: white;
+        border-width: 2px;
+        justify-content: space-between; /* Distribute items evenly */
+        align-items: center;        /* Center items horizontally */
+        gap: 20px;                  /* Add spacing between items */
+        padding: 20px;              /* Add padding inside the container */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+        font-family: MarvelFont, sans-serif;
+    }    
+}
