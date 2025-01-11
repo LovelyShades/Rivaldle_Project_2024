@@ -23,12 +23,7 @@ html, body {
     height: 50%;
     width: 50%;
 }
-@media (max-width: 768px) {
-    .logo {
-        height: 90%;
-        width: 90%;
-    }    
-}
+
 @font-face {
     font-family: 'MarvelFont';
     src: url('../../fonts/MarvelFont.otf') format('opentype');
@@ -166,4 +161,26 @@ body {
 .mode_link_box:hover::before {
     background-image: url('../../_images/home_images/border.png');
     transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 90%;
+        width: 90%;
+    }    
+
+    .other_sites_box {
+        width: 90%;
+        height: 150px;
+        background-color: #00000052;
+        border: 2px solid #dce1f4b6;
+        border-radius: 0px;
+        margin-top: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        font-family: MarvelFont, sans-serif;
+    }    
 }
