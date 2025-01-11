@@ -50,6 +50,10 @@ class GetSilhouette {
             this.imageScale = 35;
             this.imageScaleRate = 3;
         }
+        if(this.dailyCharacter.name == "Jeff the Land Shark"){
+            this.imageScale = 20;
+            this.imageScaleRate = 1.5;
+        }
     }
 
     getImageBox() {
