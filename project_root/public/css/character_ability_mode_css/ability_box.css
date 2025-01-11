@@ -41,3 +41,9 @@
     font-size: xx-large;
     margin-top: 15px;
 }
+
+@media (max-width: 768px) {
+    .ability_box_container{
+        width: 90%;
+    }
+}

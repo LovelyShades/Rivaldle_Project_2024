@@ -38,3 +38,9 @@
    position: relative;
    
 }
+
+@media (max-width: 768px) {
+    .emoji_box_container{
+        width: 90%;
+    }
+}
