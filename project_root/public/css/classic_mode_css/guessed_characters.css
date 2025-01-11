@@ -1,7 +1,7 @@
 /* CONTENTS - Guessed character CSS */
 
 #characterListHeadersContainer {
-    display: flex; /* Flex layout */
+    display: none; /* Flex layout */
     flex-direction: row;
     flex-wrap: nowrap; /* Prevent wrapping */
     gap: 10px; /* Space between guessed character boxes */

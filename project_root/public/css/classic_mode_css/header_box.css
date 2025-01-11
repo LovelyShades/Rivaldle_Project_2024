@@ -67,7 +67,7 @@
     justify-content: center;
     align-items: center;
     width: 400px; /* Dynamically adjust width based on content */
-    height: 200px; /* Dynamically adjust height based on content */
+    height: 100%; /* Dynamically adjust height based on content */
     padding: 10px; /* Optional: Add padding for spacing around the content */
     background-color: rgba(0, 0, 0, 0.751);
     background-size: cover; /* Ensures the background image covers the content */
