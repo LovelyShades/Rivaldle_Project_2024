@@ -1,13 +1,15 @@
 /* CONTENTS - Guessed character CSS */
 
 #characterListHeadersContainer {
-    margin-top: 40px;
-    display: none;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Flex layout */
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 10px; /* Space between guessed character boxes */
+    width: fit-content; /* Dynamically size to fit its content */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding and borders in width */
     position: relative;
-    gap: 10px;
-    font-family: Arial, sans-serif;
+    margin-bottom: 50px;
 }
 
 .characterListHeaders {
@@ -29,12 +31,13 @@
 }
 
 .allGuessedCharacters {
-    width: 100%;
-    display: flex;
+    display: flex; /* Flex layout */
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 10px; /* Space between guessed character boxes */
+    width: fit-content; /* Dynamically size to fit its content */
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box; /* Include padding and borders in width */
 }
 
 .guessedCharactersContainer {

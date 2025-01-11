@@ -8,22 +8,27 @@
 - Footer
 - Mode Container
 */
-
-/* Title logo */
+html, body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
 #title_logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    /* Space between logo and next element */
 }
 
 .logo {
     height: 50%;
     width: 50%;
 }
-
-/* Marvel Font */
+@media (max-width: 768px) {
+    .logo {
+        height: 90%;
+        width: 90%;
+    }    
+}
 @font-face {
     font-family: 'MarvelFont';
     src: url('../../fonts/MarvelFont.otf') format('opentype');
@@ -32,13 +37,12 @@
 }
 .mode_container {
     display: flex;
-    flex-direction: column; /* Stack the rectangles vertically */
-    gap: 15px; /* Space between the rectangles */
-    justify-content: flex-start; /* Align items at the top */
-    align-items: center; /* Center horizontally */
-    margin-top: 20px; /* Space between mode container and above elements */
+    flex-direction: column; 
+    gap: 15px; 
+    justify-content: flex-start;
+    align-items: center; 
+    margin-top: 20px;
 }
-/* Full-screen video background */
 .video-background {
     position: fixed;
     top: 0;
@@ -46,7 +50,6 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Keep the video behind the content */
     overflow: hidden;
 
 }
@@ -55,10 +58,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures the video covers the entire viewport */
 }
 
-/* Image overlay on top of the video */
 .custom-image-overlay {
     position: fixed;
         top: 0;
@@ -67,17 +68,12 @@
         height: 100%;
         background: url('../../_images/home_images/HomeBorder.png') no-repeat center center;
         background-size: 100% 100%;
-        /* Stretch the image to fill the whole viewport */
         pointer-events: none;
-        /* Make sure the image doesn't interfere with user interaction */
         z-index: 1;
-        /* Ensures the image is on top of the video */
 }
 
-/* Fallback image */
 #fallback-image {
     display: none;
-    /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
@@ -85,16 +81,14 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    /* Make sure it stays behind the content */
 }
 
-/* General styles for body */
 body {
     margin: 0;
     padding: 0;
     min-height: 150vh;
     background-color: #f0f0f0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 /* Dark overlay on video */
@@ -105,12 +99,9 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Adjust last value to change darkness */
     z-index: -1;
-    /* Place it above the video but behind the content */
 }
 
-/* Other sites box */
 .other_sites_box {
     width: 400px;
     height: 150px;
@@ -118,7 +109,6 @@ body {
     border: 2px solid #dce1f4b6;
     border-radius: 0px;
     margin-top: 140px;
-    /* Space between mode container and footer */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,20 +126,16 @@ body {
     font-family: 'MarvelFont', 'Franklin Gothic Medium';
     color: #ffffff;
     margin-top: 20px;
-    /* Space above footer */
     letter-spacing: 0px;
 }
 
 .mode_link_box {
     display: flex;
     position: relative;
-    /* Needed for layering the border image */
     height: 80px;
     width: 205px;
     background-color: #00000052;
-    /* Inner background color */
     border: none;
-    /* Remove default border */
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
@@ -157,39 +143,27 @@ body {
     font-family: MarvelFont, sans-serif;
     transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
     z-index: 1;
-    /* Ensure the content stays on top */
 }
 
 .mode_link_box::before {
     content: '';
     position: absolute;
     top: -22px;
-    /* Position the border image relative to the box */
     left: -34px;
-    /* Adjust these values to center the border */
     width: 260px;
-    /* Match your border image size */
     height: 125px;
     background-image: url('../../_images/home_images/skinnyborder.png');
     background-size: cover;
-    /* Ensure the image scales correctly */
     background-repeat: no-repeat;
     pointer-events: none;
-    /* Allow clicks to pass through to the content */
- 
 }
 
 .mode_link_box:hover {
     transform: scale(1.02);
     background-color: rgba(0, 0, 0, 0);
-    /* Change inner background color on hover */
 }
 
 .mode_link_box:hover::before {
     background-image: url('../../_images/home_images/border.png');
-        /* Hover border image */
-    /* Optional: Add effects for the border on hover */
- 
-    /* Slightly scale the border image */
     transition: transform 0.3s ease-in-out;
 }
