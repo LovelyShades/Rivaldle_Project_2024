@@ -231,7 +231,7 @@ export const characters = [
         "atlantean",
         "defenders",
         "duelist",
-        "cosmic",
+        "mutant",
         275,
         1939,
         ["🌊", "👑", "💪", "🐠"],
