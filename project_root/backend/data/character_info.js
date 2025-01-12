@@ -100,7 +100,7 @@ export const characters = [
         "human",
         "spider-verse",
         "vanguard",
-        "science",
+        "tech",
         650,
         2014,
         ["📓", "🤖", "🕸️", "🕷️"],
