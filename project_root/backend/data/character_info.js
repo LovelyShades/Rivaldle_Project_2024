@@ -216,7 +216,7 @@ export const characters = [
         "Moon Knight",
         "male",
         "human",
-        "none",
+        "midnight sons",
         "duelist",
         "magic",
         250,
