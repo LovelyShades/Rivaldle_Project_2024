@@ -296,7 +296,7 @@ export const characters = [
         "human",
         "guardians",
         "duelist",
-        "science",
+        "tech",
         250,
         1976,
         ["🎶", "🔫", "🌌", "😎"],
