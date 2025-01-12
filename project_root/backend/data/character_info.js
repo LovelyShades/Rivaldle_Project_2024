@@ -192,7 +192,7 @@ export const characters = [
         "human",
         "avengers",
         "duelist",
-        "science",
+        "tech",
         250,
         1963,
         ["🔧", "💡", "🤖", "🛡️"],
