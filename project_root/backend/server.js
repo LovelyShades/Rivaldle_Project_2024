@@ -11,6 +11,7 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = 3000;
 
+const serverID = Math.floor(1000000000 + Math.random() * 9000000000).toString();
 
 let daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
@@ -34,7 +35,6 @@ function checkAndResetCharacters() {
     console.log('Daily characters reset for the new day!');
   }
 }
-console.log(lastUpdatedDate)
 app.use((req, res, next) => {
   checkAndResetCharacters();
   next(); 
@@ -44,6 +44,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/date', (req, res) => {
   res.json(lastUpdatedDate);
+})
+
+app.get('/server_id', (req, res) => {
+  res.json(serverID);
 })
 
 app.get('/daily_classic_character', (req, res) => {

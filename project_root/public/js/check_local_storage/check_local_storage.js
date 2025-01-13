@@ -1,11 +1,30 @@
 async function checkAndClearLocalStorage() {
     try {
-        // Fetch the current date from the backend
+        // Fetch the current date and server ID from the backend
         const response = await fetch('/date');
-        if (!response.ok) throw new Error('Failed to fetch date from backend');
-        const data = await response.json();
+        const serverIDResponse = await fetch('/server_id');
 
-        // Assuming the backend sends the date as a string (e.g., "Tue Jan 08 2025")
+        if (!response.ok) throw new Error('Failed to fetch date');
+        if (!serverIDResponse.ok) throw new Error('Failed to fetch server ID');
+
+        const data = await response.json();
+        const serverID = await serverIDResponse.text();
+
+        // Retrieve stored ID from local storage
+        let storedID = localStorage.getItem('storedID');
+        // Handle first-time setup for stored ID
+        if (storedID === null) {
+            console.log('No stored ID found. Initializing stored ID and clearing localStorage.');
+            localStorage.clear();
+            window.localStorage.clear(); //try this to clear all local storage
+            localStorage.setItem('storedID', serverID);
+        } else if (storedID !== serverID) {
+            console.log('Server ID mismatch detected. Clearing localStorage...');
+            localStorage.clear();
+            window.localStorage.clear(); //try this to clear all local storage
+            localStorage.setItem('storedID', serverID);
+        }        
+        console.log(localStorage.getItem('storedID'))
         const backendDate = data;
 
         // Get the stored date from localStorage
