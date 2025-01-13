@@ -1,7 +1,7 @@
 /* CONTENTS
 - Header box with border (before)
 - Header container (actual box)
-- Header title ("Guess Todays marvel rivals hero!"
+- Header title ("Guess Todays marvel rivals hero!")
 - Header subtitle ("Type any character to start")
 - Active Header box (when in use)
 - Clue icons
@@ -9,23 +9,21 @@
 .headerBoxContainer::before {
     content: '';
     position: absolute;
-    top: -43px;
-        /* Adjust to position the border closer or further */
-    left: -65px;
-        /* Adjust to position the border closer or further */
-    width: 520px;
-    /* Match the width of the border image */
-    height: 250px;
-    /* Match the height of the border image */
+    top: -5%;
+    /* Make this relative to the container height */
+    left: -5%;
+    /* Adjust the border's left position relative to container */
+    width: 110%;
+    /* Ensure the border covers the container width regardless of resizing */
+    height: 120%;
+    /* Ensure the border covers the container height */
     background-image: url('../../_images/home_images/skinnyborder.png');
     background-size: cover;
-    /* Ensures the image scales correctly */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     pointer-events: none;
     /* Allow clicks to pass through to the content */
     z-index: 1;
-    /* Places the border behind the content */
+    /* Place the border behind the content */
 }
 
 .headerBoxContainer {
@@ -33,131 +31,146 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 410px;
-    height: 160px;
+    width: 80vw;
+    /* Make the container width relative to viewport */
+    height: 20vh;
+    /* Make the container height relative to viewport */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #00000052;
-    /* Outer border for the entire box */
     flex-direction: column;
 }
 
-.headerBoxTitle{
+.headerBoxTitle {
     position: relative;
-        padding-bottom: 20px;
-        font-size: x-large;
-        font-family: 'MarvelFont', sans-serif;
-        /* Custom font */
-        text-transform: uppercase;
-        /* Make the text uppercase */
-        color: #ffffff;
-        /* Change the text color to a custom color (Hex code) */
+    padding-bottom: 10px;
+    /* Reduced padding */
+    padding-top: 4%;
+    font-size: 1.5em;
+    /* Use em units for responsive font size */
+    font-family: 'MarvelFont', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
-.headerBoxSubtitle{
+.headerBoxSubtitle {
     position: relative;
     font-family: 'MarvelFont', sans-serif;
-    font-size: larger;
+    font-size: 1.2em;
+    /* Smaller font size */
     color: #ffffff;
 }
 
 .activeHeaderBoxContainer {
     position: relative;
-    display: none; /* Set to flex when you want it visible */
+    display: none;
+    /* Set to flex when you want it visible */
     justify-content: center;
     align-items: center;
-    width: 405px; /* Dynamically adjust width based on content */
-    height: auto; /* Dynamically adjust height based on content */
-    padding: 35px; /* Optional: Add padding for spacing around the content */
+    width: 80vw;
+    /* Adjust width dynamically */
+    height: auto;
+    padding: 40px;
+    /* Adjust padding for smaller spacing */
     background-color: rgba(0, 0, 0, 0.751);
-    background-size: cover; /* Ensures the background image covers the content */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-direction: column;
-    gap: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+    gap: 20px;
+    /* Smaller gap between elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Smaller shadow */
 }
 
 /* ::before pseudo-element with the background image acting as a border */
 .activeHeaderBoxContainer::before {
     content: '';
     position: absolute;
-    top: -50px;
-    /* Extend the image above the container */
-    left: -69px;
-    /* Extend the image to the left of the container */
-    right: -45px;
-    /* Extend the image to the right of the container */
-    height: calc(100% + 100px);
-    /* Extend the image below the container */
+    top: -11.2%;
+    /* Use relative positioning */
+    left: -10%;
+    /* Adjust to ensure the border aligns with the container */
+    right: -5%;
+    /* Ensure border extends to both sides */
+    height: calc(100% + 25%);
+    /* Use calc to extend the height proportionally */
     background-image: url('../../_images/home_images/skinnyborder.png');
-    /* Background image acting as the border */
-    background-size: 103% 105%;
-    /* Resize the background image: width 120% and height 120% */
+    background-size: 112% 121%;
+    /* Adjust the border image size */
     background-position: center;
-    /* Keeps the image centered */
     background-repeat: no-repeat;
-    /* Prevents repeating the image */
     z-index: 1;
-    /* Keeps the image behind the content */
     pointer-events: none;
-    /* Ensures the background doesn't interfere with interaction */
 }
 
-.clueContainer{
+.clueContainer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 75px; /* Add space between rows */
-    font-size: larger;
+    gap: 20px;
+    /* Reduced gap */
+    font-size: 1.2em;
+    /* Use relative font size */
     color: #ffffff;
     font-family: 'MarvelFont', sans-serif;
 }
-.clueSubContainer{
+
+.clueSubContainer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: larger;
+    font-size: 1.2em;
+    /* Smaller font size */
 }
 
-.clueSubContainer img{
-    width: 50px;
-    height: 50px;
+.clueSubContainer img {
+    width: 40px;
+    /* Smaller image size */
+    height: 40px;
     object-fit: cover;
     border-radius: inherit;
 }
 
 .clueSubContainer img:hover {
-    transform: scale(1.15); 
+    transform: scale(1.1);
+    /* Slightly smaller hover scale */
 }
 
-.activeImage{
-    transition: transform 0.5s ease; 
-    animation: hoverUpDown 2s ease-in-out infinite; 
+.activeImage {
+    transition: transform 0.5s ease;
+    animation: hoverUpDown 1.5s ease-in-out infinite;
+    /* Faster animation */
 }
 
 .characterSilhoutteImg {
     position: relative;
     display: flex;
-    height: 250px;
-    /* Allow the height to grow dynamically */
-    width: 250px;
+    height: 200px;
+    /* Reduced size */
+    width: 200px;
+    /* Reduced size */
     justify-content: center;
     transition: all 0.3s ease;
-    /* Smooth transition for resizing */
-    padding-bottom: 50px;
+    padding-bottom: 0px;
+    /* Reduced bottom padding */
 }
+
 @keyframes hoverUpDown {
-    0%, 100% {
-        transform: translateY(-2px); /* Moves up */
+
+    0%,
+    100% {
+        transform: translateY(-1px);
+        /* Smaller movement */
     }
+
     50% {
-        transform: translateY(0); /* Returns to original position */
+        transform: translateY(0);
+        /* Returns to original position */
     }
 }
