@@ -57,7 +57,7 @@ class Clues {
 
     appendNumTriesUntilSilhoutte() {
         const clueContainer = document.getElementById('clueSilhoutteSubContainer');
-        this.numTriesLeftUntilSulhoutteClue = 5;
+        this.numTriesLeftUntilSulhoutteClue = 7;
 
         if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
             this.numTriesLeftUntilSulhoutte = document.createElement('div');
@@ -72,7 +72,7 @@ class Clues {
 
     appendNumTriesUntilUlt() {
         const clueContainer = document.getElementById('clueUltSubContainer');
-        this.numTriesUntilUltClue = 3;
+        this.numTriesUntilUltClue = 5;
 
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
             this.numTriesLeftUntilUlt = document.createElement('div');

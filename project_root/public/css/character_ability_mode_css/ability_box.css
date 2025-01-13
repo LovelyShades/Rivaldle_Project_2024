@@ -1,6 +1,6 @@
 .ability_box_container{
-    height: 300px;
-    width: 450px;
+    height: 25vh;
+    width: 30vw;
     position: relative;
     display: flex;
     background-color: rgba(0, 0, 0, 0.751);
