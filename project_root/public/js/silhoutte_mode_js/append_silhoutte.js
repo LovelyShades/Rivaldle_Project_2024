@@ -10,6 +10,7 @@ class GetSilhouette {
             if (!this.dailyCharacter) throw new Error('Failed to fetch daily character.');
 
             this.checkForBigCharacters();
+            this.checkForStoredScale();
             this.removeSpaces(this.dailyCharacter);
 
             this.getImageBox();
@@ -24,7 +25,7 @@ class GetSilhouette {
 
     initializeVariables() {
         this.imageScale = 6;
-        this.imageScaleRate = 0.8;
+        this.imageScaleRate = .2;
         this.removedSpacesCharacterName = '';
         this.silhouetteImage = null;
     }
@@ -55,6 +56,13 @@ class GetSilhouette {
         }
     }
 
+    checkForStoredScale(){
+        const storedScale = localStorage.getItem('imageScale')
+        if(storedScale != undefined){
+            this.imageScale = storedScale;
+        }
+    }
+
     getImageBox() {
         this.silhouetteImage = document.getElementById('silhouette_image');
         if (!this.silhouetteImage) {
@@ -64,7 +72,6 @@ class GetSilhouette {
 
     addSilhouetteImage(character) {
         if (this.silhouetteImage && character) {
-            console.log(`Adding silhouette image for ${character} with scale ${this.imageScale}`);
             this.silhouetteImage.style.transform = `scale(${this.imageScale / 10})`;
             this.silhouetteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/blackversion/${character}.png`;
         } else {
@@ -82,11 +89,15 @@ class GetSilhouette {
 
     listenForCharacterSelect() {
         document.addEventListener('characterSelected', () => {
+            localStorage.setItem('imageScale', this.imageScale);
+            
+            
             if (this.silhouetteImage) {
-                if (this.imageScale - this.imageScaleRate > 1) {
-                    this.imageScale -= this.imageScaleRate;
-                    console.log(`Updated scale: ${this.imageScale}`);
+                // Ensure the scale does not go below 1 (normalized value)
+                if (this.imageScale/10 > 1) {
+                    this.imageScale -= this.imageScaleRate; // Decrease the scale
                     this.silhouetteImage.style.transform = `scale(${this.imageScale / 10})`;
+                    console.log(`Updated Scale: ${this.imageScale / 10}`);
                 } else {
                     console.log('Scale is already at minimum.');
                 }
