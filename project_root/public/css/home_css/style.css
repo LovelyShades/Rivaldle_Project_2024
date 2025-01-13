@@ -1,8 +1,7 @@
 /* CONTENTS
 - Content center container
 - Title header
-- Mode container
-- Mode effects (hover, before, ect.)
+
 */
 #content_container {
     display: flex;
@@ -25,19 +24,22 @@
     color: #ffffff;
     letter-spacing: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    /* Ensure text is centered */
+    width: 100%;
+    /* Ensure full width */
+    white-space: normal;
+    /* Allow text to wrap naturally */
+    line-height: 1.4;
+    /* Optional: Adjust line spacing between the two lines */
+    word-wrap: break-word;
+    /* Ensure words break if necessary */
 }
 
-/* Mode container */
-.mode_container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.mode_container a {
-    text-decoration: none;
+@media (max-width: 768px) {
+    .title_header {
+        font-size: 2em;
+    }
 }
 
 
