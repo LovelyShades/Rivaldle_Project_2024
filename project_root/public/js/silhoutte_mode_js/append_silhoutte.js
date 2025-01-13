@@ -1,35 +1,34 @@
 class GetSilhouette {
     constructor() {
-        // Initialize the class
-        this.imageScale = 6; // Default scale
-        this.imageScaleRate = 0.6; // Default scale rate
-        this.removedSpacesCharacterName = ''; // Placeholder for processed character name
-        this.silhouetteImage = null; // Placeholder for the image element
+        this.initializeVariables();
         this.initialize();
     }
 
     async initialize() {
         try {
-            // Fetch daily character data
             this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
             if (!this.dailyCharacter) throw new Error('Failed to fetch daily character.');
 
-            // Process character data
             this.checkForBigCharacters();
             this.removeSpaces(this.dailyCharacter);
 
-            // Get the image element and add the silhouette image
             this.getImageBox();
             if (!this.silhouetteImage) throw new Error('Silhouette image element not found.');
             this.addSilhouetteImage(this.removedSpacesCharacterName);
 
-            // Listen for character selection events
             this.listenForCharacterSelect();
         } catch (error) {
             console.error('Error initializing GetSilhouette:', error);
         }
     }
-    
+
+    initializeVariables() {
+        this.imageScale = 6;
+        this.imageScaleRate = 0.8;
+        this.removedSpacesCharacterName = '';
+        this.silhouetteImage = null;
+    }
+
     async fetchData(url) {
         try {
             const response = await fetch(url);
@@ -50,7 +49,7 @@ class GetSilhouette {
             this.imageScale = 35;
             this.imageScaleRate = 3;
         }
-        if(this.dailyCharacter.name == "Jeff the Land Shark"){
+        if (this.dailyCharacter.name == "Jeff the Land Shark") {
             this.imageScale = 20;
             this.imageScaleRate = 1.5;
         }
@@ -98,4 +97,4 @@ class GetSilhouette {
     }
 }
 
-    const getSilhouette = new GetSilhouette();
+const getSilhouette = new GetSilhouette();

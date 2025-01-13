@@ -1,27 +1,29 @@
 class CharacterSearch {
     constructor() {
-        this.characterInput = document.getElementById('characterInput');
-        this.suggestedCharactersContainer = document.getElementById('suggestedCharactersContainer');
-        this.characterButton = document.getElementById('character_search_button');
-
-        // Initialize asynchronously
+        this.initializeVariables();
         this.initialize();
     }
 
     async initialize() {
         this.marvelCharacters = await this.fetchMarvelCharacters();
-        const storedCharacters = this.getStoredCharacters(); // Fetch stored characters from localStorage
+        const storedCharacters = this.getStoredCharacters();
 
         // Filter out the stored characters from the marvelCharacters list
         this.notSearchedMarvelCharacters = this.marvelCharacters.filter(
             character => !storedCharacters.some(stored => stored.name === character.name)
         );
-        this.setupEventListeners(); // Setup event listeners
+        this.setupEventListeners();
+    }
+
+    initializeVariables() {
+        this.characterInput = document.getElementById('characterInput');
+        this.suggestedCharactersContainer = document.getElementById('suggestedCharactersContainer');
+        this.characterButton = document.getElementById('character_search_button');
     }
 
     getCurrentPageKey() {
-        const path = window.location.pathname; // Get the current page path
-        return `searched_characters_${path}`; // Use the path as part of the key
+        const path = window.location.pathname;
+        return `searched_characters_${path}`;
     }
 
     getStoredCharacters() {
@@ -43,8 +45,8 @@ class CharacterSearch {
     setupEventListeners() {
         this.characterInput.addEventListener('input', this.handleInput.bind(this));
         this.characterButton.addEventListener('click', this.handleButtonClick.bind(this));
-        document.addEventListener('correctCharacterGuessed', () => {this.notSearchedMarvelCharacters = []});
-        }
+        document.addEventListener('correctCharacterGuessed', () => { this.notSearchedMarvelCharacters = [] });
+    }
 
     handleInput(event) {
         const suggestedCharacters = this.getSuggestedCharacters(event.target.value);
@@ -62,19 +64,17 @@ class CharacterSearch {
 
     displaySuggestions(suggestedCharacters) {
         this.clearSuggestions();
-
         if (this.shouldHideSuggestions(suggestedCharacters)) {
             this.hideSuggestionsContainer();
             return;
         }
-
         this.showSuggestionsContainer();
         this.createSuggestionElements(suggestedCharacters);
     }
 
     shouldHideSuggestions(suggestedCharacters) {
-        return suggestedCharacters.length === 0 || 
-               suggestedCharacters.length === this.notSearchedMarvelCharacters.length;
+        return suggestedCharacters.length === 0 ||
+            suggestedCharacters.length === this.notSearchedMarvelCharacters.length;
     }
 
     createSuggestionElements(suggestedCharacters) {
@@ -130,7 +130,7 @@ class CharacterSearch {
         });
         document.dispatchEvent(event);
     }
-    
+
     removeCharacterFromList(character) {
         this.notSearchedMarvelCharacters = this.notSearchedMarvelCharacters.filter(
             c => c.name !== character.name
@@ -162,7 +162,6 @@ class CharacterSearch {
     }
 }
 
-// Initialize the character search
 (async () => {
     const characterSearch = new CharacterSearch();
 })();
