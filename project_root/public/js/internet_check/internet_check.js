@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (navigator.connection) {
             const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 
-            // Check for slow network conditions
             if (['slow-2g', '2g', '3g'].includes(connection.effectiveType)) {
                 video.style.display = 'none';
                 fallbackImage.style.display = 'block';
@@ -39,10 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Initial check on page load
     checkNetworkAndSetMedia();
 
-    // Listen for network changes
     if (navigator.connection) {
         navigator.connection.addEventListener('change', checkNetworkAndSetMedia);
     }

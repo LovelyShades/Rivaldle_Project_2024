@@ -26,7 +26,7 @@ class Clues {
             return response.json();
         } catch (error) {
             console.error('Error fetching data:', error);
-            return null; 
+            return null;
         }
     }
 
@@ -45,9 +45,9 @@ class Clues {
     }
 
     updateStorage() {
-        this.storedTries += 1; 
+        this.storedTries += 1;
         console.log(`Updated tries: ${this.storedTries}`);
-        localStorage.setItem(this.key, JSON.stringify(this.storedTries)); 
+        localStorage.setItem(this.key, JSON.stringify(this.storedTries));
     }
 
     appendClueTries() {
@@ -90,31 +90,31 @@ class Clues {
             this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
         } else if (this.numTriesLeftUntilSulhoutte) {
             this.activateSilhoutteImage();
-            this.numTriesLeftUntilSulhoutte.remove(); // Remove the element when it reaches zero
-            this.numTriesLeftUntilSulhoutte = null; // Reset the reference
+            this.numTriesLeftUntilSulhoutte.remove();
+            this.numTriesLeftUntilSulhoutte = null;
         }
 
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
             this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
         } else if (this.numTriesLeftUntilUlt) {
             this.activateUltImage();
-            this.numTriesLeftUntilUlt.remove(); // Remove the element when it reaches zero
-            this.numTriesLeftUntilUlt = null; // Reset the reference
+            this.numTriesLeftUntilUlt.remove();
+            this.numTriesLeftUntilUlt = null;
         }
     }
 
-    activateSilhoutteImage(){
+    activateSilhoutteImage() {
         this.silhoutteImageIcon = document.getElementById('silhoutteImg');
         this.silhoutteImageIcon.className += 'activeImage'
         this.addSilhoutteListener();
     }
-    activateUltImage(){
+    activateUltImage() {
         this.ultImgIcon = document.getElementById('ultImg');
         this.ultImgIcon.className += 'activeImage'
         this.addUltListener();
     }
 
-    addSilhoutteListener(){
+    addSilhoutteListener() {
         const silhouetteIcon = document.getElementById('silhoutteImg');
 
         if (silhouetteIcon) {
@@ -135,8 +135,8 @@ class Clues {
     }
 
     onSilhouetteClick() {
-        if(this.silhoutteActive) return;
-        if(this.ultName){
+        if (this.silhoutteActive) return;
+        if (this.ultName) {
             this.ultName.remove();
             this.ultName = null;
             this.ultActive = false;
@@ -151,8 +151,8 @@ class Clues {
     }
 
     onUltClick() {
-        if(this.ultActive) return;
-        if(this.silhoutteImage){
+        if (this.ultActive) return;
+        if (this.silhoutteImage) {
             this.silhoutteImage.remove();
             this.silhoutteImage = null;
             this.silhoutteActive = false;
