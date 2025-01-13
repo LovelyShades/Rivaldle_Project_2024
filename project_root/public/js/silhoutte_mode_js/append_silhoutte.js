@@ -66,7 +66,7 @@ class GetSilhouette {
         if (this.silhouetteImage && character) {
             console.log(`Adding silhouette image for ${character} with scale ${this.imageScale}`);
             this.silhouetteImage.style.transform = `scale(${this.imageScale / 10})`;
-            this.silhouetteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${character}.png`;
+            this.silhouetteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/blackversion/${character}.png`;
         } else {
             console.error('Unable to add silhouette image. Character or image box is missing.');
         }
