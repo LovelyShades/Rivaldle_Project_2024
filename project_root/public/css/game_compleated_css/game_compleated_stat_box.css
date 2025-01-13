@@ -105,7 +105,7 @@
         display: flex;
         flex-direction: column;     /* Stack items vertically */
         height: auto;               /* Allow dynamic height based on content */
-        width: 90%;
+        width: 80vw;
         background-color: rgba(0, 0, 0, 0.751);
         border-style: solid; 
         border-color: white;
