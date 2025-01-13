@@ -17,7 +17,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
     text-decoration: none;
         /* Remove underline */
 }
