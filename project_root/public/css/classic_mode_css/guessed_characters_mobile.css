@@ -14,7 +14,7 @@
     }
 
     #characterListHeadersContainer {
-        display: flex;
+        display: none;
         flex-direction: row; /* Align headers in a row */
         flex-wrap: nowrap; /* Prevent wrapping */
         gap: 10px; /* Space between headers */
