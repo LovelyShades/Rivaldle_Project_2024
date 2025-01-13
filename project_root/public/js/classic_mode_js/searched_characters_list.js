@@ -1,10 +1,6 @@
 class SearchedCharacters {
     constructor() {
-        this.marvelCharacters = [];
-        this.dailyCharacter = null;
-        this.receivedCharacter = null;
-
-        // Initialize the class
+        this.initializeVariables();
         this.initialize();
     }
 
@@ -19,6 +15,12 @@ class SearchedCharacters {
         }
     }
 
+    initializeVariables() {
+        this.marvelCharacters = [];
+        this.dailyCharacter = null;
+        this.receivedCharacter = null;
+    }
+
     async fetchData(url) {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
@@ -27,11 +29,11 @@ class SearchedCharacters {
 
     initializeEventListeners() {
         document.addEventListener('characterSelected', (event) => {
-            this.receivedCharacter = event.detail.character;            
+            this.receivedCharacter = event.detail.character;
             this.initializeSearchHeaders();
             this.activateGameHeader();
-            this.addRow(this.receivedCharacter); // Pass the character to addRow
-            this.saveCharacterToLocalStorage(this.receivedCharacter); // Save to localStorage
+            this.addRow(this.receivedCharacter);
+            this.saveCharacterToLocalStorage(this.receivedCharacter);
         });
     }
 
@@ -70,42 +72,42 @@ class SearchedCharacters {
         parent.appendChild(image);
     }
 
-    addCharacterAttributes(row, character) {        
+    addCharacterAttributes(row, character) {
         const attributes = [
             'gender', 'species', 'affiliation', 'level', 'type', 'hp', 'dateOfOrigin'
         ];
-        
+
         attributes.forEach(attr => {
             const value = character[attr];
             const box = this.addCharacterBox(row, value, attr, character);
-            box.classList.add('hidden'); // Add a hidden class to hide the content and background
+            box.classList.add('hidden');
         });
-        
+
         attributes.forEach((attr, index) => {
             setTimeout(() => {
                 const box = row.querySelector(`.guessedCharacterBox[data-attribute="${attr}"]`);
-                box.classList.remove('hidden'); // Remove the hidden class to reveal the content and background
-            }, 250 * (index + 1)); // Delay each reveal by 500ms
+                box.classList.remove('hidden');
+            }, 250 * (index + 1));
         });
         setTimeout(() => {
             this.isCorrectCharacter(character);
-        }, 250 * attributes.length + 250); // Total delay: 500ms per attribute
+        }, 250 * attributes.length + 250);
     }
-    
+
     addCharacterBox(row, textContent, attribute, character) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
         newBox.textContent = textContent;
-    
-        newBox.setAttribute('data-attribute', attribute); // Add attribute identifier
-    
+
+        newBox.setAttribute('data-attribute', attribute);
+
         this.setBoxAppearance(newBox, attribute, character);
         this.addArrowIndicator(newBox, attribute, character);
-    
+
         row.appendChild(newBox);
-        return newBox; // Return the created box for further manipulation
+        return newBox;
     }
-    
+
     setBoxAppearance(box, attribute, character) {
         const isMatching = character[attribute] === this.dailyCharacter[attribute];
         box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';
@@ -118,7 +120,7 @@ class SearchedCharacters {
         arrowImage.className = 'arrow';
 
         const comparison = character[attribute] - this.dailyCharacter[attribute];
-        if(comparison === 0) return;
+        if (comparison === 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'
             : '/_images/classic_mode_images/upArrow.png';
@@ -146,10 +148,10 @@ class SearchedCharacters {
         });
         document.dispatchEvent(event);
     }
-    
+
     getCurrentPageKey() {
-        const path = window.location.pathname; // Get the current page path
-        return `searched_characters_${path}`; // Use the path as part of the key
+        const path = window.location.pathname;
+        return `searched_characters_${path}`;
     }
 
     saveCharacterToLocalStorage(character) {
@@ -158,22 +160,21 @@ class SearchedCharacters {
         storedCharacters.push(character);
         localStorage.setItem(pageKey, JSON.stringify(storedCharacters));
     }
-    
+
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
-        
+
         if (storedCharacters.length > 0) {
-            this.initializeSearchHeaders(); // Show the headers if characters are present
-            this.activateGameHeader(); // Activate the game headers
+            this.initializeSearchHeaders();
+            this.activateGameHeader();
         }
-    
+
         storedCharacters.forEach((character) => {
             if (character && character.name) this.addRow(character);
         });
-    }    
+    }
 }
 
-// Instantiate the class
 const searchedCharacters = new SearchedCharacters();
 export default SearchedCharacters;

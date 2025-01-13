@@ -1,7 +1,7 @@
 class AppendEmoji {
     constructor() {
-        this.initializeEmojiStorage(); // Initialize storage first
-        this.numGuesses = parseInt(localStorage.getItem('numEmojisViewed'), 10) || 0; // Load stored guesses
+        this.initializeEmojiStorage();
+        this.numGuesses = parseInt(localStorage.getItem('numEmojisViewed'), 10) || 0;
         this.initialize();
     }
 
@@ -38,17 +38,17 @@ class AppendEmoji {
         this.emojis = [document.createElement('div'), document.createElement('div'), document.createElement('div'), document.createElement('div')];
 
         this.emojis.forEach((emoji, index) => {
-            emoji.className = 'emoji'; // Add the class 'emoji' to each element
-            emoji.textContent = index <= this.numGuesses ? this.dailyCharacterEmojis[index] : '?'; // Set emoji based on storage
-            emojiContainer.append(emoji); // Append the element to the container
+            emoji.className = 'emoji';
+            emoji.textContent = index <= this.numGuesses ? this.dailyCharacterEmojis[index] : '?';
+            emojiContainer.append(emoji);
         });
     }
 
     updateEmojis() {
-        if (this.numGuesses >= 3) return; // Limit updates to 4 emojis
+        if (this.numGuesses >= 3) return;
         this.numGuesses += 1;
-        this.saveEmojisToLocalStorage(); // Save updated guesses to localStorage
-        this.emojis[this.numGuesses].innerHTML = this.dailyCharacterEmojis[this.numGuesses]; // Update emoji display
+        this.saveEmojisToLocalStorage();
+        this.emojis[this.numGuesses].innerHTML = this.dailyCharacterEmojis[this.numGuesses];
     }
 
     saveEmojisToLocalStorage() {

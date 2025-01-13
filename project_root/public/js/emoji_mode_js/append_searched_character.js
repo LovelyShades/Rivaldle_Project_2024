@@ -84,8 +84,8 @@ class AppendSearchedCharacter {
     }
 
     getCurrentPageKey() {
-        const path = window.location.pathname; // Get the current page path
-        return `searched_characters_${path}`; // Use the path as part of the key
+        const path = window.location.pathname;
+        return `searched_characters_${path}`;
     }
 
     saveCharacterToLocalStorage(character) {
@@ -94,7 +94,7 @@ class AppendSearchedCharacter {
         storedCharacters.push(character);
         localStorage.setItem(pageKey, JSON.stringify(storedCharacters));
     }
-    
+
     loadStoredCharacters() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
