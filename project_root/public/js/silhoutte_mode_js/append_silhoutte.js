@@ -95,7 +95,7 @@ class GetSilhouette {
             if (this.silhouetteImage) {
                 // Ensure the scale does not go below 1 (normalized value)
                 if (this.imageScale/10 > 1) {
-                    this.imageScale -= this.imageScaleRate; // Decrease the scale
+                    this.imageScale -= this.imageScaleRate; 
                     this.silhouetteImage.style.transform = `scale(${this.imageScale / 10})`;
                     console.log(`Updated Scale: ${this.imageScale / 10}`);
                 } else {
