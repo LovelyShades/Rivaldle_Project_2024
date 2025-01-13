@@ -7,6 +7,7 @@ class Clues {
         this.getNumTries();
         this.appendClueTries();
         this.listenForCharacterSelect();
+        this.listenForWin();
         this.dailyCharacter = await this.fetchData('./daily_classic_character');
         this.silhoutteActive = false;
         this.ultActive = false;
@@ -46,7 +47,6 @@ class Clues {
 
     updateStorage() {
         this.storedTries += 1;
-        console.log(`Updated tries: ${this.storedTries}`);
         localStorage.setItem(this.key, JSON.stringify(this.storedTries));
     }
 
@@ -144,7 +144,6 @@ class Clues {
         const clueBoxContainer = document.getElementById('activeHeaderBoxContainer');
         this.silhoutteImage = document.createElement('img');
         this.silhoutteImage.className = 'characterSilhoutteImg'
-        console.log(this.dailyCharacter.name.replace(/\s+/g, ''))
         this.silhoutteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${this.dailyCharacter.name.replace(/\s+/g, '')}.png`;
         clueBoxContainer.append(this.silhoutteImage)
         this.silhoutteActive = true;
@@ -165,6 +164,19 @@ class Clues {
         clueBoxContainer.append(this.ultName);
 
         this.ultActive = true;
+    }
+
+    listenForWin(){
+        document.addEventListener('correctCharacterGuessed', (event) => {
+            this.unlockClues()
+        });
+    }
+
+    unlockClues(){
+        this.activateSilhoutteImage();
+        this.activateUltImage();
+        this.numTriesLeftUntilUlt.innerHTML = '';
+        this.numTriesLeftUntilSulhoutte.innerHTML = '';
     }
 }
 
