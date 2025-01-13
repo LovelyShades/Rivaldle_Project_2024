@@ -12,8 +12,8 @@ class AppendSearchedCharacter {
     listenForCharacterSelect() {
         document.addEventListener('characterSelected', (event) => {
             this.receivedCharacter = event.detail.character;
-            this.appendSearchedCharacterBox();
             this.saveCharacterToLocalStorage(this.receivedCharacter); // Save the character
+            this.appendSearchedCharacterBox();
         });
     }
 
@@ -68,10 +68,17 @@ class AppendSearchedCharacter {
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
                 character: this.dailyCharacter,
-                mode: 'classic'
+                mode: 'classic',
+                tries: this.getStoredCharacterCount()
             }
         });
         document.dispatchEvent(event);
+    }
+
+    getStoredCharacterCount() {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        return storedCharacters.length;
     }
 
     appendConfetti() {

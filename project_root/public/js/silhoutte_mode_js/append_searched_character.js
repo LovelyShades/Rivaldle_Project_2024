@@ -78,9 +78,16 @@ class AppendSearchedCharacter {
             detail: {
                 character: this.dailyCharacter,
                 mode: 'emoji',
+                tries: this.getStoredCharacterCount()
             },
         });
         document.dispatchEvent(event);
+    }
+
+    getStoredCharacterCount() {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        return storedCharacters.length;
     }
 
     getCurrentPageKey() {

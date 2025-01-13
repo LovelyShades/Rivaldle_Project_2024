@@ -6,7 +6,6 @@ class StatBox {
 
     initalize() {
         this.isGameCompleated()
-        this.listenForCharacterSelect();
     }
 
     async fetchData(url) {
@@ -20,16 +19,11 @@ class StatBox {
         }
     }
 
-    listenForCharacterSelect() {
-        document.addEventListener('characterSelected', (event) => {
-            this.numberOfTries += 1;
-        });
-    }
-
     isGameCompleated() {
         document.addEventListener('correctCharacterGuessed', async (event) => {
             this.dailyCharacter = event.detail.character;
             this.nextMode = event.detail.mode;
+            this.numberOfTries = event.detail.tries;
             this.appendStatBoxContainter();
             this.appendStatBoxItems(this.statBoxContainter)
         });

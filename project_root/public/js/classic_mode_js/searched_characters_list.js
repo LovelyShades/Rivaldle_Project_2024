@@ -143,7 +143,8 @@ class SearchedCharacters {
         const event = new CustomEvent('correctCharacterGuessed', {
             detail: {
                 character: this.dailyCharacter,
-                mode: 'silhouette'
+                mode: 'silhouette',
+                tries: this.getStoredCharacterCount()
             }
         });
         document.dispatchEvent(event);
@@ -173,6 +174,12 @@ class SearchedCharacters {
         storedCharacters.forEach((character) => {
             if (character && character.name) this.addRow(character);
         });
+    }
+
+    getStoredCharacterCount() {
+        const pageKey = this.getCurrentPageKey();
+        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
+        return storedCharacters.length;
     }
 }
 
