@@ -26,6 +26,7 @@ html, body {
     width: 50%;
 }
 
+
 @font-face {
     font-family: 'MarvelFont';
     src: url('../../fonts/MarvelFont.otf') format('opentype');

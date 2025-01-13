@@ -173,10 +173,14 @@ class Clues {
     }
 
     unlockClues(){
-        this.activateSilhoutteImage();
-        this.activateUltImage();
-        this.numTriesLeftUntilUlt.innerHTML = '';
-        this.numTriesLeftUntilSulhoutte.innerHTML = '';
+        if(this.numTriesLeftUntilUlt){
+            this.numTriesLeftUntilUlt.innerHTML = '';
+            this.activateUltImage();
+        }
+        if(this.numTriesLeftUntilSulhoutte){
+            this.numTriesLeftUntilSulhoutte.innerHTML = '';
+            this.activateSilhoutteImage();
+        }
     }
 }
 
