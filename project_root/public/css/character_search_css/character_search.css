@@ -12,7 +12,7 @@ Search Bar Stylizing
 .enter_character_box {
     display: flex;
     align-items: center;
-    border: 3px solid #ffffff;
+    border-radius: 15px;    
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.751);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
@@ -42,7 +42,7 @@ Search Bar Stylizing
     font-weight: bold;
     color: #000;
     cursor: pointer;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     outline: none;
