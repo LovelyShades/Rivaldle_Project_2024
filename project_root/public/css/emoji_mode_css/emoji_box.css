@@ -19,7 +19,7 @@
     font-family: MarvelFont, sans-serif;
     opacity: 150%;
     flex-direction: column;
-    gap: 50%;
+    gap: 40%;
 }
 
 .emoji_container{
