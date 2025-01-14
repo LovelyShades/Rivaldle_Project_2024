@@ -18,8 +18,8 @@ Search Bar Stylizing
 .enter_character_box {
     display: flex;
     align-items: center;
-    border-radius: 15px;    
     padding: 5px;
+    border: 2px solid #fdf5ff;
     background-color: rgba(0, 0, 0, 0.751);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
 }
