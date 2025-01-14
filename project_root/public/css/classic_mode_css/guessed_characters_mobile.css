@@ -7,42 +7,16 @@
         max-width: 100%; /* Prevent content from exceeding the viewport */
         overflow-x: auto; /* Allow horizontal scrolling */
         overflow-y: hidden; /* Prevent vertical scrolling */
-        padding: 10px;
+        padding: 20px;
         box-sizing: border-box;
         position: relative;
         margin: 0 auto; /* Center the container */
     }
 
-    #characterListHeadersContainer {
-        display: none;
-        flex-direction: row; /* Align headers in a row */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        gap: 10px; /* Space between headers */
-        width: fit-content; /* Dynamically size to fit content */
-        align-self: center; /* Align headers to the center */
-        box-sizing: border-box; /* Include padding and borders */
-    }
-
     .characterListHeaders {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-family: MarvelFont, sans-serif;
         font-size: 14px; /* Smaller font size for mobile */
-        width: 80px; /* Match the width of character boxes */
-        text-align: center;
     }
 
-    .allGuessedCharacters {
-        display: flex;
-        flex-direction: column; /* Stack character rows vertically */
-        gap: 10px; /* Space between character rows */
-        width: fit-content; /* Dynamically size based on content */
-        margin: 0 auto; /* Center the rows */
-        box-sizing: border-box; /* Include padding and borders */
-    }
 
     .guessedCharactersContainer {
         display: flex;

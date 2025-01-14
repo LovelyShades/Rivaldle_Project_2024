@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60vw;
+    width: 80vw;
     /* For smaller screens */
     max-width: 400px;
     /* Prevent it from stretching too far on desktop */
@@ -34,7 +34,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #00000052;
+    background-color: rgba(0, 0, 0, 0.7);
     flex-direction: column;
     margin: 0 auto;
     /* Center the container */
@@ -42,8 +42,9 @@
 
 .headerBoxTitle {
     position: relative;
-    padding-bottom: 10px;
-    padding-top: 4%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: 1.5em;
     font-family: 'MarvelFont', sans-serif;
     text-transform: uppercase;
@@ -57,6 +58,7 @@
 
 .headerBoxSubtitle {
     position: relative;
+    padding: 10px;
     font-family: 'MarvelFont', sans-serif;
     font-size: 1.2em;
     color: #ffffff;
@@ -65,7 +67,6 @@
     white-space: normal;
             /* Allow normal wrapping */
     text-align: center;
-    padding-bottom: 5%;
 }
 
 .activeHeaderBoxContainer {
@@ -79,7 +80,7 @@
     /* Prevent from stretching on desktop */
     height: auto;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.751);
+    background-color: rgba(0, 0, 0, 0.7);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -175,24 +176,13 @@
 }
 
 /* Media Query for mobile and tablets */
-@media (max-width: 768px) {
-    .headerBoxContainer {
-        width: 70vw;
-        /* Makes it responsive on smaller screens */
-        height: auto;
-        /* Adjusts height for content on mobile */
-    }
+@media (max-width: 500px) {
 
-    .activeHeaderBoxContainer {
-        width: 70vw;
-        /* Adjusts width for smaller screens */
-        padding: 20px;
-        /* Adjusts padding for mobile */
-    }
 
     .headerBoxTitle {
         font-size: 1.2em;
         /* Smaller font size for mobile */
+
     }
 
     .headerBoxSubtitle {
