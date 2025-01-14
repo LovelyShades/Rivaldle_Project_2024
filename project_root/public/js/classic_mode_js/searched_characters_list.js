@@ -74,7 +74,7 @@ class SearchedCharacters {
 
     addCharacterAttributes(row, character) {
         const attributes = [
-            'gender', 'species', 'affiliation', 'role', 'hp', 'dateOfOrigin'
+            'gender', 'species', 'affiliation', 'role', 'eyeColor', 'hairColor', 'hp'
         ];
 
         attributes.forEach(attr => {
@@ -109,10 +109,22 @@ class SearchedCharacters {
     }
 
     setBoxAppearance(box, attribute, character) {
-        const isMatching = character[attribute] === this.dailyCharacter[attribute];
-        box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';
+        const dailyValue = this.dailyCharacter[attribute];
+        const characterValue = character[attribute];
+    
+        if (Array.isArray(dailyValue) && Array.isArray(characterValue)) {
+            // Check for partial matches in the arrays
+            const hasPartialMatch = characterValue.some(value => dailyValue.includes(value));
+            const isMatching = JSON.stringify(characterValue) === JSON.stringify(dailyValue);
+    
+            box.style.backgroundColor = isMatching ? '#7aff6f' : hasPartialMatch ? '#ffff6f' : '#ff3c3b';
+        } else {
+            // Standard comparison for non-array attributes
+            const isMatching = characterValue === dailyValue;
+            box.style.backgroundColor = isMatching ? '#7aff6f' : '#ff3c3b';
+        }
     }
-
+    
     addArrowIndicator(box, attribute, character) {
         if (!['hp', 'dateOfOrigin'].includes(attribute)) return;
 
