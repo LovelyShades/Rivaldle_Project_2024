@@ -27,7 +27,6 @@ class StatBox {
             this.appendStatBoxContainter();
             this.appendStatBoxItems(this.statBoxContainter)
         });
-
     }
 
     getTime() {
