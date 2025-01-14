@@ -10,7 +10,7 @@
     width: 80vw;
     max-width: 400px;
     height: 250px;
-    background-color: #000000d6;
+    background-color: rgba(0, 0, 0, 0.7);;
     border: 2px solid #dce1f4b6;
     border-radius: 0px;
     display: flex;
