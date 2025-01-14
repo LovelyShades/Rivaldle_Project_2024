@@ -22,9 +22,9 @@
   padding: 20px;           
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
   font-family: MarvelFont, sans-serif;
-  min-height: 25vh; /* Starts with a minimum height */
-  height: auto; /* Grows based on content */
-  box-sizing: border-box; /* Ensures padding and border are included in the box size */
+  min-height: 25vh; 
+  height: auto;
+  box-sizing: border-box; 
 }
 
 .shareBoxText {
@@ -44,8 +44,6 @@
     margin: 0 auto;
 }
 
-
-/* CSS */
 .button-43 {
   background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
   border-radius: .5rem;
