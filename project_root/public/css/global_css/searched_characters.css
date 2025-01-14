@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MarvelFont';
+    src: url('../../fonts/MarvelFont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .searched_characters_container {
     position: relative;          /* Positioning relative to allow child positioning if needed */
     display: flex;               /* Enable Flexbox */
@@ -44,6 +51,8 @@
     object-fit: cover;         /* Ensure the image fills the space */
     display: block;            /* Ensure proper block-level rendering */
     position: relative;        /* Relative positioning for flexibility */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border: 2px solid #000000b6;
 }
 
 .searched_character_text{
@@ -55,4 +64,5 @@
     font-family: Arial, sans-serif; /* Consistent font */
     font-size: 16px;             /* Adjust font size */
     color: #000000;                 /* Text color */
+    font-family: MarvelFont, sans-serif;
 }
