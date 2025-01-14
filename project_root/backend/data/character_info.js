@@ -41,7 +41,7 @@ export const characters = [
         ['brown','grey'],
         650,
         1963,
-        ["📖", "🌀", "✨", "🧙‍♂️"]
+        ["👁️", "📖", "✨", "🧙‍♂️"],
         ["DAGGERS OF DENAK","EYE OF AGAMOTTO","CLOAK OF LEVITATION","MAELSTROM OF MADNESS","PENTAGRAM OF FARALLAH","SHIELD OF THE SERAPHIM"],
         "EYE OF AGAMOTTO"
     ),
@@ -97,7 +97,7 @@ export const characters = [
         ['white'],
         650,
         1963,
-        ["🎩", "🌀", "🧲", "👨‍🎤"],
+        ["🪖", "🧲", "🌀", "🦹‍♂️"],
         ["IRON VOLLEY", "METEOR M", "METALLIC CURTAIN", "METAL BULWARK", "IRON BULWARK", "MAG-CANNON", "MAGNETIC DESCENT"],
         "METEOR M"
     ),
@@ -125,7 +125,7 @@ export const characters = [
         ['none'],
         650,
         1988,
-        ["👄", "🧪", "👅", "🖤"],
+        ["🕷️", "🦠", "👅", "🖤"],
         ["Dark Predation", "Cellular Corrosion", "Symbiotic Resilience", "Frenzied Arrival", "Feast of the Abyss"],
         "Feast of the Abyss"
     ),
@@ -182,7 +182,7 @@ export const characters = [
         ['none'],
         275,
         1964,
-        ["🕯️", "🖤", "👑", "💀"],
+        ["⚔️", "🖤", "👑", "💀"],
         ["NIGHTSWORD THORN", "GODDESS OF DEATH", "ASTRAL FLOCK", "SOUL DRAINER", "PIERCING NIGHT"],
         "GODDESS OF DEATH"
     ),
@@ -196,7 +196,7 @@ export const characters = [
         ['black'],
         250,
         1974,
-        ["🌀", "🔥", "👊", "⚡"],
+        ["🎭", "🐉", "👊", "🔥"],
         ["JEET KUNE DO", "YAT JEE CHUNG KUEN", "LIVING CHI", "K'UN-LUN KICK", "HARMONY RECOVERY", "CRANE LEAP", "DRAGON'S DEFENSE", "WALL RUNNER"],
         "LIVING CHI"
     ),
@@ -210,7 +210,7 @@ export const characters = [
         ['brown'],
         250,
         1963,
-        ["🔧", "💡", "🤖", "🛡️"],
+        ["🔧", "💡", "🤖", "🛑"],
         ["REPULSOR BLAST", "UNIBEAM", "INVINCIBLE PULSE CANNON", "HYPER-VELOCITY", "ARMOR OVERDRIVE", "MICRO-MISSILE BARRAGE"],
         "INVINCIBLE PULSE CANNON"
     ),
@@ -224,7 +224,7 @@ export const characters = [
         ['blond','white'],
         250,
         1975,
-        ["🧘‍♀️", "⚔️", "✨", "🌌"],
+        ["👩‍🦳", "🗡️", "🌠", "🔥"],
         ["SOULSWORD", "DARKCHILD", "STEPPING DISCS", "UMBRAL INCURSION", "ELDRITCH WHIRL", "MAGIK SLASH", "DEMON'S RAGE"],
         "DARKCHILD"
     ),
@@ -238,7 +238,7 @@ export const characters = [
         ['none'],
         250,
         1975,
-        ["🔮", "🌙", "🩸", "⚔️"],
+        ["🔮", "🎭", "🏺", "🌙"],
         ["CRESCENT DART", "HAND OF KHONSHU", "NIGHT GLIDER", "ANCIENT ANKH", "MOONLIGHT HOOK", "RISING LEAP", "MOON BLADE", "TRIPLE ECLIPSE"],
         "HAND OF KHONSHU"
     ),
@@ -266,7 +266,7 @@ export const characters = [
         ['purple'],
         250,
         1976,
-        ["🎭", "🌀", "⚔️", "💜"],
+        ["🗡️", "👁️‍🗨️", "🦋","💜"],
         ["PSIONIC CROSSBOW", "DANCE OF THE BUTTERFLY", "PSI-BLADE DASH", "PSYCHIC STEALTH", "WING SHURIKENS"],
         "DANCE OF THE BUTTERFLY"
     ),
@@ -280,7 +280,7 @@ export const characters = [
         ['auburn'],
         250,
         1964,
-        ["📜", "✨", "🌀", "🧙‍♀️"],
+        ["📜", "🔮", "🟥", "🧙‍♀️"],
         ["CHAOS CONTROL", "REALITY ERASURE", "MYSTIC PROJECTION", "DARK SEAL", "TELEKINESIS", "CHTHONIAN BURST"],
         "REALITY ERASURE"
     ),
@@ -308,7 +308,7 @@ export const characters = [
         ['ginger'],
         275,
         1992,
-        ["🍂", "🐿️", "💪", "😂"],
+        ["🍂", "😂", "💪", "🐿️"],
         ["Burst Acorn", "Squirrel Blockade", "Tail Bounce", "Mammal Bond", "Unbeatable Squirrel Tsunami"],
         "Unbeatable Squirrel Tsunami"
     ),
@@ -364,7 +364,7 @@ export const characters = [
         ['brown'],
         250,
         1941,
-        ["❄️", "🔧", "🛡️", "🧑‍🎤"],
+        ["❄️", "🔧", "🦾", "🧑‍🎤"],
         ["Roterstern", "Bionic Hook", "Tainted Voltage", "Trooper's Fist", "Ceaseless Charge", "Kraken Impact", "Infinite Grit"],
         "Kraken Impact"
     ),
@@ -378,7 +378,7 @@ export const characters = [
         ['black'],
         300,
         1974,
-        ["🌲", "🩸", "💪", "⚔️"],
+        ["🐺", "⚔️", "🛡️", "🦾"],
         ["Savage Claw", "Feral Leap", "Undying Animal", "Vicious Rampage", "Regenerative Healing Factor", "Berserker Rage", "Last Stand"],
         "Last Stand"
     ),
@@ -435,7 +435,7 @@ export const characters = [
         ['black'],
         250,
         1949,
-        ["🃏", "🔥", "👑", "🪄"],
+        ["🃏", "🟢", "👑", "🪄"],
         ["MYSTICAL MISSILE", "GOD OF MISCHIEF", "REGENERATION DOMAIN", "DOPPELGANGER", "DEVIOUS EXCHANGE", "BACKSTAB", "DECEPTION"],
         "GOD OF MISCHIEF"
     ),
@@ -477,7 +477,7 @@ export const characters = [
         ['black', 'blond'],
         250,
         1982,
-        ["🌘", "🔗", "⚡", "🧙‍♂️"],
+        ["🌘", "🔗", "🗡️", "🌌"],
         ["DARKFORCE CLOAK", "ETERNAL BOND", "LIGHT'S EMBRACE", "TERROR CAPE", "DARK TELEPORTATION"],
         "ETERNAL BOND"
     ),
