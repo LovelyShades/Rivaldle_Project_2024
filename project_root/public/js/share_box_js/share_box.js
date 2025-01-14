@@ -29,7 +29,7 @@ class ShareBox{
         const headerText = document.createElement('div');
         headerText.className = 'shareBoxText'
         headerText.style.fontSize ='xx-large'
-        headerText.innerHTML = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTries()} tries!\n👑`
+        headerText.innerHTML = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}\n👑`
         shareBox.append(headerText);
     }
 
@@ -42,7 +42,7 @@ class ShareBox{
     }
 
     copyButton(shareBox) {
-        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTries()} tries!🔨\nCan you beat my score?\n https://rivaldle.net`;
+        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.net`;
         const copyButton = document.createElement('button');
         copyButton.innerHTML = 'Share!😊';
         copyButton.className = 'button-43'
@@ -73,6 +73,16 @@ class ShareBox{
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
         return storedCharacters.length;
+    }
+
+    getTriesText() {
+        const tries = this.getTries();
+        if (tries === 1) {
+            console.log(tries)
+            return 'one shot!';
+        }else{
+            return `${tries} tries!`;
+        }
     }
 
     getCurrentPageKey() {
