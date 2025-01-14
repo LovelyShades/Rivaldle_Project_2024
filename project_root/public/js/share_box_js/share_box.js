@@ -62,9 +62,13 @@ class ShareBox{
     }
     
     getMode(){
-        return window.location.pathname.replace('/', '');
+        let mode = window.location.pathname.replace('/', '');
+        mode = mode.replace('_', ' ');
+        return mode;
     }
 
+
+    
     getTries() {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];

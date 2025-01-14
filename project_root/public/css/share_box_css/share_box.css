@@ -5,25 +5,26 @@
     font-style: normal;
 }
 
-.shareBox{
-    margin: 30px auto;         
-    position: relative;
-    display: flex;
-    flex-direction: column;    
-    height: 35vh;              
-    width: 500px;
-    max-width: 80vw;
-    background-color: rgba(0, 0, 0, 0.751);
-    border-style: solid; 
-    border-color: white;
-    border-width: 2px;
-    justify-content: space-between;
-    align-items: center;      
-    gap: 20px;                 
-    padding: 20px;           
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    font-family: MarvelFont, sans-serif;
-    gap: 15%;
+.shareBox {
+  margin: 30px auto;         
+  position: relative;
+  display: flex;
+  flex-direction: column;    
+  width: 500px;
+  max-width: 90vw;
+  background-color: rgba(0, 0, 0, 0.751);
+  border-style: solid; 
+  border-color: white;
+  border-width: 2px;
+  justify-content: space-between;
+  align-items: center;      
+  gap: 20px;                 
+  padding: 20px;           
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  font-family: MarvelFont, sans-serif;
+  min-height: 25vh; /* Starts with a minimum height */
+  height: auto; /* Grows based on content */
+  box-sizing: border-box; /* Ensures padding and border are included in the box size */
 }
 
 .shareBoxText {
