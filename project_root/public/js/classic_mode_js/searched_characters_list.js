@@ -74,7 +74,7 @@ class SearchedCharacters {
 
     addCharacterAttributes(row, character) {
         const attributes = [
-            'gender', 'species', 'affiliation', 'level', 'type', 'hp', 'dateOfOrigin'
+            'gender', 'species', 'affiliation', 'role', 'hp', 'dateOfOrigin'
         ];
 
         attributes.forEach(attr => {
