@@ -96,12 +96,12 @@
 .activeHeaderBoxContainer::before {
     content: '';
     position: absolute;
-    top: -9%;
-    left: -15%;
-    right: -10%;
-    height: calc(100% + 20%);
-    background-image: url('../../_images/home_images/skinnyborder.png');
-    background-size: 103% 130%;
+    top: -8%;
+        left: -15%;
+        right: -15%;
+        height: calc(100% + 20%);
+    background-image: url('../../_images/home_images/skinnyborder2.png');
+    background-size: 113% 99%;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
