@@ -21,6 +21,7 @@
     font-family: MarvelFont, sans-serif;
     opacity: 150%;
     flex-direction: column;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     gap: 40%;
 }
 .emoji_box_container::before {
@@ -45,6 +46,7 @@
     flex-direction: row;
     font-size: 24px;
     position: relative;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     gap: 15px;
 }
 
@@ -69,6 +71,7 @@
     padding-bottom: 5px;
     font-family: MarvelFont, sans-serif;
     text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     word-wrap: normal;
 }
 

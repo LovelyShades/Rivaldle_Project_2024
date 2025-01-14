@@ -14,10 +14,10 @@ Search Bar Stylizing
 
 .enter_character_box {
     display: flex;
-    width: 70vw;
-    max-width: 350px;
+    width: 65vw;
+    max-width: 300px;
     align-items: center;
-    border: 3.5px solid #DCE1F4;
+    border: 3px solid #dce1f4e8;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
     padding: 5px;

@@ -108,9 +108,9 @@ body {
     max-width: 400px;
     height: 150px;
     background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid #dce1f4b6;
+    border: 3px solid #dce1f4e8;
     border-radius: 0px;
-    margin-top: 30vh;
+    margin-top: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +125,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: .8em;
+    font-size: 1em;
     font-family: 'MarvelFont', 'Franklin Gothic Medium';
     color: #ffffff;
     margin-top: 30px;
