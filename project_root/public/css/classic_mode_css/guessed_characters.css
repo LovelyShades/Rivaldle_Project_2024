@@ -71,6 +71,10 @@
     opacity: 1; /* Default state is fully visible */
     transform: scale(1); /* Normal size */
     transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth transition */
+    white-space: normal; 
+    line-height: 1.4; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
 }
 
 .hidden {

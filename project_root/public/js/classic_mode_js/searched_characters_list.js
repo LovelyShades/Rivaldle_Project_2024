@@ -76,24 +76,33 @@ class SearchedCharacters {
         const attributes = [
             'gender', 'species', 'affiliation', 'role', 'eyeColor', 'hairColor', 'hp'
         ];
-
+    
         attributes.forEach(attr => {
-            const value = character[attr];
+            let value;
+            if (Array.isArray(character[attr])) {
+                // Concatenate array values into a single string, separated by commas
+                value = character[attr].join(', ');
+            } else {
+                value = character[attr];
+            }
+    
+            // Create a single box with the combined value
             const box = this.addCharacterBox(row, value, attr, character);
             box.classList.add('hidden');
         });
-
+    
         attributes.forEach((attr, index) => {
             setTimeout(() => {
                 const box = row.querySelector(`.guessedCharacterBox[data-attribute="${attr}"]`);
-                box.classList.remove('hidden');
+                if (box) box.classList.remove('hidden');
             }, 250 * (index + 1));
         });
+    
         setTimeout(() => {
             this.isCorrectCharacter(character);
         }, 250 * attributes.length + 250);
     }
-
+    
     addCharacterBox(row, textContent, attribute, character) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
