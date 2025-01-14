@@ -74,6 +74,9 @@ class GetSilhouette {
         if (this.silhouetteImage && character) {
             this.silhouetteImage.style.transform = `scale(${this.imageScale / 10})`;
             this.silhouetteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/blackversion/${character}.png`;
+            this.silhouetteImage.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+            });
         } else {
             console.error('Unable to add silhouette image. Character or image box is missing.');
         }
