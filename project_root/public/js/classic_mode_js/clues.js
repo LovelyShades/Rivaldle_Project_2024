@@ -78,7 +78,7 @@ class Clues {
             this.numTriesLeftUntilUlt = document.createElement('div');
             this.numTriesLeftUntilUlt.className = 'clue2';
             this.numTriesLeftUntilUlt.style.fontSize = 'medium';
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
+            this.numTriesLeftUntilUlt.innerHTML = `Tries until ult name: ${this.numTriesUntilUltClue - this.storedTries}`;
             clueContainer.append(this.numTriesLeftUntilUlt);
         } else {
             this.activateUltImage();
