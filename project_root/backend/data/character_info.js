@@ -65,10 +65,10 @@ export const characters = [
         "human",
         "avengers",
         "vanguard",
+        ['brown','green'],
+        ['brown','black'],
         200,
         1962,
-        ['brown','green'],
-        ['brown','black']
         ["🧪", "💥", "💪", "💚"],
         ["GAMMA RAY GUN","PUNY BANNER","GAMMA GRENADE"],
         "PUNY BANNER"
