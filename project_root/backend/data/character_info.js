@@ -238,7 +238,7 @@ export const characters = [
         ['none'],
         250,
         1975,
-        ["🔮", "🩸", "🏺", "🌙"],
+        ["🔮", "🎭", "🏺", "🌙"],
         ["CRESCENT DART", "HAND OF KHONSHU", "NIGHT GLIDER", "ANCIENT ANKH", "MOONLIGHT HOOK", "RISING LEAP", "MOON BLADE", "TRIPLE ECLIPSE"],
         "HAND OF KHONSHU"
     ),
