@@ -1,14 +1,30 @@
 .silhouette_contaner{
     height: 500px;
-    width: 400px;
+    width: 80vw;
+    max-width: 400px;
     position: relative;
     display: flex;
     background-color: rgba(0, 0, 0, 0.751);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
-    border: 3px solid #ffffff;
+    border: 0px solid #DCE1F4;
     flex-direction: column;
     justify-content: center;   /* Center children horizontally */
     align-items: center;       /* Center children vertically */
+}
+
+.silhouette_contaner::before {
+    content: '';
+    position: absolute;
+    top: -8%;
+    left: -15%;
+    right: -15%;
+    height: calc(100% + 20%);
+    background-image: url('../../_images/home_images/skinnyborder2.png');
+    background-size: 113% 99%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .silhouette_header{
@@ -20,6 +36,10 @@
     font-size: x-large;
     color: #ffffff;
     font-family: 'MarvelFont', Arial;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .silhouette_footer{
@@ -31,6 +51,10 @@
     font-size: larger;
     color: #ffffff;
     font-family: 'MarvelFont', Arial;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .silhouette_image_container {
@@ -40,8 +64,8 @@
     display: flex;             /* Enable flexbox */
     justify-content: center;   /* Center horizontally */
     align-items: center;       /* Center vertically */
-    width: 300px;              /* Set container width */
-    height: 300px;             /* Set container height */
+    width: auto;              /* Set container width */
+    height: auto;             /* Set container height */
     overflow: hidden;          /* Prevent image overflow */
     background-color: #ffffff; /* Optional background for testing */
     border-radius: 50%;        /* Optional: Circular container */
