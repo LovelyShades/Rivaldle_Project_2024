@@ -1,6 +1,7 @@
 .ability_box_container{
-    height: 25vh;
-    width: 30vw;
+    height: 200px;
+    width: 70vw;
+    max-width: 400px;
     position: relative;
     display: flex;
     background-color: rgba(0, 0, 0, 0.751);
@@ -10,9 +11,22 @@
     border-style: solid; 
     border-color: white;
     border-width: 2px;
-    gap: 50px;
+    gap: 20px;
 }
-
+.ability_box_container::before {
+    content: '';
+    position: absolute;
+    top: -9%;
+    left: -15%;
+    right: -10%;
+    height: calc(100% + 20%);
+    background-image: url('../../_images/home_images/skinnyborder.png');
+    background-size: 103% 130%;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
+}
 .ability_box_header{
     position: relative;
     display: flex;
@@ -20,8 +34,12 @@
     align-items: top;
     color: white;     
     font-family: 'MarvelFont', Arial;  
-    font-size: x-large;
+    font-size: 2em;
     margin-top: 15px;
+    text-align: center;
+    word-wrap: normal;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .ability_box_container{
@@ -38,12 +56,23 @@
     align-items: center;
     color: white;     
     font-family: 'MarvelFont', Arial;  
-    font-size: xx-large;
-    margin-top: 15px;
+    font-size: 1.7em;
+    text-align: center;
+    word-wrap: normal;
+    padding: 10px;
+    
+        
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .ability_box_container{
-        width: 90%;
+        height: 150px;
+        font-size: 1em;
+    }
+    .ability_text {
+        font-size: 1.2em;
+    }
+    .ability_box_header{
+        font-size: 1.5em;
     }
 }
