@@ -6,6 +6,7 @@ class AppendInstrustions {
     initialize() {
         this.instructionsBox = document.getElementById('game_instructions_container');
         this.loadActivationStatus();
+        if(this.isActivated == false) return;
         this.checkLocalStorageOnLoad();
         this.listenForCharacterSelect();
     }

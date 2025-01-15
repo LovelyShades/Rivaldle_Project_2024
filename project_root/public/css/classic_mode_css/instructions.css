@@ -12,7 +12,7 @@
     align-items: center;
     width: 80vw;
     max-width: 400px;
-    height: 25vh;
+    height: 20vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,15 +33,19 @@
 
 .color_container{
     display: flex;
-    position: relative;
+    position: absolute;
     flex-direction: row;
-    gap: 10px;
+    gap: 50px;
+    bottom: 10%;
 }
 
 .color_sub_container{
     display: flex;
     position: relative;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;      
+    gap: 10px;
 }
 
 .color_text{
@@ -52,12 +56,29 @@
 }
 
 .green_color{
-    height: 15px;
-    width: 15px;
+    height: 50px;
+    width: 50px;
     position: relative;
     display: flex;
     background-color: rgb(60, 255, 0);
 }
+
+.yellow_color{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: flex;
+    background-color: rgb(255, 238, 0);
+}
+
+.red_color{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: flex;
+    background-color: rgb(255, 0, 0);
+}
+
 .game_instructions_container_img{
     width: 30px;
     height: 30px;
