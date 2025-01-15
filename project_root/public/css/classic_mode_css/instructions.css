@@ -1,11 +1,18 @@
+@font-face {
+    font-family: 'MarvelFont';
+    src: url('../../fonts/MarvelFont.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .game_instructions_container{
     position: relative;
     display: none;
     justify-content: center;
     align-items: center;
     width: 80vw;
-    max-width: 500px;
-    height: 15vh;
+    max-width: 400px;
+    height: 25vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,6 +22,42 @@
     margin: 0 auto;
 }
 
+.game_instructions_header{
+    display: flex;
+    color: #DCE1F4;
+    font-family: MarvelFont, sans-serif;
+    font-size: x-large;
+    position: absolute;
+    top: 10%;
+}
+
+.color_container{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.color_sub_container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.color_text{
+    display: flex;
+    color: #DCE1F4;
+    font-family: MarvelFont, sans-serif;
+    font-size: large;
+}
+
+.green_color{
+    height: 15px;
+    width: 15px;
+    position: relative;
+    display: flex;
+    background-color: rgb(60, 255, 0);
+}
 .game_instructions_container_img{
     width: 30px;
     height: 30px;

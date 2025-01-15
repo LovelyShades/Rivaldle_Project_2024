@@ -4,20 +4,20 @@ class AppendInstrustions {
     }
 
     initialize() {
-        this.loadActivationStatus()
         this.instructionsBox = document.getElementById('game_instructions_container');
+        this.loadActivationStatus();
         this.checkLocalStorageOnLoad();
         this.listenForCharacterSelect();
     }
 
     listenForCharacterSelect() {
         if (this.isActivated) return;
+
         document.addEventListener('characterSelected', (event) => {
-            console.log(this.isActivated)
-            if (this.isActivated == false){
-                this.checkX()
-                this.showInstructionsBox();    
-            } 
+            if (!this.isActivated) {
+                this.checkX();
+                this.showInstructionsBox();
+            }
         });
     }
 
@@ -27,40 +27,35 @@ class AppendInstrustions {
     }
 
     checkLocalStorageOnLoad() {
-        const pageKey = this.getCurrentPageKey();
-        const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
-        
-        if (storedCharacters.length > 0) {
-            this.checkX()
+        if (this.isActivated) {
+            this.checkX();
+            this.showInstructionsBox();
         }
     }
 
-    storeActivationStatus(){
+    storeActivationStatus() {
         const pageKey = this.getCurrentPageKey();
-        localStorage.setItem(pageKey, this.isActivated);
+        localStorage.setItem(pageKey, JSON.stringify(this.isActivated));
     }
 
     loadActivationStatus() {
         const pageKey = this.getCurrentPageKey();
         const storedStatus = localStorage.getItem(pageKey);
-    
+
         if (storedStatus === null) {
             this.isActivated = false;
-            localStorage.setItem(pageKey, JSON.stringify(false));
+            this.storeActivationStatus();
         } else if (storedStatus === "true") {
-            console.log(localStorage.getItem(this.getCurrentPageKey()));
             this.isActivated = true;
         } else {
             this.isActivated = false;
         }
     }
-        
-    checkX(){
+
+    checkX() {
         const x = document.getElementById('game_instructions_container_img');
         this.listenForXHover(x);
         this.listenForXClick(x);
-
-        this.showInstructionsBox();
     }
 
     showInstructionsBox() {
@@ -70,6 +65,8 @@ class AppendInstrustions {
     }
 
     removeInstructionsBox() {
+        this.isActivated = false;
+        this.storeActivationStatus();
         this.instructionsBox.style.display = 'none';
     }
 
