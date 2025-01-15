@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); 
 
 const app = express();
-const port = 3000;
+const port = 80;
 
 const serverID = Math.floor(1000000000 + Math.random() * 9000000000).toString();
 
@@ -97,7 +97,7 @@ app.get('/character_ability', (req, res) => {
 
 
 // Start the server and automatically open the browser
-app.listen(port, () => {
+app.listen(80, '0.0.0.0', () => {
   console.log(`Server is running on http://localhost:${port}`);
   open(`http://localhost:${port}`);  // This will open the browser automatically
 });
