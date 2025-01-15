@@ -50,6 +50,8 @@ app.get('/server_id', (req, res) => {
   res.json(serverID);
 })
 
+
+
 app.get('/daily_classic_character', (req, res) => {
   res.json(daily_classic_character);
 })
@@ -78,6 +80,11 @@ app.get('/character_info', (req, res) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/home_page/index.html'));
 });
+
+app.get('/privacy_policy', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pages/privacy_policy/privacy_policy.html'));
+});
+
 // Serve the classic mode page
 app.get('/classic', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/classic_mode_page/index.html'));
