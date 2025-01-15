@@ -68,7 +68,6 @@ Search Bar Stylizing
     z-index: 1000;
     max-height: 200px;
     overflow-y: auto;
-    overflow-x: hidden;
     padding: 5px;
     left: 0;
     right: 0;
@@ -76,22 +75,28 @@ Search Bar Stylizing
     flex-direction: column;
     box-sizing: border-box;
     white-space: nowrap;
-    transition: transform 0.1s ease-in-out;
+    
 }
-
+.suggestedCharacter:hover {
+    transform: scale(1.02);
+    /* Slight zoom effect */
+    background-color: white;
+}
 .suggestedCharacter {
     background-color: #DCE1F4;
     padding: 5px;
     cursor: pointer;
     width: 290px;
     height: 60px;
-    border: 2px solid #000;
+    border: 2px solid rgba(0, 0, 0, 0.9);;
     margin: 1px auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 50px;
+    transition: transform 0.1s ease-in-out;
+    transform-origin: center center;
 }
 
 .suggestedCharacterImage {
@@ -99,7 +104,7 @@ Search Bar Stylizing
     height: 50px;
     width: 50px;
     background-color: #ffffff;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, .9);
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -118,7 +123,7 @@ Search Bar Stylizing
 
 .suggestedCharacterText {
     flex-grow: 1;
-    font-size: 16px;
+    font-size: 1em;
     text-align: left;
     color: #000000;
     overflow: hidden;
@@ -127,10 +132,6 @@ Search Bar Stylizing
     font-family: MarvelFont, sans-serif;
 }
 
-#suggestedCharactersContainer div:hover {
-    transform: scale(1.02);
-    background-color: #ffffff;
-    }
 
 
         /* Media Query for mobile and tablets */
