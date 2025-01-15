@@ -97,7 +97,7 @@ app.get('/character_ability', (req, res) => {
 
 
 // Start the server and automatically open the browser
-app.listen(port, () => {
+app.listen(3000, '0.0.0.0', () => {
   console.log(`Server is running on http://localhost:${port}`);
   open(`http://localhost:${port}`);  // This will open the browser automatically
 });

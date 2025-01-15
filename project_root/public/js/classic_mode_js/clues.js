@@ -95,7 +95,7 @@ class Clues {
         }
 
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until silhouette: ${this.numTriesUntilUltClue - this.storedTries}`;
+            this.numTriesLeftUntilUlt.innerHTML = `Tries until ult name: ${this.numTriesUntilUltClue - this.storedTries}`;
         } else if (this.numTriesLeftUntilUlt) {
             this.activateUltImage();
             this.numTriesLeftUntilUlt.remove();
