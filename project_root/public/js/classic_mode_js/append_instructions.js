@@ -4,17 +4,20 @@ class AppendInstrustions {
     }
 
     initialize() {
+        console.log(this.hasBeenRemoved())
+        if(this.hasBeenRemoved() == true) return;
         this.instructionsBox = document.getElementById('game_instructions_container');
         this.loadActivationStatus();
-        if(this.isActivated == false) return;
         this.checkLocalStorageOnLoad();
         this.listenForCharacterSelect();
     }
 
     listenForCharacterSelect() {
+        if(this.hasBeenRemoved() == true) return;
         if (this.isActivated) return;
 
         document.addEventListener('characterSelected', (event) => {
+            if(this.hasBeenRemoved() == true) return;
             if (!this.isActivated) {
                 this.checkX();
                 this.showInstructionsBox();
@@ -27,6 +30,11 @@ class AppendInstrustions {
         return `isInstructionsActive_${path}`;
     }
 
+    getCurrentDeletionKey() {
+        const path = window.location.pathname;
+        return `isInstructionsRemoved_${path}`;
+    }
+
     checkLocalStorageOnLoad() {
         if (this.isActivated) {
             this.checkX();
@@ -34,9 +42,20 @@ class AppendInstrustions {
         }
     }
 
+    hasBeenRemoved(){
+        const path = this.getCurrentDeletionKey();
+        const storedStatus = localStorage.getItem(path);
+
+        if(storedStatus === "true") return true;
+    }
     storeActivationStatus() {
         const pageKey = this.getCurrentPageKey();
         localStorage.setItem(pageKey, JSON.stringify(this.isActivated));
+    }
+
+    storeRemovalStatus(){
+        const path = this.getCurrentDeletionKey();
+        localStorage.setItem(path, JSON.stringify(true));
     }
 
     loadActivationStatus() {
@@ -66,6 +85,7 @@ class AppendInstrustions {
     }
 
     removeInstructionsBox() {
+        this.storeRemovalStatus();
         this.isActivated = false;
         this.storeActivationStatus();
         this.instructionsBox.style.display = 'none';
