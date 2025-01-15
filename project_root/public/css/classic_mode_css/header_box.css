@@ -30,7 +30,7 @@
     /* For smaller screens */
     max-width: 400px;
     /* Prevent it from stretching too far on desktop */
-    height: 20vh;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -96,9 +96,9 @@
     content: '';
     position: absolute;
     top: -8%;
-        left: -15%;
-        right: -15%;
-        height: calc(100% + 20%);
+    left: -15%;
+    right: -15%;
+    height: calc(100% + 20%);
     background-image: url('../../_images/home_images/skinnyborder2.png');
     background-size: 113% 99%;
     background-position: center;
@@ -193,5 +193,9 @@
     .headerBoxSubtitle {
         font-size: 1em;
         /* Smaller font size for mobile */
+    }
+
+    .headerBoxContainer {
+        height: 150px;
     }
 }

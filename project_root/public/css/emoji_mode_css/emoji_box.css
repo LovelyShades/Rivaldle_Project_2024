@@ -6,9 +6,11 @@
 }
 
 .emoji_box_container{
-    width: 500px;
+    position: relative;
+    width: 80vw;
+    max-width: 400px;
     height: 250px;
-    background-color: #000000d6;
+    background-color: rgba(0, 0, 0, 0.7);;
     border: 2px solid #dce1f4b6;
     border-radius: 0px;
     display: flex;
@@ -19,7 +21,22 @@
     font-family: MarvelFont, sans-serif;
     opacity: 150%;
     flex-direction: column;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     gap: 40%;
+}
+.emoji_box_container::before {
+    content: '';
+    position: absolute;
+    top: -9%;
+    left: -15%;
+    right: -10%;
+    height: calc(100% + 20%);
+    background-image: url('../../_images/home_images/skinnyborder.png');
+    background-size: 103% 130%;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .emoji_container{
@@ -29,6 +46,7 @@
     flex-direction: row;
     font-size: 24px;
     position: relative;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
     gap: 15px;
 }
 
@@ -47,12 +65,19 @@
     font-size: 24px;
     position: relative;
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
     font-family: MarvelFont, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    word-wrap: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .emoji_box_container{
-        width: 90%;
+        font-size: .8em;
+        height: 200px
     }
 }

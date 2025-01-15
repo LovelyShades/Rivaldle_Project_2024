@@ -14,10 +14,10 @@ Search Bar Stylizing
 
 .enter_character_box {
     display: flex;
-    width: 60vw;
-    max-width: 350px;
+    width: 65vw;
+    max-width: 300px;
     align-items: center;
-    border: 3.5px solid #DCE1F4;
+    border: 3px solid #dce1f4e8;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
     padding: 5px;
@@ -39,7 +39,7 @@ Search Bar Stylizing
     width: 60px;
     height: 50px;
     background-color: #ffffff;
-    border: 3px solid #000000;
+    border: 3.5px solid #000000;
     border-radius: 15px;
     border: none;
     font-size: 16px;
@@ -134,13 +134,13 @@ Search Bar Stylizing
 
 
         /* Media Query for mobile and tablets */
-        @media (max-width: 500px) {
+@media (max-width: 500px) {
     
-            .enter_character {
-                font-size: .9em;
+    .enter_character {
+    font-size: .9em;
                 /* Smaller font size for mobile */
     
-            }
+        }
     
             
-        }
+    }
