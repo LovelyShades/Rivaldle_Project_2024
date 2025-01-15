@@ -94,7 +94,7 @@ Search Bar Stylizing
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    gap: 50px;
+    gap: 20px;
     transition: transform 0.1s ease-in-out;
     transform-origin: center center;
 }
