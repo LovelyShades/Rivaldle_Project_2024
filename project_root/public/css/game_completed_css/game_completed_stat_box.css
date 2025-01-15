@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'MarvelFont';
-    src: url('../../fonts/MarvelFont.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 .stat_box_container {
     margin: 30px auto;          /* Center container horizontally and add spacing */

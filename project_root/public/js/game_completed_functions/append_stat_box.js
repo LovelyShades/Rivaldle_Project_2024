@@ -5,7 +5,7 @@ class StatBox {
     }
 
     initalize() {
-        this.isGameCompleated()
+        this.isGameCompleted()
     }
 
     async fetchData(url) {
@@ -19,7 +19,7 @@ class StatBox {
         }
     }
 
-    isGameCompleated() {
+    isGameCompleted() {
         document.addEventListener('correctCharacterGuessed', async (event) => {
             this.dailyCharacter = event.detail.character;
             this.nextMode = event.detail.mode;
@@ -46,11 +46,11 @@ class StatBox {
     }
 
     appendStatBoxContainter() {
-        const gameCompleatedContainer = document.getElementById('game_compleated_container');
+        const gameCompletedContainer = document.getElementById('game_completed_container');
         this.statBoxContainter = document.createElement('div');
         this.statBoxContainter.id = 'stat_box_container'
         this.statBoxContainter.className = 'stat_box_container'
-        gameCompleatedContainer.append(this.statBoxContainter)
+        gameCompletedContainer.append(this.statBoxContainter)
 
     }
 
