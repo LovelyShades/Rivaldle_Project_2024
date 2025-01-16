@@ -32,6 +32,7 @@ async function checkAndClearLocalStorage() {
 
         // Handle first-time setup
         if (storedDate == undefined) {
+            location.reload(true);
             console.log('First-time setup: initializing localStorage with the current date.');
             localStorage.setItem('lastUpdatedDate', backendDate);
             return; // Exit since no clearing is needed
@@ -41,9 +42,10 @@ async function checkAndClearLocalStorage() {
         if (backendDate !== storedDate) {
             console.log('New day detected, clearing local storage...');
 
-            // Clear localStorage and set the new date
+            
             localStorage.clear();
             localStorage.setItem('lastUpdatedDate', backendDate);
+            location.reload(true);
 
             console.log('Local storage cleared and updated with the new date.');
         } else {
