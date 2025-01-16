@@ -30,21 +30,29 @@ class StatBox {
     }
 
     getTime() {
-        let now = new Date();
-        let midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1); // Next midnight
-        let timeUntilMidnight = midnight - now; // Difference in milliseconds
-
+        const centralTimeZone = "America/Chicago";
+    
+        // Get current Central Time
+        const now = new Date(new Date().toLocaleString("en-US", { timeZone: centralTimeZone }));
+    
+        // Get next midnight in Central Time
+        const midnight = new Date(new Date(now).toLocaleString("en-US", { timeZone: centralTimeZone }));
+        midnight.setHours(24, 0, 0, 0); // Set to midnight in Central Time
+    
+        // Calculate time difference in milliseconds
+        const timeUntilMidnight = midnight - now;
+    
         // Convert milliseconds to hours, minutes, and seconds
-        let hours = Math.floor((timeUntilMidnight / (1000 * 60 * 60)) % 24);
-        let minutes = Math.floor((timeUntilMidnight / (1000 * 60)) % 60);
-        let seconds = Math.floor((timeUntilMidnight / 1000) % 60);
-
+        const hours = Math.floor((timeUntilMidnight / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeUntilMidnight / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeUntilMidnight / 1000) % 60);
+    
         // Format the time remaining
         this.formattedTime = `${hours.toString().padStart(2, '0')}:` +
             `${minutes.toString().padStart(2, '0')}:` +
             `${seconds.toString().padStart(2, '0')}`;
     }
-
+    
     appendStatBoxContainter() {
         const gameCompletedContainer = document.getElementById('game_completed_container');
         this.statBoxContainter = document.createElement('div');
