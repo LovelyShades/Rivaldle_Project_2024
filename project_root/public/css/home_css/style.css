@@ -18,13 +18,12 @@
     font-size: 2em;
     font-family: 'MarvelFont', 'Franklin Gothic Medium';
     color: #ffffff;
-    letter-spacing: 0px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 80vw;
     max-width: 500px;
     white-space: normal;
-    line-height: 1.4;
     word-wrap: break-word;
     margin-bottom: 5vh;
 }
