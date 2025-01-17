@@ -468,7 +468,7 @@ export const characters = [
         "SOUL RESURGENCE"
     ),
     new Person(
-        "Cloak and Dagger",
+        "Cloak And Dagger",
         "other",
         "mutant",
         "x-men",
@@ -482,7 +482,7 @@ export const characters = [
         "ETERNAL BOND"
     ),
     new Person(
-        "Jeff the Land Shark",
+        "Jeff The Land Shark",
         "male",
         "land shark",
         "none",
