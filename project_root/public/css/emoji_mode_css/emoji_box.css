@@ -22,7 +22,7 @@
     opacity: 150%;
     flex-direction: column;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-    gap: 40%;
+    gap: 25%;
 }
 .emoji_box_container::before {
     content: '';

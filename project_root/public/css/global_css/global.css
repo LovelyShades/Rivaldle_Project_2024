@@ -11,6 +11,7 @@
 html, body {
     overflow-x: hidden;
     box-sizing: border-box;
+    touch-action: manipulation; 
 }
 
 #title_logo {
@@ -110,7 +111,6 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     border: 3.5px solid #dce1f4e8;
     border-radius: 0px;
-    margin-top: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,6 +131,7 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    text-decoration: none; 
 }
 
 @media (max-width: 768px) { 
@@ -190,4 +191,29 @@ body {
 }
 .mode_container a {
     text-decoration: none;
+}
+
+.social_media_links_container {
+    position: relative;
+    display: flex;
+    height: 80px;
+    width: 205px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 15vh;
+    row-gap: 15px;
+}
+
+.media_logo {
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.media_logo:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)) brightness(1.2);
+    cursor: pointer;
 }

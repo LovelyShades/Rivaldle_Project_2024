@@ -4,13 +4,16 @@ class Clues {
     }
 
     async initialize() {
+        this.key = 'numTries';
         this.getNumTries();
         this.appendClueTries();
         this.listenForCharacterSelect();
         this.listenForWin();
-        this.dailyCharacter = await this.fetchData('./daily_classic_character');
-        this.silhoutteActive = false;
-        this.ultActive = false;
+        this.fetchData('./daily_classic_character').then((data) => {
+            this.dailyCharacter = data;
+            this.silhoutteActive = false;
+            this.ultActive = false;
+        });
     }
 
     listenForCharacterSelect() {
