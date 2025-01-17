@@ -1,17 +1,18 @@
 /* CONTENTS
 - RIVALDLE Logo
 - Marvel Font Creation
-- Video background
-- Video background border
-- Video background darken overlay
-- Other sites stylling
+- Video background (removed)
+- Image fallback background
+- Other sites styling
 - Footer
 - Mode Container (mode link)
 */
-html, body {
+
+html,
+body {
     overflow-x: hidden;
     box-sizing: border-box;
-    touch-action: manipulation; 
+    touch-action: manipulation;
 }
 
 #title_logo {
@@ -19,7 +20,6 @@ html, body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-        /* Remove underline */
 }
 
 .logo {
@@ -27,11 +27,12 @@ html, body {
     width: 90vw;
     max-width: 600px;
 }
+
 .logo:hover {
     transform: scale(1.02);
-    /* Zoom effect on hover */
 }
 
+/* Marvel font setup */
 @font-face {
     font-family: 'MarvelFont';
     src: url('../../fonts/MarvelFont.otf') format('opentype');
@@ -39,61 +40,41 @@ html, body {
     font-style: normal;
 }
 
-.video-background {
+/* Background image styling */
+.background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    overflow: hidden;
+    background-image: url('../../_images/home_images/fallback_image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Custom image overlay (optional, still kept) */
 .custom-image-overlay {
     position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('../../_images/home_images/HomeBorder.png') no-repeat center center;
-        background-size: 100% 100%;
-        pointer-events: none;
-        z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../_images/home_images/HomeBorder.png') no-repeat center center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 1;
 }
-/* Media query to hide the custom image overlay on small screens (max-width: 768px) */
+
+/* Media query to hide the custom image overlay on small screens */
 @media (max-width: 768px) {
     .custom-image-overlay {
         display: none;
-        /* Remove the overlay when the screen is smaller than 768px */
     }
 }
 
-#fallback-image {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 150vh;
-    background-color: #f0f0f0;
-    overflow-x: hidden; 
-}
-
-/* Dark overlay on video */
+/* Dark overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -131,16 +112,17 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-@media (max-width: 768px) { 
-
+/* Media query for smaller screens */
+@media (max-width: 768px) {
     .other_sites_box {
         font-size: 1em;
-    }    
+    }
 }
 
+/* Mode link box styling */
 .mode_link_box {
     display: flex;
     position: relative;
@@ -169,7 +151,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     pointer-events: none;
-    
 }
 
 .mode_link_box:hover {
@@ -182,6 +163,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Mode container for links */
 .mode_container {
     display: flex;
     flex-direction: column;
@@ -189,10 +171,12 @@ body {
     justify-content: flex-start;
     align-items: center;
 }
+
 .mode_container a {
     text-decoration: none;
 }
 
+/* Social media container */
 .social_media_links_container {
     position: relative;
     display: flex;
@@ -205,6 +189,7 @@ body {
     row-gap: 15px;
 }
 
+/* Social media icons */
 .media_logo {
     height: 50px;
     width: 50px;
