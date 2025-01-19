@@ -37,7 +37,7 @@ class ShareBox{
         const webUrlText = document.createElement('div');
         webUrlText.className = 'shareBoxText'
         webUrlText.style.fontSize ='x-large'
-        webUrlText.innerHTML = 'https://rivaldle.net'
+        webUrlText.innerHTML = 'https://rivaldle.com'
         shareBox.append(webUrlText);
     }
 
