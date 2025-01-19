@@ -41,11 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.src = selectedBg;
 
                 img.onload = () => {
+                    // Apply the new background image
                     document.body.style.backgroundImage = `url('${selectedBg}')`;
                     document.body.style.backgroundSize = 'cover';
                     document.body.style.backgroundPosition = 'center';
-                    document.body.classList.add('background-loaded'); // Remove the default background
-                    localStorage.setItem('selectedBackground', selectedBg); // Save to localStorage
+
+                    // Remove the default background only after the new one is loaded
+                    document.body.classList.add('background-loaded'); 
+
+                    // Save the selected background to localStorage
+                    localStorage.setItem('selectedBackground', selectedBg);
                 };
             }
             backgroundMenu.style.display = 'none'; // Hide menu after selection
@@ -61,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.backgroundImage = `url('${storedBackground}')`;
             document.body.style.backgroundSize = 'cover';
             document.body.style.backgroundPosition = 'center';
-            document.body.classList.add('background-loaded'); // Remove the default background
+
+            // Remove the default background only after the new one is loaded
+            document.body.classList.add('background-loaded');
         };
     }
 });
