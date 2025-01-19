@@ -40,18 +40,62 @@ body {
     font-style: normal;
 }
 
-/* Background image styling */
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('../../_images/home_images/fallback_image.jpg');
+/* Default body styles with the default background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/_images/backgrounds/default.jpg');
+    /* Default background */
     background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    /* Smooth transition */
+}
+
+/* Settings icon styling */
+.settings-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+/* Background selection menu styling */
+.background-menu {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 999;
+    display: none;
+    /* Initially hidden */
+}
+
+/* Options container */
+.background-options {
+    display: flex;
+    gap: 10px;
+}
+
+/* Individual background option thumbnails */
+.background-option {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Highlight effect on hover */
+.background-option:hover {
+    border-color: #007bff;
+    /* Highlight color */
 }
 
 /* Custom image overlay (optional, still kept) */
@@ -81,8 +125,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('../../_images/home_images/transparent_overlay.png');
+    /* Transparent PNG path */
+    background-size: cover;
+    /* Ensure it covers the entire screen */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+    background-position: center;
+    /* Center the image */
     z-index: -1;
+    /* Keep it in the background */
+    
 }
 
 .other_sites_box {
