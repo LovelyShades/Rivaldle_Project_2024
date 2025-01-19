@@ -47,10 +47,9 @@ body {
     background-image: url('/_images/backgrounds/default.jpg');
     /* Default background */
     background-size: cover;
-    background-position: center;
-    transition: background-image 0.5s ease;
-    /* Smooth transition */
+    background-position: center;/
 }
+
 
 /* Settings icon styling */
 .settings-icon {
@@ -119,23 +118,16 @@ body {
 }
 
 /* Dark overlay */
+/* Dark overlay */
+/* Dark overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../_images/home_images/transparent_overlay.png');
-    /* Transparent PNG path */
-    background-size: cover;
-    /* Ensure it covers the entire screen */
-    background-repeat: no-repeat;
-    /* Prevent tiling */
-    background-position: center;
-    /* Center the image */
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: -1;
-    /* Keep it in the background */
-    
 }
 
 .other_sites_box {
