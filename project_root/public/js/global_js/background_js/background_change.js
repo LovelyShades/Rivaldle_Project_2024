@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetBackgroundBtn = document.getElementById('resetBackgroundBtn'); // Reset button
     const defaultBackground = '/_images/backgrounds/default.jpg'; // Default background path
     const loader = document.getElementById('loader'); // Loader element
+    const body = document.body; // Body element
+    const content = document.getElementById('content'); // Page content
 
     // Preload background images
     const preloadImages = (images) => {
@@ -30,6 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Preload background images
     preloadImages(backgroundImages);
 
+    // Hide the body and content initially, only show once the background is loaded
+    body.style.display = 'none';
+    loader.style.display = 'block'; // Make sure the loader is visible during loading
+
     // Toggle visibility of the background menu
     settingsIcon.addEventListener('click', () => {
         backgroundMenu.style.display = backgroundMenu.style.display === 'block' ? 'none' : 'block';
@@ -46,14 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 img.onload = () => {
                     // Apply the new background image to both loader and body
-                    document.body.style.backgroundImage = `url('${selectedBg}')`;
-                    document.body.style.backgroundSize = 'cover';
-                    document.body.style.backgroundPosition = 'center';
+                    body.style.backgroundImage = `url('${selectedBg}')`;
+                    body.style.backgroundSize = 'cover';
+                    body.style.backgroundPosition = 'center';
 
                     loader.style.backgroundImage = `url('${selectedBg}')`; // Set loader background
 
-                    // Remove the default background only after the new one is loaded
-                    document.body.classList.add('background-loaded'); 
+                    // Hide the loader and display the content after background is loaded
+                    loader.style.display = 'none';
+                    content.style.display = 'block';
+                    body.style.display = 'block'; // Make the body visible
 
                     // Save the selected background to localStorage
                     localStorage.setItem('selectedBackground', selectedBg);
@@ -69,14 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = new Image();
         img.src = storedBackground;
         img.onload = () => {
-            document.body.style.backgroundImage = `url('${storedBackground}')`;
-            document.body.style.backgroundSize = 'cover';
-            document.body.style.backgroundPosition = 'center';
+            // Apply background after it's fully loaded
+            body.style.backgroundImage = `url('${storedBackground}')`;
+            body.style.backgroundSize = 'cover';
+            body.style.backgroundPosition = 'center';
 
             loader.style.backgroundImage = `url('${storedBackground}')`; // Set loader background
 
-            // Remove the default background only after the new one is loaded
-            document.body.classList.add('background-loaded');
+            // Hide loader and show content after background is applied
+            loader.style.display = 'none';
+            content.style.display = 'block';
+            body.style.display = 'block'; // Make body visible after background is loaded
         };
     } else {
         // Set loader to default background if no stored background
@@ -85,9 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Wait for the window to load all content (images, styles, etc.)
     window.onload = function() {
-        // Hide the loader and show the page content
+        // Hide the loader and show the page content once everything is ready
         loader.style.display = 'none';
-        document.getElementById('content').style.display = 'block';
+        content.style.display = 'block';
+        body.style.display = 'block';
     };
 
     // Reset background button functionality

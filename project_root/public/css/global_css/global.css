@@ -28,7 +28,8 @@
 
 /* Default background for loader (fallback) */
 #loader {
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
+    display: block;
 }
 
 html,
