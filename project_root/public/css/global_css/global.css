@@ -28,7 +28,7 @@
 
 /* Default background for loader (fallback) */
 #loader {
-
+    background-color: black;
     display: block;
 }
 
