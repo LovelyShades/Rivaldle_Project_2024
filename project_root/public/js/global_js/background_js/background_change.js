@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     preloadImages(backgroundImages);
 
     // Hide the body and content initially, only show once the background is loaded
-    body.style.display = 'none';
+    body.style.visibility = 'display: none'; // Set visibility instead of display: none
     loader.style.display = 'block'; // Make sure the loader is visible during loading
 
     // Toggle visibility of the background menu
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Hide the loader and display the content after background is loaded
                     loader.style.display = 'none';
                     content.style.display = 'block';
-                    body.style.display = 'block'; // Make the body visible
+                    body.style.visibility = 'visible'; // Make the body visible after background is loaded
 
                     // Save the selected background to localStorage
                     localStorage.setItem('selectedBackground', selectedBg);
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Hide loader and show content after background is applied
             loader.style.display = 'none';
             content.style.display = 'block';
-            body.style.display = 'block'; // Make body visible after background is loaded
+            body.style.visibility = 'visible'; // Make body visible after background is loaded
         };
     } else {
         // Set loader to default background if no stored background
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide the loader and show the page content once everything is ready
         loader.style.display = 'none';
         content.style.display = 'block';
-        body.style.display = 'block';
+        body.style.visibility = 'visible'; // Make sure body is visible
     };
 
     // Reset background button functionality
