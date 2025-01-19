@@ -1,113 +1,125 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const settingsIcon = document.getElementById('settingsIcon');
-    const backgroundMenu = document.getElementById('backgroundMenu');
-    const backgroundOptions = document.querySelectorAll('.background-option');
-    const resetBackgroundBtn = document.getElementById('resetBackgroundBtn'); // Reset button
-    const defaultBackground = '/_images/backgrounds/default.jpg'; // Default background path
-    const loader = document.getElementById('loader'); // Loader element
-    const body = document.body; // Body element
-    const content = document.getElementById('content'); // Page content
+class BackgroundManager {
+    constructor() {
+        this.settingsIcon = document.getElementById('settingsIcon');
+        this.backgroundMenu = document.getElementById('backgroundMenu');
+        this.backgroundOptions = document.querySelectorAll('.background-option');
+        this.resetBackgroundBtn = document.getElementById('resetBackgroundBtn');
+        this.defaultBackground = '/_images/backgrounds/default.jpg';
+        this.loader = document.getElementById('loader');
+        this.body = document.body;
+        this.content = document.getElementById('content');
+        this.overlay = this.createOverlay();
+        this.backgroundImages = [
+            '/_images/backgrounds/default.jpg',
+            '/_images/backgrounds/image (1).jpg',
+            '/_images/backgrounds/image (2).jpg',
+            '/_images/backgrounds/image (3).jpg',
+            '/_images/backgrounds/image (4).jpg',
+            '/_images/backgrounds/image (5).jpg',
+            '/_images/backgrounds/image (6).jpg',
+            '/_images/backgrounds/image (7).jpg',
+            '/_images/backgrounds/image (8).jpg',
+        ];
 
-    // Preload background images
-    const preloadImages = (images) => {
+        this.init();
+    }
+
+    createOverlay() {
+        const overlay = document.createElement('div');
+        overlay.className = 'dark-overlay';
+        document.body.appendChild(overlay);
+        return overlay;
+    }
+
+    preloadImages(images) {
         images.forEach(src => {
             const img = new Image();
             img.src = src;
         });
-    };
-
-    // Background options to preload
-    const backgroundImages = [
-        '/_images/backgrounds/default.jpg',
-        '/_images/backgrounds/image (1).jpg',
-        '/_images/backgrounds/image (2).jpg',
-        '/_images/backgrounds/image (3).jpg',
-        '/_images/backgrounds/image (4).jpg',
-        '/_images/backgrounds/image (5).jpg',
-        '/_images/backgrounds/image (6).jpg',
-        '/_images/backgrounds/image (7).jpg',
-        '/_images/backgrounds/image (8).jpg'
-    ];
-
-    // Preload background images
-    preloadImages(backgroundImages);
-
-    // Hide the body and content initially, only show once the background is loaded
-    body.style.visibility = 'display: none'; // Set visibility instead of display: none
-    loader.style.display = 'block'; // Make sure the loader is visible during loading
-
-    // Toggle visibility of the background menu
-    settingsIcon.addEventListener('click', () => {
-        backgroundMenu.style.display = backgroundMenu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Change the background when an option is clicked
-    backgroundOptions.forEach(option => {
-        option.addEventListener('click', (event) => {
-            const selectedBg = event.target.dataset.bg; // Retrieve data-bg attribute
-            if (selectedBg) {
-                // Wait until the image is fully loaded before changing the background
-                const img = new Image();
-                img.src = selectedBg;
-
-                img.onload = () => {
-                    // Apply the new background image to both loader and body
-                    body.style.backgroundImage = `url('${selectedBg}')`;
-                    body.style.backgroundSize = 'cover';
-                    body.style.backgroundPosition = 'center';
-
-                    loader.style.backgroundImage = `url('${selectedBg}')`; // Set loader background
-
-                    // Hide the loader and display the content after background is loaded
-                    loader.style.display = 'none';
-                    content.style.display = 'block';
-                    body.style.visibility = 'visible'; // Make the body visible after background is loaded
-
-                    // Save the selected background to localStorage
-                    localStorage.setItem('selectedBackground', selectedBg);
-                };
-            }
-            backgroundMenu.style.display = 'none'; // Hide menu after selection
-        });
-    });
-
-    // Apply the stored background if it exists
-    const storedBackground = localStorage.getItem('selectedBackground');
-    if (storedBackground) {
-        const img = new Image();
-        img.src = storedBackground;
-        img.onload = () => {
-            // Apply background after it's fully loaded
-            body.style.backgroundImage = `url('${storedBackground}')`;
-            body.style.backgroundSize = 'cover';
-            body.style.backgroundPosition = 'center';
-
-            loader.style.backgroundImage = `url('${storedBackground}')`; // Set loader background
-
-            // Hide loader and show content after background is applied
-            loader.style.display = 'none';
-            content.style.display = 'block';
-            body.style.visibility = 'visible'; // Make body visible after background is loaded
-        };
-    } else {
-        // Set loader to default background if no stored background
-        loader.style.backgroundImage = `url('${defaultBackground}')`;
     }
 
-    // Wait for the window to load all content (images, styles, etc.)
-    window.onload = function() {
-        // Hide the loader and show the page content once everything is ready
-        loader.style.display = 'none';
-        content.style.display = 'block';
-        body.style.visibility = 'visible'; // Make sure body is visible
-    };
+    toggleMenu() {
+        const isVisible = this.backgroundMenu.style.display === 'block';
+        this.backgroundMenu.style.display = isVisible ? 'none' : 'block';
+        this.overlay.style.display = isVisible ? 'none' : 'block';
+    
+        if (isVisible) {
+            this.body.classList.remove('no-scroll'); // Re-enable scrolling
+        } else {
+            this.body.classList.add('no-scroll'); // Disable scrolling and fix background
+        }
+    }
+    
+    applyBackground(imagePath) {
+        const img = new Image();
+        img.src = imagePath;
+        img.onload = () => {
+            this.body.style.backgroundImage = `url('${imagePath}')`;
+            this.body.style.backgroundSize = 'cover';
+            this.body.style.backgroundPosition = 'center';
+            this.loader.style.backgroundImage = `url('${imagePath}')`;
 
-    // Reset background button functionality
-    resetBackgroundBtn.addEventListener('click', () => {
-        // Remove the stored background from localStorage
-        localStorage.removeItem('selectedBackground'); // Clear the stored background
+            this.loader.style.display = 'none';
+            this.content.style.display = 'block';
+            this.body.style.visibility = 'visible';
 
-        // Optionally, trigger a reload to reset the page as it would be on initial load
-        location.reload(); // This will force the page to load fresh, with no background image set
-    });
+            localStorage.setItem('selectedBackground', imagePath);
+        };
+    }
+
+    resetBackground() {
+        localStorage.removeItem('selectedBackground');
+        location.reload();
+    }
+
+    loadStoredBackground() {
+        const storedBackground = localStorage.getItem('selectedBackground');
+        if (storedBackground) {
+            this.applyBackground(storedBackground);
+        } else {
+            this.loader.style.backgroundImage = `url('${this.defaultBackground}')`;
+        }
+    }
+
+    initializeBackgroundOptions() {
+        this.backgroundOptions.forEach(option => {
+            option.addEventListener('click', (event) => {
+                const selectedBg = event.target.dataset.bg;
+                if (selectedBg) {
+                    this.applyBackground(selectedBg);
+                }
+                this.backgroundMenu.style.display = 'none';
+                this.overlay.style.display = 'none';
+            });
+        });
+    }
+
+    initializeEventListeners() {
+        this.settingsIcon.addEventListener('click', () => this.toggleMenu());
+        this.resetBackgroundBtn.addEventListener('click', () => this.resetBackground());
+    }
+
+    hideLoaderWhenReady() {
+        window.onload = () => {
+            this.loader.style.display = 'none';
+            this.content.style.display = 'block';
+            this.body.style.visibility = 'visible';
+        };
+    }
+
+    init() {
+        this.preloadImages(this.backgroundImages);
+        this.body.style.visibility = 'hidden';
+        this.loader.style.display = 'block';
+
+        this.loadStoredBackground();
+        this.initializeBackgroundOptions();
+        this.initializeEventListeners();
+        this.hideLoaderWhenReady();
+    }
+}
+
+// Initialize the BackgroundManager after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new BackgroundManager();
 });
