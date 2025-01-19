@@ -47,7 +47,8 @@ body {
     background-image: url('/_images/backgrounds/default.jpg');
     /* Default background */
     background-size: cover;
-    background-position: center;/
+    background-position: center;
+    background-attachment: fixed; 
 }
 
 
