@@ -43,12 +43,15 @@ body {
 /* Default body styles with the default background */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('/_images/backgrounds/default.jpg');
-    /* Default background */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
+        font-family: Arial, sans-serif;
+        background-image: url('/_images/backgrounds/default.jpg');
+        background-size: cover;
+        /* The image covers the whole viewport */
+        background-position: center;
+        /* Centers the image */
+        background-attachment: fixed;
+        /* Keeps the image fixed in place when scrolling */
+        background-color: black;
 }
 
 
