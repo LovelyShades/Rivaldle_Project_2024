@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgroundOptions = document.querySelectorAll('.background-option');
     const resetBackgroundBtn = document.getElementById('resetBackgroundBtn'); // Reset button
     const defaultBackground = '/_images/backgrounds/default.jpg'; // Default background path
+    const loader = document.getElementById('loader'); // Loader element
 
     // Preload background images
     const preloadImages = (images) => {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Background options to preload
     const backgroundImages = [
+        '/_images/backgrounds/default.jpg',
         '/_images/backgrounds/image (1).jpg',
         '/_images/backgrounds/image (2).jpg',
         '/_images/backgrounds/image (3).jpg',
@@ -43,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.src = selectedBg;
 
                 img.onload = () => {
-                    // Apply the new background image
+                    // Apply the new background image to both loader and body
                     document.body.style.backgroundImage = `url('${selectedBg}')`;
                     document.body.style.backgroundSize = 'cover';
                     document.body.style.backgroundPosition = 'center';
+
+                    loader.style.backgroundImage = `url('${selectedBg}')`; // Set loader background
 
                     // Remove the default background only after the new one is loaded
                     document.body.classList.add('background-loaded'); 
@@ -69,22 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.backgroundSize = 'cover';
             document.body.style.backgroundPosition = 'center';
 
+            loader.style.backgroundImage = `url('${storedBackground}')`; // Set loader background
+
             // Remove the default background only after the new one is loaded
             document.body.classList.add('background-loaded');
         };
+    } else {
+        // Set loader to default background if no stored background
+        loader.style.backgroundImage = `url('${defaultBackground}')`;
     }
 
-    // Function to reset background and clear localStorage
+    // Wait for the window to load all content (images, styles, etc.)
+    window.onload = function() {
+        // Hide the loader and show the page content
+        loader.style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+    };
+
+    // Reset background button functionality
     resetBackgroundBtn.addEventListener('click', () => {
-        // Reset the background to default
-        document.body.style.backgroundImage = `url('${defaultBackground}')`;
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.backgroundPosition = 'center';
-
         // Remove the stored background from localStorage
-        localStorage.removeItem('selectedBackground'); // Correct key to remove from localStorage
+        localStorage.removeItem('selectedBackground'); // Clear the stored background
 
-        // Optionally, you could also remove the 'background-loaded' class if you're using it:
-        document.body.classList.remove('background-loaded');
+        // Optionally, trigger a reload to reset the page as it would be on initial load
+        location.reload(); // This will force the page to load fresh, with no background image set
     });
 });
