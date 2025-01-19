@@ -43,13 +43,19 @@
 </head>
 
 <body>
-    <body>
+        <div id="loader" class="loader"></div>
+        <div id="content">
         <!-- Settings Icon -->
         <div class="settings-icon" id="settingsIcon">⚙️</div>
     
         <!-- Background Selection Menu -->
         <div class="background-menu" id="backgroundMenu">
-            <h3>Select a Background</h3>
+    <div class="menu-header">
+        <h3>Select a Background</h3>
+        <button id="resetBackgroundBtn" title="Reset Background">
+            <span class="reset-icon">&#x21bb;</span> <!-- Reload icon -->
+        </button>
+    </div>
             <div class="background-options">
                 <img src="/_images/backgrounds/image (1).jpg" alt="Background 1" class="background-option"
                     data-bg="/_images/backgrounds/image (1).jpg">
@@ -72,7 +78,6 @@
     <!-- header.html -->
     <div class="custom-image-overlay"></div>
 
-    <div class="background"> </div>
 
     <div class="overlay"></div>
 
@@ -202,6 +207,7 @@
     <script src="/js/check_local_storage/check_local_storage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="/js/global_js/background_js/background_change.js"></script>
+    </div>
 </body>
 
 </html>

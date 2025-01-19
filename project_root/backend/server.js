@@ -1,12 +1,12 @@
-import express from 'express'; 
+import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import open from 'open';  
+import open from 'open';
 import { characters } from './data/character_info.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename); 
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
@@ -20,7 +20,7 @@ let daily_emoji_character = characters[Math.floor(Math.random() * characters.len
 let daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
 let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
 
-let lastUpdatedDate = new Date().toDateString(); 
+let lastUpdatedDate = new Date().toDateString();
 
 // Function to check if the date has changed
 function checkAndResetCharacters() {
@@ -31,13 +31,13 @@ function checkAndResetCharacters() {
     daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
     daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
     daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
-    lastUpdatedDate = today; 
+    lastUpdatedDate = today;
     console.log('Daily characters reset for the new day!');
   }
 }
 app.use((req, res, next) => {
   checkAndResetCharacters();
-  next(); 
+  next();
 });
 
 app.use(express.static(path.join(__dirname, '../public')));
