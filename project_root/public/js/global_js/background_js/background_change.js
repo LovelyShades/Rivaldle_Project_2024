@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsIcon = document.getElementById('settingsIcon');
     const backgroundMenu = document.getElementById('backgroundMenu');
     const backgroundOptions = document.querySelectorAll('.background-option');
+    const resetBackgroundBtn = document.getElementById('resetBackgroundBtn'); // Reset button
+    const defaultBackground = '/_images/backgrounds/default.jpg'; // Default background path
 
     // Preload background images
     const preloadImages = (images) => {
@@ -71,4 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('background-loaded');
         };
     }
+
+    // Function to reset background and clear localStorage
+    resetBackgroundBtn.addEventListener('click', () => {
+        // Reset the background to default
+        document.body.style.backgroundImage = `url('${defaultBackground}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+
+        // Remove the stored background from localStorage
+        localStorage.removeItem('selectedBackground'); // Correct key to remove from localStorage
+
+        // Optionally, you could also remove the 'background-loaded' class if you're using it:
+        document.body.classList.remove('background-loaded');
+    });
 });
