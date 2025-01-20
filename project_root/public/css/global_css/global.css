@@ -83,13 +83,30 @@ body {
 }
 
 /* Settings icon styling */
+/* Settings icon styling */
+/* Settings icon styling */
 .settings-icon {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background-image: url('../../_images/global_images/background_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     z-index: 1000;
+    display: inline-block;
+    text-indent: -9999px;
+    /* Transition for transform and background-image */
+}
+
+/* Hover effect */
+.settings-icon:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the icon */
+    background-image: url('../../_images/global_images/hover_background_logo.png');
+    /* Change background image on hover */
 }
 .dark-overlay {
     position: fixed;
