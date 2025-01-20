@@ -113,17 +113,17 @@ body {
     background-color: rgba(0, 0, 0, 0.751);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
     left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
+    top: calc(10vh + 20px); /* Add a base value + dynamic height offset */
+    transform: translateX(-50%); /* Center horizontally */
     width: 80vw;
     max-width: 600px;
-    max-height: 80vh; /* Ensure it doesn't exceed the viewport height */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: calc(80vh - 20px); /* Account for padding/margins */
     padding: 15px;
     z-index: 999;
     display: none; /* Initially hidden */
     overflow-y: auto; /* Enable scrolling if content overflows */
 }
+
 
 /* Options container */
 .background-options {
