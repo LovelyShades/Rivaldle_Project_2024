@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader'); // Loader element
     const body = document.body; // Body element
     const content = document.getElementById('content'); // Page content
+    const backgroundOverlay = document.createElement('div');
+    backgroundOverlay.className = 'dark-overlay';
+    body.appendChild(backgroundOverlay);
 
     // Preload background images
     const preloadImages = (images) => {
@@ -15,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = src;
         });
     };
+
 
     // Background options to preload
     const backgroundImages = [
@@ -39,6 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle visibility of the background menu
     settingsIcon.addEventListener('click', () => {
         backgroundMenu.style.display = backgroundMenu.style.display === 'block' ? 'none' : 'block';
+        if (backgroundMenu.style.display == 'block') {
+            backgroundOverlay.style.display = 'block'
+            document.body.style.overflowY = 'hidden';
+            document.documentElement.style.overflowY = 'hidden'; 
+        } else {
+            backgroundOverlay.style.display = 'none'
+            document.body.style.overflowY = '';
+            document.documentElement.style.overflowY = ''; 
+        }
     });
 
     // Change the background when an option is clicked
@@ -68,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             }
             backgroundMenu.style.display = 'none'; // Hide menu after selection
+            backgroundOverlay.style.display = 'none';
+            document.body.style.overflowY = '';
+            document.documentElement.style.overflowY = ''; 
         });
     });
 
@@ -95,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Wait for the window to load all content (images, styles, etc.)
-    window.onload = function() {
+    window.onload = function () {
         // Hide the loader and show the page content once everything is ready
         loader.style.display = 'none';
         content.style.display = 'block';
