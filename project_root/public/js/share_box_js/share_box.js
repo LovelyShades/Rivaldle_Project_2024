@@ -42,7 +42,7 @@ class ShareBox{
     }
 
     copyButton(shareBox) {
-        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.net`;
+        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.com`;
         const copyButton = document.createElement('button');
         copyButton.innerHTML = 'Share!😊';
         copyButton.className = 'button-43'
