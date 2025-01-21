@@ -10,7 +10,7 @@
     max-width: 600px;
     max-height: calc(80vh - 20px); 
     padding: 15px;
-    z-index: 999;
+    z-index: 1001;
     display: none; 
     overflow-y: auto; 
     color: white;

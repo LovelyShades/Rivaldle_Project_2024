@@ -10,7 +10,7 @@ class Tos {
 
     initializeOverlay() {
         this.overlay = document.createElement('div');
-        this.overlay.className = 'dark-overlay'
+        this.overlay.className = 'dark-overlay-tos'
         document.body.appendChild(this.overlay)
     }
 

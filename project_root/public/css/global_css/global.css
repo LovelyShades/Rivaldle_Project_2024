@@ -119,6 +119,17 @@ body {
     display: none; /* Initially hidden */
     pointer-events: all; /* Blocks interaction with elements behind */
 }
+.dark-overlay-tos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1000; /* Sits behind the popup but above the main content */
+    display: none; /* Initially hidden */
+    pointer-events: all; /* Blocks interaction with elements behind */
+}
 
 /* Background selection menu styling */
 /* Popup container */
