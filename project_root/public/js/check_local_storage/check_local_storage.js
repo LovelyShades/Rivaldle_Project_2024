@@ -12,11 +12,11 @@ async function checkAndClearLocalStorage() {
 
         // Retrieve stored ID from local storage
         let storedID = localStorage.getItem('storedID');
-        
+        console.log(storedID, serverID);
 
         //stored items to not clear
-        let selectedBackground = localStorage.getItem(selectedBackground);
-        let tosHasBeenLoaded = localStorage.getItem(tosHasBeenLoaded)
+        let selectedBackground = localStorage.getItem('selectedBackground');
+        let tosHasBeenLoaded = localStorage.getItem('tosHasBeenLoaded')
 
         // Handle first-time setup for stored ID
         if (storedID === null) {
@@ -33,13 +33,12 @@ async function checkAndClearLocalStorage() {
 
         // Get the stored date from localStorage
         const storedDate = localStorage.getItem('lastUpdatedDate');
-
         // Handle first-time setup
         if (storedDate == undefined) {
             location.reload(true);
             console.log('First-time setup: initializing localStorage with the current date.');
             localStorage.setItem('lastUpdatedDate', backendDate);
-            return; // Exit since no clearing is needed
+            return;
         }
 
         // Compare dates
@@ -55,10 +54,11 @@ async function checkAndClearLocalStorage() {
         } else {
             console.log('Same day, no action required.');
         }
+        if(selectedBackground){
+            localStorage.setItem('selectedBackground', selectedBackground)    
+        }
         localStorage.setItem('tosHasBeenLoaded', tosHasBeenLoaded)
-        localStorage.setItem('selectedBackground', selectedBackground)  
-    } 
-    catch (error) {
+    } catch (error) {
         console.error('Error checking and clearing local storage:', error);
     }
 
