@@ -1,40 +1,103 @@
-.tos_container{
-    position: fixed; 
-    border: 2px solid #ddd;    
-    background-color: rgba(0, 0, 0, 0.751);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    left: 50%;
-    top: calc(10vh + 20px); 
-    transform: translateX(-50%); 
-    width: 80vw;
-    max-width: 600px;
-    max-height: calc(80vh - 20px); 
-    padding: 15px;
-    z-index: 1001;
-    display: none; 
-    overflow-y: auto; 
-    color: white;
-    flex-direction: column;
-    align-items: center; 
+/* Overlay styles */
+#tos_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent black */
+    z-index: 1000;
+    /* Behind the popup */
+    display: none;
+    /* Initially hidden */
 }
 
-.accept_terms {
-    position: relative;
-    background-color: #fff;
+.tos_container {
+    position: fixed;
+    border: 2px solid #DCE1F4;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 400px;
+    height: 60vh;
+    max-height: 800px;
+    padding: 20px;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    transition: ease-in-out 0.5s;
+    font-size: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+    font-family: MarvelFont;
+    
+}
+
+
+.skip_to_bottom {
+    position: absolute;
+    top: 90px;
+    /* Adjust this value to move the button down if needed */
+    /* Adjust this value to move the button left if needed */
+    background-color: #DCE1F4;
     color: #000;
     border: 1px solid #ccc;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 2px 5px;
+    font-size: 15px;
     cursor: pointer;
     border-radius: 1px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    width: 25%;
+    width: auto;
+    height: auto;
     text-align: center;
-    height: 10%;
-}
-.accept_terms:hover {
-    background-color: #ffffff; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    font-family: MarvelFont;
 }
 
+.skip_to_bottom:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.accept_terms {
+    position: relative;
+    background-color: #DCE1F4;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-family: MarvelFont;
+    margin-top: 9%;
+}
+
+.accept_terms:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+
+a[href^="mailto:"]:link,
+/* For unvisited links */
+a[href^="mailto:"]:visited {
+    /* For visited links */
+    color: inherit;
+    /* Inherit the color from the parent element */
+
+}
