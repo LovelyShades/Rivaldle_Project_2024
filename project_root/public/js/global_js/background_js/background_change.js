@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     body.style.backgroundPosition = 'center';
 
                     localStorage.setItem('selectedBackground', selectedBg); // Save selection
-
+                    location.reload();
+                    
                     loader.style.opacity = 0;
                     content.style.opacity = 1;
                 };
