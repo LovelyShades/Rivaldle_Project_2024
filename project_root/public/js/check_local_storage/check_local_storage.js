@@ -55,12 +55,12 @@ async function checkAndClearLocalStorage() {
         } else {
             console.log('Same day, no action required.');
         }
+        localStorage.setItem('tosHasBeenLoaded', tosHasBeenLoaded)
+        localStorage.setItem('selectedBackground', selectedBackground)    
     } catch (error) {
         console.error('Error checking and clearing local storage:', error);
     }
 
-    localStorage.setItem('tosHasBeenLoaded', tosHasBeenLoaded)
-    localStorage.setItem('selectedBackground', selectedBackground)
 }
 
 checkAndClearLocalStorage();
