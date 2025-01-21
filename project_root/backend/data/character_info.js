@@ -224,7 +224,7 @@ export const characters = [
         ['blond','white'],
         250,
         1975,
-        ["👩‍🦳", "🗡️", "🌠", "🔥"],
+        ["👩", "🗡️", "🌠", "🔥"],
         ["SOULSWORD", "DARKCHILD", "STEPPING DISCS", "UMBRAL INCURSION", "ELDRITCH WHIRL", "MAGIK SLASH", "DEMON'S RAGE"],
         "DARKCHILD"
     ),
