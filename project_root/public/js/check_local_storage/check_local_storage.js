@@ -12,16 +12,20 @@ async function checkAndClearLocalStorage() {
 
         // Retrieve stored ID from local storage
         let storedID = localStorage.getItem('storedID');
+        
+
+        //stored items to not clear
+        let selectedBackground = localStorage.getItem(selectedBackground);
+        let tosHasBeenLoaded = localStorage.getItem(tosHasBeenLoaded)
+
         // Handle first-time setup for stored ID
         if (storedID === null) {
             console.log('No stored ID found. Initializing stored ID and clearing localStorage.');
             localStorage.clear();
-            window.localStorage.clear(); //try this to clear all local storage
             localStorage.setItem('storedID', serverID);
         } else if (storedID !== serverID) {
             console.log('Server ID mismatch detected. Clearing localStorage...');
             localStorage.clear();
-            window.localStorage.clear(); //try this to clear all local storage
             localStorage.setItem('storedID', serverID);
         }        
         console.log(localStorage.getItem('storedID'))
@@ -54,6 +58,9 @@ async function checkAndClearLocalStorage() {
     } catch (error) {
         console.error('Error checking and clearing local storage:', error);
     }
+
+    localStorage.setItem('tosHasBeenLoaded', tosHasBeenLoaded)
+    localStorage.setItem('selectedBackground', selectedBackground)
 }
 
 checkAndClearLocalStorage();
