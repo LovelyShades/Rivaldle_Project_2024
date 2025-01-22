@@ -25,9 +25,6 @@ let lastUpdatedDate = new Date().toDateString();
 // Function to check if the date has changed
 function checkAndResetCharacters() {
   const today = new Date().toDateString();
-  console.log(lastUpdatedDate);
-console.log(today);
-
   if (today !== lastUpdatedDate) {
     daily_classic_character = characters[Math.floor(Math.random() * characters.length)];
     daily_silhouette_character = characters[Math.floor(Math.random() * characters.length)];
@@ -35,14 +32,13 @@ console.log(today);
     daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
     daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
     lastUpdatedDate = today;
-    console.log('Daily characters reset for the new day!');
+    console.log('Daily characters reset for the new day! last udated day is:', lastUpdatedDate);
   }
 }
 
 setInterval(() => {
-  lastUpdatedDate = new Date().toDateString();
   checkAndResetCharacters();
-}, 60 * 1000); 
+}, 24 * 60 * 60 * 1000); 
 
 app.use(express.static(path.join(__dirname, '../public')));
 
