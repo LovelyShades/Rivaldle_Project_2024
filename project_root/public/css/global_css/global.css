@@ -374,3 +374,11 @@ body {
     cursor: not-allowed;
     transform: none;
 }
+
+.head_icon_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
