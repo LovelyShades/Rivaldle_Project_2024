@@ -6,6 +6,18 @@ class Menu{
     initialize(){
         
     }
+
+    listenForMenuClick(){
+
+    }
+
+    openMenu(){
+
+    }
+
+    closeMenu(){
+        
+    }
 }
 
 const menu = new Menu();
