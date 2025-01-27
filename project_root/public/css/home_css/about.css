@@ -23,9 +23,8 @@
     padding-right: 40px;
     text-align: left;
     font-family: MarvelFont;
-    gap: 5px;
+    overflow: auto;
 }
-
 .about_header{
     position: relative;
     display: flex;
@@ -44,6 +43,8 @@
     padding-left: 40px;
     color: white;
     font-size: 30px;
+    margin-bottom: 50px;
+    line-height: 1.8;
 }
 
 .white_line{
@@ -51,7 +52,9 @@
     display: flex;
     width: 95%;
     height: 5px;
-    background-color: #DCE1F4;
+    background-color: #ffffff;
+    padding: 1px 0; 
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 
@@ -63,6 +66,8 @@
     height: 40px;
     transition: transform 1.02s ease;
 }
+
+
 
 .x_icon:hover{
     cursor: pointer;
