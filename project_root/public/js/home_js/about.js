@@ -4,23 +4,30 @@ class About{
     }
 
     initialize(){
-        this.getIcon();
-        this.listenForClick();
+        this.getIcons();
+        this.listenForClicks();
     }
 
-    getIcon(){
-        this.icon = document.getElementById('how_to_play_icon');
+    getIcons(){
+        this.aboutIcon = document.getElementById('about_icon');
+        this.howToPlayIcon = document.getElementById('how_to_play_icon');
     }
 
     getBody(){
         this.body = document.body;
     }
 
-    listenForClick(){
-        const icon = this.icon;
-        icon.addEventListener('click',() =>{
+    listenForClicks(){
+        const aboutIcon = this.aboutIcon;
+        aboutIcon.addEventListener('click',() =>{
             this.appendOverlay();
             this.showAboutContainer();
+        })
+
+        const howToPlayIcon = this.howToPlayIcon;
+        howToPlayIcon.addEventListener('click',() =>{
+            this.appendOverlay();
+            this.showhowToPlayIconContainer();
         })
     }
 
@@ -41,17 +48,27 @@ class About{
     }
 
     getAboutContainer(){
-        this.howToPlayContainer = document.getElementById('about_container');
+        this.aboutContainer = document.getElementById('about_container');
     }
+
+    getHowToPlayContainer(){
+        this.howToPlayContainer = document.getElementById('how_to_play_Container');
+    } 
 
     showAboutContainer(){
         this.getAboutContainer();
-        this.howToPlayContainer.style.display = 'flex';
+        this.aboutContainer.style.display = 'flex';
         this.listenForXClick();
     }
 
-    removeAboutContainer(){
-        this.howToPlayContainer.style.display = 'none';
+    showHowToPlayContainer(){
+        this.getHowToPlayContainer();
+        this.howToPlayContainer.style.display = 'flex'
+        this.listenForXClick();
+    }
+
+    removeContainer(){
+        this.aboutContainer.style.display = 'none';
     }
 
     getXIcon(){
@@ -62,7 +79,7 @@ class About{
         this.getXIcon();
         this.x.addEventListener('click',()=>{
             this.removeOverlay();
-            this.removeAboutContainer();
+            this.removeContainer();
         })
     }
 }

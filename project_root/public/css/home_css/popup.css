@@ -1,4 +1,4 @@
-.about_container{
+.popupContainer{
     position: fixed;
     border: 2px solid #DCE1F4;
     background-color: rgba(0, 0, 0, 0.9);
@@ -25,7 +25,7 @@
     font-family: MarvelFont;
     overflow: auto;
 }
-.about_header{
+.popup_header{
     position: relative;
     display: flex;
     font-family: MarvelFont;
@@ -35,7 +35,7 @@
     font-size: 50px;
 }
 
-.about_text{
+.popup_text{
     position: relative;
     display: flex;
     font-family: MarvelFont;
