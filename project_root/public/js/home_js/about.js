@@ -12,15 +12,31 @@ class About{
         this.icon = document.getElementById('how_to_play_icon');
     }
 
+    getBody(){
+        this.body = document.body;
+    }
+
     listenForClick(){
         const icon = this.icon;
         icon.addEventListener('click',() =>{
-            console.log('clicked');
+            this.openAboutInfo();
         })
     }
 
     openAboutInfo(){
-        
+        this.getBody();
+        this.darkOverlay = document.createElement('div');
+        this.darkOverlay.className = 'overlay';
+        this.darkOverlay.style.zIndex = '999';
+        document.body.style.overflowY = 'hidden';
+        document.documentElement.style.overflowY = 'hidden';
+        this.body.append(this.darkOverlay);
+    }
+
+    closeAboutInfo(){
+        this.darkOverlay.remove();
+        document.body.style.overflowY = ''
+        document.documentElement.style.overflowY = ''
     }
 }
 
