@@ -31,12 +31,18 @@ class About{
         document.body.style.overflowY = 'hidden';
         document.documentElement.style.overflowY = 'hidden';
         this.body.append(this.darkOverlay);
+
+        this.getHowToPlayContainer();
     }
 
     closeAboutInfo(){
         this.darkOverlay.remove();
         document.body.style.overflowY = ''
         document.documentElement.style.overflowY = ''
+    }
+
+    getHowToPlayContainer(){
+        this.howToPlayContainer = document.getElementById('how_to_play_container');
     }
 }
 
