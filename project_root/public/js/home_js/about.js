@@ -19,11 +19,12 @@ class About{
     listenForClick(){
         const icon = this.icon;
         icon.addEventListener('click',() =>{
-            this.openAboutInfo();
+            this.appendOverlay();
+            this.showAboutContainer();
         })
     }
 
-    openAboutInfo(){
+    appendOverlay(){
         this.getBody();
         this.darkOverlay = document.createElement('div');
         this.darkOverlay.className = 'overlay';
@@ -31,18 +32,21 @@ class About{
         document.body.style.overflowY = 'hidden';
         document.documentElement.style.overflowY = 'hidden';
         this.body.append(this.darkOverlay);
-
-        this.getHowToPlayContainer();
     }
 
-    closeAboutInfo(){
+    removeOverlay(){
         this.darkOverlay.remove();
         document.body.style.overflowY = ''
         document.documentElement.style.overflowY = ''
     }
 
-    getHowToPlayContainer(){
-        this.howToPlayContainer = document.getElementById('how_to_play_container');
+    getAboutContainer(){
+        this.howToPlayContainer = document.getElementById('about_container');
+    }
+
+    showAboutContainer(){
+        this.getAboutContainer();
+        this.howToPlayContainer.style.display = 'flex';
     }
 }
 
