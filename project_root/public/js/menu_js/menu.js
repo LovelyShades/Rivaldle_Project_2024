@@ -8,7 +8,8 @@ class Menu{
     }
 
     listenForMenuClick(){
-
+        document.addEventListener('menuClick', () => {
+        })
     }
 
     openMenu(){
