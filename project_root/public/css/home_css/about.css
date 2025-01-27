@@ -54,3 +54,17 @@
     background-color: #DCE1F4;
     margin-bottom: 30px;
 }
+
+.x_icon{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 40px;
+    height: 40px;
+    transition: transform 1.02s ease;
+}
+
+.x_icon:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+}

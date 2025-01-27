@@ -47,6 +47,23 @@ class About{
     showAboutContainer(){
         this.getAboutContainer();
         this.howToPlayContainer.style.display = 'flex';
+        this.listenForXClick();
+    }
+
+    removeAboutContainer(){
+        this.howToPlayContainer.style.display = 'none';
+    }
+
+    getXIcon(){
+        this.x = document.getElementById('x_icon');
+    }
+
+    listenForXClick(){
+        this.getXIcon();
+        this.x.addEventListener('click',()=>{
+            this.removeOverlay();
+            this.removeAboutContainer();
+        })
     }
 }
 
