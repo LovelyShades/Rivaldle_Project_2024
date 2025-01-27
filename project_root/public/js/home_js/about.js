@@ -6,6 +6,8 @@ class About{
     initialize(){
         this.getIcons();
         this.listenForClicks();
+        this.aboutPopupIsActive = false;
+        this.howToPlayPopupIsActive = false;
     }
 
     getIcons(){
@@ -22,12 +24,14 @@ class About{
         aboutIcon.addEventListener('click',() =>{
             this.appendOverlay();
             this.showAboutContainer();
+            this.aboutPopupIsActive = true;
         })
 
         const howToPlayIcon = this.howToPlayIcon;
         howToPlayIcon.addEventListener('click',() =>{
             this.appendOverlay();
-            this.showhowToPlayIconContainer();
+            this.showHowToPlayContainer();
+            this.howToPlayPopupIsActive = true;
         })
     }
 
@@ -52,7 +56,7 @@ class About{
     }
 
     getHowToPlayContainer(){
-        this.howToPlayContainer = document.getElementById('how_to_play_Container');
+        this.howToPlayContainer = document.getElementById('how_to_play_container');
     } 
 
     showAboutContainer(){
@@ -68,19 +72,26 @@ class About{
     }
 
     removeContainer(){
-        this.aboutContainer.style.display = 'none';
-    }
 
-    getXIcon(){
-        this.x = document.getElementById('x_icon');
-    }
+        if(this.aboutPopupIsActive){
+            this.aboutContainer.style.display = 'none';
+            this.aboutPopupIsActive = false;
+        }
+        if(this.howToPlayPopupIsActive){
+            this.howToPlayContainer.style.display = 'none';
+            this.howToPlayPopupIsActive = false;
+        }
 
-    listenForXClick(){
-        this.getXIcon();
-        this.x.addEventListener('click',()=>{
-            this.removeOverlay();
-            this.removeContainer();
-        })
+    }
+  
+    listenForXClick() {
+        const xIcons = document.querySelectorAll('.x_icon'); 
+        xIcons.forEach((x) => {
+            x.addEventListener('click', () => {
+                this.removeOverlay();
+                this.removeContainer();
+            });
+        });
     }
 }
 
