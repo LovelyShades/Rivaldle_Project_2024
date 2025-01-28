@@ -1,0 +1,80 @@
+.popupContainer{
+    position: fixed;
+    border: 2px solid #DCE1F4;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 800px;
+    height: 80vh;
+    max-height: 800px;
+    padding: 20px;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    color: white;
+    flex-direction: column;
+    align-items: left;
+    transition: ease 0.2s;
+    font-size: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+    font-family: MarvelFont;
+    overflow: auto;
+}
+.popup_header{
+    position: relative;
+    display: flex;
+    font-family: MarvelFont;
+    text-align: left;
+    padding-left: 40px;
+    color: white;
+    font-size: 50px;
+}
+
+.popup_text{
+    position: relative;
+    display: flex;
+    font-family: MarvelFont;
+    text-align: left;
+    padding-left: 40px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.white_line{
+    position: relative;
+    display: flex;
+    width: 95%;
+    height: 5px;
+    background-color: #ffffff;
+    padding: 1px 0; 
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.x_icon{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 40px;
+    height: 40px;
+    transition: transform 1.02s ease;
+}
+
+.x_icon:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
+.example_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}

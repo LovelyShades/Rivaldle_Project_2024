@@ -26,8 +26,9 @@
 
     <!-- Stylesheets for Home Page -->
     <link rel="stylesheet" type="text/css" href="/css/home_css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/home_css/tos.css">
+    <link rel="stylesheet" type="text/css" href="/css/home_css/popup.css">
     <link rel="stylesheet" type="text/css" href="/css/global_css/global.css">
+    <link rel="stylesheet" type="text/css" href="/css/global_css/icons.css">
 
     <!-- Meta Information -->
     <meta charset="UTF-8">
@@ -41,6 +42,48 @@
 
 <body>
 
+    <div class="popupContainer" id="about_container">
+        <img src="/_images/global_images/x.png" class="x_icon" id="x_icon">
+        <div class="popup_header">About Us</div>
+        <div class="white_line"></div>
+
+        <div class="popup_text">Rivaldle was created by two computer science students passionate about programming and eager to deepen their skills through a collaborative project. As lifelong Marvel fans,
+             we’ve spent countless hours enjoying Marvel Rivals, both together and with friends, which inspired us to develop a fun trivia game centered on the Marvel universe.</div>
+        <div class="popup_text">We also drew inspiration from Smashdle, an engaging online trivia game based on Super Smash Bros, combining our love for gaming and interactive challenges.
+             With Rivaldle, our aim is to create an enjoyable and immersive experience for fans who share our enthusiasm.</div>
+        <div class="popup_text">Ultimately, our goal is to provide a fun and engaging platform where Marvel enthusiasts can test their knowledge and celebrate their fandom.</div>
+
+        <div class="popup_header">Questions / Concerns / Feedback</div>
+        <div class="white_line"></div>
+
+        <div class="popup_text"> We value your input and feedback and encourage you to share any concerns, bugs, or suggestions you have about the website. 
+            Your insights help us improve and provide the best experience possible.</div>
+        <div class="popup_text"> Feel free to reach out to us at rivaldleguesser@gmail.com. We look forward to hearing from you!</div>
+
+        <div class="popup_text">Many Thanks!</div>
+        <div class="popup_text">-The Rivaldle team</div>
+    </div>
+
+    <div class="popupContainer" id="how_to_play_container">
+        <img src="/_images/global_images/x.png" class="x_icon" id="x_icon">
+        <div class="popup_header">How To Play</div>
+        <div class="white_line"></div>
+
+        <div class="popup_text"> Rivaldle is a Marvel Rivals based trivia game with the objective being to guess the correct character in each of the respective modes</div>
+        <div class="popup_text"> As of now Rivaldle featured four modes. Classic, Silhouetter, Emoji, and Character Ability. Each of these modes provides a different method of guessing the correct character for that mode</div>
+        <div class="popup_text"> Each of these modes can be compleated at any time by clicking the desired mode box on the home page.</div>
+        <div class="example_container">
+            <b><div class="popup_text">Example:</div></b>
+            <div class="mode_link_box">Mode Box</div>    
+        </div>
+        <div class="popup_text"> More information on the individual modes will be avalable on their respective pages.</div>
+        <div class="popup_text"> Each one of these modes features a different character with them changing daily. When the characters reset, the new character is chosen randomly with no consideration of the previous days character</div>
+
+        <div class="popup_header">Frequently Asked Questions</div>
+        <div class="white_line"></div>
+
+        <div ></div>
+    </div>
     <div id="loader" class="loader"></div>
     <div id="content"> <!-- Settings Icon -->
         <div class="settings-icon" id="settingsIcon">⚙️</div>
@@ -76,83 +119,13 @@
 
         <!-- header.html -->
         <div class="custom-image-overlay"></div>
-
         <div class="overlay"></div>
-        <div id="tos_overlay"></div>
-        <div class="tos_container" id="tos_container">
-            <h1>Terms of Service</h1>
-            <button class="skip_to_bottom" id="skip_to_bottom">Scroll to Bottom</button>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2>1. Acceptance of Terms</h2>
-            <p>
-                By accessing or using Rivaldle (“the Service”), you agree to comply with and be bound by these Terms of Service. If you do not agree with these terms, you must not use the Service.
-            </p>
-            
-            <h2>2. Purpose of the Service</h2>
-            <p>
-                Rivaldle is an interactive guessing game designed for educational and entertainment purposes, providing commentary, trivia, and information about popular superhero information. The Service is intended for entertainment only.
-            </p>
-            
-            <h2>3. Intellectual Property</h2>
-            <h3>3.1 No Affiliation with Marvel Entertainment</h3>
-            <p>
-                The Service is an independent, fan-created platform and is not affiliated with, endorsed by, or associated with Marvel Entertainment, its parent company Disney, or any of its subsidiaries.
-            </p>
-            
-            <h3>3.2 Use of Trademarks and Copyrighted Material</h3>
-            <p>
-                All trademarks, logos, and characters mentioned within the Service are the property of their respective owners. Content appearing in the Service is used solely for commentary, educational, and transformative purposes under the doctrine of fair use, as defined in Section 107 of the U.S. Copyright Act.
-            </p>
-            <p>
-                If you believe any content on the Service infringes your intellectual property rights, please contact us at <a href="mailto:rivaldleguesser@gmail.com">rivaldleguesser@gmail.com</a> to resolve the issue.
-            </p>
-            
-            <h2>4. User Conduct</h2>
-            <p>
-                By using the Service, you agree not to:
-            </p>
-            <ul>
-                <li>Use the Service for commercial purposes or in a way that implies endorsement by any third-party copyright holder.</li>
-                <li>Reproduce, distribute, or create derivative works based on content from the Service without proper authorization.</li>
-                <li>Engage in any activity that disrupts or interferes with the functionality of the Service.</li>
-                <li>Attempt to access or manipulate data or features of the Service that are not intended for your use.</li>
-            </ul>
-            
-            <h2>5. Disclaimer of Liability</h2>
-            <p>
-                The Service is provided on an "as-is" and "as-available" basis. We make no warranties, express or implied, regarding the operation, availability, or reliability of the Service.
-            </p>
-            <p>
-                Rivaldle is not liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the Service.
-            </p>
-            
-            <h2>6. Changes to the Service</h2>
-            <p>
-                We reserve the right to modify, suspend, or discontinue the Service at any time without notice. This includes removing content deemed to infringe upon third-party rights.
-            </p>
-            
-            <h2>7. Contact Information</h2>
-            <p>
-                If you have questions, concerns, or wish to submit a copyright claim, please contact us at:
-            </p>
-            <p>
-                Email: <a href="mailto:rivaldleguesser@gmail.com">rivaldleguesser@gmail.com</a>
-            </p>
-            
-            <button class="accept_terms" id="accept_terms"> Accept and Continue </button>
-
-        </div>
-        
-
-        </div>
 
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
         </a>
 
+        <div class="how_to_play_container" id="how_to_play_container"></div>
 
         <!-- Page-Specific Content -->
         <div id="content_container">
@@ -162,6 +135,11 @@
                 </b>
 
                 <div id="head_icon_container" class="head_icon_container"></div>
+
+                <div class="icon_container">
+                    <img src="/_images/global_images/info.png" class="icon" id="about_icon">
+                    <img src="/_images/global_images/question_icon.png" class="icon" id="how_to_play_icon">
+                </div>
 
                 <a href="/classic">
                     <div class="mode_link_box">Classic</div>
@@ -195,8 +173,7 @@
         </a>
 
         <script src="/js/global_js/background_js/background_change.js"></script>
-        <script src="/js/home_js/how_to_play.js"></script>
-        <script src="/js/tos_js/load_tos.js"></script>
+        <script src="/js/home_js/popup.js"></script>
 
     </div>
 </body>
