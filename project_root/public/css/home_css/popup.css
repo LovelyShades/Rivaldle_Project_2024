@@ -67,9 +67,14 @@
     transition: transform 1.02s ease;
 }
 
-
-
 .x_icon:hover{
     cursor: pointer;
     transform: scale(1.07);
+}
+
+.example_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
 }
