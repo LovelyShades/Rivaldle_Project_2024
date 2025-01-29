@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Rivaldle: The ultimate guessing game inspired by Marvel Rivals and Wordle. Test your knowledge, challenge your friends, and uncover the secrets of Marvel's legendary characters!">
-    <title>RIVALDLE</title>
+    <title id="title_header">RIVALDLE</title>
 
     <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="/_images/home_images/favicon/favicon-96x96.png" sizes="96x96" />
@@ -81,7 +81,8 @@
         <!-- Main Content -->
         <div id="content_container">
             <div class="mode_container">
-                <div class="title_header" data-translate="title"><b>GUESS THE MARVEL RIVALS CHARACTER</b></div>
+                <div id="title_header" class="title_header" data-translate="title_header"><b>GUESS THE MARVEL RIVALS
+                        CHARACTER</b></div>
                 <div id="head_icon_container" class="head_icon_container"></div>
 
                 <div class="icon_container">
@@ -92,34 +93,35 @@
 
                 <!-- Game Modes -->
                 <a href="/classic">
-                    <div class="mode_link_box" data-translate="classicMode">Classic</div>
+                    <div class="mode_link_box" data-translate="mode_classic" id="mode_classic">Classic</div>
                 </a>
                 <a href="/silhouette">
-                    <div class="mode_link_box" data-translate="silhouetteMode">Silhouette</div>
+                    <div class="mode_link_box" data-translate="mode_silhouette" id="mode_silhouette">Silhouette</div>
                 </a>
                 <a href="/emoji">
-                    <div class="mode_link_box" data-translate="emojiMode">Emoji</div>
+                    <div class="mode_link_box" data-translate="mode_emoji" id="mode_emoji">Emoji</div>
                 </a>
                 <a href="/character_ability">
-                    <div class="mode_link_box" data-translate="characterAbilityMode">Character Ability</div>
+                    <div class="mode_link_box" data-translate="mode_character_ability" id="mode_character_ability">
+                        Character Ability</div>
                 </a>
 
                 <!-- About Popup -->
                 <div class="popupContainer" id="about_container">
                     <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
-                    <div class="popup_header" data-translate="aboutHeader">About Us</div>
+                    <div class="popup_header" data-translate="aboutHeader" id="aboutHeader">About Us</div>
                     <div class="white_line"></div>
-                    <div class="popup_text" data-translate="aboutText1">
+                    <div class="popup_text" data-translate="aboutText1" id="aboutText1">
                         Rivaldle was created by two computer science students passionate about programming and eager to
                         deepen their skills through a collaborative project.
                         As lifelong Marvel fans, we’ve spent countless hours enjoying Marvel Rivals, which inspired us
                         to develop this trivia game.
                     </div>
-                    <div class="popup_text" data-translate="aboutText2">
+                    <div class="popup_text" data-translate="aboutText2" id="aboutText2">
                         We also drew inspiration from Smashdle, an online trivia game based on Super Smash Bros. With
                         Rivaldle, we aim to create an immersive experience for Marvel fans.
                     </div>
-                    <div class="popup_text" data-translate="aboutText3">
+                    <div class="popup_text" data-translate="aboutText3" id="aboutText3">
                         Feedback? Email us at <strong>rivaldleguesser@gmail.com</strong>
                     </div>
                 </div>
@@ -127,35 +129,42 @@
                 <!-- Language Popup -->
                 <div class="popupContainer" id="language_container">
                     <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon_language">
-                    <div class="popup_header" data-translate="languageHeader">Select Your Language</div>
+                    <div class="popup_header" data-translate="languageHeader" id="languageHeader">Select Your Language
+                    </div>
                     <div class="white_line"></div>
-                    <div class="popup_text" data-translate="languagePrompt">Choose a language to change the site’s
+                    <div class="popup_text" data-translate="languagePrompt" id="languagePrompt">Choose a language to
+                        change the site’s
                         language:</div>
                     <ul class="language-options">
-                        <li><button class="language-button" data-lang="en" data-translate="english">English</button>
+                        <li><button class="language-button" data-lang="en" data-translate="english"
+                                id="english">English</button>
                         </li>
-                        <li><button class="language-button" data-lang="es" data-translate="spanish">Español</button>
+                        <li><button class="language-button" data-lang="es" data-translate="spanish"
+                                id="spanish">Español</button>
                         </li>
-                        <li><button class="language-button" data-lang="fr" data-translate="french">Français</button>
+                        <li><button class="language-button" data-lang="fr" data-translate="french"
+                                id="french">Français</button>
                         </li>
-                        <li><button class="language-button" data-lang="de" data-translate="german">Deutsch</button></li>
-                        <li><button class="language-button" data-lang="zh" data-translate="chinese">中文</button></li>
+                        <li><button class="language-button" data-lang="de" data-translate="german"
+                                id="german">Deutsch</button></li>
+                        <li><button class="language-button" data-lang="zh" data-translate="chinese"
+                                id="chinese">中文</button></li>
                     </ul>
                 </div>
 
                 <!-- How to Play Popup -->
                 <div class="popupContainer" id="how_to_play_container">
                     <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
-                    <div class="popup_header" data-translate="howToPlayHeader">How To Play</div>
+                    <div class="popup_header" data-translate="howToPlayHeader" id="howToPlayHeader">How To Play</div>
                     <div class="white_line"></div>
-                    <div class="popup_text" data-translate="howToPlayText1">
+                    <div class="popup_text" data-translate="howToPlayText1" id="howToPlayText1">
                         Rivaldle is a trivia game inspired by Marvel Rivals. Guess the correct character in four
                         different modes: Classic, Silhouette, Emoji, and Character Ability.
                     </div>
-                    <div class="popup_text" data-translate="howToPlayText2">
+                    <div class="popup_text" data-translate="howToPlayText2" id="howToPlayText2">
                         New characters are featured daily and selected randomly with no repeats.
                     </div>
-                    <div class="popup_text" data-translate="howToPlayText3">
+                    <div class="popup_text" data-translate="howToPlayText3" id="howToPlayText3">
                         Each mode can be accessed by clicking the mode boxes on the home page.
                     </div>
                 </div>
@@ -173,11 +182,12 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer_text" data-translate="footerText1">rivaldle.com — 2025</div>
-        <div class="footer_text" data-translate="footerText2">Marvel does not endorse or sponsor this project.</div>
+        <div class="footer_text" data-translate="footerText1" id="footerText1">rivaldle.com — 2025</div>
+        <div class="footer_text" data-translate="footerText2" id="footerText2">Marvel does not endorse or sponsor this
+            project.</div>
         <a href="/privacy_policy">
             <u>
-                <div class="footer_text" data-translate="privacyPolicy">Privacy Policy</div>
+                <div class="footer_text" data-translate="privacyPolicy" id="privacyPolicy">Privacy Policy</div>
             </u>
         </a>
     </div>
@@ -185,7 +195,6 @@
     <!-- Scripts -->
     <script src="/js/global_js/background_js/background_change.js"></script>
     <script src="/js/home_js/popup.js"></script>
-    <script src="/js/home_js/language.js"></script>
 </body>
 
 </html>
