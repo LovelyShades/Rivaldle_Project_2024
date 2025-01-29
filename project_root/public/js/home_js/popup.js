@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        title_header: "GUESS THE MARVEL RIVALS CHARACTER",
+        title: "GUESS THE MARVEL RIVALS CHARACTER",
         mode_classic: "Classic",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -29,7 +29,7 @@ const translations = {
         privacyPolicy: "Privacy Policy",
     },
     es: {
-        title_header: "ADIVINA AL PERSONAJE DE MARVEL RIVALS",
+        title: "ADIVINA AL PERSONAJE DE MARVEL RIVALS",
         mode_classic: "Clásico",
         mode_silhouette: "Silueta",
         mode_emoji: "Emoji",
@@ -59,7 +59,7 @@ const translations = {
     },
 
     fr: {
-        title_header: "DEVINEZ LE PERSONNAGE MARVEL RIVALS",
+        title: "DEVINEZ LE PERSONNAGE MARVEL RIVALS",
         mode_classic: "Classique",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -89,7 +89,7 @@ const translations = {
     },
 
     de: {
-        title_header: "RATE DEN MARVEL RIVALS CHARAKTER",
+        title: "RATE DEN MARVEL RIVALS CHARAKTER",
         mode_classic: "Klassisch",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -119,7 +119,7 @@ const translations = {
     },
 
     zh: {
-        title_header: "猜测MARVEL RIVALS角色",
+        title: "猜测MARVEL RIVALS角色",
         mode_classic: "经典",
         mode_silhouette: "轮廓",
         mode_emoji: "表情符号",
@@ -298,8 +298,8 @@ class About {
         if (!langData) return;
 
         console.log("Applying Language: ", language); // Debugging line
-        document.title = langData.title_header;  // Use title_header for the page title
-        this.updateElement('title_header', langData.title_header);
+        document.title = langData.title;  // Use title for the page title
+        this.updateElement('title', langData.title);
         this.updateElement('mode_classic', langData.mode_classic);
         this.updateElement('mode_silhouette', langData.mode_silhouette);
         this.updateElement('mode_emoji', langData.mode_emoji);

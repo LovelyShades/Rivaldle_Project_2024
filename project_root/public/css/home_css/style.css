@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-.title_header {
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 }
 
 @media (max-width: 500px) {
-    .title_header {
+    .title {
         font-size: 1.8em;
     }
 }
