@@ -5,7 +5,7 @@ class CharacterSearch {
     }
 
     async initialize() {
-        this.marvelCharacters = await this.fetchMarvelCharacters();
+        this.marvelCharacters = await this.fetchMarvelCharacters('en');
         const storedCharacters = this.getStoredCharacters();
 
         // Filter out the stored characters from the marvelCharacters list
@@ -31,13 +31,17 @@ class CharacterSearch {
         return JSON.parse(localStorage.getItem(pageKey)) || [];
     }
 
-    async fetchMarvelCharacters() {
+    async fetchMarvelCharacters(language) {
         try {
-            const response = await fetch('./character_info');
-            if (!response.ok) throw new Error(`Failed to fetch characters: ${response.statusText}`);
-            return await response.json();
+            const response = await fetch(`/character_info?language=${language}`);
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            const characters = await response.json();
+            console.log('Fetched Characters:', characters);
+            return characters;
         } catch (error) {
-            console.error('Error fetching Marvel characters:', error);
+            console.error('Failed to fetch characters:', error);
             return [];
         }
     }

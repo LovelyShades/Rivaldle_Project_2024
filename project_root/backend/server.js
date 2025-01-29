@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import open from 'open';
-import { characters } from './data/character_info.js';
+import { characters } from './data/englishCharacters.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -74,6 +74,7 @@ app.get('/daily_character_ability', (req, res) => {
 
 
 app.get('/character_info', (req, res) => {
+  const language = req.query.language || 'en'; 
   res.json(characters);
 });
 // Serve the HTML file
