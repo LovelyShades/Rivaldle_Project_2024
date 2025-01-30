@@ -19,15 +19,20 @@ async function checkAndClearLocalStorage() {
         // Retrieve stored ID and other items to preserve
         const storedID = localStorage.getItem('storedID');
         const selectedBackground = localStorage.getItem('selectedBackground');
-        const tosHasBeenLoaded = localStorage.getItem('tosHasBeenLoaded');
+        const home_streak = localStorage.getItem('home_streak');
+        const todaysNumber = localStorage.getItem('todaysNumber');
+        const yesterdaysNumber = localStorage.getItem('yesterdaysNumber');
+        
 
 
         // Clear localStorage and preserve necessary items
         const clearAndPreserve = () => {
             localStorage.clear();
             if (selectedBackground) localStorage.setItem('selectedBackground', selectedBackground);
-            if (tosHasBeenLoaded) localStorage.setItem('tosHasBeenLoaded', tosHasBeenLoaded);
-            localStorage.setItem('storedID', serverID);
+            if (home_streak) localStorage.setItem('home_streak', home_streak);
+            if (todaysNumber) localStorage.setItem('todaysNumber', todaysNumber);
+            if (yesterdaysNumber) localStorage.setItem('yesterdaysNumber', yesterdaysNumber);
+            localStorage.setItem('storedID', serverID); // Do not change
         };
 
 
