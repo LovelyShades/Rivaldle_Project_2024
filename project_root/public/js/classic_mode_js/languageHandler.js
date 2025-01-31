@@ -20,7 +20,7 @@ class Language {
 
     // Update page content for language-specific elements
     updatePageContent(langData) {
-        document.title = langData.title || document.title;
+
 
         // List of headers that need the underline styling
         const headersWithUnderline = [

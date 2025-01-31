@@ -1,15 +1,18 @@
 import { translations } from './language.js';
 
+
 export class Language {
     constructor() {
         this.loadLanguage();
     }
+
 
     // Load the language from localStorage or default to 'en'
     loadLanguage() {
         const storedLanguage = localStorage.getItem('language') || 'en';
         this.applyLanguage(storedLanguage);
     }
+
 
     // Apply the translations to the page
     applyLanguage(language) {
@@ -19,8 +22,12 @@ export class Language {
     }
 
 
+
+
     // Update a specific element's text content
     updatePageContent(langData) {
+        document.title = langData.title;
+
 
         document.querySelectorAll("[data-translate]").forEach(element => {
             const key = element.getAttribute("data-translate");
@@ -32,11 +39,15 @@ export class Language {
         });
     }
 
-    // Set the language and save to localStorage
-    setLanguage(language) {
-        localStorage.setItem('language', language);
-        this.applyLanguage(language);
-    }
+
+
+
 }
 
+
 export default new Language();
+
+
+
+
+

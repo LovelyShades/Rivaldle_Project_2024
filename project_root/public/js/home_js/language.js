@@ -4,7 +4,7 @@ export const translations = {
 
     en: {
         ...globalTranslations.en,
-        title: "GUESS THE MARVEL RIVALS CHARACTER",
+        subtitle: "GUESS THE MARVEL RIVALS CHARACTER",
         mode_classic: "Classic",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -30,7 +30,7 @@ export const translations = {
     },
     es: {
         ...globalTranslations.es,
-        title: "ADIVINA AL PERSONAJE DE MARVEL RIVALS",
+        subtitle: "ADIVINA AL PERSONAJE DE MARVEL RIVALS",
         mode_classic: "Clásico",
         mode_silhouette: "Silueta",
         mode_emoji: "Emoji",
@@ -59,7 +59,7 @@ export const translations = {
 
     fr: {
         ...globalTranslations.fr,
-        title: "DEVINEZ LE PERSONNAGE MARVEL RIVALS",
+        subtitle: "DEVINEZ LE PERSONNAGE MARVEL RIVALS",
         mode_classic: "Classique",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -92,7 +92,7 @@ export const translations = {
 
     de: {
         ...globalTranslations.de,
-        title: "RATE DEN MARVEL RIVALS CHARAKTER",
+        subtitle: "RATE DEN MARVEL RIVALS CHARAKTER",
         mode_classic: "Klassisch",
         mode_silhouette: "Silhouette",
         mode_emoji: "Emoji",
@@ -125,7 +125,7 @@ export const translations = {
 
     zh: {
         ...globalTranslations.zh,
-        title: "猜测MARVEL RIVALS角色",
+        subtitle: "猜测MARVEL RIVALS角色",
         mode_classic: "经典",
         mode_silhouette: "轮廓",
         mode_emoji: "表情符号",
