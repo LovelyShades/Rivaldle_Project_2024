@@ -38,7 +38,7 @@ function checkAndResetCharacters() {
 
 setInterval(() => {
   checkAndResetCharacters();
-}, 24 * 60 * 60 * 1000); 
+}, 24 * 60 * 60 * 1000);
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -74,7 +74,7 @@ app.get('/daily_character_ability', (req, res) => {
 
 
 app.get('/character_info', (req, res) => {
-  const language = req.query.language || 'en'; 
+  const language = req.query.language || 'en';
   res.json(characters);
 });
 // Serve the HTML file

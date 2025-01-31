@@ -1,4 +1,4 @@
-.popupContainer{
+.popupContainer {
     position: fixed;
     border: 2px solid #DCE1F4;
     background-color: rgba(0, 0, 0, 0.9);
@@ -25,7 +25,8 @@
     font-family: MarvelFont;
     overflow: auto;
 }
-.popup_header{
+
+.popup_header {
     position: relative;
     display: flex;
     font-family: MarvelFont;
@@ -35,7 +36,7 @@
     font-size: 50px;
 }
 
-.popup_text{
+.popup_text {
     position: relative;
     display: flex;
     font-family: MarvelFont;
@@ -47,18 +48,18 @@
     line-height: 1.8;
 }
 
-.white_line{
+.white_line {
     position: relative;
     display: flex;
     width: 95%;
     height: 5px;
     background-color: #ffffff;
-    padding: 1px 0; 
+    padding: 1px 0;
     margin-top: 15px;
     margin-bottom: 30px;
 }
 
-.x_icon{
+.x_icon {
     position: absolute;
     top: 2%;
     right: 2%;
@@ -67,14 +68,58 @@
     transition: transform 1.02s ease;
 }
 
-.x_icon:hover{
+.x_icon:hover {
     cursor: pointer;
     transform: scale(1.07);
 }
 
-.example_container{
+.example_container {
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 50px;
+}
+
+
+/* Remove bullets and default padding/margin for the language list */
+.language-options {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding-left: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.language-button {
+    padding: 12px 24px;
+    /* Boxy padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Transparent background */
+    color: #dce1f4;
+    /* Off-white color */
+    border: 2px solid #dce1f4;
+    /* Off-white border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    font-family: 'MarvelFont', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.language-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.language-button:active {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(0.98);
+}
+
+.language-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
 }
