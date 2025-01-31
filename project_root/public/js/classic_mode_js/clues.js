@@ -169,18 +169,18 @@ class Clues {
         this.ultActive = true;
     }
 
-    listenForWin(){
+    listenForWin() {
         document.addEventListener('correctCharacterGuessed', (event) => {
             this.unlockClues()
         });
     }
 
-    unlockClues(){
-        if(this.numTriesLeftUntilUlt){
+    unlockClues() {
+        if (this.numTriesLeftUntilUlt) {
             this.numTriesLeftUntilUlt.innerHTML = '';
             this.activateUltImage();
         }
-        if(this.numTriesLeftUntilSulhoutte){
+        if (this.numTriesLeftUntilSulhoutte) {
             this.numTriesLeftUntilSulhoutte.innerHTML = '';
             this.activateSilhoutteImage();
         }

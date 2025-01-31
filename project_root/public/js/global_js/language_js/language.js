@@ -20,6 +20,18 @@ export const globalTranslations = {
         privacyPolicy: "Politique de confidentialité",
         // Add more translation keys here...
     },
-    // Add other languages here...
+    de: {
+        selectBackground: "Wählen Sie einen Hintergrund",
+        footerText1: "rivaldle.com — 2025",
+        footerText2: "Marvel unterstützt oder sponsert dieses Projekt nicht.",
+        privacyPolicy: "Datenschutz-Bestimmungen",
+        // Add more translation keys here...
+    },
+    zh: {
+        selectBackground: "选择背景",
+        footerText1: "rivaldle.com — 2025",
+        footerText2: "Marvel 不支持或赞助该项目。",
+        privacyPolicy: "隐私政策",
+        // Add more translation keys here...
+    },
 };
-

@@ -1,3 +1,5 @@
+//variables stored in local storage
+
 //home_streak in localStorage
 //todaysNumber in localStorage
 //yesterdaysNumber in localSorage
@@ -24,7 +26,7 @@ class Streak {
             return await response.json();
         } catch (error) {
             console.error(error);
-            return null; 
+            return null;
         }
     }
 
@@ -44,7 +46,7 @@ class Streak {
         this.dayTracker = await this.fetchData("day_tracker");
         if (this.dayTracker === null) {
             console.warn("Day tracker data could not be fetched.");
-            this.dayTracker = 0; 
+            this.dayTracker = 0;
         }
 
     }
@@ -52,7 +54,7 @@ class Streak {
     async getTodaysNumber() {
         this.todaysNumber = localStorage.getItem("todaysNumber");
         if (!this.todaysNumber) {
-            this.todaysNumber = this.dayTracker; 
+            this.todaysNumber = this.dayTracker;
             localStorage.setItem("todaysNumber", this.todaysNumber);
         }
     }
@@ -60,7 +62,7 @@ class Streak {
     async getYesterdaysNumber() {
         this.yesterdaysNumber = localStorage.getItem("todaysNumber");
         if (!this.yesterdaysNumber) {
-            this.yesterdaysNumber = this.dayTracker; 
+            this.yesterdaysNumber = this.dayTracker;
             localStorage.setItem("yesterdaysNumber", this.yesterdaysNumber);
         }
     }
@@ -73,7 +75,7 @@ class Streak {
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
             this.addStreakToStorage();
-        } else if(this.dayTracker != 0){
+        } else if (this.dayTracker != 0) {
             this.storedStreak = 1;
         }
         this.updatedStoredDays();
@@ -89,38 +91,38 @@ class Streak {
         return this.todaysNumber != this.dayTracker;
     }
 
-appendStreak() {
-    if (this.storedStreak == 0) return;
+    appendStreak() {
+        if (this.storedStreak == 0) return;
 
-    const logo = document.getElementById("streak_icon");
-    if (!logo) {
-        console.error("Logo element not found!");
-        return;
-    }
+        const logo = document.getElementById("streak_icon");
+        if (!logo) {
+            console.error("Logo element not found!");
+            return;
+        }
 
-    let logoContainer = logo.parentElement;
-    if (!logoContainer) {
-        console.error("Streak icon has no parent container!");
-        return;
-    }
-    logoContainer.style.position = "relative"; 
+        let logoContainer = logo.parentElement;
+        if (!logoContainer) {
+            console.error("Streak icon has no parent container!");
+            return;
+        }
+        logoContainer.style.position = "relative";
 
-    let streakDisplay = document.getElementById("streakDisplay");
-    if (!streakDisplay) {
-        streakDisplay = document.createElement("div");
-        streakDisplay.id = "streakDisplay";
-        streakDisplay.style.position = "absolute";
-        streakDisplay.style.top = "0";  // Start positioning relative to parent
-        streakDisplay.style.left = "50%";  // Center horizontally
-        streakDisplay.style.transform = "translate(-50%, -150%)"; // Center and adjust upward
-        streakDisplay.style.color = "white";
-        streakDisplay.style.fontSize = "16px"; 
-        streakDisplay.style.fontWeight = "bold";
-        streakDisplay.style.zIndex = "50";  
-        logoContainer.appendChild(streakDisplay);
-    }
+        let streakDisplay = document.getElementById("streakDisplay");
+        if (!streakDisplay) {
+            streakDisplay = document.createElement("div");
+            streakDisplay.id = "streakDisplay";
+            streakDisplay.style.position = "absolute";
+            streakDisplay.style.top = "0";  // Start positioning relative to parent
+            streakDisplay.style.left = "50%";  // Center horizontally
+            streakDisplay.style.transform = "translate(-50%, -150%)"; // Center and adjust upward
+            streakDisplay.style.color = "white";
+            streakDisplay.style.fontSize = "16px";
+            streakDisplay.style.fontWeight = "bold";
+            streakDisplay.style.zIndex = "50";
+            logoContainer.appendChild(streakDisplay);
+        }
 
-    streakDisplay.textContent = this.storedStreak;
+        streakDisplay.textContent = this.storedStreak;
     }
 
 }

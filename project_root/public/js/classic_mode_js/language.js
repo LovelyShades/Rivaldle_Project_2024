@@ -1,38 +1,104 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Get the language from localStorage (or default to 'en' if not found)
-    const storedLanguage = localStorage.getItem('language') || 'en';
+import { globalTranslations } from '../global_js/language_js/language.js';
 
-    // Apply language to the page based on the stored language
-    applyLanguage(storedLanguage);
-});
+export const translations = {
+    en: {
+        ...globalTranslations.en,
+        triesUntilSilhouette: 'Tries until silhouette: ',
+        triesUntilUlt: "Tries until ult name: ",
+        guessHero: "Guess today's Marvel Rivals hero!",
+        typeCharacter: "Type any character to start.",
+        okButton: "OK",
+        characterHeader: "Character",
+        genderHeader: "Gender",
+        speciesHeader: "Species",
+        affiliationHeader: "Affiliation",
+        roleHeader: "Role",
+        eyeColorHeader: "Eye-Color",
+        hairColorHeader: "Hair-Color",
+        hpHeader: "HP",
+        colorIndicators: "Color Indicators",
+        correct: "Correct",
+        partial: "Partial",
+        incorrect: "Incorrect",
+    },
 
-// Function to apply translations to the page based on the selected language
-function applyLanguage(language) {
-    const translations = {
-        en: {
-            background: "Select a Background",
-            resetBackground: "Reset Background",
-            gameInstructions: "Color Indicators",
-            correct: "Correct",
-            partial: "Partial",
-            incorrect: "Incorrect"
-        },
-        es: {
-            background: "Seleccionar un fondo",
-            resetBackground: "Restablecer fondo",
-            gameInstructions: "Indicadores de color",
-            correct: "Correcto",
-            partial: "Parcial",
-            incorrect: "Incorrecto"
-        },
-        // Add other languages here...
-    };
+    es: {
+        ...globalTranslations.es,
+        triesUntilSilhouette: 'Intentos hasta la silueta: ',
+        guessHero: "¡Adivina el héroe de Marvel Rivals de hoy!",
+        typeCharacter: "Escribe cualquier personaje para comenzar.",
+        okButton: "OK",
+        characterHeader: "Personaje",
+        genderHeader: "Género",
+        speciesHeader: "Especie",
+        affiliationHeader: "Afiliación",
+        roleHeader: "Rol",
+        eyeColorHeader: "Color de ojos",
+        hairColorHeader: "Color de cabello",
+        hpHeader: "HP",
+        colorIndicators: "Indicadores de color",
+        correct: "Correcto",
+        partial: "Parcial",
+        incorrect: "Incorrecto",
+    },
 
-    const elements = document.querySelectorAll('[data-translate]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[language] && translations[language][key]) {
-            element.textContent = translations[language][key];
-        }
-    });
-}
+    fr: {
+        ...globalTranslations.fr,
+        triesUntilSilhouette: 'Essais jusqu\'à la silhouette : ',
+        guessHero: "Devinez le héros de Marvel Rivals d'aujourd'hui !",
+        typeCharacter: "Tapez n'importe quel personnage pour commencer.",
+        okButton: "OK",
+        characterHeader: "Personnage",
+        genderHeader: "Genre",
+        speciesHeader: "Espèce",
+        affiliationHeader: "Affiliation",
+        roleHeader: "Rôle",
+        eyeColorHeader: "Couleur des yeux",
+        hairColorHeader: "Couleur des cheveux",
+        hpHeader: "HP",
+        colorIndicators: "Indicateurs de couleur",
+        correct: "Correct",
+        partial: "Partiel",
+        incorrect: "Incorrect",
+    },
+
+    de: {
+        ...globalTranslations.de,
+        triesUntilSilhouette: 'Versuche bis zur Silhouette: ',
+        guessHero: "Errate den Marvel Rivals-Helden von heute!",
+        typeCharacter: "Gib einen beliebigen Charakter ein, um zu starten.",
+        okButton: "OK",
+        characterHeader: "Charakter",
+        genderHeader: "Geschlecht",
+        speciesHeader: "Spezies",
+        affiliationHeader: "Zugehörigkeit",
+        roleHeader: "Rolle",
+        eyeColorHeader: "Augenfarbe",
+        hairColorHeader: "Haarfarbe",
+        hpHeader: "HP",
+        colorIndicators: "Farbindikatoren",
+        correct: "Richtig",
+        partial: "Teilweise",
+        incorrect: "Falsch",
+    },
+
+    zh: {
+        ...globalTranslations.zh,
+        triesUntilSilhouette: '直到轮廓的尝试次数：',
+        guessHero: "猜猜今天的《漫威对决》英雄！",
+        typeCharacter: "输入任何角色以开始。",
+        okButton: "确定",
+        characterHeader: "角色",
+        genderHeader: "性别",
+        speciesHeader: "种族",
+        affiliationHeader: "隶属",
+        roleHeader: "角色",
+        eyeColorHeader: "眼睛颜色",
+        hairColorHeader: "头发颜色",
+        hpHeader: "生命值",
+        colorIndicators: "颜色指示",
+        correct: "正确",
+        partial: "部分正确",
+        incorrect: "错误",
+    },
+};

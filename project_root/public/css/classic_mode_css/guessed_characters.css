@@ -1,15 +1,22 @@
 /* CONTENTS - Guessed character CSS */
 
 #characterListHeadersContainer {
-    display: none; /* Flex layout */
+    display: none;
+    /* Flex layout */
     flex-direction: row;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 10px; /* Space between guessed character boxes */
-    width: fit-content; /* Dynamically size to fit its content */
-    margin: 0 auto; /* Center the content */
-    box-sizing: border-box; /* Include padding and borders in width */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    gap: 10px;
+    /* Space between guessed character boxes */
+    width: fit-content;
+    /* Dynamically size to fit its content */
+    margin: 0 auto;
+    /* Center the content */
+    box-sizing: border-box;
+    /* Include padding and borders in width */
     position: relative;
     margin-bottom: 50px;
+
 }
 
 .characterListHeaders {
@@ -19,28 +26,41 @@
     justify-content: center;
     color: #ffffff;
     padding-top: 10px;
+    padding-bottom: 12px;
     font-family: MarvelFont, sans-serif;
     font-size: 1em;
     position: relative;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);;
-
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    overflow-wrap: break-word;
+    width: 81px;
+    text-align: center;
 }
 
-#characterListHeadersUnderline {
+.characterListHeadersUnderline {
+    position: absolute;
+    /* Position the underline independently of the text */
+    bottom: 0;
     height: 3px;
-    width: 80px;
+    width: 100%;
+    /* Set the width to 100% of the container */
     background-color: #DCE1F4;
     margin-top: 10px;
 }
 
 .allGuessedCharacters {
-    display: flex; /* Flex layout */
+    display: flex;
+    /* Flex layout */
     flex-direction: column;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 10px; /* Space between guessed character boxes */
-    width: fit-content; /* Dynamically size to fit its content */
-    margin: 0 auto; /* Center the content */
-    box-sizing: border-box; /* Include padding and borders in width */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    gap: 10px;
+    /* Space between guessed character boxes */
+    width: fit-content;
+    /* Dynamically size to fit its content */
+    margin: 0 auto;
+    /* Center the content */
+    box-sizing: border-box;
+    /* Include padding and borders in width */
 }
 
 .guessedCharactersContainer {
@@ -68,43 +88,63 @@
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-    opacity: 1; /* Default state is fully visible */
-    transform: scale(1); /* Normal size */
-    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth transition */
-    white-space: normal; 
-    line-height: 1.4; 
-    word-wrap: break-word; 
-    overflow-wrap: break-word; 
+    opacity: 1;
+    /* Default state is fully visible */
+    transform: scale(1);
+    /* Normal size */
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Smooth transition */
+    white-space: normal;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hidden {
-    border: 2px solid #000000; /* Only the border is visible */
-    background-color: transparent !important; /* No background */
-    color: transparent !important; /* Hide text */
-    opacity: 0; /* Fully transparent */
-    transform: scale(0.8); /* Slightly smaller size for animation effect */
-    position: relative; /* Ensure child elements are properly positioned */
-    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth easing transition */
+    border: 2px solid #000000;
+    /* Only the border is visible */
+    background-color: transparent !important;
+    /* No background */
+    color: transparent !important;
+    /* Hide text */
+    opacity: 0;
+    /* Fully transparent */
+    transform: scale(0.8);
+    /* Slightly smaller size for animation effect */
+    position: relative;
+    /* Ensure child elements are properly positioned */
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Smooth easing transition */
 }
 
 .guessedCharacterBox:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge on hover */
 }
 
 /* Arrow styles */
 .arrow {
-    width: 90px; /* Set desired width */
-    height: 90px; /* Set desired height */
-    overflow: hidden; /* Ensures any overflow is clipped */
-    position: absolute; /* Helps with layout adjustments */
-    opacity: 0; /* Initially hidden */
-    transform: scale(0.5) rotate(-20deg); /* Start small and rotated */
-    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; /* Smooth fade and scale with rotation */
+    width: 90px;
+    /* Set desired width */
+    height: 90px;
+    /* Set desired height */
+    overflow: hidden;
+    /* Ensures any overflow is clipped */
+    position: absolute;
+    /* Helps with layout adjustments */
+    opacity: 0;
+    /* Initially hidden */
+    transform: scale(0.5) rotate(-20deg);
+    /* Start small and rotated */
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    /* Smooth fade and scale with rotation */
 }
 
 .guessedCharacterBox:not(.hidden) .arrow {
-    opacity: 0.4; /* Partially visible */
-    transform: scale(1) rotate(0deg); /* Normal size and alignment */
+    opacity: 0.4;
+    /* Partially visible */
+    transform: scale(1) rotate(0deg);
+    /* Normal size and alignment */
 }
 
 /* Guessed character image box */
