@@ -18,7 +18,9 @@ let daily_silhouette_character = characters[Math.floor(Math.random() * character
 let daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
 
 let daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
-let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)]
+let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)];
+
+let dayTracker = 0;
 
 let lastUpdatedDate = new Date().toDateString();
 
@@ -34,6 +36,7 @@ function checkAndResetCharacters() {
     lastUpdatedDate = today;
     console.log('Daily characters reset for the new day! last udated day is:', lastUpdatedDate);
   }
+  dayTracker += 1;
 }
 
 setInterval(() => {
@@ -50,7 +53,9 @@ app.get('/server_id', (req, res) => {
   res.json(serverID);
 })
 
-
+app.get('/day_tracker', (req, res) => {
+  res.json(dayTracker);
+})
 
 app.get('/daily_classic_character', (req, res) => {
   res.json(daily_classic_character);
