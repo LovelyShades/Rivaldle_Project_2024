@@ -22,7 +22,8 @@ async function checkAndClearLocalStorage() {
         const home_streak = localStorage.getItem('home_streak');
         const todaysNumber = localStorage.getItem('todaysNumber');
         const yesterdaysNumber = localStorage.getItem('yesterdaysNumber');
-        
+        const selectedLanguage = localStorage.getItem('language');
+
 
 
         // Clear localStorage and preserve necessary items
@@ -32,6 +33,7 @@ async function checkAndClearLocalStorage() {
             if (home_streak) localStorage.setItem('home_streak', home_streak);
             if (todaysNumber) localStorage.setItem('todaysNumber', todaysNumber);
             if (yesterdaysNumber) localStorage.setItem('yesterdaysNumber', yesterdaysNumber);
+            if (selectedLanguage) localStorage.setItem('language', selectedLanguage);
             localStorage.setItem('storedID', serverID); // Do not change
         };
 
