@@ -112,7 +112,7 @@ class About {
     }
 
     listenForXClick() {
-        const xIcons = document.querySelectorAll('.x_icon');
+        const xIcons = document.querySelectorAll('.x_icon, .language-popup-x-icon');
         xIcons.forEach((x) => {
             x.addEventListener('click', () => {
                 this.removeOverlay();
@@ -120,6 +120,7 @@ class About {
             });
         });
     }
+
 
     listenForLanguageSelection() {
         const languageButtons = document.querySelectorAll('.language-button');

@@ -91,7 +91,7 @@
     transform: translate(-50%, -50%);
     width: 60vw;
     /* Adjust width to be smaller */
-    max-width: 500px;
+    max-width: 200px;
     /* Smaller max width */
     height: auto;
     /* Let the height adjust based on content */
@@ -113,10 +113,9 @@
     position: relative;
     display: flex;
     font-family: MarvelFont;
-    text-align: left;
-    padding-left: 40px;
+    text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     /* Smaller header size */
     margin-bottom: 15px;
     /* Adjusted spacing */
@@ -128,7 +127,6 @@
     display: flex;
     font-family: MarvelFont;
     text-align: left;
-    padding-left: 40px;
     color: white;
     font-size: 16px;
     /* Smaller text */
@@ -141,7 +139,7 @@
     position: relative;
     display: flex;
     width: 95%;
-    height: 5px;
+    height: 2px;
     background-color: #ffffff;
     padding: 1px 0;
     margin-top: 10px;
