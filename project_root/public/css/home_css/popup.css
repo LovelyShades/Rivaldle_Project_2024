@@ -1,3 +1,4 @@
+/* Popup Container - Default Style */
 .popupContainer {
     position: fixed;
     border: 2px solid #DCE1F4;
@@ -65,7 +66,6 @@
     right: 2%;
     width: 40px;
     height: 40px;
-    transition: transform 1.02s ease;
 }
 
 .x_icon:hover {
@@ -80,33 +80,114 @@
     gap: 50px;
 }
 
-
-/* Remove bullets and default padding/margin for the language list */
-.language-options {
-    list-style-type: none;
-    /* Remove bullet points */
-    padding-left: 0;
-    /* Remove padding */
-    margin: 0;
-    /* Remove default margin */
+/* Language Popup Container - Smaller Size */
+.language-popup-container {
+    position: fixed;
+    border: 2px solid #DCE1F4;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    /* Adjust width to be smaller */
+    max-width: 500px;
+    /* Smaller max width */
+    height: auto;
+    /* Let the height adjust based on content */
+    padding: 20px;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    color: white;
+    flex-direction: column;
+    align-items: left;
+    transition: ease 0.2s;
+    font-size: 15px;
+    font-family: MarvelFont;
+    text-align: left;
 }
 
+/* Specific Header for Language Popup */
+.language-popup-header {
+    position: relative;
+    display: flex;
+    font-family: MarvelFont;
+    text-align: left;
+    padding-left: 40px;
+    color: white;
+    font-size: 30px;
+    /* Smaller header size */
+    margin-bottom: 15px;
+    /* Adjusted spacing */
+}
+
+/* Text for Language Popup */
+.language-popup-text {
+    position: relative;
+    display: flex;
+    font-family: MarvelFont;
+    text-align: left;
+    padding-left: 40px;
+    color: white;
+    font-size: 16px;
+    /* Smaller text */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* White Line Divider */
+.language-popup-white-line {
+    position: relative;
+    display: flex;
+    width: 95%;
+    height: 5px;
+    background-color: #ffffff;
+    padding: 1px 0;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Close Icon for Language Popup */
+.language-popup-x-icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+}
+
+.language-popup-x-icon:hover {
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
+/* Language List Styling */
+.language-options {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.language-option {
+    margin-bottom: 10px;
+    /* Adjusted margin between options */
+}
+
+/* Language Button Styling */
 .language-button {
-    padding: 12px 24px;
-    /* Boxy padding */
+    padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Transparent background */
     color: #dce1f4;
-    /* Off-white color */
     border: 2px solid #dce1f4;
-    /* Off-white border */
     border-radius: 5px;
-    /* Rounded corners */
     font-size: 16px;
     font-family: 'MarvelFont', sans-serif;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    /* Make buttons span the full width */
 }
 
 .language-button:hover {
