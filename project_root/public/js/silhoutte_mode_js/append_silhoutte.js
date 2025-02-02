@@ -8,7 +8,7 @@ class GetSilhouette {
         try {
             this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
             if (!this.dailyCharacter) throw new Error('Failed to fetch daily character.');
-
+            console.log(this.dailyCharacter); //log character for debugging
             this.checkForBigCharacters();
             this.checkForStoredScale();
             this.removeSpaces(this.dailyCharacter);
