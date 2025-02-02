@@ -20,8 +20,6 @@ class Language {
 
     // Update page content for language-specific elements
     updatePageContent(langData) {
-
-
         // List of headers that need the underline styling
         const headersWithUnderline = [
             'characterHeader', 'genderHeader', 'speciesHeader',
@@ -33,14 +31,15 @@ class Language {
             const key = element.getAttribute("data-translate");
 
             if (langData[key]) {
-                // Store the current HTML structure and apply the translated text
                 const translatedText = langData[key];
 
+                // If the element is an <input>, update the placeholder
+                if (element.tagName === "INPUT" && element.hasAttribute("placeholder")) {
+                    element.setAttribute("placeholder", translatedText);
+                }
                 // If the element is one of the headers with underline
-                if (headersWithUnderline.includes(key)) {
-                    // Preserve the underline structure
+                else if (headersWithUnderline.includes(key)) {
                     const underline = element.querySelector('.characterListHeadersUnderline');
-                    const originalTextContent = element.textContent.trim(); // Store original text for translation
 
                     // Set the translated text while preserving the underline
                     element.innerHTML = `${translatedText}`;
@@ -51,10 +50,11 @@ class Language {
                         underlineDiv.classList.add('characterListHeadersUnderline');
                         element.appendChild(underlineDiv);
                     } else {
-                        element.appendChild(underline); // Re-append underline if already exists
+                        element.appendChild(underline);
                     }
-                } else {
-                    // Just update text without adding underline
+                }
+                // Default case: update text content
+                else {
                     element.textContent = translatedText;
                 }
             } else {

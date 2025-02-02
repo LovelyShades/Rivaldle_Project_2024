@@ -46,21 +46,41 @@ body {
 }
 
 /* Title logo styling */
+/* Title logo container styling */
+/* Title logo container */
 #title_logo {
     display: flex;
     justify-content: center;
+    /* Centers the logo horizontally */
     align-items: center;
+    /* Centers the logo vertically */
     text-decoration: none;
-}
-
-.logo {
-    height: auto;
-    width: 90vw;
+    width: 100%;
+    /* Ensures the container stretches the full width of its parent */
     max-width: 600px;
+    /* Sets a maximum width for the container */
+    margin: 0 auto;
+    /* Centers the container in the parent element */
+    height: 200px;
+    /* Adjust height as needed */
 }
 
+/* Logo styling */
+.logo {
+    width: 90vw;
+    /* Logo width will be 90% of the viewport width */
+    max-width: 600px;
+    /* Caps the logo width to 600px */
+    height: auto;
+    /* Keeps the logo proportional */
+}
+
+/* Hover effect for logo */
 .logo:hover {
     transform: scale(1.02);
+    /* Slightly scales the logo on hover */
+    transition: transform 0.2s ease;
+    /* Smooth transition */
 }
 
 /* Marvel font setup */
@@ -105,21 +125,26 @@ body {
     background-image: url('../../_images/global_images/hover_background_logo.png');
     /* Change background image on hover */
 }
+
 .dark-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 998; /* Sits behind the popup but above the main content */
-    display: none; /* Initially hidden */
-    pointer-events: all; /* Blocks interaction with elements behind */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    z-index: 998;
+    /* Sits behind the popup but above the main content */
+    display: none;
+    /* Initially hidden */
+    pointer-events: all;
+    /* Blocks interaction with elements behind */
 }
 
 /* Background selection menu styling */
 /* Popup container */
-.menu-header{
+.menu-header {
     display: flex;
     position: relative;
     justify-content: center;
@@ -127,21 +152,28 @@ body {
     font-family: 'MarvelFont';
     color: white;
 }
+
 .background-menu {
-    position: fixed; 
-    border: 2px solid #ddd;    
+    position: fixed;
+    border: 2px solid #ddd;
     background-color: rgba(0, 0, 0, 0.751);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for better design */
     left: 50%;
-    top: calc(10vh + 20px); /* Add a base value + dynamic height offset */
-    transform: translateX(-50%); /* Center horizontally */
+    top: calc(10vh + 20px);
+    /* Add a base value + dynamic height offset */
+    transform: translateX(-50%);
+    /* Center horizontally */
     width: 80vw;
     max-width: 600px;
-    max-height: calc(80vh - 20px); /* Account for padding/margins */
+    max-height: calc(80vh - 20px);
+    /* Account for padding/margins */
     padding: 15px;
     z-index: 999;
-    display: none; /* Initially hidden */
-    overflow-y: auto; /* Enable scrolling if content overflows */
+    display: none;
+    /* Initially hidden */
+    overflow-y: auto;
+    /* Enable scrolling if content overflows */
 }
 
 
@@ -149,20 +181,26 @@ body {
 .background-options {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: center; /* Center the options */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+    justify-content: center;
+    /* Center the options */
 }
 
 /* Individual background option thumbnails */
 .background-option {
     width: 100px;
-    height: 100px; /* Ensure the height matches the width */
+    height: 100px;
+    /* Ensure the height matches the width */
     object-fit: cover;
     cursor: pointer;
-    border: 3px solid #ddd;    
-    flex: 0 1 calc(33.33% - 10px); /* Flexible width, 3 items per row with gap */
-    box-sizing: border-box; /* Include padding and border in size calculations */
-    aspect-ratio: 1 / 1; /* Explicitly set a 1:1 aspect ratio */
+    border: 3px solid #ddd;
+    flex: 0 1 calc(33.33% - 10px);
+    /* Flexible width, 3 items per row with gap */
+    box-sizing: border-box;
+    /* Include padding and border in size calculations */
+    aspect-ratio: 1 / 1;
+    /* Explicitly set a 1:1 aspect ratio */
 }
 
 /* Highlight effect on hover */
@@ -372,7 +410,7 @@ body {
     transform: none;
 }
 
-.head_icon_container{
+.head_icon_container {
     position: relative;
     display: flex;
     flex-direction: row;

@@ -7,18 +7,22 @@ export const translations = {
         silhouetteFooter: "Each try zooms out a bit"
     },
     es: {
+        ...globalTranslations.es,
         silhouetteHeader: "¿De qué personaje es esta silueta?",
         silhouetteFooter: "Cada intento hace que se acerque un poco más"
     },
     fr: {
+        ...globalTranslations.fr,
         silhouetteHeader: "De quel personnage est cette silhouette ?",
         silhouetteFooter: "Chaque essai zoom un peu plus"
     },
     de: {
+        ...globalTranslations.de,
         silhouetteHeader: "Von welchem Charakter ist diese Silhouette?",
         silhouetteFooter: "Jeder Versuch zoomt ein wenig heraus"
     },
     zh: {
+        ...globalTranslations.zh,
         silhouetteHeader: "这是谁的剪影？",
         silhouetteFooter: "每次尝试都会稍微放大"
     }
