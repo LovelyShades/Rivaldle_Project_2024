@@ -45,6 +45,13 @@ setInterval(() => {
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.get('/character_info', (req, res) => {
+  const language = req.query.language;
+  res.json(characters);
+  
+  console.log(language)
+});
+
 app.get('/date', (req, res) => {
   res.json(lastUpdatedDate);
 })
@@ -78,10 +85,6 @@ app.get('/daily_character_ability', (req, res) => {
 })
 
 
-app.get('/character_info', (req, res) => {
-  const language = req.query.language || 'en';
-  res.json(characters);
-});
 // Serve the HTML file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../pages/home_page/index.html'));
@@ -114,3 +117,8 @@ app.listen(3000, '0.0.0.0', () => {
   console.log(`Server is running on http://localhost:${port}`);
   open(`http://localhost:${port}`);  // This will open the browser automatically
 });
+
+
+
+// Exporting characters array
+console.log(`Name: ${captainAmerica.translations.fr.name}`); // "Capitán América"

@@ -38,7 +38,6 @@ class CharacterSearch {
                 throw new Error(`Error: ${response.status}`);
             }
             const characters = await response.json();
-            console.log('Fetched Characters:', characters);
             return characters;
         } catch (error) {
             console.error('Failed to fetch characters:', error);
