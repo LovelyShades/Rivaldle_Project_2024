@@ -4,6 +4,7 @@ class AppendSearchedCharacter {
     }
 
     async initialize() {
+        this.language = localStorage.getItem('language')
         this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
         if (!this.dailyCharacter) {
             console.error('Failed to load dailyCharacter data.');
@@ -44,11 +45,11 @@ class AppendSearchedCharacter {
 
         const newBoxText = document.createElement('div');
         newBoxText.className = 'searched_character_text';
-        newBoxText.innerHTML = character.name;
+        newBoxText.innerHTML = character.translations[this.language].name;
 
         const newBoxImg = document.createElement('img');
         newBoxImg.className = 'searched_character_image';
-        newBoxImg.src = `/_images/character_images/character_icon_images/${character.name.replace(/\s+/g, '')}.png`;
+        newBoxImg.src = `/_images/character_images/character_icon_images/${character.translations['en'].name.replace(/\s+/g, '')}.png`;
 
         this.isCorrectCharacter(newBox, character);
         this.searchedCharacterBoxContainer.prepend(newBox);
@@ -57,7 +58,7 @@ class AppendSearchedCharacter {
     }
 
     isCorrectCharacter(newBox, character = this.receivedCharacter) {
-        if (character.name === this.dailyCharacter.name) {
+        if (character.translations[this.language].name === this.dailyCharacter.translations[this.language].name) {
             this.broadcastCorrectCharacter();
             this.appendConfetti();
             newBox.style.backgroundColor = '#4caf50';
@@ -106,7 +107,7 @@ class AppendSearchedCharacter {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
         storedCharacters.forEach((character) => {
-            if (character && character.name) this.appendSearchedCharacterBox(character);
+            if (character && character.translations[this.language].name) this.appendSearchedCharacterBox(character);
         });
     }
 

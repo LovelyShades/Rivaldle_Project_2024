@@ -4,7 +4,7 @@ class AppendInstrustions {
     }
 
     initialize() {
-        console.log(this.hasBeenRemoved())
+        this.language = localStorage.getItem('language')
         if(this.hasBeenRemoved() == true) return;
         this.instructionsBox = document.getElementById('game_instructions_container');
         this.loadActivationStatus();

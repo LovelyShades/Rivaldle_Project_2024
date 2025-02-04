@@ -6,6 +6,7 @@ class SearchedCharacters {
 
     async initialize() {
         try {
+            this.language = localStorage.getItem('language');
             this.marvelCharacters = await this.fetchData('./character_info');
             this.dailyCharacter = await this.fetchData('./daily_classic_character');
             this.loadStoredCharacters();
@@ -57,7 +58,7 @@ class SearchedCharacters {
         const newRow = document.createElement('div');
         newRow.className = 'guessedCharactersContainer';
 
-        this.addCharacterImageBox(newRow, character.name);
+        this.addCharacterImageBox(newRow, character.translations['en'].name);
         this.addCharacterAttributes(newRow, character);
 
         parentContainer.prepend(newRow);
@@ -79,13 +80,13 @@ class SearchedCharacters {
     
         attributes.forEach(attr => {
             let value;
-            if (Array.isArray(character[attr])) {
+            if (Array.isArray(character.translations[this.language][attr])) {
                 // Concatenate array values into a single string, separated by commas
-                value = character[attr].join(', ');
+                value = character.translations[this.language][attr].join(', ');
             } else {
-                value = character[attr];
+                value = character.translations[this.language][attr];
             }
-    
+            
             // Create a single box with the combined value
             const box = this.addCharacterBox(row, value, attr, character);
             box.classList.add('hidden');
@@ -118,8 +119,8 @@ class SearchedCharacters {
     }
 
     setBoxAppearance(box, attribute, character) {
-        const dailyValue = this.dailyCharacter[attribute];
-        const characterValue = character[attribute];
+        const dailyValue = this.dailyCharacter.translations[this.language][attribute];
+        const characterValue = character.translations[this.language][attribute];
     
         if (Array.isArray(dailyValue) && Array.isArray(characterValue)) {
             // Check for partial matches in the arrays
@@ -150,7 +151,7 @@ class SearchedCharacters {
     }
 
     isCorrectCharacter(character) {
-        if (character.name === this.dailyCharacter.name) {
+        if (character.translations[this.language].name === this.dailyCharacter.translations[this.language].name) {
             this.broadcastCorrectCharacter();
             confetti({
                 particleCount: 250,
@@ -193,7 +194,7 @@ class SearchedCharacters {
         }
 
         storedCharacters.forEach((character) => {
-            if (character && character.name) this.addRow(character);
+            if (character && character.translations[this.language].name) this.addRow(character);
         });
     }
 

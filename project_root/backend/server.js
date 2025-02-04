@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import open from 'open';
-import { characters } from './data/englishCharacters.js';
+import { characters } from './data/characterInfo.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,7 +18,7 @@ let daily_silhouette_character = characters[Math.floor(Math.random() * character
 let daily_emoji_character = characters[Math.floor(Math.random() * characters.length)];
 
 let daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
-let daily_character_ability = daily_ability_character.abilities[Math.floor(Math.random() * daily_ability_character.abilities.length)];
+let daily_character_ability = Math.floor(Math.random() * daily_ability_character.translations['en'].abilities.length);
 
 let dayTracker = 0;
 
@@ -46,11 +46,8 @@ setInterval(() => {
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/character_info', (req, res) => {
-  const language = req.query.language;
   res.json(characters);
-  
-  console.log(language)
-});
+  });
 
 app.get('/date', (req, res) => {
   res.json(lastUpdatedDate);
@@ -119,6 +116,3 @@ app.listen(3000, '0.0.0.0', () => {
 });
 
 
-
-// Exporting characters array
-console.log(`Name: ${captainAmerica.translations.fr.name}`); // "Capitán América"

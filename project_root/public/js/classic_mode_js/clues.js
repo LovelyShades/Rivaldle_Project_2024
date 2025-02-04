@@ -4,6 +4,7 @@ class Clues {
     }
 
     async initialize() {
+        this.language = localStorage.getItem('language');
         this.key = 'numTries';
         this.getNumTries();
         this.appendClueTries();
@@ -147,7 +148,7 @@ class Clues {
         const clueBoxContainer = document.getElementById('activeHeaderBoxContainer');
         this.silhoutteImage = document.createElement('img');
         this.silhoutteImage.className = 'characterSilhoutteImg'
-        this.silhoutteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${this.dailyCharacter.name.replace(/\s+/g, '')}.png`;
+        this.silhoutteImage.src = `/_images/character_images/hero_profile_images/silhouette_character_image/${this.dailyCharacter.translations['en'].name.replace(/\s+/g, '')}.png`;
         clueBoxContainer.append(this.silhoutteImage)
         this.silhoutteActive = true;
     }
@@ -163,7 +164,7 @@ class Clues {
         this.ultName = document.createElement('div');
         this.ultName.className = 'clueContainer';
         this.ultName.style.fontSize = 'xx-large'
-        this.ultName.innerHTML = this.dailyCharacter.ult
+        this.ultName.innerHTML = this.dailyCharacter.translations[this.language].ult
         clueBoxContainer.append(this.ultName);
 
         this.ultActive = true;

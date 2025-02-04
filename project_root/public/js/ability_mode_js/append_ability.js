@@ -4,8 +4,11 @@ class AppendAbility{
     }
 
     async initialize(){
+        this.language = localStorage.getItem('language')
         this.dailyCharacter = await this.fetchData('./daily_ability_character');
         this.dailyCharacterAbility = await this.fetchData('./daily_character_ability');
+        console.log(this.dailyCharacter.translations[this.language].abilities[this.dailyCharacterAbility])
+        this.dailyCharacterAbility = this.dailyCharacter.translations[this.language].abilities[this.dailyCharacterAbility];
         this.appendAbility()
     }
 

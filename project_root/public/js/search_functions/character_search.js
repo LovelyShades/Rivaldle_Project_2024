@@ -5,13 +5,22 @@ class CharacterSearch {
     }
 
     async initialize() {
-        this.marvelCharacters = await this.fetchMarvelCharacters('en');
+        this.language = localStorage.getItem('language');
+        this.marvelCharacters = await this.fetchMarvelCharacters();
         const storedCharacters = this.getStoredCharacters();
 
+
         // Filter out the stored characters from the marvelCharacters list
-        this.notSearchedMarvelCharacters = this.marvelCharacters.filter(
-            character => !storedCharacters.some(stored => stored.name === character.name)
-        );
+        this.notSearchedMarvelCharacters = this.marvelCharacters.filter(character => {
+            const characterNames = Object.values(character.translations)
+                .map(lang => lang?.name)
+                .filter(Boolean); // Remove undefined values
+            const storedCharacterNames = storedCharacters.map(stored => stored.translations?.en?.name).filter(Boolean);
+    
+            return !storedCharacterNames.some(storedName => characterNames.includes(storedName));
+        });
+        
+        console.log("Filtered List:", this.notSearchedMarvelCharacters);             
         this.setupEventListeners();
     }
 
@@ -31,9 +40,9 @@ class CharacterSearch {
         return JSON.parse(localStorage.getItem(pageKey)) || [];
     }
 
-    async fetchMarvelCharacters(language) {
+    async fetchMarvelCharacters() {
         try {
-            const response = await fetch(`/character_info?language=${language}`);
+        const response = await fetch('/character_info');
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
@@ -58,13 +67,13 @@ class CharacterSearch {
 
     getSuggestedCharacters(typedText) {
         if (!typedText) return [];
-
+    
         const searchText = typedText.toLowerCase();
+        
         return this.notSearchedMarvelCharacters.filter(character =>
-            character.name.toLowerCase().startsWith(searchText)
+            character.translations[this.language].name.toLowerCase().startsWith(searchText)
         );
     }
-
     displaySuggestions(suggestedCharacters) {
         this.clearSuggestions();
         if (this.shouldHideSuggestions(suggestedCharacters)) {
@@ -90,14 +99,14 @@ class CharacterSearch {
             element.addEventListener('click', () => this.handleCharacterSelection(character));
 
             const image = document.createElement('img');
-            const characterNameWithoutSpaces = character.name.replace(/\s+/g, '');
+            const characterNameWithoutSpaces = character.translations['en'].name.replace(/\s+/g, '');
             image.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
-            image.alt = `${character.name} icon`;
+            image.alt = `${character.translations[this.language].name} icon`;
             image.className = 'suggestedCharacterImage';
 
             const characterNameText = document.createElement('div');
             characterNameText.className = 'suggestedCharacterText';
-            characterNameText.textContent = character.name;
+            characterNameText.textContent = character.translations[this.language].name;
 
             element.appendChild(image);
             element.appendChild(characterNameText);
@@ -109,7 +118,7 @@ class CharacterSearch {
     handleButtonClick() {
         const inputValue = this.characterInput.value.toLowerCase();
         const matchingCharacter = this.notSearchedMarvelCharacters.find(character =>
-            character.name.toLowerCase() === inputValue
+            character.translations[this.language].name.toLowerCase() === inputValue
         );
 
         if (matchingCharacter) {
@@ -135,9 +144,9 @@ class CharacterSearch {
     }
 
     removeCharacterFromList(character) {
-        this.notSearchedMarvelCharacters = this.notSearchedMarvelCharacters.filter(
-            c => c.name !== character.name
-        );
+        this.notSearchedMarvelCharacters = this.notSearchedMarvelCharacters.filter(c => {
+            return !Object.values(c.translations).some(lang => lang.name === character.translations[this.language].name);
+        });
     }
 
     clearInput() {

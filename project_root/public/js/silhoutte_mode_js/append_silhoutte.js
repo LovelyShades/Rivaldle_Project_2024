@@ -5,6 +5,7 @@ class GetSilhouette {
     }
 
     async initialize() {
+        this.language = localStorage.getItem('language');
         try {
             this.dailyCharacter = await this.fetchData('./daily_silhouette_character');
             if (!this.dailyCharacter) throw new Error('Failed to fetch daily character.');
@@ -43,14 +44,14 @@ class GetSilhouette {
 
     checkForBigCharacters() {
         const bigCharacters = ["Doctor Strange", "Cloak and Dagger", "The Punisher"];
-        if (bigCharacters.includes(this.dailyCharacter.name)) {
+        if (bigCharacters.includes(this.dailyCharacter.translations['en'].name)) {
             this.imageScale = 25;
             this.imageScaleRate = 2;
         } else {
             this.imageScale = 35;
             this.imageScaleRate = 3;
         }
-        if (this.dailyCharacter.name == "Jeff the Land Shark") {
+        if (this.dailyCharacter.translations['en'].name == "Jeff the Land Shark") {
             this.imageScale = 20;
             this.imageScaleRate = 1.5;
         }
@@ -84,8 +85,8 @@ class GetSilhouette {
     }
 
     removeSpaces(character) {
-        if (character && character.name) {
-            this.removedSpacesCharacterName = character.name.replace(/\s+/g, '');
+        if (character && character.translations[this.language].name) {
+            this.removedSpacesCharacterName = character.translations['en'].name.replace(/\s+/g, '');
         } else {
             console.error('Invalid character data provided for removing spaces.');
         }

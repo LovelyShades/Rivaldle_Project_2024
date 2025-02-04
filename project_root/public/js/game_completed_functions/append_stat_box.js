@@ -5,6 +5,7 @@ class StatBox {
     }
 
     initalize() {
+        this.language = localStorage.getItem('language')
         this.isGameCompleted()
     }
 
@@ -91,13 +92,13 @@ class StatBox {
 
         const characterImage = document.createElement('img');
         characterImage.className = 'guessed_character_stat_icon'
-        const characterNameWithoutSpaces = this.dailyCharacter.name.replace(/\s+/g, '');
+        const characterNameWithoutSpaces = this.dailyCharacter.translations['en'].name.replace(/\s+/g, '');
         characterImage.src = `/_images/character_images/character_icon_images/${characterNameWithoutSpaces}.png`;
         characterImageContainer.append(characterImage);
 
         const characterText = document.createElement('div');
         characterText.className = 'stat_box_text'
-        characterText.innerHTML = `You Guessed ${this.dailyCharacter.name}`;
+        characterText.innerHTML = `You Guessed ${this.dailyCharacter.translations[this.language].name}`;
         characterText.style.color = 'black';
         characterImageContainer.append(characterText);
     }
@@ -136,7 +137,7 @@ class StatBox {
     appendFullCharacterImage(container) {
         const fullCharacterImage = document.createElement('img');
         fullCharacterImage.className = 'guessed_character_full_image'
-        const characterNameWithoutSpaces = this.dailyCharacter.name.replace(/\s+/g, '');
+        const characterNameWithoutSpaces = this.dailyCharacter.translations['en'].name.replace(/\s+/g, '');
         fullCharacterImage.src = `/_images/character_images/hero_profile_images/character_image/${characterNameWithoutSpaces}.png`;
         container.append(fullCharacterImage);
 

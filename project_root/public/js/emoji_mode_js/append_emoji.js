@@ -30,7 +30,7 @@ class AppendEmoji {
     }
 
     getCharacterEmojis() {
-        this.dailyCharacterEmojis = this.dailyCharacter.emoji;
+        this.dailyCharacterEmojis = this.dailyCharacter.translations['en'].emoji;
     }
 
     appendEmojis() {

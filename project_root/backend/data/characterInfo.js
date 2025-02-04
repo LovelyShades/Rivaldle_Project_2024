@@ -1690,7 +1690,7 @@ const scarletWitch = new Person({
 
 const spiderMan = new Person({
     en: {
-        name: "Spider-Man",
+        name: "Spider Man",
         gender: "male",
         species: "Human",
         affiliation: "Spider-Verse",
@@ -1871,7 +1871,7 @@ const squirrelGirl = new Person({
 
 const starLord = new Person({
     en: {
-        name: "Star-Lord",
+        name: "Star Lord",
         gender: "male",
         species: "Human",
         affiliation: "Guardians",
