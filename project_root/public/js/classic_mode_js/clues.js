@@ -125,7 +125,13 @@ class Clues {
         }
 
         if (this.numTriesUntilUltClue - this.storedTries > 0) {
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until ult name: ${this.numTriesUntilUltClue - this.storedTries}`;
+            const triesLeft = this.numTriesUntilUltClue - this.storedTries;
+            this.numTriesLeftUntilUlt.setAttribute("data-translate", "triesUntilUlt");
+            let translationKey = this.numTriesLeftUntilUlt.getAttribute("data-translate");
+            let translatedText = this.getTranslation(translationKey, this.language);
+            translatedText = translatedText.replace("{tries}", triesLeft);
+            this.numTriesLeftUntilUlt.removeAttribute("data-translate")
+            this.numTriesLeftUntilUlt.innerHTML = translatedText;
         } else if (this.numTriesLeftUntilUlt) {
             this.activateUltImage();
             this.numTriesLeftUntilUlt.remove();
