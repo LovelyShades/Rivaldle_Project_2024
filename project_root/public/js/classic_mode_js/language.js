@@ -3,8 +3,8 @@ import { globalTranslations } from '../global_js/language_js/language.js';
 export const translations = {
     en: {
         ...globalTranslations.en,
-        triesUntilSilhouette: 'Tries until silhouette: ',
-        triesUntilUlt: "Tries until ult name: ",
+        triesUntilSilhouette: 'Tries until silhouette: {tries}',
+        triesUntilUlt: "Tries until ult name: {tries}",
         guessHero: "Guess today's Marvel Rivals hero!",
         typeCharacter: "Type any character to start.",
         okButton: "OK",
@@ -24,7 +24,8 @@ export const translations = {
 
     es: {
         ...globalTranslations.es,
-        triesUntilSilhouette: 'Intentos hasta la silueta: ',
+        triesUntilSilhouette: 'Intentos hasta la silueta: {tries}',
+        triesUntilUlt: "Intentos hasta el nombre de la ulti: {tries}",
         guessHero: "¡Adivina el héroe de Marvel Rivals de hoy!",
         typeCharacter: "Escribe cualquier personaje para comenzar.",
         okButton: "OK",
@@ -44,7 +45,8 @@ export const translations = {
 
     fr: {
         ...globalTranslations.fr,
-        triesUntilSilhouette: 'Essais jusqu\'à la silhouette : ',
+        triesUntilSilhouette: 'Essais jusqu\'à la silhouette : {tries}',
+        triesUntilUlt: "Essais avant le nom de l'ultime : {tries}",
         guessHero: "Devinez le héros de Marvel Rivals d'aujourd'hui !",
         typeCharacter: "Tapez n'importe quel personnage pour commencer.",
         okButton: "OK",
@@ -64,7 +66,8 @@ export const translations = {
 
     de: {
         ...globalTranslations.de,
-        triesUntilSilhouette: 'Versuche bis zur Silhouette: ',
+        triesUntilSilhouette: 'Versuche bis zur Silhouette: {tries}',
+        triesUntilUlt: "Versuche bis zum Ult-Namen : {tries}",
         guessHero: "Errate den Marvel Rivals-Helden von heute!",
         typeCharacter: "Gib einen beliebigen Charakter ein, um zu starten.",
         okButton: "OK",
@@ -84,7 +87,8 @@ export const translations = {
 
     zh: {
         ...globalTranslations.zh,
-        triesUntilSilhouette: '直到轮廓的尝试次数：',
+        triesUntilSilhouette: '直到轮廓的尝试次数：{tries}',
+        triesUntilUlt: "距离终极技能名称还有 {tries} 次尝试",
         guessHero: "猜猜今天的《漫威对决》英雄！",
         typeCharacter: "输入任何角色以开始。",
         okButton: "确定",

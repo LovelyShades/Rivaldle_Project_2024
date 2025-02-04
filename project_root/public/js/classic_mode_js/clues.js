@@ -1,5 +1,8 @@
+import { translations } from '../classic_mode_js/language.js';
+
 class Clues {
     constructor() {
+        this.language = localStorage.getItem('language');
         this.initialize();
     }
 
@@ -67,11 +70,22 @@ class Clues {
             this.numTriesLeftUntilSulhoutte = document.createElement('div');
             this.numTriesLeftUntilSulhoutte.className = 'clue2';
             this.numTriesLeftUntilSulhoutte.style.fontSize = 'medium';
-            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
+            const triesLeft = this.numTriesLeftUntilSulhoutteClue - this.storedTries;
+            this.numTriesLeftUntilSulhoutte.setAttribute("data-translate", "triesUntilSilhouette");
+            let translationKey = this.numTriesLeftUntilSulhoutte.getAttribute("data-translate");
+            let translatedText = this.getTranslation(translationKey, this.language);
+            translatedText = translatedText.replace("{tries}", triesLeft);
+            this.numTriesLeftUntilSulhoutte.removeAttribute("data-translate")
+            this.numTriesLeftUntilSulhoutte.innerHTML = translatedText;
+
+            // Dynamically update the text while supporting translation placeholders
             clueContainer.append(this.numTriesLeftUntilSulhoutte);
         } else {
             this.activateSilhoutteImage();
-        }
+        }        
+    }
+    getTranslation(key, lang ) {
+        return translations[lang]?.[key] || key; // Fallback to key if translation is missing
     }
 
     appendNumTriesUntilUlt() {
@@ -82,7 +96,13 @@ class Clues {
             this.numTriesLeftUntilUlt = document.createElement('div');
             this.numTriesLeftUntilUlt.className = 'clue2';
             this.numTriesLeftUntilUlt.style.fontSize = 'medium';
-            this.numTriesLeftUntilUlt.innerHTML = `Tries until ult name: ${this.numTriesUntilUltClue - this.storedTries}`;
+            const triesLeft = this.numTriesUntilUltClue - this.storedTries;
+            this.numTriesLeftUntilUlt.setAttribute("data-translate", "triesUntilUlt");
+            let translationKey = this.numTriesLeftUntilUlt.getAttribute("data-translate");
+            let translatedText = this.getTranslation(translationKey, this.language);
+            translatedText = translatedText.replace("{tries}", triesLeft);
+            this.numTriesLeftUntilUlt.removeAttribute("data-translate")
+            this.numTriesLeftUntilUlt.innerHTML = translatedText;
             clueContainer.append(this.numTriesLeftUntilUlt);
         } else {
             this.activateUltImage();
@@ -91,7 +111,13 @@ class Clues {
 
     updateTries() {
         if (this.numTriesLeftUntilSulhoutteClue - this.storedTries > 0) {
-            this.numTriesLeftUntilSulhoutte.innerHTML = `Tries until silhouette: ${this.numTriesLeftUntilSulhoutteClue - this.storedTries}`;
+            const triesLeft = this.numTriesLeftUntilSulhoutteClue - this.storedTries;
+            this.numTriesLeftUntilSulhoutte.setAttribute("data-translate", "triesUntilSilhouette");
+            let translationKey = this.numTriesLeftUntilSulhoutte.getAttribute("data-translate");
+            let translatedText = this.getTranslation(translationKey, this.language);
+            translatedText = translatedText.replace("{tries}", triesLeft);
+            this.numTriesLeftUntilSulhoutte.removeAttribute("data-translate")
+            this.numTriesLeftUntilSulhoutte.innerHTML = translatedText;
         } else if (this.numTriesLeftUntilSulhoutte) {
             this.activateSilhoutteImage();
             this.numTriesLeftUntilSulhoutte.remove();
