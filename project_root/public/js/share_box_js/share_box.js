@@ -40,7 +40,7 @@ class ShareBox{
         let translationKey = headerText.getAttribute("data-translate");
         let translatedText = this.getTranslation(translationKey, this.language);
 
-        translatedText = translatedText.replace("{tries}", 5)
+        translatedText = translatedText.replace("{tries}", this.getTriesText())
         translatedText = translatedText.replace("{mode}", this.getMode())
         headerText.removeAttribute("data-translate")
         headerText.innerHTML = translatedText;
@@ -59,7 +59,7 @@ class ShareBox{
     copyButton(shareBox) {
         let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.com`;
         const copyButton = document.createElement('button');
-        copyButton.innerHTML = 'Share!😊';
+        copyButton.innerHTML = this.getTranslation("share", this.language);
         copyButton.className = 'button-43'
         copyButton.style.cursor = 'pointer';
         copyButton.addEventListener('click', () => {
@@ -110,9 +110,9 @@ class ShareBox{
         const tries = this.getTries();
         if (tries === 1) {
             console.log(tries)
-            return 'one shot!';
+            return this.getTranslation('oneShot', this.language);
         }else{
-            return `${tries} tries!`;
+            return `${tries} ${this.getTranslation('shareTries', this.language)}`;
         }
     }
 

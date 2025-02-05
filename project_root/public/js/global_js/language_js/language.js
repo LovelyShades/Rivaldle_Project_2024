@@ -14,12 +14,15 @@ export const globalTranslations = {
         nextMode: "Next Mode",
 
         //share box
-        shareHeader: "I found #Rivaldle {mode} mode in {tries} tries! 👑", 
+        shareHeader: "I found #Rivaldle {mode} in {tries} 👑", 
+        shareTries: "tries!",
         classicMode: "classic mode",
         silhoutteMode: "silhoutte mode",
         emojiMode: "emoji mode",
         abilityMode: "ability mode",
-        oneShot: "one shot!"
+        oneShot: "one shot!",
+        share: "Share 😊",
+
     },
     es: {
         characterInput: "Escribe el nombre del personaje ...",
@@ -34,12 +37,14 @@ export const globalTranslations = {
         newHeroIn: "Nuevo héroe en:",
         nextMode: "Siguiente Modo",
 
-        shareHeader: "¡Encontré #Rivaldle en {mode} modo en {tries} intentos! 👑",
+        shareHeader: "¡Encontré #Rivaldle en {mode} en {tries} 👑",
+        shareTries: "intenta!",
         classicMode: "modo clásico",
         silhoutteMode: "modo silueta",
         emojiMode: "modo emoji",
         abilityMode: "modo habilidad",
-        oneShot: "¡un solo intento!"
+        oneShot: "¡un solo intento!",
+        share: "Compartir 😊",
     },
     fr: {
         characterInput: "Tapez le nom du personnage ...",
@@ -54,12 +59,15 @@ export const globalTranslations = {
         newHeroIn: "Nouveau héros dans:",
         nextMode: "Mode Suivant",
 
-        shareHeader: "J'ai trouvé #Rivaldle en {mode} mode en {tries} essais ! 👑",
+        shareHeader: "J'ai trouvé #Rivaldle en {mode} en {tries} 👑",
+        shareTries: "essaie!",
         classicMode: "mode classique",
         silhoutteMode: "mode silhouette",
         emojiMode: "mode emoji",
         abilityMode: "mode capacité",
-        oneShot: "un seul essai !"
+        oneShot: "un seul essai !",
+        share: "Partager 😊",
+
     },
     de: {
         characterInput: "Geben Sie den Charakternamen ein ...",
@@ -74,12 +82,14 @@ export const globalTranslations = {
         newHeroIn: "Neuer Held in:",
         nextMode: "Nächster Modus",
 
-        shareHeader: "Ich habe #Rivaldle im {mode} modus in {tries} Versuchen gefunden! 👑",
+        shareHeader: "Ich habe #Rivaldle im {mode} in {tries} gefunden! 👑",
+        shareTries: "versucht es!",
         classicMode: "klassischer Modus",
         silhoutteMode: "Silhouettenmodus",
         emojiMode: "Emoji-Modus",
         abilityMode: "Fähigkeitenmodus",
-        oneShot: "nur ein Versuch!"
+        oneShot: "nur ein Versuch!",
+        share: "Aktie 😊",
     },
     zh: {
         characterInput: "输入角色名称 ...",
@@ -94,11 +104,13 @@ export const globalTranslations = {
         newHeroIn: "新英雄登场:",
         nextMode: "下一个模式",
 
-        shareHeader: "我在{mode}模式下用了{tries}次尝试找到了#Rivaldle！👑",
+        shareHeader: "我在{mode}用了{tries}找到#Rivaldle！👑",
+        shareTries: "尝试一下！",
         classicMode: "经典模式",
         silhoutteMode: "剪影模式",
         emojiMode: "表情符号模式",
         abilityMode: "技能模式",
-        oneShot: "仅一次尝试！"
+        oneShot: "仅一次尝试！",
+        share: "Compartir 😊",
     },
 };
