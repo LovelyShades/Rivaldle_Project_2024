@@ -121,17 +121,17 @@ class About {
         });
     }
 
-
     listenForLanguageSelection() {
-        const languageButtons = document.querySelectorAll('.language-button');
-        languageButtons.forEach((button) => {
-            button.addEventListener('click', (e) => {
-                const selectedLanguage = e.target.dataset.lang;
-                console.log("Selected Language: ", selectedLanguage); // Debugging line
-                Language.setLanguage(selectedLanguage);  // Apply language using Language class
-                this.removeOverlay();
-                this.removeContainer();
-            });
+        // Get the language dropdown
+        const languageSelect = document.getElementById('language_select');
+        
+        // Listen for changes in the dropdown
+        languageSelect.addEventListener('change', (e) => {
+            const selectedLanguage = e.target.value;
+            console.log("Selected Language: ", selectedLanguage); // Debugging line
+            Language.setLanguage(selectedLanguage);  // Apply language using Language class
+            this.removeOverlay();
+            this.removeContainer();
         });
     }
 }
