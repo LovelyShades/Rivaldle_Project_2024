@@ -101,11 +101,8 @@
     font-size: 15px;
     font-family: MarvelFont;
     text-align: left;
-    /* Center the popup container */
     flex-direction: column;
     transition: ease 0.2s;
-
-
 }
 
 /* Specific Header for Language Popup */
@@ -114,7 +111,6 @@
     display: flex;
     font-family: MarvelFont;
     text-align: left;
-    /* Align header text to the left */
     color: white;
     font-size: 30px;
     margin-bottom: 10px;
@@ -154,51 +150,43 @@
     transform: scale(1.07);
 }
 
-/* Language List Styling */
-.language-options {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Center buttons horizontally */
-    justify-content: center;
-    gap: 15px;
-    /* Space between buttons */
-}
-
-/* Language Button Styling */
-.language-button {
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Language Dropdown Styling */
+.language-dropdown {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
     color: #dce1f4;
     border: 2px solid #dce1f4;
     border-radius: 5px;
     font-size: 16px;
     font-family: 'MarvelFont', sans-serif;
-    text-align: center;
+
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
     width: 100%;
-    max-width: 100px;
-    /* Set a max-width so buttons don't stretch too wide */
+    max-width: 100%;
     min-width: 100px;
-    /* Set a min-width to ensure all buttons are the same size */
-    /* Adjust maximum width */
+    margin-bottom: 20px;
 }
 
-.language-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    transform: scale(1.05);
-}
 
-.language-button:active {
-    background-color: rgba(0, 0, 0, 0.85);
-    transform: scale(0.98);
-}
-
-.language-button:focus {
+.language-dropdown:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
 }
+
+
+@media (max-width: 768px) {
+    .language-popup-container {
+        width: 80vw;
+        max-width: 400px;
+    }
+
+    .language-popup-header {
+        font-size: 24px;
+    }
+
+    .language-popup-text {
+        font-size: 16px;
+    }
+}
+

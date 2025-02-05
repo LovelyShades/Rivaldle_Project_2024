@@ -112,13 +112,13 @@ class Streak {
             streakDisplay = document.createElement("div");
             streakDisplay.id = "streakDisplay";
             streakDisplay.style.position = "absolute";
-            streakDisplay.style.top = "0";  // Start positioning relative to parent
-            streakDisplay.style.left = "50%";  // Center horizontally
-            streakDisplay.style.transform = "translate(-50%, -150%)"; // Center and adjust upward
+            streakDisplay.style.top = "38%";  // Start positioning relative to parent
+            streakDisplay.style.left = "61%";  // Center horizontally
             streakDisplay.style.color = "white";
-            streakDisplay.style.fontSize = "16px";
+            streakDisplay.style.fontSize = "17px";
             streakDisplay.style.fontWeight = "bold";
-            streakDisplay.style.zIndex = "50";
+            streakDisplay.style.pointerEvents = "none"; // Make it non-clickable
+            streakDisplay.style.zIndex = "0";
             logoContainer.appendChild(streakDisplay);
         }
 
