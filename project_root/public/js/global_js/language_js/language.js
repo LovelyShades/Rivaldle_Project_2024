@@ -14,7 +14,7 @@ export const globalTranslations = {
         nextMode: "Next Mode",
 
         //share box
-        shareHeader: "I found #Rivaldle {mode} in {tries} 👑", 
+        shareHeader: "I found #Rivaldle {mode} in {tries} 👑",
         shareTries: "tries!",
         classicMode: "classic mode",
         silhoutteMode: "silhoutte mode",
@@ -30,7 +30,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 2025",
         footerText2: "Marvel no respalda ni patrocina este proyecto.",
         privacyPolicy: "Política de privacidad",
-        
+
         victory: "Victoria!",
         youGuessed: "Adivinaste {char}",
         numTries: "Número de intentos: {tries}",
@@ -94,7 +94,7 @@ export const globalTranslations = {
     zh: {
         characterInput: "输入角色名称 ...",
         selectBackground: "选择背景",
-        footerText1: "rivaldle.com — 2025",
+        footerText1: "rivaldle.com — 二千〇二十五",
         footerText2: "Marvel 不支持或赞助该项目。",
         privacyPolicy: "隐私政策",
 
