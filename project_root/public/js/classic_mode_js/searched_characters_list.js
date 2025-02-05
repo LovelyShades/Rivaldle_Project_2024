@@ -9,6 +9,7 @@ class SearchedCharacters {
             this.language = localStorage.getItem('language');
             this.marvelCharacters = await this.fetchData('./character_info');
             this.dailyCharacter = await this.fetchData('./daily_classic_character');
+            console.log(this.dailyCharacter)
             this.loadStoredCharacters();
             this.initializeEventListeners();
         } catch (error) {
