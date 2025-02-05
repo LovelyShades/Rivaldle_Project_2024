@@ -1,3 +1,5 @@
+import { globalTranslations } from '../global_js/language_js/language.js';
+
 class StatBox {
     constructor() {
         this.initalize();
@@ -18,6 +20,10 @@ class StatBox {
             console.error('Error fetching data:', error);
             return null;
         }
+    }
+
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key; // Fallback to key if translation is missing
     }
 
     isGameCompleted() {
@@ -80,7 +86,10 @@ class StatBox {
         const headerText = document.createElement('div');
         headerText.className = 'stat_box_text'
         headerText.style.fontSize = "xx-large";
-        headerText.innerHTML = 'Victory!'
+        headerText.setAttribute("data-translate", "victory")
+        let translationKey = headerText.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+        headerText.innerHTML = translatedText
         headerText.id = 'header_text'
         container.append(headerText);
     }
@@ -98,7 +107,14 @@ class StatBox {
 
         const characterText = document.createElement('div');
         characterText.className = 'stat_box_text'
-        characterText.innerHTML = `You Guessed ${this.dailyCharacter.translations[this.language].name}`;
+
+        characterText.setAttribute("data-translate", "youGuessed");
+        let translationKey = characterText.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+        translatedText = translatedText.replace("{char}", this.dailyCharacter.translations[this.language].name);
+        characterText.removeAttribute("data-translate")
+        characterText.innerHTML = translatedText;
+
         characterText.style.color = 'black';
         characterImageContainer.append(characterText);
     }
@@ -106,7 +122,14 @@ class StatBox {
     appendTries(container) {
         const numTriesText = document.createElement('div');
         numTriesText.className = 'stat_box_text'
-        numTriesText.innerHTML = `Number Of Tries: ${this.numberOfTries}`;
+
+        numTriesText.setAttribute("data-translate", "numTries");
+        let translationKey = numTriesText.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+        translatedText = translatedText.replace("{tries}", this.numberOfTries);
+        numTriesText.removeAttribute("data-translate")
+        numTriesText.innerHTML = translatedText;
+
         container.append(numTriesText);
     }
 
@@ -115,6 +138,13 @@ class StatBox {
         timeHeader.className = 'stat_box_text';
         timeHeader.style.fontSize = 'x-large'
         timeHeader.innerHTML = 'New hero in:'
+
+        timeHeader.setAttribute("data-translate", "newHeroIn");
+        let translationKey = timeHeader.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+        timeHeader.removeAttribute("data-translate")
+        timeHeader.innerHTML = translatedText;
+
         timeHeader.id = 'time_header';
         container.append(timeHeader);
     }
@@ -152,7 +182,11 @@ class StatBox {
     appendModeLink(container) {
         const modeLink = document.createElement('a');
         modeLink.className = 'mode_link_box';
-        modeLink.innerHTML = 'Next Mode';
+        modeLink.setAttribute("data-translate", "nextMode");
+        let translationKey = modeLink.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+        modeLink.removeAttribute("data-translate")
+        modeLink.innerHTML = translatedText;
         modeLink.href = `/${this.nextMode}`;
         modeLink.target = '_self';
 

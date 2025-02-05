@@ -1,11 +1,17 @@
+import { globalTranslations } from '../global_js/language_js/language.js';
+
 class ShareBox{
     constructor(){
+        this.language = localStorage.getItem('language');
         this.initialize()
-
     }
 
     initialize(){
         this.isGameCompleated();
+    }
+    
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key; // Fallback to key if translation is missing
     }
 
     isGameCompleated() {
@@ -29,7 +35,16 @@ class ShareBox{
         const headerText = document.createElement('div');
         headerText.className = 'shareBoxText'
         headerText.style.fontSize ='xx-large'
-        headerText.innerHTML = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}\n👑`
+
+        headerText.setAttribute("data-translate", "shareHeader");
+        let translationKey = headerText.getAttribute("data-translate");
+        let translatedText = this.getTranslation(translationKey, this.language);
+
+        translatedText = translatedText.replace("{tries}", 5)
+        translatedText = translatedText.replace("{mode}", this.getMode())
+        headerText.removeAttribute("data-translate")
+        headerText.innerHTML = translatedText;
+
         shareBox.append(headerText);
     }
 
@@ -61,9 +76,25 @@ class ShareBox{
         shareBox.append(copyButton);
     }
     
-    getMode(){
-        let mode = window.location.pathname.replace('/', '');
-        mode = mode.replace('_', ' ');
+    // Function to get mode from URL and translate it
+    getMode() {
+        let mode = window.location.pathname.replace('/', '').replace('_', ' ');
+
+        // Define a mapping of mode names to translation keys
+        const modeTranslations = {
+            "classic": "classicMode",
+            "silhoutte": "silhoutteMode",
+            "emoji": "emojiMode",
+            "ability": "abilityMode"
+        };
+
+        // Check if mode exists in the translations and fetch the localized string
+        let translationKey = modeTranslations[mode];
+        if (translationKey) {
+            return this.getTranslation(translationKey, this.language);
+        }
+
+        // Fallback to English mode name if not found
         return mode;
     }
 
