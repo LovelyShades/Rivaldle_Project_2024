@@ -417,3 +417,20 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Removes the underline */
+#privacyPolicyLink {
+    text-decoration: none;
+}
+
+/* Ensure the text is not underlined even on hover or active states */
+#privacyPolicyLink:hover,
+#privacyPolicyLink:active,
+#privacyPolicyLink:visited {
+    text-decoration: none;
+}
+
+/* Adds pointer cursor for a clickable effect */
+#privacyPolicyLink .footer_text {
+    cursor: pointer;
+}
