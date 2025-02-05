@@ -114,7 +114,9 @@ class Streak {
             streakDisplay.style.position = "absolute";
             streakDisplay.style.top = "38%";  // Start positioning relative to parent
             streakDisplay.style.left = "61%";  // Center horizontally
-            streakDisplay.style.color = "white";
+            streakDisplay.style.color = "#dce1f4";
+
+
             streakDisplay.style.fontSize = "17px";
             streakDisplay.style.fontWeight = "bold";
             streakDisplay.style.pointerEvents = "none"; // Make it non-clickable

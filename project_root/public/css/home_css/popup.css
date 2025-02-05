@@ -88,7 +88,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     width: 65vw;
     max-width: 300px;
@@ -153,7 +153,7 @@
 /* Language Dropdown Styling */
 .language-dropdown {
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     color: #dce1f4;
     border: 2px solid #dce1f4;
     border-radius: 5px;
@@ -169,24 +169,8 @@
 }
 
 
-.language-dropdown:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
-}
 
 
-@media (max-width: 768px) {
-    .language-popup-container {
-        width: 80vw;
-        max-width: 400px;
-    }
 
-    .language-popup-header {
-        font-size: 24px;
-    }
 
-    .language-popup-text {
-        font-size: 16px;
-    }
-}
 
