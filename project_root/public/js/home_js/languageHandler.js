@@ -44,6 +44,8 @@ export class Language {
     setLanguage(language) {
         // If setting to English, we can clear localStorage to avoid conflicts
         if (language === 'en') {
+            localStorage.setItem('language', 'en');
+        } else {
             localStorage.setItem('language', language);
         }
         this.applyLanguage(language);
