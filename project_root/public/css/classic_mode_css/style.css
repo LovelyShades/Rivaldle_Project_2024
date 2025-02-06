@@ -11,3 +11,10 @@
     align-items: center; /* Center horizontally */
     margin-top: 20px; /* Space between mode container and above elements */
 }
+
+.subHeadContainer{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
