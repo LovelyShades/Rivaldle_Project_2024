@@ -66,7 +66,7 @@ class ShareBox{
             navigator.clipboard.writeText(textToCopy).then(() => {
                 copyButton.innerHTML = 'Copied👍';
                 setTimeout(() => {
-                    copyButton.innerHTML = 'Share!😊';
+                    copyButton.innerHTML = this.getTranslation("share", this.language);
                 }, 1500);
                 }).catch((error) => {
                 console.error('Failed to copy text:', error);
