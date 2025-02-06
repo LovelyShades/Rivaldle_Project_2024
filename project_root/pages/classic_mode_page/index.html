@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/css/classic_mode_css/style.css">
     <link rel="stylesheet" href="/css/classic_mode_css/header_box.css">
     <link rel="stylesheet" href="/css/classic_mode_css/instructions.css">
+    <link rel="stylesheet" href="/css/global_css/popup.css">
     <link rel="stylesheet" href="/css/global_css/global.css">
     <link rel="stylesheet" href="/css/global_css/icons.css">
     <link rel="stylesheet" href="/css/character_search_css/character_search.css">
@@ -82,6 +83,12 @@
 
         <div class="overlay"></div>
 
+        <div class="popupContainer" id = "how_to_play_container">
+            <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
+            <div class="popup_header"> Welcome to Classic Mode</div>
+            <div class="white_line"></div>
+        </div>
+
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
         </a>
@@ -108,7 +115,7 @@
                 </div>
 
                 <div class="subHeadContainer">
-                    <img src="/_images/global_images/help_logo.png" class="icon modeIcon" >
+                    <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
                     <div class="enter_character_container">
                         <div class="enter_character_box">
                             <input type="text" class="enter_character" placeholder="Type character name ..."
@@ -214,6 +221,7 @@
         <script type="module" src="/js/classic_mode_js/searched_characters_list.js"></script>
         <script type="module" src="/js/classic_mode_js/clues.js"></script>
         <script type="module" src="/js/classic_mode_js/append_instructions.js"></script>
+        <script type="module" src="/js/classic_mode_js/how_to_play.js"></script>
         <script type="module" src="/js/game_completed_functions/append_stat_box.js"></script>
         <script type="module" src="/js/share_box_js/share_box.js"></script>
 
