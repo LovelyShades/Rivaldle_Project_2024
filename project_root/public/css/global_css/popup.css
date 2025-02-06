@@ -168,9 +168,10 @@
     margin-bottom: 20px;
 }
 
-
-
-
-
-
+.classic_example_container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 

@@ -47,6 +47,9 @@ class About {
         this.howToPlayContainer = document.getElementById('how_to_play_container');
     }
 
+    appendExample(){
+        this.example = document.getElementById('classic_example_container');
+    }
     showHowToPlayContainer() {
         this.getHowToPlayContainer();
         this.howToPlayContainer.style.display = 'flex';
