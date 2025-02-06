@@ -57,14 +57,16 @@ class ShareBox{
     }
 
     copyButton(shareBox) {
-        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.com`;
+        let textToCopy = this.getTranslation("copyText", this.language);
+        textToCopy = textToCopy.replace("{tries}", this.getTriesText())
+        textToCopy = textToCopy.replace("{mode}", this.getMode())
         const copyButton = document.createElement('button');
         copyButton.innerHTML = this.getTranslation("share", this.language);
         copyButton.className = 'button-43'
         copyButton.style.cursor = 'pointer';
         copyButton.addEventListener('click', () => {
             navigator.clipboard.writeText(textToCopy).then(() => {
-                copyButton.innerHTML = 'Copied👍';
+                copyButton.innerHTML = this.getTranslation("copy", this.language);
                 setTimeout(() => {
                     copyButton.innerHTML = this.getTranslation("share", this.language);
                 }, 1500);
