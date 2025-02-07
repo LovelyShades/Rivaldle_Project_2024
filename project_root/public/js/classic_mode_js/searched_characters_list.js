@@ -142,7 +142,8 @@ class SearchedCharacters {
         const arrowImage = document.createElement('img');
         arrowImage.className = 'arrow';
 
-        const comparison = character[attribute] - this.dailyCharacter[attribute];
+        const comparison = character.translations['en'][attribute] - this.dailyCharacter.translations['en'][attribute];
+        console.log(comparison)
         if (comparison === 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'
