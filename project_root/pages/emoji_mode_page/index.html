@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="/css/game_completed_css/game_completed_stat_box.css">
     <link rel="stylesheet" href="/css/share_box_css/share_box.css">
     <link rel="stylesheet" href="/css/emoji_mode_css/emoji_box.css">
+    <link rel="stylesheet" href="/css/global_css/icons.css">
 </head>
 
 <body>
@@ -85,12 +86,19 @@
                 <div class="emoji_container" id="emoji_container"></div>
             </div>
 
-            <div class="enter_character_container">
-                <div class="enter_character_box">
-                    <input type="text" class="enter_character" placeholder="Type character name ..." id="characterInput"
-                        data-translate="characterInput">
-                    <button class="enter_character_button" id="character_search_button">OK</button>
+            <div class="subHeadContainer">
+                <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
+                <div class="enter_character_container">
+                    <div class="enter_character_box">
+                        <input type="text" class="enter_character" placeholder="Type character name ..."
+                            id="characterInput" data-translate="characterInput">
+                        <button class="enter_character_button" id="character_search_button"
+                            data-translate="okButton">OK</button>
+                    </div>    
                 </div>
+
+            <img src="/_images/global_images/streak_logo.png" class="icon modeIcon">
+
             </div>
             <div id="suggestedCharactersContainer"></div>
 
@@ -131,6 +139,8 @@
         <script type="module" src="/js/global_js/language_js/language.js"></script>
         <script type="module" src="/js/emoji_mode_js/language.js"></script>
         <script type="module" src="/js/emoji_mode_js/languageHandler.js"></script>
+        <script type="module" src="/js/global_js/how_to_play.js"></script>
+
 
     </div>
 </body>
