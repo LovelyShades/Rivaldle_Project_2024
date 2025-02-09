@@ -5,7 +5,9 @@
 //yesterdaysNumber in localSorage
 
 class Streak {
+    
     constructor() {
+        this.language = localStorage.getItem('language');
         this.initialize();
     }
 
@@ -15,8 +17,8 @@ class Streak {
         await this.getTodaysNumber();
         await this.getYesterdaysNumber();
         await this.addToStreak();
-        console.log(this.storedStreak)
         await this.appendStreak();
+        this.listenForChange();
     }
 
     async fetchData(url) {
@@ -30,6 +32,13 @@ class Streak {
         }
     }
 
+    listenForChange(){
+        document.addEventListener("languageChange", (event) => {
+            this.language = localStorage.getItem('language');
+            console.log(streakDisplay.textContent)
+            streakDisplay.textContent = this.translatedNumber(this.storedStreak)
+        });
+    }
     async getStreakFromStorage() {
         this.storedStreak = localStorage.getItem("home_streak");
         if (!this.storedStreak) {
@@ -107,26 +116,24 @@ class Streak {
         }
         logoContainer.style.position = "relative";
 
-        let streakDisplay = document.getElementById("streakDisplay");
-        if (!streakDisplay) {
-            streakDisplay = document.createElement("div");
-            streakDisplay.id = "streakDisplay";
-            streakDisplay.style.position = "absolute";
-            streakDisplay.style.top = "38%";  // Start positioning relative to parent
-            streakDisplay.style.left = "61%";  // Center horizontally
-            streakDisplay.style.color = "#dce1f4";
+        this.streakDisplay = document.getElementById("streakDisplay");
+        if (!this.streakDisplay) {
+            this.streakDisplay = document.createElement("div");
+            this.streakDisplay.id = "streakDisplay";
+            this. streakDisplay.style.position = "absolute";
+            this.streakDisplay.style.top = "38%";  // Start positioning relative to parent
+            this.streakDisplay.style.left = "61%";  // Center horizontally
+            this.streakDisplay.style.color = "#dce1f4";
 
 
-            streakDisplay.style.fontSize = "17px";
-            streakDisplay.style.fontWeight = "bold";
-            streakDisplay.style.pointerEvents = "none"; // Make it non-clickable
-            streakDisplay.style.zIndex = "0";
-            logoContainer.appendChild(streakDisplay);
+            this.streakDisplay.style.fontSize = "17px";
+            this.streakDisplay.style.fontWeight = "bold";
+            this.streakDisplay.style.pointerEvents = "none"; // Make it non-clickable
+            this.streakDisplay.style.zIndex = "0";
+            logoContainer.appendChild(this.streakDisplay);
         }
-
-        streakDisplay.textContent = this.storedStreak;
+        this.streakDisplay.textContent = this.storedStreak;
     }
-
 }
 
 const streak = new Streak();

@@ -1,3 +1,5 @@
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+
 class SearchedCharacters {
     constructor() {
         this.initializeVariables();
@@ -108,8 +110,11 @@ class SearchedCharacters {
     addCharacterBox(row, textContent, attribute, character) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
-        newBox.textContent = textContent;
-
+        if(Number.isInteger(textContent)){
+            newBox.textContent = numberToChinese(textContent);
+        } else {
+            newBox.textContent = textContent;
+        }
         newBox.setAttribute('data-attribute', attribute);
 
         this.setBoxAppearance(newBox, attribute, character);
@@ -204,6 +209,13 @@ class SearchedCharacters {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
         return storedCharacters.length;
+    }
+
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
     }
 }
 
