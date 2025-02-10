@@ -11,7 +11,6 @@ class SearchedCharacters {
             this.language = localStorage.getItem('language');
             this.marvelCharacters = await this.fetchData('./character_info');
             this.dailyCharacter = await this.fetchData('./daily_classic_character');
-            console.log(this.dailyCharacter)
             this.loadStoredCharacters();
             this.initializeEventListeners();
         } catch (error) {
@@ -111,7 +110,7 @@ class SearchedCharacters {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
         if(Number.isInteger(textContent)){
-            newBox.textContent = numberToChinese(textContent);
+            newBox.textContent = this.translatedNumber(textContent);
         } else {
             newBox.textContent = textContent;
         }
@@ -148,7 +147,6 @@ class SearchedCharacters {
         arrowImage.className = 'arrow';
 
         const comparison = character.translations['en'][attribute] - this.dailyCharacter.translations['en'][attribute];
-        console.log(comparison)
         if (comparison === 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'

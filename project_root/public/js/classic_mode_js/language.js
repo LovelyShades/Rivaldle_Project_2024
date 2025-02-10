@@ -88,7 +88,7 @@ export const translations = {
     zh: {
         ...globalTranslations.zh,
         triesUntilSilhouette: '直到轮廓的尝试次数：{tries}',
-        triesUntilUlt: "距离终极技能名称还有 {tries} 次尝试",
+        triesUntilUlt: "尝试离开直到最终名称：{tries}",
         guessHero: "猜猜今天的《漫威对决》英雄！",
         typeCharacter: "输入任何角色以开始。",
         okButton: "确定",

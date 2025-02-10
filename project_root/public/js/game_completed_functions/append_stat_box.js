@@ -203,6 +203,13 @@ class StatBox {
             });
         }, 1000);
     }
+    
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
+    }
 }
 
 const statBox = new StatBox();
