@@ -27,6 +27,10 @@ async function checkAndClearLocalStorage() {
         const todaysClassicNumber = localStorage.getItem('todaysClassicNumber');
         const yesterdaysClassicNumber = localStorage.getItem('yesterdaysClassicNumber');
 
+        const silhoutte_streak = localStorage.getItem('silhoutte_streak');
+        const todaysSilhoutteNumber = localStorage.getItem('todaysSilhoutteNumber');
+        const yesterdaysSilhoutteNumber = localStorage.getItem('yesterdaysSilhoutteNumber');
+
         const selectedLanguage = localStorage.getItem('language');
 
 
@@ -42,6 +46,10 @@ async function checkAndClearLocalStorage() {
             if (classic_streak) localStorage.setItem('classic_streak', classic_streak);
             if (todaysClassicNumber) localStorage.setItem('todaysClassicNumber', todaysClassicNumber);
             if (yesterdaysClassicNumber) localStorage.setItem('yesterdaysClassicNumber', yesterdaysClassicNumber);
+
+            if (silhoutte_streak) localStorage.setItem('silhoutte_streak', silhoutte_streak);
+            if (todaysSilhoutteNumber) localStorage.setItem('todaysSilhoutteNumber', todaysSilhoutteNumber);
+            if (yesterdaysSilhoutteNumber) localStorage.setItem('yesterdaysSilhoutteNumber', yesterdaysSilhoutteNumber);
 
             if (selectedLanguage) localStorage.setItem('language', selectedLanguage);
             localStorage.setItem('storedID', serverID); // Do not change

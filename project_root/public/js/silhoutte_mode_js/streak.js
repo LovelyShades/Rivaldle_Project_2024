@@ -138,7 +138,6 @@ class Streak {
 
     isGameCompleted() {
         document.addEventListener('correctCharacterGuessed', async (event) => {
-            console.log("guessed")
             this.addToStreak();
         });
     }    
