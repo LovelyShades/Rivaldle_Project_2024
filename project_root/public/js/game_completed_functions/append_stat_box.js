@@ -127,7 +127,7 @@ class StatBox {
         numTriesText.setAttribute("data-translate", "numTries");
         let translationKey = numTriesText.getAttribute("data-translate");
         let translatedText = this.getTranslation(translationKey, this.language);
-        translatedText = translatedText.replace("{tries}", this.numberOfTries);
+        translatedText = translatedText.replace("{tries}", this.translatedNumber(this.numberOfTries));
         numTriesText.removeAttribute("data-translate")
         numTriesText.innerHTML = translatedText;
 

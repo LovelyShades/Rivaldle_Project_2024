@@ -1,4 +1,5 @@
 import { globalTranslations } from '../global_js/language_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class ShareBox{
     constructor(){
@@ -111,10 +112,9 @@ class ShareBox{
     getTriesText() {
         const tries = this.getTries();
         if (tries === 1) {
-            console.log(tries)
             return this.getTranslation('oneShot', this.language);
         }else{
-            return `${tries} ${this.getTranslation('shareTries', this.language)}`;
+            return `${this.translatedNumber(tries)} ${this.getTranslation('shareTries', this.language)}`;
         }
     }
 
@@ -122,6 +122,14 @@ class ShareBox{
         const path = window.location.pathname;
         return `searched_characters_${path}`;
     }
+
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
+    }
 }
 
 const shareBox = new ShareBox();
+
