@@ -1,4 +1,5 @@
 import { translations } from '../classic_mode_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class Clues {
     constructor() {
