@@ -1,4 +1,5 @@
 import { globalTranslations } from '../global_js/language_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class StatBox {
     constructor() {
