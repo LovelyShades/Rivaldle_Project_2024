@@ -1,8 +1,8 @@
 //variables stored in local storage
 
-//home_streak in localStorage
-//todaysNumber in localStorage
-//yesterdaysNumber in localSorage
+//classic_streak in localStorage
+//todaysClassicNumber in localStorage
+//yesterdaysClassicNumber in localSorage
 
 class Streak {
     
@@ -16,8 +16,8 @@ class Streak {
         await this.getDayTracker();
         await this.getTodaysNumber();
         await this.getYesterdaysNumber();
-        await this.addToStreak();
         await this.appendStreak();
+        this.isGameCompleted();
     }
 
     async fetchData(url) {
@@ -32,7 +32,7 @@ class Streak {
     }
 
     async getStreakFromStorage() {
-        this.storedStreak = localStorage.getItem("home_streak");
+        this.storedStreak = localStorage.getItem("classic_streak");
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
@@ -40,7 +40,7 @@ class Streak {
     }
 
     addStreakToStorage() {
-        localStorage.setItem("home_streak", this.storedStreak);
+        localStorage.setItem("classic_streak", this.storedStreak);
     }
 
     async getDayTracker() {
@@ -53,43 +53,44 @@ class Streak {
     }
 
     async getTodaysNumber() {
-        this.todaysNumber = localStorage.getItem("todaysNumber");
-        if (!this.todaysNumber) {
-            this.todaysNumber = this.dayTracker;
-            localStorage.setItem("todaysNumber", this.todaysNumber);
+        this.todaysClassicNumber = localStorage.getItem("todaysClassicNumber");
+        if (!this.todaysClassicNumber) {
+            this.todaysClassicNumber = this.dayTracker;
+            localStorage.setItem("todaysClassicNumber", this.todaysClassicNumber);
         }
     }
 
     async getYesterdaysNumber() {
-        this.yesterdaysNumber = localStorage.getItem("todaysNumber");
-        if (!this.yesterdaysNumber) {
-            this.yesterdaysNumber = this.dayTracker;
-            localStorage.setItem("yesterdaysNumber", this.yesterdaysNumber);
+        this.yesterdaysClassicNumber = localStorage.getItem("todaysClassicNumber");
+        if (!this.yesterdaysClassicNumber) {
+            this.yesterdaysClassicNumber = this.dayTracker;
+            localStorage.setItem("yesterdaysClassicNumber", this.yesterdaysClassicNumber);
         }
     }
 
     addToStreak() {
         this.newDay = this.isNewDay();
-        console.log(this.newDay);
         if (!this.newDay) return;
-        console.log(this.dayTracker, this.todaysNumber)
-        if (parseInt(this.dayTracker, 10) - parseInt(this.todaysNumber, 10) === 1) {
+        console.log(this.dayTracker, this.todaysClassicNumber)
+        if (parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
+            this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
         } else if (this.dayTracker != 0) {
-            this.storedStreak = 1;
+            this.storedStreak = 2;
+            this.streakDisplay.textContent = this.storedStreak - 1;
         }
         this.updatedStoredDays();
     }
 
     updatedStoredDays() {
-        localStorage.setItem("yesterdaysNumber", this.todaysNumber);
-        localStorage.setItem("todaysNumber", this.dayTracker);
-        localStorage.setItem("home_streak", this.storedStreak)
+        localStorage.setItem("yesterdaysClassicNumber", this.todaysClassicNumber);
+        localStorage.setItem("todaysClassicNumber", this.dayTracker);
+        localStorage.setItem("classic_streak", this.storedStreak)
     }
 
     isNewDay() {
-        return this.todaysNumber != this.dayTracker;
+        return this.todaysClassicNumber != this.dayTracker;
     }
 
     appendStreak() {
@@ -113,8 +114,8 @@ class Streak {
             this.streakDisplay = document.createElement("div");
             this.streakDisplay.id = "streakDisplay";
             this. streakDisplay.style.position = "absolute";
-            this.streakDisplay.style.top = "38%";  // Start positioning relative to parent
-            this.streakDisplay.style.left = "61%";  // Center horizontally
+            this.streakDisplay.style.top = "40%";  // Start positioning relative to parent
+            this.streakDisplay.style.left = "94.1%";  // Center horizontally
             this.streakDisplay.style.color = "#dce1f4";
 
 
@@ -124,8 +125,25 @@ class Streak {
             this.streakDisplay.style.zIndex = "0";
             logoContainer.appendChild(this.streakDisplay);
         }
-        this.streakDisplay.textContent = this.storedStreak;
+        if(this.storedStreak == 0){
+            this.streakDisplay.textContent = "";
+        } else {
+            this.streakDisplay.textContent = this.storedStreak - 1;
+        }
+        if(parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) >= 2) {
+            this.storedStreak = 1;
+            this.streakDisplay.textContent = "";
+        }
     }
+
+    isGameCompleted() {
+        document.addEventListener('correctCharacterGuessed', async (event) => {
+            this.addToStreak();
+        });
+    }    
 }
 
 const streak = new Streak();
+
+
+

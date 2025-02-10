@@ -5,7 +5,7 @@ class CharacterSearch {
     }
 
     async initialize() {
-        this.language = localStorage.getItem('language');
+        this.checkForLanguage();
         this.marvelCharacters = await this.fetchMarvelCharacters();
         const storedCharacters = this.getStoredCharacters();
 
@@ -24,6 +24,12 @@ class CharacterSearch {
         this.setupEventListeners();
     }
 
+    checkForLanguage(){
+        this.language = localStorage.getItem("language");
+        if(this.language) return;
+        localStorage.setItem("language", "en");
+        this.language = "en";
+    }
     initializeVariables() {
         this.characterInput = document.getElementById('characterInput');
         this.suggestedCharactersContainer = document.getElementById('suggestedCharactersContainer');
