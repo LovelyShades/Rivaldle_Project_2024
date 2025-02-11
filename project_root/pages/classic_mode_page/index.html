@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="/css/classic_mode_css/style.css">
     <link rel="stylesheet" href="/css/classic_mode_css/header_box.css">
     <link rel="stylesheet" href="/css/classic_mode_css/instructions.css">
+    <link rel="stylesheet" href="/css/global_css/popup.css">
     <link rel="stylesheet" href="/css/global_css/global.css">
+    <link rel="stylesheet" href="/css/global_css/icons.css">
     <link rel="stylesheet" href="/css/character_search_css/character_search.css">
     <link rel="stylesheet" href="/css/classic_mode_css/guessed_characters.css">
     <link rel="stylesheet" href="/css/classic_mode_css/guessed_characters_mobile.css">
@@ -81,6 +83,31 @@
 
         <div class="overlay"></div>
 
+        <div class="popupContainer" id = "how_to_play_container">
+            <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
+            <div class="popup_header"> How to Play Rivaldle: Classic Mode </div>
+            <div class="white_line"></div>
+
+            <div class="popup_header"> 1.Understanding the Gameplay</div>
+            <div class="popup_text">Your goal is to identify the mystery character by making guesses. 
+                Each guess will provide feedback to help you get closer to the correct answer. 
+                In the input box, type the name of a Marvel character you think could be the answer then press on the searched character to submit your guess.</div>
+
+            <div class="popup_header"> 2.Interpreting Feedback</div>
+            <div class="popup_text">After submitting a guess, the game provides feedback based on several character attributes:</div>
+            <div class="popup_text">
+                <ul>
+                    <li>Affiliation – Are they a hero, villain, or anti-hero?</li>
+                    <li>Species – Are they human, mutant, alien, or something else?</li>
+                    <li>Gender – Is the character male, female, ect...</li>
+                    <li>Appearances – What color/colors are the characters eyes or hair?</li>
+                    <li>Other Attributes – Additional unique identifiers such as their primary team, powers, ect....</li>
+                </ul>
+            </div>
+            <div id="classic_example_container"></div>
+
+        </div>
+
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
         </a>
@@ -106,13 +133,18 @@
                     </div>
                 </div>
 
-                <div class="enter_character_container">
-                    <div class="enter_character_box">
-                        <input type="text" class="enter_character" placeholder="Type character name ..."
-                            id="characterInput" data-translate="characterInput">
-                        <button class="enter_character_button" id="character_search_button"
-                            data-translate="okButton">OK</button>
-                    </div>
+                <div class="subHeadContainer">
+                    <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
+                    <div class="enter_character_container">
+                        <div class="enter_character_box">
+                            <input type="text" class="enter_character" placeholder="Type character name ..."
+                                id="characterInput" data-translate="characterInput">
+                            <button class="enter_character_button" id="character_search_button"
+                                data-translate="okButton">OK</button>
+                        </div>    
+                </div>
+                <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
+
                 </div>
                 <div id="suggestedCharactersContainer"></div>
                 <div class="allCharactersContainer">
@@ -207,7 +239,9 @@
         <script type="module" src="/js/search_functions/character_search.js"></script>
         <script type="module" src="/js/classic_mode_js/searched_characters_list.js"></script>
         <script type="module" src="/js/classic_mode_js/clues.js"></script>
+        <script type="module" src="/js/classic_mode_js/streak.js"></script>
         <script type="module" src="/js/classic_mode_js/append_instructions.js"></script>
+        <script type="module" src="/js/global_js/how_to_play.js"></script>
         <script type="module" src="/js/game_completed_functions/append_stat_box.js"></script>
         <script type="module" src="/js/share_box_js/share_box.js"></script>
 

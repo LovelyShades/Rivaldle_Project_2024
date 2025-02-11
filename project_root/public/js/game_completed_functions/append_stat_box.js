@@ -1,4 +1,5 @@
 import { globalTranslations } from '../global_js/language_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class StatBox {
     constructor() {
@@ -126,7 +127,7 @@ class StatBox {
         numTriesText.setAttribute("data-translate", "numTries");
         let translationKey = numTriesText.getAttribute("data-translate");
         let translatedText = this.getTranslation(translationKey, this.language);
-        translatedText = translatedText.replace("{tries}", this.numberOfTries);
+        translatedText = translatedText.replace("{tries}", this.translatedNumber(this.numberOfTries));
         numTriesText.removeAttribute("data-translate")
         numTriesText.innerHTML = translatedText;
 
@@ -201,6 +202,13 @@ class StatBox {
                 block: 'start'
             });
         }, 1000);
+    }
+    
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
     }
 }
 

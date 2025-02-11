@@ -22,6 +22,8 @@ export const globalTranslations = {
         abilityMode: "ability mode",
         oneShot: "one shot!",
         share: "Share 😊",
+        copy: "Copied👍",
+        copyText:  `I found #Rivaldle {mode} mode hero in {tries}🔨\nCan you beat my score?\n https://rivaldle.com`,
 
     },
     es: {
@@ -45,6 +47,8 @@ export const globalTranslations = {
         abilityMode: "modo habilidad",
         oneShot: "¡un solo intento!",
         share: "Compartir 😊",
+        copy: "Copiado👍",
+        copyText:  `Encontré al héroe de #Rivaldle en modo {mode} en {tries}🔨\n¿Puedes superar mi puntuación?\n https://rivaldle.com`,
     },
     fr: {
         characterInput: "Tapez le nom du personnage ...",
@@ -67,7 +71,8 @@ export const globalTranslations = {
         abilityMode: "mode capacité",
         oneShot: "un seul essai !",
         share: "Partager 😊",
-
+        copy: "Copié👍",
+        copyText:  `J'ai trouvé le héros de #Rivaldle en mode {mode} en {tries}🔨\nPeux-tu dépasser mon score ?\n https://rivaldle.com`,
     },
     de: {
         characterInput: "Geben Sie den Charakternamen ein ...",
@@ -90,6 +95,8 @@ export const globalTranslations = {
         abilityMode: "Fähigkeitenmodus",
         oneShot: "nur ein Versuch!",
         share: "Aktie 😊",
+        copy: "Kopiert👍",
+        copyText:  `Ich habe den #Rivaldle-Helden im {mode}-Modus in {tries}🔨 gefunden\nKannst du meinen Score schlagen?\n https://rivaldle.com`,
     },
     zh: {
         characterInput: "输入角色名称 ...",
@@ -111,6 +118,8 @@ export const globalTranslations = {
         emojiMode: "表情符号模式",
         abilityMode: "技能模式",
         oneShot: "仅一次尝试！",
-        share: "Compartir 😊",
+        share: "分享  😊",
+        copy: "已复制👍",
+        copyText:  `我在 #Rivaldle {mode} 模式下用了 {tries}🔨 找到了英雄\n你能打破我的记录吗？\n https://rivaldle.com`,
     },
 };

@@ -1,4 +1,5 @@
 import { globalTranslations } from '../global_js/language_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class ShareBox{
     constructor(){
@@ -57,16 +58,18 @@ class ShareBox{
     }
 
     copyButton(shareBox) {
-        let textToCopy = `I found #Rivaldle ${this.getMode()} mode hero in ${this.getTriesText()}🔨\nCan you beat my score?\n https://rivaldle.com`;
+        let textToCopy = this.getTranslation("copyText", this.language);
+        textToCopy = textToCopy.replace("{tries}", this.getTriesText())
+        textToCopy = textToCopy.replace("{mode}", this.getMode())
         const copyButton = document.createElement('button');
         copyButton.innerHTML = this.getTranslation("share", this.language);
         copyButton.className = 'button-43'
         copyButton.style.cursor = 'pointer';
         copyButton.addEventListener('click', () => {
             navigator.clipboard.writeText(textToCopy).then(() => {
-                copyButton.innerHTML = 'Copied👍';
+                copyButton.innerHTML = this.getTranslation("copy", this.language);
                 setTimeout(() => {
-                    copyButton.innerHTML = 'Share!😊';
+                    copyButton.innerHTML = this.getTranslation("share", this.language);
                 }, 1500);
                 }).catch((error) => {
                 console.error('Failed to copy text:', error);
@@ -109,10 +112,9 @@ class ShareBox{
     getTriesText() {
         const tries = this.getTries();
         if (tries === 1) {
-            console.log(tries)
             return this.getTranslation('oneShot', this.language);
         }else{
-            return `${tries} ${this.getTranslation('shareTries', this.language)}`;
+            return `${this.translatedNumber(tries)} ${this.getTranslation('shareTries', this.language)}`;
         }
     }
 
@@ -120,6 +122,14 @@ class ShareBox{
         const path = window.location.pathname;
         return `searched_characters_${path}`;
     }
+
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
+    }
 }
 
 const shareBox = new ShareBox();
+

@@ -50,6 +50,9 @@ export class Language {
         }
         this.applyLanguage(language);
         this.updateDropdown(language);  // Update the dropdown after setting the language
+        const event = new CustomEvent("languageChange", {
+        });
+        document.dispatchEvent(event);
     }
 
 }

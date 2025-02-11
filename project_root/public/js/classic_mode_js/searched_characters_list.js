@@ -1,3 +1,5 @@
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+
 class SearchedCharacters {
     constructor() {
         this.initializeVariables();
@@ -9,7 +11,6 @@ class SearchedCharacters {
             this.language = localStorage.getItem('language');
             this.marvelCharacters = await this.fetchData('./character_info');
             this.dailyCharacter = await this.fetchData('./daily_classic_character');
-            console.log(this.dailyCharacter)
             this.loadStoredCharacters();
             this.initializeEventListeners();
         } catch (error) {
@@ -108,8 +109,11 @@ class SearchedCharacters {
     addCharacterBox(row, textContent, attribute, character) {
         const newBox = document.createElement('div');
         newBox.className = 'guessedCharacterBox';
-        newBox.textContent = textContent;
-
+        if(Number.isInteger(textContent)){
+            newBox.textContent = this.translatedNumber(textContent);
+        } else {
+            newBox.textContent = textContent;
+        }
         newBox.setAttribute('data-attribute', attribute);
 
         this.setBoxAppearance(newBox, attribute, character);
@@ -142,7 +146,7 @@ class SearchedCharacters {
         const arrowImage = document.createElement('img');
         arrowImage.className = 'arrow';
 
-        const comparison = character[attribute] - this.dailyCharacter[attribute];
+        const comparison = character.translations['en'][attribute] - this.dailyCharacter.translations['en'][attribute];
         if (comparison === 0) return;
         arrowImage.src = comparison > 0
             ? '/_images/classic_mode_images/downArrow.png'
@@ -203,6 +207,13 @@ class SearchedCharacters {
         const pageKey = this.getCurrentPageKey();
         const storedCharacters = JSON.parse(localStorage.getItem(pageKey)) || [];
         return storedCharacters.length;
+    }
+
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
     }
 }
 

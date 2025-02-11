@@ -1,4 +1,5 @@
 import { translations } from '../classic_mode_js/language.js';
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 
 class Clues {
     constructor() {
@@ -74,7 +75,7 @@ class Clues {
             this.numTriesLeftUntilSulhoutte.setAttribute("data-translate", "triesUntilSilhouette");
             let translationKey = this.numTriesLeftUntilSulhoutte.getAttribute("data-translate");
             let translatedText = this.getTranslation(translationKey, this.language);
-            translatedText = translatedText.replace("{tries}", triesLeft);
+            translatedText = translatedText.replace("{tries}", this.translatedNumber(triesLeft));
             this.numTriesLeftUntilSulhoutte.removeAttribute("data-translate")
             this.numTriesLeftUntilSulhoutte.innerHTML = translatedText;
 
@@ -100,7 +101,7 @@ class Clues {
             this.numTriesLeftUntilUlt.setAttribute("data-translate", "triesUntilUlt");
             let translationKey = this.numTriesLeftUntilUlt.getAttribute("data-translate");
             let translatedText = this.getTranslation(translationKey, this.language);
-            translatedText = translatedText.replace("{tries}", triesLeft);
+            translatedText = translatedText.replace("{tries}", this.translatedNumber(triesLeft));
             this.numTriesLeftUntilUlt.removeAttribute("data-translate")
             this.numTriesLeftUntilUlt.innerHTML = translatedText;
             clueContainer.append(this.numTriesLeftUntilUlt);
@@ -115,7 +116,7 @@ class Clues {
             this.numTriesLeftUntilSulhoutte.setAttribute("data-translate", "triesUntilSilhouette");
             let translationKey = this.numTriesLeftUntilSulhoutte.getAttribute("data-translate");
             let translatedText = this.getTranslation(translationKey, this.language);
-            translatedText = translatedText.replace("{tries}", triesLeft);
+            translatedText = translatedText.replace("{tries}", this.translatedNumber(triesLeft));
             this.numTriesLeftUntilSulhoutte.removeAttribute("data-translate")
             this.numTriesLeftUntilSulhoutte.innerHTML = translatedText;
         } else if (this.numTriesLeftUntilSulhoutte) {
@@ -129,7 +130,7 @@ class Clues {
             this.numTriesLeftUntilUlt.setAttribute("data-translate", "triesUntilUlt");
             let translationKey = this.numTriesLeftUntilUlt.getAttribute("data-translate");
             let translatedText = this.getTranslation(translationKey, this.language);
-            translatedText = translatedText.replace("{tries}", triesLeft);
+            translatedText = translatedText.replace("{tries}", this.translatedNumber(triesLeft));
             this.numTriesLeftUntilUlt.removeAttribute("data-translate")
             this.numTriesLeftUntilUlt.innerHTML = translatedText;
         } else if (this.numTriesLeftUntilUlt) {
@@ -218,6 +219,14 @@ class Clues {
             this.activateSilhoutteImage();
         }
     }
+    
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
+    }
 }
+
 
 const clues = new Clues();

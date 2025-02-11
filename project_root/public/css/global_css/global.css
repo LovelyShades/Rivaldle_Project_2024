@@ -434,3 +434,9 @@ body {
 #privacyPolicyLink .footer_text {
     cursor: pointer;
 }
+
+.subHeadContainer{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}

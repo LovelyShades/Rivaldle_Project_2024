@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/css/game_completed_css/game_completed_stat_box.css">
     <link rel="stylesheet" href="/css/share_box_css/share_box.css">
     <link rel="stylesheet" href="/css/character_ability_mode_css/ability_box.css">
+    <link rel="stylesheet" href="/css/global_css/icons.css">
     <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="/_images/home_images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/_images/home_images/favicon/favicon.svg" />
@@ -83,12 +84,19 @@
                 <div class="ability_text_container" id="ability_text_container"></div>
             </div>
 
-            <div class="enter_character_container">
-                <div class="enter_character_box">
-                    <input type="text" class="enter_character" placeholder="Type character name ..." id="characterInput"
-                        data-translate="characterInput">
-                    <button class="enter_character_button" id="character_search_button">OK</button>
+            <div class="subHeadContainer">
+                <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
+                <div class="enter_character_container">
+                    <div class="enter_character_box">
+                        <input type="text" class="enter_character" placeholder="Type character name ..."
+                            id="characterInput" data-translate="characterInput">
+                        <button class="enter_character_button" id="character_search_button"
+                            data-translate="okButton">OK</button>
+                    </div>    
                 </div>
+
+            <img src="/_images/global_images/streak_logo.png" class="icon modeIcon">
+
             </div>
             <div id="suggestedCharactersContainer"></div>
 
@@ -129,7 +137,7 @@
         <script type="module" src="/js/ability_mode_js/languageHandler.js"></script>
         <script type="module" src="/js/ability_mode_js/append_searched_character.js"></script>
         <script type="module" src="/js/ability_mode_js/append_ability.js"></script>
-
+        <script type="module" src="/js/global_js/how_to_play.js"></script>
 
     </div>
 
