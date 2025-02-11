@@ -31,6 +31,10 @@ async function checkAndClearLocalStorage() {
         const todaysSilhoutteNumber = localStorage.getItem('todaysSilhoutteNumber');
         const yesterdaysSilhoutteNumber = localStorage.getItem('yesterdaysSilhoutteNumber');
 
+        const emoji_streak = localStorage.getItem('emoji_streak');
+        const todaysEmojiNumber = localStorage.getItem('todaysEmojiNumber');
+        const yesterdaysEmojiNumber = localStorage.getItem('yesterdaysEmojiNumber');
+
         const selectedLanguage = localStorage.getItem('language');
 
 
@@ -50,6 +54,10 @@ async function checkAndClearLocalStorage() {
             if (silhoutte_streak) localStorage.setItem('silhoutte_streak', silhoutte_streak);
             if (todaysSilhoutteNumber) localStorage.setItem('todaysSilhoutteNumber', todaysSilhoutteNumber);
             if (yesterdaysSilhoutteNumber) localStorage.setItem('yesterdaysSilhoutteNumber', yesterdaysSilhoutteNumber);
+
+            if (emoji_streak) localStorage.setItem('emoji_streak', emoji_streak);
+            if (todaysEmojiNumber) localStorage.setItem('todaysEmojiNumber', todaysEmojiNumber);
+            if (yesterdaysEmojiNumber) localStorage.setItem('yesterdaysEmojiNumber', yesterdaysEmojiNumber);
 
             if (selectedLanguage) localStorage.setItem('language', selectedLanguage);
             localStorage.setItem('storedID', serverID); // Do not change

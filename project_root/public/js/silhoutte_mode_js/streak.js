@@ -38,7 +38,7 @@ class Streak {
     }
 
     async getStreakFromStorage() {
-        this.storedStreak = localStorage.getItem("silhoutte");
+        this.storedStreak = localStorage.getItem("silhoutte_streak");
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
@@ -46,7 +46,7 @@ class Streak {
     }
 
     addStreakToStorage() {
-        localStorage.setItem("silhoutte", this.storedStreak);
+        localStorage.setItem("silhoutte_streak", this.storedStreak);
     }
 
     async getDayTracker() {
@@ -101,7 +101,7 @@ class Streak {
     updatedStoredDays() {
         localStorage.setItem("yesterdaysSilhoutteNumber", this.todaysSilhoutteNumber);
         localStorage.setItem("todaysSilhoutteNumber", this.dayTracker);
-        localStorage.setItem("silhoutte", this.storedStreak)
+        localStorage.setItem("silhoutte_streak", this.storedStreak)
     }
 
     isNewDay() {
