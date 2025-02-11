@@ -1,12 +1,18 @@
 //variables stored in local storage
 
-//silhoutte_steak in localStorage
+//silhoutte in localStorage
 //todaysSilhoutteNumber in localStorage
 //yesterdaysSilhoutteNumber in localSorage
 
 class Streak {
     
     constructor() {
+        this.firstDaySilhoutteGuessed = localStorage.getItem("firstDaySilhoutteGuessed");
+        if(!this.firstDaySilhoutteGuessed){
+            this.firstDaySilhoutteGuessed = false;
+        } else {
+            this.firstDaySilhoutteGuessed = true;
+        }
         this.language = localStorage.getItem('language');
         this.initialize();
     }
@@ -32,7 +38,7 @@ class Streak {
     }
 
     async getStreakFromStorage() {
-        this.storedStreak = localStorage.getItem("silhoutte_steak");
+        this.storedStreak = localStorage.getItem("silhoutte");
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
@@ -40,7 +46,7 @@ class Streak {
     }
 
     addStreakToStorage() {
-        localStorage.setItem("silhoutte_steak", this.storedStreak);
+        localStorage.setItem("silhoutte", this.storedStreak);
     }
 
     async getDayTracker() {
@@ -71,14 +77,23 @@ class Streak {
     addToStreak() {
         this.newDay = this.isNewDay();
         if (!this.newDay) return;
+        console.log("ran")
         console.log(this.dayTracker, this.todaysSilhoutteNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysSilhoutteNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
+            console.log(this.storedStreak)
             this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
         } else if (this.dayTracker != 0) {
             this.storedStreak = 2;
             this.streakDisplay.textContent = this.storedStreak - 1;
+        } else {
+            this.storedStreak = parseInt(this.storedStreak) + 1;
+            console.log(this.storedStreak)
+            this.streakDisplay.textContent = this.storedStreak - 1;
+            this.addStreakToStorage();
+            localStorage.setItem("firstDaySilhoutteGuessed", true)
+            this.firstDaySilhoutteGuessed = true;
         }
         this.updatedStoredDays();
     }
@@ -86,10 +101,11 @@ class Streak {
     updatedStoredDays() {
         localStorage.setItem("yesterdaysSilhoutteNumber", this.todaysSilhoutteNumber);
         localStorage.setItem("todaysSilhoutteNumber", this.dayTracker);
-        localStorage.setItem("silhoutte_steak", this.storedStreak)
+        localStorage.setItem("silhoutte", this.storedStreak)
     }
 
     isNewDay() {
+        if(this.dayTracker == 0 && this.firstDaySilhoutteGuessed == false) return true;
         return this.todaysSilhoutteNumber != this.dayTracker;
     }
 

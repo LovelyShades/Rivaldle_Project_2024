@@ -7,11 +7,11 @@
 class Streak {
     
     constructor() {
-        this.firstDayGuessed = localStorage.getItem("firstDayGuessed");
-        if(!this.firstDayGuessed){
-            this.firstDayGuessed = false;
+        this.firstDayClassicGuessed = localStorage.getItem("firstDayClassicGuessed");
+        if(!this.firstDayClassicGuessed){
+            this.firstDayClassicGuessed = false;
         } else {
-            this.firstDayGuessed = true;
+            this.firstDayClassicGuessed = true;
         }
         this.language = localStorage.getItem('language');
         this.initialize();
@@ -92,8 +92,8 @@ class Streak {
             console.log(this.storedStreak)
             this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
-            localStorage.setItem("firstDayGuessed", true)
-            this.firstDayGuessed = true;
+            localStorage.setItem("firstDayClassicGuessed", true)
+            this.firstDayClassicGuessed = true;
         }
         this.updatedStoredDays();
     }
@@ -105,7 +105,7 @@ class Streak {
     }
 
     isNewDay() {
-        if(this.dayTracker == 0 && this.firstDayGuessed == false) return true;
+        if(this.dayTracker == 0 && this.firstDayClassicGuessed == false) return true;
         return this.todaysClassicNumber != this.dayTracker;
     }
 
