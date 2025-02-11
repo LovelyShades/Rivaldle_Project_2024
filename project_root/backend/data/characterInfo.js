@@ -2850,7 +2850,7 @@ const mantis = new Person({
 const cloakAndDagger = new Person({
     en: {  // English
         name: "Cloak And Dagger",
-        gender: "Other",
+        gender: ["Male", "Female"],
         species: "Mutant",
         affiliation: "X-Men",
         role: "Strategist",
@@ -2867,7 +2867,7 @@ const cloakAndDagger = new Person({
     },
     es: {  // Spanish
         name: "Capa y Daga",
-        gender: "Otro",
+        gender: ["Masculino", "Femenino"],
         species: "Mutante",
         affiliation: "X-Men",
         role: "Estratega",
@@ -2884,7 +2884,8 @@ const cloakAndDagger = new Person({
     },
     fr: {  // French
         name: "Cape et Dague",
-        gender: "Autre",
+        gender: ["Homme", "Femme"],
+
         species: "Mutant",
         affiliation: "X-Men",
         role: "Stratège",
@@ -2901,7 +2902,8 @@ const cloakAndDagger = new Person({
     },
     de: {  // German
         name: "Umhang und Dolch",
-        gender: "Andere",
+        gender: ["Männlich", "Weiblich"],
+
         species: "Mutant",
         affiliation: "X-Men",
         role: "Stratege",
@@ -2918,7 +2920,7 @@ const cloakAndDagger = new Person({
     },
     zh: {  // Mandarin (Simplified Chinese)
         name: "斗篷与匕首",
-        gender: "其他",
+        gender: ["男性", "女性"],
         species: "变种人",
         affiliation: "X战警",
         role: "战略家",

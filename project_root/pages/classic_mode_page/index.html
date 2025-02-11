@@ -83,30 +83,84 @@
 
         <div class="overlay"></div>
 
-        <div class="popupContainer" id = "how_to_play_container">
+        <div class="popupContainer" id="how_to_play_container">
             <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
             <div class="popup_header"> How to Play Rivaldle: Classic Mode </div>
             <div class="white_line"></div>
 
-            <div class="popup_header"> 1.Understanding the Gameplay</div>
-            <div class="popup_text">Your goal is to identify the mystery character by making guesses. 
-                Each guess will provide feedback to help you get closer to the correct answer. 
-                In the input box, type the name of a Marvel character you think could be the answer then press on the searched character to submit your guess.</div>
+            <div class="popup_header"> 1. Understanding the Gameplay </div>
+            <div class="popup_text">
+                In this mode, you start by picking a Marvel character. Based on the character you choose, the game will
+                show you
+                their traits in different categories.
+                Your goal is to guess the secret character by comparing their traits with the one you selected.
+                If the trait matches, it will show green. If it doesn't match, it will show red. If it's partial, it
+                will show
+                yellow.
+                You'll keep guessing until you find the correct character.
+            </div>
 
-            <div class="popup_header"> 2.Interpreting Feedback</div>
-            <div class="popup_text">After submitting a guess, the game provides feedback based on several character attributes:</div>
+            <div class="popup_header"> 2. Categories and How to Interpret Them </div>
+            <div class="popup_text">
+                Here are the categories and what the colors mean:
+            </div>
             <div class="popup_text">
                 <ul>
-                    <li>Affiliation – Are they a hero, villain, or anti-hero?</li>
-                    <li>Species – Are they human, mutant, alien, or something else?</li>
-                    <li>Gender – Is the character male, female, ect...</li>
-                    <li>Appearances – What color/colors are the characters eyes or hair?</li>
-                    <li>Other Attributes – Additional unique identifiers such as their primary team, powers, ect....</li>
+                    <li><strong>Gender:</strong> The character could be <strong>female</strong>, <strong>male</strong>,
+                        or
+                        <strong>fluid</strong>. If the trait box is green, the secret character has that gender. If it’s
+                        red,
+                        they do not. Yellow means the character has some variation of that gender.
+                    </li>
+                    <li><strong>Species:</strong> This could be <strong>human</strong>, <strong>mutant</strong>,
+                        <strong>alien</strong>, or other. Green means the species matches, red means it doesn't, and
+                        yellow
+                        means it’s partially correct.
+                    </li>
+                    <li><strong>Affiliation:</strong> The character could be a <strong>hero</strong>,
+                        <strong>villain</strong>,
+                        or <strong>anti-hero</strong>. Green means a full match, red means no match, and yellow means a
+                        partial
+                        match.
+                    </li>
+                    <li><strong>Role:</strong> This shows whether the character is a <strong>fighter</strong>,
+                        <strong>leader</strong>, <strong>support</strong>, etc. Green means correct, red means wrong,
+                        and yellow
+                        means partially correct.
+                    </li>
+                    <li><strong>Eye Color:</strong> The game shows the eye color, such as <strong>blue</strong> or
+                        <strong>green</strong>. Green means the eyes match, red means they don’t, and yellow means the
+                        eyes are
+                        partially correct (e.g., one eye may match).
+                    </li>
+                    <li><strong>Hair Color:</strong> This shows colors like <strong>blonde</strong>,
+                        <strong>brown</strong>, or
+                        <strong>red</strong>. Green means a full match, red means no match, and yellow means partial
+                        match
+                        (e.g., a different color on one side).
+                    </li>
+                    <li><strong>HP (Health):</strong> If the box is green, the secret character’s health is correct. If
+                        it's
+                        red, it will show an up or down arrow indicating if the character has higher or lower health
+                        compared to
+                        the selected character.</li>
                 </ul>
             </div>
-            <div id="classic_example_container"></div>
 
+            <div class="popup_header"> 3. How to Play </div>
+            <div class="popup_text">
+                Once you've selected a character, you’ll see their traits listed under each category. For example, you
+                might see
+                the character has green eyes and is a male hero.
+                Based on that information, you can make your guess.
+                If you guess wrong, the game will show you how your selected character's traits compare to the secret
+                character,
+                helping you get closer to the right answer.
+                Keep making guesses until you find the secret character.
+            </div>
+            <div id="classic_example_container"></div>
         </div>
+
 
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
@@ -134,16 +188,16 @@
                 </div>
 
                 <div class="subHeadContainer">
-                    <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
+                    <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id="how_to_play">
                     <div class="enter_character_container">
                         <div class="enter_character_box">
                             <input type="text" class="enter_character" placeholder="Type character name ..."
                                 id="characterInput" data-translate="characterInput">
                             <button class="enter_character_button" id="character_search_button"
                                 data-translate="okButton">OK</button>
-                        </div>    
-                </div>
-                <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
+                        </div>
+                    </div>
+                    <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
 
                 </div>
                 <div id="suggestedCharactersContainer"></div>

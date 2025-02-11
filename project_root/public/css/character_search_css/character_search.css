@@ -10,6 +10,7 @@ Search Bar Stylizing
     align-items: center;
     padding: 10px;
     max-width: 100%;
+
     word-wrap: break-word;
     overflow-wrap: break-word;
 
@@ -18,8 +19,10 @@ Search Bar Stylizing
 
 .enter_character_box {
     display: flex;
-    width: 65vw;
+    width: 60vw;
     max-width: 300px;
+    height: 3.5vh;
+    max-height: 40px;
     align-items: center;
     border: 3px solid #dce1f4e8;
     background-color: rgba(0, 0, 0, 0.7);
@@ -147,7 +150,7 @@ Search Bar Stylizing
 @media (max-width: 500px) {
 
     .enter_character {
-        font-size: .9em;
+        font-size: .8em;
         /* Smaller font size for mobile */
 
     }

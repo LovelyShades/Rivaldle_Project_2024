@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="/css/share_box_css/share_box.css">
     <link rel="stylesheet" href="/css/emoji_mode_css/emoji_box.css">
     <link rel="stylesheet" href="/css/global_css/icons.css">
+    <link rel="stylesheet" href="/css/global_css/popup.css">
 </head>
 
 <body>
@@ -74,6 +75,39 @@
         <div class="custom-image-overlay"></div>
 
         <div class="overlay"></div>
+        <div class="popupContainer" id="how_to_play_container">
+            <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
+            <div class="popup_header"> How to Play Rivaldle: Emoji Mode </div>
+            <div class="white_line"></div>
+
+            <div class="popup_header"> 1. Understanding the Gameplay </div>
+            <div class="popup_text">
+                In this mode, you will be given a single emoji to start, representing the mystery Marvel character.
+                Your goal is to guess the character based on the clues provided by the emojis.
+                Each time you make a wrong guess, a new emoji will be revealed, providing more clues about the
+                character's
+                appearance, personality, or powers.
+            </div>
+
+            <div class="popup_header"> 2. Interpreting Emojis </div>
+            <div class="popup_text">
+                Emojis are a fun way to give hints about the character. Here’s how to interpret them:
+            </div>
+            <div class="popup_text">
+                <ul>
+                    <li><strong>Appearance Clues:</strong> Emojis that hint at the character's look, such as their
+                        outfit,
+                        accessories, or physical traits.</li>
+                    <li><strong>Personality Clues:</strong> Emojis that describe the character's attitude or role (e.g.,
+                        hero,
+                        villain, funny, serious).</li>
+                    <li><strong>Power Clues:</strong> Emojis that represent the character’s powers or abilities (e.g.,
+                        fire,
+                        strength, flying).</li>
+                </ul>
+            </div>
+            <div id="classic_example_container"></div>
+        </div>
 
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
@@ -87,17 +121,17 @@
             </div>
 
             <div class="subHeadContainer">
-                <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id = "how_to_play">
+                <img src="/_images/global_images/help_logo.png" class="icon modeIcon" id="how_to_play">
                 <div class="enter_character_container">
                     <div class="enter_character_box">
                         <input type="text" class="enter_character" placeholder="Type character name ..."
                             id="characterInput" data-translate="characterInput">
                         <button class="enter_character_button" id="character_search_button"
                             data-translate="okButton">OK</button>
-                    </div>    
+                    </div>
                 </div>
 
-            <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
+                <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
 
             </div>
             <div id="suggestedCharactersContainer"></div>
