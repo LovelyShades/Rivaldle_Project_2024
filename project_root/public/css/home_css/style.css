@@ -31,3 +31,33 @@
         font-size: 1.8em;
     }
 }
+
+.home_streak_popup_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+    font-family: MarvelFont, sans-serif;
+    background-color: rgba(0, 0, 0, 0.751);
+    border-style: solid; 
+    border-color: white;
+    border-width: 2px;
+    height: 10vh;
+    width: 75vw;
+    max-width: 200px;
+}
+
+.home_streak_popup_text{
+    position: relative;
+    display: flex;
+    color: black;
+    font-size: medium;
+    justify-content: center;    /* Center text horizontally */
+    align-items: center;        /* Center text vertically */
+    text-align: center;         /* Ensure text is centered */
+    width: auto;
+    flex-grow: 1;               /* Allow text to grow and take available space */
+    color: #ffffff;
+    font-family: MarvelFont, sans-serif;
+}

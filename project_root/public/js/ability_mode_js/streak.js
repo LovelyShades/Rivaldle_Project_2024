@@ -130,7 +130,7 @@ class Streak {
             this.streakDisplay = document.createElement("div");
             this.streakDisplay.id = "streakDisplay";
             this. streakDisplay.style.position = "absolute";
-            this.streakDisplay.style.top = "40%";  // Start positioning relative to parent
+            this.streakDisplay.style.top = "47%";  // Start positioning relative to parent
             this.streakDisplay.style.left = "94.1%";  // Center horizontally
             this.streakDisplay.style.color = "#dce1f4";
 
