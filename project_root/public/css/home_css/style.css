@@ -61,3 +61,25 @@
     color: #ffffff;
     font-family: MarvelFont, sans-serif;
 }
+
+.popup_row{
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    font-size: x-large;
+
+}
+
+.example_text{
+    height: 100px;  /* Set a height */
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    text-align: center; 
+}
+
+.example_link_box{
+    padding-bottom: 50px;
+}
