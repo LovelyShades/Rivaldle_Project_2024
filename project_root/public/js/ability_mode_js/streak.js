@@ -77,7 +77,6 @@ class Streak {
     addToStreak() {
         this.newDay = this.isNewDay();
         if (!this.newDay) return;
-        console.log("ran")
         console.log(this.dayTracker, this.todaysAbilityNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysAbilityNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
@@ -144,7 +143,11 @@ class Streak {
         if(this.storedStreak == 0){
             this.streakDisplay.textContent = "";
         } else {
-            this.streakDisplay.textContent = this.storedStreak - 1;
+            if(this.storedStreak > 9){
+                this.streakDisplay.textContent = '✨'
+            } else {
+                this.streakDisplay.textContent = this.storedStreak - 1;
+            }    
         }
         if(parseInt(this.dayTracker, 10) - parseInt(this.todaysAbilityNumber, 10) >= 2) {
             this.storedStreak = 1;

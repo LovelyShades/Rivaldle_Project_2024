@@ -144,7 +144,11 @@ class Streak {
         if(this.storedStreak == 0){
             this.streakDisplay.textContent = "";
         } else {
-            this.streakDisplay.textContent = this.storedStreak - 1;
+            if(this.storedStreak > 9){
+                this.streakDisplay.textContent = '✨'
+            } else {
+                this.streakDisplay.textContent = this.storedStreak - 1;
+            }    
         }
         if(parseInt(this.dayTracker, 10) - parseInt(this.todaysSilhoutteNumber, 10) >= 2) {
             this.storedStreak = 1;

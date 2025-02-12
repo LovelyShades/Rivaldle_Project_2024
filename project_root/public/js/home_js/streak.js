@@ -124,7 +124,11 @@ class Streak {
             this.streakDisplay.style.zIndex = "0";
             logoContainer.appendChild(this.streakDisplay);
         }
-        this.streakDisplay.textContent = this.storedStreak;
+        if(this.storedStreak > 9){
+            this.streakDisplay.textContent = '✨'
+        } else {
+            this.streakDisplay.textContent = this.storedStreak;
+        }
     }
 }
 

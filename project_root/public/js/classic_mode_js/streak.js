@@ -76,24 +76,20 @@ class Streak {
 
     addToStreak() {
         this.newDay = this.isNewDay();
+        console.log(this.newDay);
         if (!this.newDay) return;
-        console.log("ran")
         console.log(this.dayTracker, this.todaysClassicNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
-            console.log(this.storedStreak)
-            this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
         } else if (this.dayTracker != 0) {
             this.storedStreak = 2;
-            this.streakDisplay.textContent = this.storedStreak - 1;
-        } else {
+        }else {
             this.storedStreak = parseInt(this.storedStreak) + 1;
-            console.log(this.storedStreak)
             this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
-            localStorage.setItem("firstDayClassicGuessed", true)
-            this.firstDayClassicGuessed = true;
+            localStorage.setItem("firstDaySilhoutteGuessed", true)
+            this.firstDaySilhoutteGuessed = true;
         }
         this.updatedStoredDays();
     }
@@ -144,7 +140,11 @@ class Streak {
         if(this.storedStreak == 0){
             this.streakDisplay.textContent = "";
         } else {
-            this.streakDisplay.textContent = this.storedStreak - 1;
+            if(this.storedStreak > 9){
+                this.streakDisplay.textContent = '✨'
+            } else {
+                this.streakDisplay.textContent = this.storedStreak - 1;
+            }    
         }
         if(parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) >= 2) {
             this.storedStreak = 1;
