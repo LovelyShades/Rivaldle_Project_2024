@@ -1,3 +1,4 @@
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 //variables stored in local storage
 
 //home_streak in localStorage
@@ -8,6 +9,8 @@ class Streak {
     
     constructor() {
         this.language = localStorage.getItem('language');
+        this.currentStreakDisplay = document.getElementById("current_streak");
+        this.bestStreadDisplay = document.getElementById("best_streak");
         this.initialize();
     }
 
@@ -18,6 +21,7 @@ class Streak {
         await this.getYesterdaysNumber();
         await this.addToStreak();
         await this.appendStreak();
+        this.listenForLanguageSelection();
     }
 
     async fetchData(url) {
@@ -33,6 +37,7 @@ class Streak {
 
     async getStreakFromStorage() {
         this.storedStreak = localStorage.getItem("home_streak");
+        this.bestStoredStreak = localStorage.getItem("best_home_streak");
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
@@ -41,6 +46,7 @@ class Streak {
 
     addStreakToStorage() {
         localStorage.setItem("home_streak", this.storedStreak);
+        localStorage.setItem("best_home_streak", this.bestStoredStreak);
     }
 
     async getDayTracker() {
@@ -86,6 +92,7 @@ class Streak {
         localStorage.setItem("yesterdaysNumber", this.todaysNumber);
         localStorage.setItem("todaysNumber", this.dayTracker);
         localStorage.setItem("home_streak", this.storedStreak)
+        localStorage.setItem("best_home_streak", this.bestStoredStreak)
     }
 
     isNewDay() {
@@ -94,42 +101,33 @@ class Streak {
 
     appendStreak() {
         if (this.storedStreak == 0) return;
-
-        const logo = document.getElementById("streak_icon");
-        if (!logo) {
-            console.error("Logo element not found!");
-            return;
+        if(this.storedStreak >= this.bestStoredStreak){
+            this.bestStoredStreak = this.storedStreak;
         }
-
-        let logoContainer = logo.parentElement;
-        if (!logoContainer) {
-            console.error("Streak icon has no parent container!");
-            return;
-        }
-        logoContainer.style.position = "relative";
-
-        this.streakDisplay = document.getElementById("streakDisplay");
-        if (!this.streakDisplay) {
-            this.streakDisplay = document.createElement("div");
-            this.streakDisplay.id = "streakDisplay";
-            this. streakDisplay.style.position = "absolute";
-            this.streakDisplay.style.top = "38%";  // Start positioning relative to parent
-            this.streakDisplay.style.left = "61%";  // Center horizontally
-            this.streakDisplay.style.color = "#dce1f4";
-
-
-            this.streakDisplay.style.fontSize = "17px";
-            this.streakDisplay.style.fontWeight = "bold";
-            this.streakDisplay.style.pointerEvents = "none"; // Make it non-clickable
-            this.streakDisplay.style.zIndex = "0";
-            logoContainer.appendChild(this.streakDisplay);
-        }
-        if(this.storedStreak > 9){
-            this.streakDisplay.textContent = '✨'
-        } else {
-            this.streakDisplay.textContent = this.storedStreak;
-        }
+        this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak);
+        this.bestStreadDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak);
     }
+
+    translatedNumber(number){
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
+    }
+    listenForLanguageSelection() {
+        // Get the language dropdown
+        const languageSelect = document.getElementById('language_select');
+
+        // Listen for changes in the dropdown
+        languageSelect.addEventListener('change', (e) => {
+            this.language = e.target.value;
+
+            console.log(this.language)
+            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak);
+            this.bestStreadDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak);    
+        });
+    }
+
 }
 
 const streak = new Streak();

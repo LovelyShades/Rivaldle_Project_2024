@@ -151,8 +151,7 @@ class About {
         // Listen for changes in the dropdown
         languageSelect.addEventListener('change', (e) => {
             const selectedLanguage = e.target.value;
-            console.log("Selected Language: ", selectedLanguage); // Debugging line
-            Language.setLanguage(selectedLanguage);  // Apply language using Language class
+            Language.setLanguage(selectedLanguage); 
             this.removeOverlay();
             this.removeContainer();
         });
