@@ -84,7 +84,6 @@ class Streak {
     addToStreak() {
         this.newDay = this.isNewDay();
         if (!this.newDay) return;
-        console.log("ran")
         console.log(this.dayTracker, this.todaysSilhoutteNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysSilhoutteNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
