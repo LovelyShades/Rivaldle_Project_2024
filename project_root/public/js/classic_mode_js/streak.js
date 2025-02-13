@@ -86,12 +86,14 @@ class Streak {
         if (!this.newDay) return;
         console.log(this.dayTracker, this.todaysClassicNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) === 1) {
+            this.storedStreak = parseInt(this.storedStreak) + 1;
             this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
             this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);    
-            this.storedStreak = parseInt(this.storedStreak) + 1;
             this.addStreakToStorage();
         } else if (this.dayTracker != 0) {
             this.storedStreak = 2;
+            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
+            this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);    
         }else {
             this.storedStreak = parseInt(this.storedStreak) + 1;
             this.addStreakToStorage();
