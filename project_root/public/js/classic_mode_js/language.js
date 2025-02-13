@@ -20,6 +20,24 @@ export const translations = {
         correct: "Correct",
         partial: "Partial",
         incorrect: "Incorrect",
+        
+   how_to_play_classic_mode: "How to Play Rivaldle: Classic Mode",
+  understanding_gameplay_header: "1. Understanding the Gameplay",
+  understanding_gameplay_text: "In this mode, you start by picking a Marvel character. Based on the character you choose, the game will show you their traits in different categories. Your goal is to guess the secret character by comparing their traits with the one you selected. If the trait matches, it will show green. If it doesn't match, it will show red. If it's partial, it will show yellow. You'll keep guessing until you find the correct character.",
+  
+  categories_header: "2. Categories and How to Interpret Them",
+  categories_description: "Here are the categories and what the colors mean:",
+  gender: "Gender: The character could be female, male, or fluid. If the trait box is green, the secret character has that gender. If it’s red, they do not. Yellow means the character has some variation of that gender.",
+  species: "Species: This could be human, mutant, alien, or other. Green means the species matches, red means it doesn't, and yellow means it’s partially correct.",
+  affiliation: "Affiliation: The character could be a hero, villain, or anti-hero. Green means a full match, red means no match, and yellow means a partial match.",
+  role: "Role: This shows whether the character is a fighter, leader, support, etc. Green means correct, red means wrong, and yellow means partially correct.",
+  eye_color: "Eye Color: The game shows the eye color, such as blue or green. Green means the eyes match, red means they don’t, and yellow means the eyes are partially correct (e.g., one eye may match).",
+  hair_color: "Hair Color: This shows colors like blonde, brown, or red. Green means a full match, red means no match, and yellow means partial match (e.g., a different color on one side).",
+  hp_health: "HP (Health): If the box is green, the secret character’s health is correct. If it's red, it will show an up or down arrow indicating if the character has higher or lower health compared to the selected character.",
+  
+  how_to_play_header: "3. How to Play",
+  how_to_play_text: "Once you've selected a character, you’ll see their traits listed under each category. For example, you might see the character has green eyes and is a male hero (indicated by the box with those traits being green). Based on that information, you can make your next guess. If you guess wrong, the game will show you how your selected character's traits compare to the secret character. Green meaning the secret character has that trait, red meaning they do not have that trait, and yellow meaning they have one of those traits. These clues will help you get closer to the right answer. Keep making guesses until you find the secret character!"
+
     },
 
     es: {
@@ -41,6 +59,22 @@ export const translations = {
         correct: "Correcto",
         partial: "Parcial",
         incorrect: "Incorrecto",
+        how_to_play_classic_mode: "Cómo jugar Rivaldle: Modo Clásico",
+  understanding_gameplay_header: "1. Entendiendo el juego",
+  understanding_gameplay_text: "En este modo, comienzas eligiendo un personaje de Marvel. Según el personaje que elijas, el juego te mostrará sus rasgos en diferentes categorías. Tu objetivo es adivinar al personaje secreto comparando sus rasgos con el que seleccionaste. Si el rasgo coincide, se mostrará en verde. Si no coincide, se mostrará en rojo. Si es parcial, se mostrará en amarillo. Continuarás adivinando hasta encontrar al personaje correcto.",
+  
+  categories_header: "2. Categorías y cómo interpretarlas",
+  categories_description: "Aquí están las categorías y lo que significan los colores:",
+  gender: "Género: El personaje podría ser mujer, hombre o fluido. Si el cuadro de rasgo es verde, el personaje secreto tiene ese género. Si es rojo, no lo tiene. Amarillo significa que el personaje tiene alguna variación de ese género.",
+  species: "Especie: Esto podría ser humano, mutante, alienígena u otro. Verde significa que la especie coincide, rojo significa que no coincide y amarillo significa que es parcialmente correcto.",
+  affiliation: "Afiliación: El personaje podría ser un héroe, villano o antihéroe. Verde significa una coincidencia total, rojo significa que no coincide y amarillo significa una coincidencia parcial.",
+  role: "Rol: Esto muestra si el personaje es un luchador, líder, apoyo, etc. Verde significa correcto, rojo significa incorrecto y amarillo significa parcialmente correcto.",
+  eye_color: "Color de ojos: El juego muestra el color de los ojos, como azul o verde. Verde significa que los ojos coinciden, rojo significa que no coinciden y amarillo significa que los ojos son parcialmente correctos (por ejemplo, un ojo puede coincidir).",
+  hair_color: "Color de cabello: Esto muestra colores como rubio, marrón o rojo. Verde significa una coincidencia total, rojo significa que no coincide y amarillo significa coincidencia parcial (por ejemplo, un color diferente en un lado).",
+  hp_health: "HP (Salud): Si el cuadro es verde, la salud del personaje secreto es correcta. Si es rojo, mostrará una flecha hacia arriba o hacia abajo indicando si el personaje tiene más o menos salud en comparación con el personaje seleccionado.",
+  
+  how_to_play_header: "3. Cómo jugar",
+  how_to_play_text: "Una vez que hayas seleccionado un personaje, verás sus rasgos listados bajo cada categoría. Por ejemplo, podrías ver que el personaje tiene ojos verdes y es un héroe masculino (indicado por el cuadro con esos rasgos en verde). Basado en esa información, puedes hacer tu próxima suposición. Si adivinas mal, el juego te mostrará cómo se comparan los rasgos de tu personaje seleccionado con el personaje secreto. Verde significa que el personaje secreto tiene ese rasgo, rojo significa que no lo tiene y amarillo significa que tiene uno de esos rasgos. Estas pistas te ayudarán a acercarte a la respuesta correcta. ¡Sigue adivinando hasta que encuentres al personaje secreto!"
     },
 
     fr: {
@@ -62,6 +96,22 @@ export const translations = {
         correct: "Correct",
         partial: "Partiel",
         incorrect: "Incorrect",
+         how_to_play_classic_mode: "Comment jouer à Rivaldle : Mode classique",
+  understanding_gameplay_header: "1. Comprendre le gameplay",
+  understanding_gameplay_text: "Dans ce mode, vous commencez en choisissant un personnage Marvel. En fonction du personnage que vous choisissez, le jeu vous montrera ses traits dans différentes catégories. Votre objectif est de deviner le personnage secret en comparant leurs traits avec celui que vous avez sélectionné. Si le trait correspond, il sera affiché en vert. S'il ne correspond pas, il sera affiché en rouge. S'il est partiellement correct, il sera affiché en jaune. Vous continuerez à deviner jusqu'à trouver le bon personnage.",
+  
+  categories_header: "2. Catégories et comment les interpréter",
+  categories_description: "Voici les catégories et ce que signifient les couleurs :",
+  gender: "Genre : Le personnage peut être féminin, masculin ou fluide. Si la case du trait est verte, le personnage secret a ce genre. Si elle est rouge, il ne l'a pas. Jaune signifie que le personnage a une variation de ce genre.",
+  species: "Espèce : Cela peut être humain, mutant, extraterrestre ou autre. Vert signifie que l'espèce correspond, rouge signifie que cela ne correspond pas et jaune signifie que c'est partiellement correct.",
+  affiliation: "Affiliation : Le personnage peut être un héros, un méchant ou un anti-héros. Vert signifie une correspondance totale, rouge signifie qu'il n'y a pas de correspondance et jaune signifie une correspondance partielle.",
+  role: "Rôle : Cela montre si le personnage est un combattant, un leader, un soutien, etc. Vert signifie correct, rouge signifie incorrect et jaune signifie partiellement correct.",
+  eye_color: "Couleur des yeux : Le jeu montre la couleur des yeux, comme bleu ou vert. Vert signifie que les yeux correspondent, rouge signifie qu'ils ne correspondent pas et jaune signifie que les yeux sont partiellement corrects (par exemple, un œil peut correspondre).",
+  hair_color: "Couleur des cheveux : Cela montre des couleurs comme blond, brun ou rouge. Vert signifie une correspondance totale, rouge signifie qu'il n'y a pas de correspondance et jaune signifie une correspondance partielle (par exemple, une couleur différente d'un côté).",
+  hp_health: "HP (Santé) : Si la case est verte, la santé du personnage secret est correcte. Si elle est rouge, elle affichera une flèche vers le haut ou vers le bas indiquant si le personnage a plus ou moins de santé par rapport au personnage sélectionné.",
+  
+  how_to_play_header: "3. Comment jouer",
+  how_to_play_text: "Une fois que vous avez sélectionné un personnage, vous verrez ses traits listés sous chaque catégorie. Par exemple, vous pourriez voir que le personnage a des yeux verts et est un héros masculin (indiqué par la case avec ces traits en vert). En fonction de cette information, vous pouvez faire votre prochaine supposition. Si vous vous trompez, le jeu vous montrera comment les traits de votre personnage sélectionné se comparent à ceux du personnage secret. Vert signifie que le personnage secret a ce trait, rouge signifie qu'il n'a pas ce trait et jaune signifie qu'il en a un. Ces indices vous aideront à vous rapprocher de la bonne réponse. Continuez à deviner jusqu'à ce que vous trouviez le personnage secret !"
     },
 
     de: {
@@ -83,6 +133,22 @@ export const translations = {
         correct: "Richtig",
         partial: "Teilweise",
         incorrect: "Falsch",
+          how_to_play_classic_mode: "So spielst du Rivaldle: Klassischer Modus",
+  understanding_gameplay_header: "1. Das Spielverständnis",
+  understanding_gameplay_text: "In diesem Modus beginnst du, indem du einen Marvel-Charakter auswählst. Basierend auf dem Charakter, den du wählst, zeigt dir das Spiel seine Merkmale in verschiedenen Kategorien. Dein Ziel ist es, den geheimen Charakter zu erraten, indem du seine Merkmale mit dem ausgewählten Charakter vergleichst. Wenn das Merkmal übereinstimmt, wird es grün angezeigt. Wenn es nicht übereinstimmt, wird es rot angezeigt. Wenn es teilweise übereinstimmt, wird es gelb angezeigt. Du wirst weiter raten, bis du den richtigen Charakter gefunden hast.",
+  
+  categories_header: "2. Kategorien und wie man sie interpretiert",
+  categories_description: "Hier sind die Kategorien und was die Farben bedeuten:",
+  gender: "Geschlecht: Der Charakter kann weiblich, männlich oder geschlechtsfluid sein. Wenn das Merkmal grün ist, hat der geheime Charakter dieses Geschlecht. Wenn es rot ist, hat er es nicht. Gelb bedeutet, dass der Charakter eine Variation dieses Geschlechts hat.",
+  species: "Spezies: Dies kann Mensch, Mutant, Außerirdischer oder anderes sein. Grün bedeutet, dass die Spezies übereinstimmt, rot bedeutet, dass sie nicht übereinstimmt und gelb bedeutet, dass es teilweise korrekt ist.",
+  affiliation: "Zugehörigkeit: Der Charakter kann ein Held, ein Bösewicht oder ein Anti-Held sein. Grün bedeutet eine vollständige Übereinstimmung, rot bedeutet keine Übereinstimmung und gelb bedeutet eine teilweise Übereinstimmung.",
+  role: "Rolle: Dies zeigt, ob der Charakter ein Kämpfer, ein Anführer, ein Unterstützer usw. ist. Grün bedeutet korrekt, rot bedeutet falsch und gelb bedeutet teilweise korrekt.",
+  eye_color: "Augenfarbe: Das Spiel zeigt die Augenfarbe, wie blau oder grün. Grün bedeutet, dass die Augen übereinstimmen, rot bedeutet, dass sie nicht übereinstimmen und gelb bedeutet, dass die Augen teilweise übereinstimmen (z. B. wenn ein Auge übereinstimmt).",
+  hair_color: "Haarfarbe: Dies zeigt Farben wie blond, braun oder rot. Grün bedeutet eine vollständige Übereinstimmung, rot bedeutet keine Übereinstimmung und gelb bedeutet eine teilweise Übereinstimmung (z. B. eine andere Farbe auf einer Seite).",
+  hp_health: "HP (Gesundheit): Wenn das Feld grün ist, ist die Gesundheit des geheimen Charakters korrekt. Wenn es rot ist, zeigt es einen Auf- oder Abwärtspfeil, der anzeigt, ob der Charakter mehr oder weniger Gesundheit hat als der ausgewählte Charakter.",
+  
+  how_to_play_header: "3. Wie man spielt",
+  how_to_play_text: "Sobald du einen Charakter ausgewählt hast, siehst du seine Merkmale unter jeder Kategorie aufgelistet. Zum Beispiel könntest du sehen, dass der Charakter grüne Augen hat und ein männlicher Held ist (angezeigt durch das grüne Feld mit diesen Merkmalen). Basierend auf dieser Information kannst du deinen nächsten Tipp abgeben. Wenn du falsch rätst, zeigt dir das Spiel, wie die Merkmale deines ausgewählten Charakters mit denen des geheimen Charakters verglichen werden. Grün bedeutet, dass der geheime Charakter dieses Merkmal hat, rot bedeutet, dass er es nicht hat, und gelb bedeutet, dass er eines dieser Merkmale hat. Diese Hinweise helfen dir, der richtigen Antwort näher zu kommen. Rate weiter, bis du den geheimen Charakter gefunden hast!"
     },
 
     zh: {
@@ -104,5 +170,21 @@ export const translations = {
         correct: "正确",
         partial: "部分正确",
         incorrect: "错误",
+        how_to_play_classic_mode: "如何玩Rivaldle：经典模式",
+  understanding_gameplay_header: "一、理解游戏玩法",
+  understanding_gameplay_text: "在此模式下，你从选择一个漫威角色开始。根据你选择的角色，游戏会显示他们在不同类别下的特征。你的目标是通过比较他们的特征来猜测秘密角色。如果特征匹配，它会显示为绿色。如果不匹配，它会显示为红色。如果是部分匹配，它会显示为黄色。你将继续猜测直到找到正确的角色。",
+  
+  categories_header: "二、类别及如何解读",
+  categories_description: "以下是类别及颜色的含义：",
+  gender: "性别：角色可以是女性、男性或流动性别。如果特征框是绿色，则秘密角色具有该性别。如果是红色，则没有该性别。黄色表示角色具有该性别的某些变体。",
+  species: "种族：这可以是人类、变种人、外星人或其他。绿色表示种族匹配，红色表示不匹配，黄色表示部分正确。",
+  affiliation: "隶属关系：角色可以是英雄、反派或反英雄。绿色表示完全匹配，红色表示没有匹配，黄色表示部分匹配。",
+  role: "角色：这显示角色是战士、领导者、支援等。绿色表示正确，红色表示错误，黄色表示部分正确。",
+  eye_color: "眼睛颜色：游戏显示眼睛颜色，如蓝色或绿色。绿色表示眼睛匹配，红色表示不匹配，黄色表示眼睛部分匹配（例如，一个眼睛可能匹配）。",
+  hair_color: "发色：这显示颜色，如金色、棕色或红色。绿色表示完全匹配，红色表示不匹配，黄色表示部分匹配（例如，一侧是不同的颜色）。",
+  hp_health: "HP（健康）：如果框是绿色，则秘密角色的健康值正确。如果是红色，将显示上下箭头，表示该角色的健康值与所选角色相比是更高或更低。",
+  
+  how_to_play_header: "三、如何玩",
+  how_to_play_text: "一旦你选择了一个角色，你将看到他们在每个类别下列出的特征。例如，你可能会看到角色有绿色的眼睛并且是男性英雄（特征框为绿色）。根据这些信息，你可以做出下一个猜测。如果你猜错了，游戏将展示你所选角色的特征与秘密角色的比较。绿色表示秘密角色有该特征，红色表示没有该特征，黄色表示他们有其中一个特征。这些线索将帮助你更接近正确答案。继续猜测直到你找到秘密角色！"
     },
 };
