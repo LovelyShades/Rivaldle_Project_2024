@@ -18,7 +18,7 @@ export const translations = {
         aboutText5: "Looking to the future, we’re excited to expand Rivaldle even further. We have many plans in the works, including adding new game modes, enhancing the user interface, and even introducing new types of trivia questions that will test players in exciting and unexpected ways. Our goal is to make Rivaldle not only the best trivia game for Marvel fans, but a game that continually evolves with its community. The Marvel universe is vast, and we want to ensure that Rivaldle reflects its endless possibilities. As we continue to improve the game and grow the Rivaldle community, we invite you to join us on this adventure. Your feedback, your passion, and your love for Marvel are what make this project worthwhile.",
         aboutText6: "We believe that games should be a reflection of the community they serve, which is why we are committed to listening to our players every step of the way. Whether it’s through feature requests, bug reports, or even just casual discussions about Marvel lore, we want to hear from you. Together, we can make Rivaldle the ultimate destination for Marvel trivia fans. So, whether you’re here for the challenge or just to prove your Marvel expertise, we hope you enjoy playing Rivaldle as much as we’ve enjoyed building it.",
         aboutText7: "Have feedback, ideas, or just want to chat about Marvel? Reach out to us at rivaldleguesser@gmail.com—we’d love to hear from you. Thank you for being a part of this journey with us!",
-
+        howToPlayText5: "Starting out is simple, click any of the various modes to start!",
 
 
         languageHeader: "Select Your Language",
@@ -52,7 +52,7 @@ export const translations = {
         aboutText5: "Mirando al futuro, estamos emocionados por expandir aún más Rivaldle. Tenemos muchos planes en marcha, incluyendo la adición de nuevos modos de juego, la mejora de la interfaz de usuario e incluso la introducción de nuevos tipos de preguntas de trivia que pondrán a prueba a los jugadores de maneras emocionantes e inesperadas. Nuestro objetivo es hacer de Rivaldle no solo el mejor juego de trivia para los fanáticos de Marvel, sino un juego que evoluciona continuamente con su comunidad. El universo Marvel es vasto y queremos asegurarnos de que Rivaldle refleje sus infinitas posibilidades. A medida que continuamos mejorando el juego y haciendo crecer la comunidad de Rivaldle, te invitamos a unirte a nosotros en esta aventura. Tus comentarios, tu pasión y tu amor por Marvel son lo que hace que este proyecto valga la pena.",
         aboutText6: "Creemos que los juegos deben ser un reflejo de la comunidad a la que sirven, por eso estamos comprometidos a escuchar a nuestros jugadores en cada paso del camino. Ya sea a través de solicitudes de características, reportes de errores o incluso discusiones casuales sobre la mitología de Marvel, queremos saber de ti. Juntos, podemos hacer de Rivaldle el destino definitivo para los fanáticos de la trivia de Marvel. Así que, ya sea que estés aquí para el desafío o solo para probar tu experiencia en Marvel, esperamos que disfrutes jugar Rivaldle tanto como nosotros hemos disfrutado creándolo.",
         aboutText7: "¿Tienes comentarios, ideas o simplemente quieres charlar sobre Marvel? Contáctanos en rivaldleguesser@gmail.com—nos encantaría saber de ti. ¡Gracias por ser parte de este viaje con nosotros!",
-
+        howToPlayText5: "Comenzar es sencillo, ¡haz clic en cualquiera de los distintos modos para empezar!",
 
 
         languageHeader: "Selecciona tu idioma",
@@ -88,7 +88,7 @@ export const translations = {
         aboutText5: "En regardant vers l'avenir, nous sommes impatients d'étendre encore Rivaldle. Nous avons de nombreux projets en cours, notamment l'ajout de nouveaux modes de jeu, l'amélioration de l'interface utilisateur et même l'introduction de nouveaux types de questions de trivia qui mettront les joueurs au défi de manière excitante et inattendue. Notre objectif est de faire de Rivaldle non seulement le meilleur jeu de trivia pour les fans de Marvel, mais aussi un jeu qui évolue continuellement avec sa communauté. L'univers Marvel est vaste, et nous voulons nous assurer que Rivaldle reflète ses possibilités infinies. Alors que nous continuons à améliorer le jeu et à faire grandir la communauté Rivaldle, nous vous invitons à nous rejoindre dans cette aventure. Vos retours, votre passion et votre amour pour Marvel sont ce qui donne toute sa valeur à ce projet.",
         aboutText6: "Nous croyons que les jeux doivent être le reflet de la communauté qu'ils servent, c'est pourquoi nous nous engageons à écouter nos joueurs à chaque étape du processus. Que ce soit par des demandes de fonctionnalités, des rapports de bugs, ou même des discussions informelles sur la mythologie Marvel, nous voulons avoir de vos nouvelles. Ensemble, nous pouvons faire de Rivaldle la destination ultime pour les fans de trivia Marvel. Que vous soyez ici pour le défi ou juste pour prouver vos connaissances sur Marvel, nous espérons que vous apprécierez jouer à Rivaldle autant que nous avons pris plaisir à le créer.",
         aboutText7: "Vous avez des retours, des idées ou souhaitez simplement discuter de Marvel ? Contactez-nous à rivaldleguesser@gmail.com—nous serions ravis d'avoir de vos nouvelles. Merci de faire partie de cette aventure avec nous !",
-
+        howToPlayText5: "Commencer est simple, cliquez sur l'un des différents modes pour commencer !",
 
 
 
@@ -126,7 +126,7 @@ export const translations = {
         aboutText5: "Mit Blick auf die Zukunft sind wir gespannt darauf, Rivaldle noch weiter auszubauen. Wir haben viele Pläne in Arbeit, darunter die Einführung neuer Spielmodi, die Verbesserung der Benutzeroberfläche und sogar die Einführung neuer Arten von Quizfragen, die die Spieler auf aufregende und unerwartete Weise herausfordern werden. Unser Ziel ist es, Rivaldle nicht nur zum besten Quizspiel für Marvel-Fans zu machen, sondern zu einem Spiel, das sich ständig mit seiner Community weiterentwickelt. Das Marvel-Universum ist riesig, und wir möchten sicherstellen, dass Rivaldle die unendlichen Möglichkeiten widerspiegelt. Während wir das Spiel weiter verbessern und die Rivaldle-Community wachsen lassen, laden wir dich ein, uns auf dieses Abenteuer zu begleiten. Dein Feedback, deine Leidenschaft und deine Liebe zu Marvel sind es, die dieses Projekt wertvoll machen.",
         aboutText6: "Wir glauben, dass Spiele ein Spiegelbild der Community sein sollten, der sie dienen, deshalb sind wir verpflichtet, unseren Spielern bei jedem Schritt zuzuhören. Ob durch Funktionsanfragen, Fehlerberichte oder sogar durch informelle Diskussionen über Marvel-Lore, wir möchten von dir hören. Gemeinsam können wir Rivaldle zum ultimativen Ziel für Marvel-Quiz-Fans machen. Also, egal ob du hier bist, um die Herausforderung anzunehmen oder einfach nur, um dein Marvel-Wissen zu beweisen, wir hoffen, dass du Rivaldle genauso genießen wirst, wie wir es genossen haben, es zu entwickeln.",
         aboutText7: "Hast du Feedback, Ideen oder möchtest einfach über Marvel plaudern? Kontaktiere uns unter rivaldleguesser@gmail.com – wir würden uns freuen, von dir zu hören. Vielen Dank, dass du Teil dieses Abenteuers mit uns bist!",
-
+        howToPlayText5: "Der Einstieg ist einfach, klicke auf einen der verschiedenen Modi, um zu starten!",
 
 
 
@@ -164,7 +164,7 @@ export const translations = {
         aboutText5: "展望未来，我们很高兴能将Rivaldle进一步扩展。我们有很多计划正在进行中，包括增加新的游戏模式、增强用户界面，甚至引入新的问答类型，以令人兴奋和意想不到的方式挑战玩家。我们的目标是让Rivaldle不仅成为Marvel粉丝最好的问答游戏，而且是一个与社区不断发展壮大的游戏。Marvel宇宙是如此庞大，我们希望确保Rivaldle能够反映其无限的可能性。当我们继续改进游戏并壮大Rivaldle社区时，我们邀请你加入我们的冒险。你的反馈、热情和对Marvel的热爱正是让这个项目变得有意义的动力。",
         aboutText6: "我们相信游戏应该是它所服务的社区的一个反映，这就是为什么我们承诺在每个阶段都倾听玩家的声音。无论是通过功能请求、bug报告，还是关于Marvel故事的随意讨论，我们都希望听到你的意见。让我们一起努力，让Rivaldle成为Marvel问答粉丝的终极目的地。所以，无论你是来迎接挑战，还是仅仅为了证明你的Marvel专业知识，我们希望你能像我们一样享受Rivaldle。",
         aboutText7: "有反馈、想法，或者只是想聊聊Marvel吗？请通过rivaldleguesser@gmail.com与我们联系——我们很高兴听到你的声音。感谢你与我们一同踏上这段旅程！",
-
+        howToPlayText5: "开始很简单，点击任意模式即可开始!",
 
 
 

@@ -222,6 +222,18 @@
                     </select>
                 </div>
 
+                <div class="streak-popup-container" id="streak_container">
+                    <img src="/_images/global_images/x_logo.png" class="streak-popup-x-icon" alt="icon"
+                        id="x_icon_streak">
+                    <div class="streak-popup-header" data-translate="streakHeader" id="streakHeader">Your Streak</div>
+                    <div class="streak-popup-white-line"></div>
+                    <!-- Streak Content Goes Here -->
+                    <div class="streak-details">
+                        <p>Your current streak: <span id="current_streak">?</span></p>
+                        <p>Best streak: <span id="best_streak">?</span></p>
+                        <!-- Additional streak-related content can go here -->
+                    </div>
+                </div>
 
                 <!-- How to Play Popup -->
                 <div class="popupContainer" id="how_to_play_container">
@@ -281,17 +293,18 @@
                     </div>
 
                     <div class="popup_text" data-translate="howToPlayText5" id="howToPlayText5">
-                            Starting out is simple, click any of the various modes to start!
+                        Starting out is simple, click any of the various modes to start!
                     </div>
 
                     <div class="popup_row">
-                        <div class="example_text" translate="howToPlayText6" id="howToPlayText6">Example:</div>
+                        <div class="example_text" data-translate="example" id="howToPlayText6">Example:</div>
                         <a href="/classic">
-                            <div class="mode_link_box example_link_box" data-translate="mode_classic" id="mode_classic">Classic</div>
+                            <div class="mode_link_box example_link_box" data-translate="mode_classic" id="mode_classic">
+                                Classic</div>
                         </a>
-    
+
                     </div>
-    
+
                     <div class="popup_text" data-translate="howToPlayText4" id="howToPlayText4">
                         On the top right of the screen, you’ll also notice the background logo. By clicking this icon,
                         you can change

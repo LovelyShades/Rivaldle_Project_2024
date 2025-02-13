@@ -5,6 +5,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 2025",
         footerText2: "Marvel does not endorse or sponsor this project.",
         privacyPolicy: "Privacy Policy",
+        example: "Example:",
 
         //game compleated stat box
         victory: "Victory!",
@@ -23,7 +24,7 @@ export const globalTranslations = {
         oneShot: "one shot!",
         share: "Share 😊",
         copy: "Copied👍",
-        copyText:  `I found #Rivaldle {mode} mode hero in {tries}🔨\nCan you beat my score?\n https://rivaldle.com`,
+        copyText: `I found #Rivaldle {mode} mode hero in {tries}🔨\nCan you beat my score?\n https://rivaldle.com`,
 
     },
     es: {
@@ -32,6 +33,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 2025",
         footerText2: "Marvel no respalda ni patrocina este proyecto.",
         privacyPolicy: "Política de privacidad",
+        example: "Ejemplo:",
 
         victory: "Victoria!",
         youGuessed: "Adivinaste {char}",
@@ -48,7 +50,7 @@ export const globalTranslations = {
         oneShot: "¡un solo intento!",
         share: "Compartir 😊",
         copy: "Copiado👍",
-        copyText:  `Encontré al héroe de #Rivaldle en modo {mode} en {tries}🔨\n¿Puedes superar mi puntuación?\n https://rivaldle.com`,
+        copyText: `Encontré al héroe de #Rivaldle en modo {mode} en {tries}🔨\n¿Puedes superar mi puntuación?\n https://rivaldle.com`,
     },
     fr: {
         characterInput: "Tapez le nom du personnage ...",
@@ -56,6 +58,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 2025",
         footerText2: "Marvel ne soutient ni ne parraine ce projet.",
         privacyPolicy: "Politique de confidentialité",
+        example: "Exemple:",
 
         victory: "Victoire!",
         youGuessed: "Vous avez deviné {char}",
@@ -72,7 +75,7 @@ export const globalTranslations = {
         oneShot: "un seul essai !",
         share: "Partager 😊",
         copy: "Copié👍",
-        copyText:  `J'ai trouvé le héros de #Rivaldle en mode {mode} en {tries}🔨\nPeux-tu dépasser mon score ?\n https://rivaldle.com`,
+        copyText: `J'ai trouvé le héros de #Rivaldle en mode {mode} en {tries}🔨\nPeux-tu dépasser mon score ?\n https://rivaldle.com`,
     },
     de: {
         characterInput: "Geben Sie den Charakternamen ein ...",
@@ -80,6 +83,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 2025",
         footerText2: "Marvel unterstützt oder sponsert dieses Projekt nicht.",
         privacyPolicy: "Datenschutz-Bestimmungen",
+        example: "Beispiel:",
 
         victory: "Sieg!",
         youGuessed: "Du hast es erraten {char}",
@@ -96,7 +100,7 @@ export const globalTranslations = {
         oneShot: "nur ein Versuch!",
         share: "Aktie 😊",
         copy: "Kopiert👍",
-        copyText:  `Ich habe den #Rivaldle-Helden im {mode}-Modus in {tries}🔨 gefunden\nKannst du meinen Score schlagen?\n https://rivaldle.com`,
+        copyText: `Ich habe den #Rivaldle-Helden im {mode}-Modus in {tries}🔨 gefunden\nKannst du meinen Score schlagen?\n https://rivaldle.com`,
     },
     zh: {
         characterInput: "输入角色名称 ...",
@@ -104,6 +108,7 @@ export const globalTranslations = {
         footerText1: "rivaldle.com — 二千〇二十五",
         footerText2: "Marvel 不支持或赞助该项目。",
         privacyPolicy: "隐私政策",
+        example: "示例:",
 
         victory: "胜利",
         youGuessed: "你猜对了 {char}",
@@ -120,6 +125,6 @@ export const globalTranslations = {
         oneShot: "仅一次尝试！",
         share: "分享  😊",
         copy: "已复制👍",
-        copyText:  `我在 #Rivaldle {mode} 模式下用了 {tries}🔨 找到了英雄\n你能打破我的记录吗？\n https://rivaldle.com`,
+        copyText: `我在 #Rivaldle {mode} 模式下用了 {tries}🔨 找到了英雄\n你能打破我的记录吗？\n https://rivaldle.com`,
     },
 };

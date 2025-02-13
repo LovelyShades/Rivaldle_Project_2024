@@ -80,6 +80,7 @@
         <div class="custom-image-overlay"></div>
 
         <div class="overlay"></div>
+
         <div class="popupContainer" id="how_to_play_container">
             <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
             <div class="popup_header"> How to Play Rivaldle: Silhouette Mode </div>
@@ -126,6 +127,18 @@
             <div id="classic_example_container"></div>
         </div>
 
+        <div class="streak-popup-container" id="streak_container">
+            <img src="/_images/global_images/x_logo.png" class="streak-popup-x-icon" alt="icon" id="x_icon_streak">
+            <div class="streak-popup-header" data-translate="streakHeader" id="streakHeader">Your Streak</div>
+            <div class="streak-popup-white-line"></div>
+            <!-- Streak Content Goes Here -->
+            <div class="streak-details">
+                <p>Your current streak: <span id="current_streak">?</span></p>
+                <p>Best streak: <span id="best_streak">?</span></p>
+                <!-- Additional streak-related content can go here -->
+            </div>
+        </div>
+
         <a href="/" id="title_logo">
             <img src="../../_images/home_images/RivalsLogo.png" class="logo" alt="Marvel Rivals Game Logo">
         </a>
@@ -151,6 +164,7 @@
                             data-translate="okButton">OK</button>
                     </div>
                 </div>
+
 
                 <img src="/_images/global_images/streak_logo.png" class="icon modeIcon" id="streak_icon">
 
@@ -187,7 +201,6 @@
     <script type="module" src="/js/global_js/how_to_play.js"></script>
     <script type="module" src="/js/silhoutte_mode_js/language.js"></script>
     <script type="module" src="/js/silhoutte_mode_js/languageHandler.js"></script>
-
     <script type="module" src="/js/search_functions/character_search.js"></script>
     <script type="module" src="/js/game_completed_functions/append_stat_box.js"></script>
     <script type="module" src="/js/share_box_js/share_box.js"></script>

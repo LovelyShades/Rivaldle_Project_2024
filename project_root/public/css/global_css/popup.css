@@ -168,10 +168,85 @@
     margin-bottom: 20px;
 }
 
-.classic_example_container{
+.classic_example_container {
     position: relative;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
+/* Streak Popup Container - Smaller Size */
+.streak-popup-container {
+    position: fixed;
+    border: 2px solid #DCE1F4;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    color: white;
+    font-size: 15px;
+    font-family: MarvelFont;
+    text-align: left;
+    flex-direction: column;
+    transition: ease 0.2s;
+}
+
+/* Specific Header for Streak Popup */
+.streak-popup-header {
+    position: relative;
+    display: flex;
+    font-family: MarvelFont;
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* White Line Divider for Streak Popup */
+.streak-popup-white-line {
+    width: 95%;
+    height: 3px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Close Icon for Streak Popup */
+.streak-popup-x-icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    z-index: 10000;
+}
+
+.streak-popup-x-icon:hover {
+    cursor: pointer;
+    transform: scale(1.07);
+}
+
+/* Streak Details Text */
+.streak-details {
+    font-family: MarvelFont;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Specific Style for Streak Values (current and best streak) */
+#current_streak,
+#best_streak {
+    font-weight: bold;
+    font-size: 20px;
+}

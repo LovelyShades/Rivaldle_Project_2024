@@ -1,4 +1,3 @@
-
 class About {
     constructor() {
         this.initialize();
@@ -8,10 +7,12 @@ class About {
         this.getIcons();
         this.listenForClicks();
         this.howToPlayPopupIsActive = false;
+        this.streakPopupIsActive = false;
     }
 
     getIcons() {
         this.howToPlayIcon = document.getElementById('how_to_play');
+        this.streakIcon = document.getElementById('streak_icon');  // Add streak icon reference
     }
 
     listenForClicks() {
@@ -20,6 +21,13 @@ class About {
             this.appendOverlay();
             this.showHowToPlayContainer();
             this.howToPlayPopupIsActive = true;
+        });
+
+        // Streak icon click
+        this.streakIcon.addEventListener('click', () => {
+            this.appendOverlay();
+            this.showStreakContainer();
+            this.streakPopupIsActive = true;
         });
     }
 
@@ -47,12 +55,19 @@ class About {
         this.howToPlayContainer = document.getElementById('how_to_play_container');
     }
 
-    appendExample(){
-        this.example = document.getElementById('classic_example_container');
+    getStreakContainer() {
+        this.streakContainer = document.getElementById('streak_container');  // Add streak container reference
     }
+
     showHowToPlayContainer() {
         this.getHowToPlayContainer();
         this.howToPlayContainer.style.display = 'flex';
+        this.listenForXClick();
+    }
+
+    showStreakContainer() {
+        this.getStreakContainer();
+        this.streakContainer.style.display = 'flex';  // Show streak popup
         this.listenForXClick();
     }
 
@@ -61,10 +76,14 @@ class About {
             this.howToPlayContainer.style.display = 'none';
             this.howToPlayPopupIsActive = false;
         }
+        if (this.streakPopupIsActive) {
+            this.streakContainer.style.display = 'none';  // Hide streak popup
+            this.streakPopupIsActive = false;
+        }
     }
 
     listenForXClick() {
-        const xIcons = document.querySelectorAll('.x_icon, .language-popup-x-icon');
+        const xIcons = document.querySelectorAll('.x_icon, .language-popup-x-icon, .streak-popup-x-icon');  // Add streak popup X icon
         xIcons.forEach((x) => {
             x.addEventListener('click', () => {
                 this.removeOverlay();

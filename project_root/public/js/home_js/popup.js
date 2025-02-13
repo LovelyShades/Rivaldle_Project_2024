@@ -11,6 +11,7 @@ class About {
         this.aboutPopupIsActive = false;
         this.howToPlayPopupIsActive = false;
         this.languagePopupIsActive = false;
+        this.streakPopupIsActive = false;  // Add streak popup state
 
         // Load the selected language from localStorage
         Language.loadLanguage();
@@ -20,6 +21,7 @@ class About {
         this.aboutIcon = document.getElementById('about_icon');
         this.howToPlayIcon = document.getElementById('how_to_play_icon');
         this.languageIcon = document.getElementById('language_icon');
+        this.streakIcon = document.getElementById('streak_icon'); // Add streak icon
     }
 
     listenForClicks() {
@@ -42,6 +44,13 @@ class About {
             this.appendOverlay();
             this.showLanguageContainer();
             this.languagePopupIsActive = true;
+        });
+
+        // Streak icon click (added functionality)
+        this.streakIcon.addEventListener('click', () => {
+            this.appendOverlay();
+            this.showStreakContainer();
+            this.streakPopupIsActive = true;
         });
     }
 
@@ -77,6 +86,10 @@ class About {
         this.languageContainer = document.getElementById('language_container');
     }
 
+    getStreakContainer() {
+        this.streakContainer = document.getElementById('streak_container');  // Streak container
+    }
+
     showAboutContainer() {
         this.getAboutContainer();
         this.aboutContainer.style.display = 'flex';
@@ -96,6 +109,12 @@ class About {
         this.listenForLanguageSelection();
     }
 
+    showStreakContainer() {
+        this.getStreakContainer();
+        this.streakContainer.style.display = 'flex';
+        this.listenForXClick();
+    }
+
     removeContainer() {
         if (this.aboutPopupIsActive) {
             this.aboutContainer.style.display = 'none';
@@ -109,10 +128,14 @@ class About {
             this.languageContainer.style.display = 'none';
             this.languagePopupIsActive = false;
         }
+        if (this.streakPopupIsActive) {
+            this.streakContainer.style.display = 'none';  // Hide streak container
+            this.streakPopupIsActive = false;
+        }
     }
 
     listenForXClick() {
-        const xIcons = document.querySelectorAll('.x_icon, .language-popup-x-icon');
+        const xIcons = document.querySelectorAll('.x_icon, .language-popup-x-icon, .streak-popup-x-icon');  // Add streak popup x-icon
         xIcons.forEach((x) => {
             x.addEventListener('click', () => {
                 this.removeOverlay();
@@ -124,7 +147,7 @@ class About {
     listenForLanguageSelection() {
         // Get the language dropdown
         const languageSelect = document.getElementById('language_select');
-        
+
         // Listen for changes in the dropdown
         languageSelect.addEventListener('change', (e) => {
             const selectedLanguage = e.target.value;
