@@ -12,7 +12,7 @@ class Streak {
     constructor() {
         this.language = localStorage.getItem('language');
         this.currentStreakDisplay = document.getElementById("current_streak");
-        this.bestStreadDisplay = document.getElementById("best_streak");
+        this.bestStreakDisplay = document.getElementById("best_streak");
         this.initialize();
     }
 
@@ -106,8 +106,8 @@ class Streak {
         if(this.storedStreak >= this.bestStoredStreak){
             this.bestStoredStreak = this.storedStreak;
         }
-        this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak);
-        this.bestStreadDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak);
+        this.currentStreakDisplay.innerHTML = this.getTranslation('currentStreak', this.language) + " " + this.translatedNumber(this.storedStreak);
+        this.bestStreakDisplay.innerHTML = this.getTranslation('bestStreak', this.language) + " " + this.translatedNumber(this.bestStoredStreak);    
     }
 
     translatedNumber(number){
@@ -116,6 +116,7 @@ class Streak {
         } 
         return numberToChinese(number);
     }
+
     listenForLanguageSelection() {
         // Get the language dropdown
         const languageSelect = document.getElementById('language_select');
@@ -123,11 +124,14 @@ class Streak {
         // Listen for changes in the dropdown
         languageSelect.addEventListener('change', (e) => {
             this.language = e.target.value;
-
-            console.log(this.language)
-            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak);
-            this.bestStreadDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak);    
+            
+            this.currentStreakDisplay.innerHTML = this.getTranslation('currentStreak', this.language) + " " + this.translatedNumber(this.storedStreak);
+            this.bestStreakDisplay.innerHTML = this.getTranslation('bestStreak', this.language) + " " + this.translatedNumber(this.bestStoredStreak);    
         });
+    }
+
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key;
     }
 
 }
