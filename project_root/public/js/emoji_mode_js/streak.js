@@ -1,3 +1,4 @@
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
 //variables stored in local storage
 
 //silhoutte in localStorage
