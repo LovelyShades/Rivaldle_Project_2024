@@ -37,7 +37,7 @@ class Streak {
 
     async getStreakFromStorage() {
         this.storedStreak = localStorage.getItem("home_streak");
-        this.bestStoredStreak = localStorage.getItem("best_home_streak");
+        this.bestStoredStreak = parseInt(localStorage.getItem("best_home_streak")) || 0;
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
