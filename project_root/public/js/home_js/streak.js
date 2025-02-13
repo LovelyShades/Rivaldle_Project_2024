@@ -1,4 +1,6 @@
 import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+import { globalTranslations } from '../global_js/language_js/language.js';
+
 //variables stored in local storage
 
 //home_streak in localStorage
