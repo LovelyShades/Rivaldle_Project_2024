@@ -1,4 +1,6 @@
 import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+import { globalTranslations } from '../global_js/language_js/language.js';
+
 //variables stored in local storage
 
 //silhoutte in localStorage
@@ -87,17 +89,11 @@ class Streak {
         console.log(this.dayTracker, this.todaysSilhoutteNumber)
         if (parseInt(this.dayTracker, 10) - parseInt(this.todaysSilhoutteNumber, 10) === 1) {
             this.storedStreak = parseInt(this.storedStreak) + 1;
-            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
-            this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);    
             this.addStreakToStorage();
         } else if (this.dayTracker != 0) {
             this.storedStreak = 2;
-            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
-            this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);    
         } else {
             this.storedStreak = parseInt(this.storedStreak) + 1;
-            this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
-            this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);    
             this.addStreakToStorage();
             localStorage.setItem("firstDaySilhoutteGuessed", true)
             this.firstDaySilhoutteGuessed = true;
@@ -124,8 +120,8 @@ class Streak {
         if(this.storedStreak >= this.bestStoredStreak){
             this.bestStoredStreak = this.storedStreak;
         }
-        this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
-        this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);
+        this.currentStreakDisplay.innerHTML = this.getTranslation('currentStreak', this.language) + " " + this.translatedNumber(this.storedStreak - 1);
+        this.bestStreakDisplay.innerHTML = this.getTranslation('bestStreak', this.language) + " " + this.translatedNumber(this.bestStoredStreak - 1);    
     }
 
     translatedNumber(number){
@@ -134,6 +130,10 @@ class Streak {
             return number;
         } 
         return numberToChinese(number);
+    }
+
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key;
     }
 
     isGameCompleted() {

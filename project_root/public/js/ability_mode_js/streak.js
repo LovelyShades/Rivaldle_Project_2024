@@ -1,4 +1,5 @@
 import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+import { globalTranslations } from '../global_js/language_js/language.js';
 //variables stored in local storage
 
 //silhoutte in localStorage
@@ -117,8 +118,12 @@ class Streak {
         if(this.storedStreak >= this.bestStoredStreak){
             this.bestStoredStreak = this.storedStreak;
         }
-        this.currentStreakDisplay.innerHTML = this.translatedNumber(this.storedStreak - 1);
-        this.bestStreakDisplay.innerHTML = this.translatedNumber(this.bestStoredStreak - 1);
+        this.currentStreakDisplay.innerHTML = this.getTranslation('currentStreak', this.language) + " " + this.translatedNumber(this.storedStreak - 1);
+        this.bestStreakDisplay.innerHTML = this.getTranslation('bestStreak', this.language) + " " + this.translatedNumber(this.bestStoredStreak - 1);    
+    }
+
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key;
     }
 
     translatedNumber(number){

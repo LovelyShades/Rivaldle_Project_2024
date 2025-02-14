@@ -25,9 +25,9 @@ export const globalTranslations = {
         share: "Share 😊",
         copy: "Copied👍",
         copyText: `I found #Rivaldle {mode} mode hero in {tries}🔨\nCan you beat my score?\n https://rivaldle.com`,
-         streakHeader: "Your Streak",
-  currentStreak: "Your current streak:",
-  bestStreak: "Best streak:",
+        streakHeader: "Your Streak",
+        currentStreak: "Your current streak:",
+        bestStreak: "Best streak:",
 
     },
     es: {
