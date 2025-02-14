@@ -25,6 +25,9 @@ export const globalTranslations = {
         share: "Share 😊",
         copy: "Copied👍",
         copyText: `I found #Rivaldle {mode} mode hero in {tries}🔨\nCan you beat my score?\n https://rivaldle.com`,
+        streakHeader: "Your Streak",
+        currentStreak: "Your current streak:",
+        bestStreak: "Best streak:",
 
     },
     es: {
@@ -51,6 +54,9 @@ export const globalTranslations = {
         share: "Compartir 😊",
         copy: "Copiado👍",
         copyText: `Encontré al héroe de #Rivaldle en modo {mode} en {tries}🔨\n¿Puedes superar mi puntuación?\n https://rivaldle.com`,
+        streakHeader: "Tu racha",
+  currentStreak: "Tu racha actual:",
+  bestStreak: "Mejor racha:",
     },
     fr: {
         characterInput: "Tapez le nom du personnage ...",
@@ -76,6 +82,9 @@ export const globalTranslations = {
         share: "Partager 😊",
         copy: "Copié👍",
         copyText: `J'ai trouvé le héros de #Rivaldle en mode {mode} en {tries}🔨\nPeux-tu dépasser mon score ?\n https://rivaldle.com`,
+          streakHeader: "Votre série",
+  currentStreak: "Votre série actuelle :",
+  bestStreak: "Meilleure série :",
     },
     de: {
         characterInput: "Geben Sie den Charakternamen ein ...",
@@ -101,6 +110,9 @@ export const globalTranslations = {
         share: "Aktie 😊",
         copy: "Kopiert👍",
         copyText: `Ich habe den #Rivaldle-Helden im {mode}-Modus in {tries}🔨 gefunden\nKannst du meinen Score schlagen?\n https://rivaldle.com`,
+         streakHeader: "Ihre Serie",
+  currentStreak: "Ihre aktuelle Serie :",
+  bestStreak: "Beste Serie :",
     },
     zh: {
         characterInput: "输入角色名称 ...",
@@ -126,5 +138,8 @@ export const globalTranslations = {
         share: "分享  😊",
         copy: "已复制👍",
         copyText: `我在 #Rivaldle {mode} 模式下用了 {tries}🔨 找到了英雄\n你能打破我的记录吗？\n https://rivaldle.com`,
+          streakHeader: "你的连胜纪录",
+  currentStreak: "你的当前连胜：",
+  bestStreak: "最佳连胜：",
     },
 };

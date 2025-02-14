@@ -75,47 +75,51 @@
         <div class="custom-image-overlay"></div>
 
         <div class="overlay"></div>
+
         <div class="popupContainer" id="how_to_play_container">
             <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
-            <div class="popup_header"> How to Play Rivaldle: Emoji Mode </div>
+            <div class="popup_header" data-translate="how_to_play_emoji_mode"> How to Play Rivaldle: Emoji Mode </div>
             <div class="white_line"></div>
-
-            <div class="popup_header"> 1. Understanding the Gameplay </div>
-            <div class="popup_text">
+        
+            <div class="popup_header" data-translate="understanding_the_gameplay_header"> 1. Understanding the Gameplay </div>
+            <div class="popup_text" data-translate="understanding_the_gameplay_text">
                 In this mode, you will be given a single emoji to start, representing the mystery Marvel character.
                 Your goal is to guess the character based on the clues provided by the emojis.
                 Each time you make a wrong guess, a new emoji will be revealed, providing more clues about the
-                character's
-                appearance, personality, or powers.
+                character's appearance, personality, or powers.
             </div>
-
-            <div class="popup_header"> 2. Interpreting Emojis </div>
-            <div class="popup_text">
+        
+            <div class="popup_header" data-translate="interpreting_emojis_header"> 2. Interpreting Emojis </div>
+            <div class="popup_text" data-translate="interpreting_emojis_text">
                 Emojis are a fun way to give hints about the character. Here’s how to interpret them:
             </div>
             <div class="popup_text">
                 <ul>
-                    <li><strong>Appearance Clues:</strong> Emojis that hint at the character's look, such as their
-                        outfit,
-                        accessories, or physical traits.</li>
-                    <li><strong>Personality Clues:</strong> Emojis that describe the character's attitude or role (e.g.,
-                        hero,
-                        villain, funny, serious).</li>
-                    <li><strong>Power Clues:</strong> Emojis that represent the character’s powers or abilities (e.g.,
-                        fire,
-                        strength, flying).</li>
+                    <li data-translate="appearance_clues"> Appearance Clues: Emojis that hint at the character's look, such as
+                        their
+                        outfit, accessories, or physical traits.
+                    </li>
+                    <li data-translate="personality_clues"> Personality Clues: Emojis that describe the character's attitude or
+                        role (e.g.,
+                        hero, villain, funny, serious).
+                    </li>
+                    <li data-translate="power_clues"> Power Clues: Emojis that represent the character’s powers or abilities
+                        (e.g.,
+                        fire, strength, flying).
+                    </li>
                 </ul>
             </div>
             <div id="classic_example_container"></div>
         </div>
+
         <div class="streak-popup-container" id="streak_container">
             <img src="/_images/global_images/x_logo.png" class="streak-popup-x-icon" alt="icon" id="x_icon_streak">
             <div class="streak-popup-header" data-translate="streakHeader" id="streakHeader">Your Streak</div>
             <div class="streak-popup-white-line"></div>
             <!-- Streak Content Goes Here -->
             <div class="streak-details">
-                <p>Your current streak: <span id="current_streak">?</span></p>
-                <p>Best streak: <span id="best_streak">?</span></p>
+                <p id="current_streak">Your current streak: </p>
+                <p id="best_streak">Best streak: </p>
                 <!-- Additional streak-related content can go here -->
             </div>
         </div>

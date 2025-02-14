@@ -1,3 +1,6 @@
+import { numberToChinese } from "/js/global_js/num_to_chinese.js";
+import { globalTranslations } from '../global_js/language_js/language.js';
+
 //variables stored in local storage
 
 //classic_streak in localStorage
@@ -8,12 +11,13 @@ class Streak {
     
     constructor() {
         this.firstDayClassicGuessed = localStorage.getItem("firstDayClassicGuessed");
+        this.language = localStorage.getItem('language');
+
         if(!this.firstDayClassicGuessed){
             this.firstDayClassicGuessed = false;
         } else {
             this.firstDayClassicGuessed = true;
         }
-        this.language = localStorage.getItem('language');
         this.initialize();
     }
 
@@ -39,6 +43,11 @@ class Streak {
 
     async getStreakFromStorage() {
         this.storedStreak = localStorage.getItem("classic_streak");
+        this.bestStoredStreak = parseInt(localStorage.getItem("best_classic_streak")) || 0;
+
+        this.currentStreakDisplay = document.getElementById("current_streak");
+        this.bestStreakDisplay = document.getElementById("best_streak");
+
         if (!this.storedStreak) {
             this.storedStreak = 1;
             this.addStreakToStorage();
@@ -47,6 +56,7 @@ class Streak {
 
     addStreakToStorage() {
         localStorage.setItem("classic_streak", this.storedStreak);
+        localStorage.setItem("best_classic_streak", this.bestStoredStreak);
     }
 
     async getDayTracker() {
@@ -86,18 +96,19 @@ class Streak {
             this.storedStreak = 2;
         }else {
             this.storedStreak = parseInt(this.storedStreak) + 1;
-            this.streakDisplay.textContent = this.storedStreak - 1;
             this.addStreakToStorage();
-            localStorage.setItem("firstDaySilhoutteGuessed", true)
-            this.firstDaySilhoutteGuessed = true;
+            localStorage.setItem("firstDayClassicGuessed", true)
+            this.firstDayClassicGuessed = true;
         }
         this.updatedStoredDays();
+        this.appendStreak();
     }
 
     updatedStoredDays() {
         localStorage.setItem("yesterdaysClassicNumber", this.todaysClassicNumber);
         localStorage.setItem("todaysClassicNumber", this.dayTracker);
         localStorage.setItem("classic_streak", this.storedStreak)
+        localStorage.setItem("best_classic_streak", this.bestStoredStreak)
     }
 
     isNewDay() {
@@ -107,49 +118,24 @@ class Streak {
 
     appendStreak() {
         if (this.storedStreak == 0) return;
-
-        const logo = document.getElementById("streak_icon");
-        if (!logo) {
-            console.error("Logo element not found!");
-            return;
+        if(this.storedStreak >= this.bestStoredStreak){
+            this.bestStoredStreak = this.storedStreak;
         }
+        
+        this.currentStreakDisplay.innerHTML = this.getTranslation('currentStreak', this.language) + " " + this.translatedNumber(this.storedStreak - 1);
+        this.bestStreakDisplay.innerHTML = this.getTranslation('bestStreak', this.language) + " " + this.translatedNumber(this.bestStoredStreak - 1);    
+    }
 
-        let logoContainer = logo.parentElement;
-        if (!logoContainer) {
-            console.error("Streak icon has no parent container!");
-            return;
-        }
-        logoContainer.style.position = "relative";
+    getTranslation(key, lang ) {
+        return globalTranslations[lang]?.[key] || key;
+    }
 
-        this.streakDisplay = document.getElementById("streakDisplay");
-        if (!this.streakDisplay) {
-            this.streakDisplay = document.createElement("div");
-            this.streakDisplay.id = "streakDisplay";
-            this. streakDisplay.style.position = "absolute";
-            this.streakDisplay.style.top = "47%";  // Start positioning relative to parent
-            this.streakDisplay.style.left = "94.1%";  // Center horizontally
-            this.streakDisplay.style.color = "#dce1f4";
-
-
-            this.streakDisplay.style.fontSize = "17px";
-            this.streakDisplay.style.fontWeight = "bold";
-            this.streakDisplay.style.pointerEvents = "none"; // Make it non-clickable
-            this.streakDisplay.style.zIndex = "0";
-            logoContainer.appendChild(this.streakDisplay);
-        }
-        if(this.storedStreak == 0){
-            this.streakDisplay.textContent = "";
-        } else {
-            if(this.storedStreak > 9){
-                this.streakDisplay.textContent = '✨'
-            } else {
-                this.streakDisplay.textContent = this.storedStreak - 1;
-            }    
-        }
-        if(parseInt(this.dayTracker, 10) - parseInt(this.todaysClassicNumber, 10) >= 2) {
-            this.storedStreak = 1;
-            this.streakDisplay.textContent = "";
-        }
+    translatedNumber(number){
+        this.language = localStorage.getItem('language');
+        if(this.language != 'zh'){
+            return number;
+        } 
+        return numberToChinese(number);
     }
 
     isGameCompleted() {

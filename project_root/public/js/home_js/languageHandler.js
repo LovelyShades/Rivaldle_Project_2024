@@ -3,9 +3,9 @@ import { translations } from './language.js';
 export class Language {
     constructor() {
         this.loadLanguage();
+        this.setupLanguageDropdown(); // Set up event listener for the dropdown
     }
 
-    // Load the language from localStorage or default to 'en'
     // Load the language from localStorage or default to 'en'
     loadLanguage() {
         const storedLanguage = localStorage.getItem('language') || 'en';
@@ -16,9 +16,10 @@ export class Language {
     // Update the dropdown to reflect the selected language
     updateDropdown(language) {
         const languageSelect = document.getElementById('language_select');
-        languageSelect.value = language; // Set the value to match the stored language
+        if (languageSelect) {
+            languageSelect.value = language; // Set the value to match the stored language
+        }
     }
-
 
     // Apply the translations to the page
     applyLanguage(language) {
@@ -40,21 +41,29 @@ export class Language {
     }
 
     // Set the language and save to localStorage
-    // Set the language and save to localStorage
     setLanguage(language) {
-        // If setting to English, we can clear localStorage to avoid conflicts
-        if (language === 'en') {
-            localStorage.setItem('language', 'en');
-        } else {
-            localStorage.setItem('language', language);
-        }
+        localStorage.setItem('language', language);
         this.applyLanguage(language);
         this.updateDropdown(language);  // Update the dropdown after setting the language
-        const event = new CustomEvent("languageChange", {
-        });
+
+        // Dispatch a custom event to notify other parts of the application
+        const event = new CustomEvent("languageChange");
         document.dispatchEvent(event);
     }
 
+    // Handle dropdown change event
+    changeLanguage(event) {
+        const selectedLanguage = event.target.value;
+        this.setLanguage(selectedLanguage);
+    }
+
+    // Set up event listener for language dropdown
+    setupLanguageDropdown() {
+        const languageSelect = document.getElementById("language_select");
+        if (languageSelect) {
+            languageSelect.addEventListener("change", (event) => this.changeLanguage(event));
+        }
+    }
 }
 
 export default new Language();

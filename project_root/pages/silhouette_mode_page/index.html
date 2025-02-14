@@ -83,49 +83,38 @@
 
         <div class="popupContainer" id="how_to_play_container">
             <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
-            <div class="popup_header"> How to Play Rivaldle: Silhouette Mode </div>
+            <div class="popup_header" data-translate="how_to_play_silhouette_mode">How to Play Rivaldle: Silhouette Mode</div>
             <div class="white_line"></div>
-
-            <div class="popup_header"> 1. Understanding the Gameplay </div>
-            <div class="popup_text">
-                In this mode, you will be given a silhouette of a Marvel character to start.
-                Your goal is to guess the mystery character based on the clues provided.
-                Each time you make a wrong guess, the silhouette will zoom out slightly, revealing more of the
-                character,
-                and helping you get closer to identifying the correct answer.
+        
+            <div class="popup_header" data-translate="understanding_the_gameplay_header">1. Understanding the Gameplay</div>
+            <div class="popup_text" data-translate="understanding_the_gameplay_text">
+                In this mode, you will be given a silhouette of a Marvel character to start. Your goal is to guess the mystery
+                character based on the clues provided. Each time you make a wrong guess, the silhouette will zoom out slightly,
+                revealing more of the character, and helping you get closer to identifying the correct answer.
             </div>
-
-            <div class="popup_header"> 2. Interpreting Silhouette </div>
-            <div class="popup_text">
-                After each guess, the photo zooms out slightly, giving more clues on the character's appearance.
-                Here are some things to consider:
+        
+            <div class="popup_header" data-translate="interpreting_silhouette_header">2. Interpreting Silhouette</div>
+            <div class="popup_text" data-translate="interpreting_silhouette_text">
+                After each guess, the photo zooms out slightly, giving more clues on the character's appearance. Here are some
+                things to consider:
             </div>
-            <div class="popup_text">
+            <div class="popup_text" data-translate="silhouette_clues">
                 <ul>
-                    <li><strong>Body Shape:</strong> Look for general body type and posture. For example, a large,
-                        muscular
-                        silhouette may be Hulk, while a more agile, slimmer shape could be Spider-Man.</li>
-                    <li><strong>Clothing Shape:</strong> Pay attention to the style or shape of their outfit. A
-                        distinctive cape
-                        could hint at Moon Knight, or a sleek body suit might suggest Black Widow.</li>
-                    <li><strong>Hair Shape:</strong> Notice the style or length of hair. A ponytail silhouette might
-                        represent
-                        Psylocke, while long, flowing hair could be a clue for Scarlet Witch.</li>
-                    <li><strong>Accessories or Gear:</strong> Items like a bow (Hawkeye) or a sword (Magik)
-                        might
-                        be visible even in the silhouette.</li>
-
-
-
-
-                    <li><strong>Tail or Ears:</strong> Characters like Squirrel Girl (with her squirrel ears) or a
-                        character with
-                        an
-                        animalistic tail like Rockets could be identified by those features.</li>
+                    <li data-translate="body_shape">Body Shape: Look for general body type and posture. For example, a large,
+                        muscular silhouette may be Hulk, while a more agile, slimmer shape could be Spider-Man.</li>
+                    <li data-translate="clothing_shape">Clothing Shape: Pay attention to the style or shape of their outfit. A
+                        distinctive cape could hint at Moon Knight, or a sleek body suit might suggest Black Widow.</li>
+                    <li data-translate="hair_shape">Hair Shape: Notice the style or length of hair. A ponytail silhouette might
+                        represent Psylocke, while long, flowing hair could be a clue for Scarlet Witch.</li>
+                    <li data-translate="accessories_or_gear">Accessories or Gear: Items like a bow (Hawkeye) or a sword (Magik)
+                        might be visible even in the silhouette.</li>
+                    <li data-translate="tail_or_ears">Tail or Ears: Characters like Squirrel Girl (with her squirrel ears) or a
+                        character with an animalistic tail like Rocket could be identified by those features.</li>
                 </ul>
             </div>
             <div id="classic_example_container"></div>
         </div>
+
 
         <div class="streak-popup-container" id="streak_container">
             <img src="/_images/global_images/x_logo.png" class="streak-popup-x-icon" alt="icon" id="x_icon_streak">
@@ -133,8 +122,8 @@
             <div class="streak-popup-white-line"></div>
             <!-- Streak Content Goes Here -->
             <div class="streak-details">
-                <p>Your current streak: <span id="current_streak">?</span></p>
-                <p>Best streak: <span id="best_streak">?</span></p>
+                <p id="current_streak">Your current streak: </p>
+                <p id="best_streak">Best streak: </p>
                 <!-- Additional streak-related content can go here -->
             </div>
         </div>
