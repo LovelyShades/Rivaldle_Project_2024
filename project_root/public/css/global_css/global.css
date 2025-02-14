@@ -61,8 +61,16 @@ body {
     /* Sets a maximum width for the container */
     margin: 0 auto;
     /* Centers the container in the parent element */
-    height: 200px;
+    height: auto;
     /* Adjust height as needed */
+    margin-top: 3vh;
+}
+
+@media (max-width: 768px) {
+    #title_logo {
+        margin-top: 5vh;
+        /* Adjust for mobile */
+    }
 }
 
 /* Logo styling */
@@ -73,6 +81,7 @@ body {
     /* Caps the logo width to 600px */
     height: auto;
     /* Keeps the logo proportional */
+
 }
 
 /* Hover effect for logo */
@@ -271,24 +280,7 @@ body {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
-    .logo {
-        width: 70vw;
-    }
 
-    .mode_link_box {
-        width: 90%;
-        font-size: 16px;
-    }
-
-    .social_media_links_container {
-        margin-top: 10vh;
-    }
-
-    .footer_text {
-        font-size: 0.9em;
-    }
-}
 
 /* Mode link box styling */
 .mode_link_box {
@@ -435,7 +427,7 @@ body {
     cursor: pointer;
 }
 
-.subHeadContainer{
+.subHeadContainer {
     display: flex;
     flex-direction: row;
     position: relative;

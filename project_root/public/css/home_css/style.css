@@ -23,24 +23,21 @@
     max-width: 500px;
     white-space: normal;
     word-wrap: break-word;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
-@media (max-width: 500px) {
-    .title {
-        font-size: 1.8em;
-    }
-}
 
-.home_streak_popup_container{
+
+.home_streak_popup_container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better design */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for better design */
     font-family: MarvelFont, sans-serif;
     background-color: rgba(0, 0, 0, 0.751);
-    border-style: solid; 
+    border-style: solid;
     border-color: white;
     border-width: 2px;
     height: 10vh;
@@ -48,21 +45,25 @@
     max-width: 200px;
 }
 
-.home_streak_popup_text{
+.home_streak_popup_text {
     position: relative;
     display: flex;
     color: black;
     font-size: medium;
-    justify-content: center;    /* Center text horizontally */
-    align-items: center;        /* Center text vertically */
-    text-align: center;         /* Ensure text is centered */
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
+    text-align: center;
+    /* Ensure text is centered */
     width: auto;
-    flex-grow: 1;               /* Allow text to grow and take available space */
+    flex-grow: 1;
+    /* Allow text to grow and take available space */
     color: #ffffff;
     font-family: MarvelFont, sans-serif;
 }
 
-.popup_row{
+.popup_row {
     height: auto;
     position: relative;
     display: flex;
@@ -72,14 +73,15 @@
 
 }
 
-.example_text{
-    height: 100px;  /* Set a height */
+.example_text {
+    height: 100px;
+    /* Set a height */
     display: flex;
-    justify-content: center; 
-    align-items: center;    
-    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.example_link_box{
+.example_link_box {
     padding-bottom: 50px;
 }
