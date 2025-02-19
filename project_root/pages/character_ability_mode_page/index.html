@@ -18,8 +18,26 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description"
+        content="Play Rivaldle Ability Mode – the daily Marvel Rivals guessing game! Guess the secret Marvel character based on their unique ability. Can you solve today’s challenge by identifying their power?">
+    <meta name="keywords"
+        content="Rivaldle Ability Mode, Marvel Rivals guessing game, Guess character by ability, Marvel trivia, Daily Marvel ability guessing game, Marvel Rivals quiz">
 
-    <title id="title">RIVALDLE</title>
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Game",
+  "name": "Rivaldle – Ability Mode",
+  "genre": "Trivia Game",
+  "gameMode": "SinglePlayer",
+  "description": "Guess the secret Marvel Rivals character based on their unique ability in Ability Mode. Reveal more details with each guess.",
+  "url": "https://rivaldle.com/ability-mode"
+}
+</script>
+
+
+    <title id="title">Rivaldle Ability Mode – Guess the Marvel Rivals Character by Ability</title>
+
     <link rel="stylesheet" href="/css/character_search_css/character_search.css">
     <link rel="stylesheet" href="/css/global_css/global.css">
     <link rel="stylesheet" type="text/css" href="/css/global_css/searched_characters.css">
@@ -74,58 +92,72 @@
 
         <div class="overlay"></div>
 
-    <div class="popupContainer" id="how_to_play_container">
-        <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
-        <div class="popup_header" data-translate="how_to_play_ability_mode">How to Play Rivaldle: Ability Mode</div>
-        <div class="white_line"></div>
-    
-        <div class="popup_header" data-translate="understanding_the_gameplay_header">1. Understanding the Gameplay</div>
-        <div class="popup_text" data-translate="understanding_the_gameplay_text">
-            In this mode, you will be given the name of one of the Marvel character’s abilities. Your goal is to guess the
-            correct hero based on the name of the ability provided.
-            The name of the ability may give you important clues about the character’s powers, appearance, or role within
-            the Marvel Universe.
-            Your task is to use your knowledge of Marvel characters to make the correct guess.
+        <div class="popupContainer" id="how_to_play_container">
+            <img src="/_images/global_images/x_logo.png" class="x_icon" alt="icon" id="x_icon">
+            <div class="popup_header" data-translate="how_to_play_ability_mode">How to Play Rivaldle: Ability Mode</div>
+            <div class="white_line"></div>
+
+            <div class="popup_header" data-translate="understanding_the_gameplay_header">1. Understanding the Gameplay
+            </div>
+            <div class="popup_text" data-translate="understanding_the_gameplay_text">
+                In this mode, you will be given the name of one of the Marvel character’s abilities. Your goal is to
+                guess the
+                correct hero based on the name of the ability provided.
+                The name of the ability may give you important clues about the character’s powers, appearance, or role
+                within
+                the Marvel Universe.
+                Your task is to use your knowledge of Marvel characters to make the correct guess.
+            </div>
+
+            <div class="popup_header" data-translate="interpreting_abilities_header">2. Interpreting Abilities</div>
+            <div class="popup_text" data-translate="interpreting_abilities_text">
+                The ability name will provide you with a clue about what the character can do. Here are some things to
+                consider
+                when trying to deduce the correct hero:
+            </div>
+            <div class="popup_text">
+                <ul>
+                    <li data-translate="weaponry_tools">
+                        Weaponry/Tools: Some abilities will reference specific weapons or tools. For example, abilities
+                        related
+                        to ranged weapons or precision shooting might point to a character who uses a bow or a crossbow.
+                        Similarly, abilities that mention protection or defense could hint at a hero who wields a shield
+                        or
+                        armor.
+                    </li>
+                    <li data-translate="supernatural_powers">
+                        Supernatural Powers: Abilities that reference god-like traits or immortality might suggest a
+                        character
+                        with divine origins. Look for words that imply control over natural forces, or those associated
+                        with
+                        mythological figures, such as the control of thunder or death.
+                    </li>
+                    <li data-translate="elemental_control">
+                        Elemental Control: Abilities related to elements like water, fire, lightning, or weather can
+                        help you
+                        identify heroes who command those forces. Think about characters who have the ability to
+                        manipulate the
+                        weather, summon lightning, or control the elements of nature.
+                    </li>
+                    <li data-translate="combat_techniques">
+                        Combat Techniques: Some abilities refer to advanced martial arts or combat skills. If the
+                        ability
+                        mentions mastery of physical fighting techniques or enhanced agility, consider heroes known for
+                        their
+                        combat prowess, such as those skilled in hand-to-hand or weapon-based fighting.
+                    </li>
+                    <li data-translate="stealth_invisibility">
+                        Stealth or Invisibility: Abilities related to stealth, invisibility, or phasing could point to
+                        characters who specialize in disappearing or blending into shadows. If the ability involves
+                        becoming
+                        invisible or passing through solid objects, think of characters known for their stealth or
+                        ability to
+                        avoid detection.
+                    </li>
+                </ul>
+            </div>
+            <div id="classic_example_container"></div>
         </div>
-    
-        <div class="popup_header" data-translate="interpreting_abilities_header">2. Interpreting Abilities</div>
-        <div class="popup_text" data-translate="interpreting_abilities_text">
-            The ability name will provide you with a clue about what the character can do. Here are some things to consider
-            when trying to deduce the correct hero:
-        </div>
-        <div class="popup_text">
-            <ul>
-                <li data-translate="weaponry_tools">
-                    Weaponry/Tools: Some abilities will reference specific weapons or tools. For example, abilities related
-                    to ranged weapons or precision shooting might point to a character who uses a bow or a crossbow.
-                    Similarly, abilities that mention protection or defense could hint at a hero who wields a shield or
-                    armor.
-                </li>
-                <li data-translate="supernatural_powers">
-                    Supernatural Powers: Abilities that reference god-like traits or immortality might suggest a character
-                    with divine origins. Look for words that imply control over natural forces, or those associated with
-                    mythological figures, such as the control of thunder or death.
-                </li>
-                <li data-translate="elemental_control">
-                    Elemental Control: Abilities related to elements like water, fire, lightning, or weather can help you
-                    identify heroes who command those forces. Think about characters who have the ability to manipulate the
-                    weather, summon lightning, or control the elements of nature.
-                </li>
-                <li data-translate="combat_techniques">
-                    Combat Techniques: Some abilities refer to advanced martial arts or combat skills. If the ability
-                    mentions mastery of physical fighting techniques or enhanced agility, consider heroes known for their
-                    combat prowess, such as those skilled in hand-to-hand or weapon-based fighting.
-                </li>
-                <li data-translate="stealth_invisibility">
-                    Stealth or Invisibility: Abilities related to stealth, invisibility, or phasing could point to
-                    characters who specialize in disappearing or blending into shadows. If the ability involves becoming
-                    invisible or passing through solid objects, think of characters known for their stealth or ability to
-                    avoid detection.
-                </li>
-            </ul>
-        </div>
-        <div id="classic_example_container"></div>
-    </div>
 
         <div class="streak-popup-container" id="streak_container">
             <img src="/_images/global_images/x_logo.png" class="streak-popup-x-icon" alt="icon" id="x_icon_streak">
