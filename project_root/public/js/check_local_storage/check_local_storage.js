@@ -99,7 +99,6 @@ async function checkAndClearLocalStorage() {
             console.log('First-time setup: Initializing date in localStorage.');
             clearAndPreserve();
             localStorage.setItem('lastUpdatedDate', backendDate);
-            location.reload(true);
             return;
         }
 

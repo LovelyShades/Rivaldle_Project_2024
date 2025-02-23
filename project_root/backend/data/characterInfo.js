@@ -710,6 +710,94 @@ const venom = new Person({
     }
 });
 
+const theThing = new Person({
+    en: {
+        name: "The Thing",
+        gender: "Male",
+        species: "Human",
+        affiliation: "Fantastic 4",
+        role: "Vanguard",
+        eyeColor: ["Blue"],
+        hairColor: ["None"],
+        hp: 700,
+        dateOfOrigin: 1961,
+        emoji: ["💪", "😊", "👊", "🪨"],
+        abilities: [
+            "ROCKY JAB", "CLOBBERIN' TIME", "STONE HAYMAKER",
+            "YANCY STREET CHARGE", "EMBATTLED LEAP"
+        ],
+        ult: "CLOBBERIN' TIME"
+    },
+    es: {  // Spanish
+        name: "La Cosa",
+        gender: "Masculino",
+        species: "Humano",
+        affiliation: "Los Cuatro Fantásticos",
+        role: "Vanguardia",
+        eyeColor: ["Azul"],
+        hairColor: ["Ninguno"],
+        hp: 700,
+        dateOfOrigin: 1961,
+        emoji: ["💪", "😊", "👊", "🪨"],
+        abilities: [
+            "GOLPE ROCOSO", "¡HORA DE MACHACAR!", "GANCHO DE PIEDRA",
+            "CARGA DE LA CALLE YANCY", "SALTO DE BATALLA"
+        ],
+        ult: "¡HORA DE MACHACAR!"
+    },
+    fr: {  // French
+        name: "La Chose",
+        gender: "Homme",
+        species: "Humain",
+        affiliation: "Les Quatre Fantastiques",
+        role: "Avant-garde",
+        eyeColor: ["Bleu"],
+        hairColor: ["Aucun"],
+        hp: 700,
+        dateOfOrigin: 1961,
+        emoji: ["💪", "😊", "👊", "🪨"],
+        abilities: [
+            "COUP ROCHEUX", "C'EST L'HEURE DE COGNER", "COUP DE PIERRE",
+            "CHARGE DE LA RUE YANCY", "SAUT DE COMBAT"
+        ],
+        ult: "C'EST L'HEURE DE COGNER"
+    },
+    de: {  // German
+        name: "Das Ding",
+        gender: "Männlich",
+        species: "Menschlich",
+        affiliation: "Fantastische Vier",
+        role: "Vorhut",
+        eyeColor: ["Blau"],
+        hairColor: ["Keine"],
+        hp: 700,
+        dateOfOrigin: 1961,
+        emoji: ["💪", "😊", "👊", "🪨"],
+        abilities: [
+            "FELSHIEB", "ZEIT ZUM VERKLOPPEN", "STEINHAKEN",
+            "YANCY-STRASSEN-ANSTURM", "KAMPFSPRUNG"
+        ],
+        ult: "ZEIT ZUM VERKLOPPEN"
+    },
+    zh: {  // Mandarin (Simplified Chinese)
+        name: "石头人",
+        gender: "男性",
+        species: "人类",
+        affiliation: "神奇四侠",
+        role: "先锋",
+        eyeColor: ["蓝色"],
+        hairColor: ["无"],
+        hp: 700,
+        dateOfOrigin: 1961,
+        emoji: ["💪", "😊", "👊", "🪨"],
+        abilities: [
+            "岩石重击", "暴揍时刻", "石拳横扫",
+            "扬西街冲锋", "战斗跳跃"
+        ],
+        ult: "暴揍时刻"
+    }
+});
+
 const blackPanther = new Person({
     en: {
         name: "Black Panther",
@@ -1785,7 +1873,7 @@ const squirrelGirl = new Person({
     en: {
         name: "Squirrel Girl",
         gender: "Female",
-        species: "Mutant",
+        species: "Human",
         affiliation: "None",
         role: "Duelist",
         eyeColor: ["Green"],
@@ -1802,7 +1890,7 @@ const squirrelGirl = new Person({
     es: {  // Spanish
         name: "Chica Ardilla",
         gender: "Femenino",
-        species: "Mutante",
+        species: "Humana",
         affiliation: "Ninguno",
         role: "Duelista",
         eyeColor: ["Verde"],
@@ -1819,7 +1907,7 @@ const squirrelGirl = new Person({
     fr: {  // French
         name: "Fille Écureuil",
         gender: "Féminin",
-        species: "Mutante",
+        species: "Humaine",
         affiliation: "Aucune",
         role: "Duelliste",
         eyeColor: ["Vert"],
@@ -1836,7 +1924,7 @@ const squirrelGirl = new Person({
     de: {  // German
         name: "Eichhörnchen-Mädchen",
         gender: "Weiblich",
-        species: "Mutantin",
+        species: "Menschlich",
         affiliation: "Keine",
         role: "Duellant",
         eyeColor: ["Grün"],
@@ -1853,7 +1941,7 @@ const squirrelGirl = new Person({
     zh: {  // Mandarin (Simplified Chinese)
         name: "松鼠女孩",
         gender: "女性",
-        species: "变种人",
+        species: "人类",
         affiliation: "无",
         role: "决斗者",
         eyeColor: ["绿色"],
@@ -2399,6 +2487,94 @@ const misterFantastic = new Person({
             "灵活延展", "拉长抓握", "弹性力量"
         ],
         ult: "智者弹跳"
+    }
+});
+
+const humanTorch = new Person({
+    en: {
+        name: "Human Torch",
+        gender: "Male",  // Fixed typo from 'gemder'
+        species: "Human",
+        affiliation: "Fantastic 4",
+        role: "Duelist",
+        eyeColor: ["Blue"],
+        hairColor: ["Blonde"],
+        hp: 250,
+        dateOfOrigin: 1939,
+        emoji: ["💥", "💫", "💙", "🔥"],
+        abilities: [
+            "FIRE CLUSTER", "BLAZING BLAST", "PYRO-PRISON",
+            "PLASMA BODY", "FLAMING METEOR", "SUPERNOVA"
+        ],
+        ult: "SUPERNOVA"  // Fixed capitalization to match pattern
+    },
+    es: {  // Spanish
+        name: "Antorcha Humana",
+        gender: "Masculino",
+        species: "Humano",
+        affiliation: "Los Cuatro Fantásticos",
+        role: "Duelista",
+        eyeColor: ["Azul"],
+        hairColor: ["Rubio"],
+        hp: 250,
+        dateOfOrigin: 1939,
+        emoji: ["💥", "💫", "💙", "🔥"],
+        abilities: [
+            "CÚMULO DE FUEGO", "EXPLOSIÓN ARDIENTE", "PRISIÓN DE FUEGO",
+            "CUERPO DE PLASMA", "METEORO LLAMEANTE", "SUPERNOVA"
+        ],
+        ult: "SUPERNOVA"
+    },
+    fr: {  // French
+        name: "Torche Humaine",
+        gender: "Homme",
+        species: "Humain",
+        affiliation: "Les Quatre Fantastiques",
+        role: "Duelliste",
+        eyeColor: ["Bleu"],
+        hairColor: ["Blond"],
+        hp: 250,
+        dateOfOrigin: 1939,
+        emoji: ["💥", "💫", "💙", "🔥"],
+        abilities: [
+            "GRAPPE DE FEU", "EXPLOSION FLAMBOYANTE", "PRISON PYRO",
+            "CORPS DE PLASMA", "MÉTÉORE ENFLAMMÉ", "SUPERNOVA"
+        ],
+        ult: "SUPERNOVA"
+    },
+    de: {  // German
+        name: "Menschliche Fackel",
+        gender: "Männlich",
+        species: "Menschlich",
+        affiliation: "Fantastische Vier",
+        role: "Duellant",
+        eyeColor: ["Blau"],
+        hairColor: ["Blond"],
+        hp: 250,
+        dateOfOrigin: 1939,
+        emoji: ["💥", "💫", "💙", "🔥"],
+        abilities: [
+            "FEUERBÜNDEL", "LODERNDE EXPLOSION", "PYRO-GEFÄNGNIS",
+            "PLASMAKÖRPER", "FLAMMENDER METEOR", "SUPERNOVA"
+        ],
+        ult: "SUPERNOVA"
+    },
+    zh: {  // Mandarin (Simplified Chinese)
+        name: "霹雳火",
+        gender: "男性",
+        species: "人类",
+        affiliation: "神奇四侠",
+        role: "决斗者",
+        eyeColor: ["蓝色"],
+        hairColor: ["金色"],
+        hp: 250,
+        dateOfOrigin: 1939,
+        emoji: ["💥", "💫", "💙", "🔥"],
+        abilities: [
+            "火焰集群", "烈焰爆破", "烈火牢笼",
+            "等离子体", "燃烧流星", "超新星"
+        ],
+        ult: "超新星"
     }
 });
 
@@ -3127,6 +3303,7 @@ export const characters = [
     magneto,
     peniParker,
     venom,
+    theThing,
     blackPanther,
     blackWidow,
     hawkeye,
@@ -3146,6 +3323,7 @@ export const characters = [
     winterSoldier,
     wolverine,
     misterFantastic,
+    humanTorch,
     adamWarlock,
     rocket,
     loki,
