@@ -41,8 +41,8 @@ class Clues {
 
     getNumTries() {
         this.key = 'numTries';
-        this.storedTries = localStorage.getItem(this.key);
-
+        this.storedTries = (JSON.parse(localStorage.getItem(this.getCurrentPageKey())) || []).length;
+        
         if (this.storedTries === null || this.storedTries === undefined) {
             // If not found in localStorage, initialize it to 0
             this.storedTries = 0;
@@ -51,6 +51,11 @@ class Clues {
             // Parse the retrieved string as a number
             this.storedTries = JSON.parse(this.storedTries);
         }
+    }
+
+    getCurrentPageKey() {
+        const path = window.location.pathname;
+        return `searched_characters_${path}`;
     }
 
     updateStorage() {
