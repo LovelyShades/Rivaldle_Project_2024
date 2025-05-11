@@ -432,3 +432,12 @@ body {
     flex-direction: row;
     position: relative;
 }
+
+.quiz_garden_logo{
+    background-color: hsl(152,43%,98%);
+    border-radius: 9999px;
+    border: 2px solid rgba(189, 189, 189, 0.102);
+    height: 50%;
+    width: 50%;
+    padding: 5px;
+}
