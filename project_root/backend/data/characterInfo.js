@@ -108,7 +108,7 @@ const doctorStrange = new Person({
         role: "Vanguard",
         eyeColor: ["Green"],
         hairColor: ["Brown", "Grey"],
-        hp: 650,
+        hp: 600,
         dateOfOrigin: 1963,
         emoji: ["👁️", "📖", "✨", "🧙‍♂️"],
         abilities: [
@@ -125,7 +125,7 @@ const doctorStrange = new Person({
         role: "Vanguardia",
         eyeColor: ["Verde"],
         hairColor: ["Marrón", "Gris"],
-        hp: 650,
+        hp: 600,
         dateOfOrigin: 1963,
         emoji: ["👁️", "📖", "✨", "🧙‍♂️"],
         abilities: [
@@ -142,7 +142,7 @@ const doctorStrange = new Person({
         role: "Avant-garde",
         eyeColor: ["Vert"],
         hairColor: ["Marron", "Gris"],
-        hp: 650,
+        hp: 600,
         dateOfOrigin: 1963,
         emoji: ["👁️", "📖", "✨", "🧙‍♂️"],
         abilities: [
@@ -159,7 +159,7 @@ const doctorStrange = new Person({
         role: "Vorreiter",
         eyeColor: ["Grün"],
         hairColor: ["Braun", "Grau"],
-        hp: 650,
+        hp: 600,
         dateOfOrigin: 1963,
         emoji: ["👁️", "📖", "✨", "🧙‍♂️"],
         abilities: [
@@ -176,7 +176,7 @@ const doctorStrange = new Person({
         role: "先锋",
         eyeColor: ["绿色"],
         hairColor: ["棕色", "灰色"],
-        hp: 650,
+        hp: 600,
         dateOfOrigin: 1963,
         emoji: ["👁️", "📖", "✨", "🧙‍♂️"],
         abilities: [
@@ -983,7 +983,7 @@ const hawkeye = new Person({
         role: "Duelist",
         eyeColor: ["Green"],
         hairColor: ["Blonde"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["🔍", "🎯", "🏹", "🦅"],
         abilities: [
@@ -1000,7 +1000,7 @@ const hawkeye = new Person({
         role: "Duelista",
         eyeColor: ["Verde"],
         hairColor: ["Rubio"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["🔍", "🎯", "🏹", "🦅"],
         abilities: [
@@ -1017,7 +1017,7 @@ const hawkeye = new Person({
         role: "Duelliste",
         eyeColor: ["Vert"],
         hairColor: ["Blonde"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["🔍", "🎯", "🏹", "🦅"],
         abilities: [
@@ -1034,7 +1034,7 @@ const hawkeye = new Person({
         role: "Duellant",
         eyeColor: ["Grün"],
         hairColor: ["Blonde"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["🔍", "🎯", "🏹", "🦅"],
         abilities: [
@@ -1051,7 +1051,7 @@ const hawkeye = new Person({
         role: "决斗者",
         eyeColor: ["绿色"],
         hairColor: ["金色"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["🔍", "🎯", "🏹", "🦅"],
         abilities: [
@@ -1071,7 +1071,7 @@ const hela = new Person({
         role: "Duelist",
         eyeColor: ["Green"],
         hairColor: ["None"],
-        hp: 250,
+        hp: 275,
         dateOfOrigin: 1964,
         emoji: ["⚔️", "🖤", "👑", "💀"],
         abilities: [
@@ -1159,7 +1159,7 @@ const ironFist = new Person({
         role: "Duelist",
         eyeColor: ["Brown"],
         hairColor: ["Black"],
-        hp: 250,
+        hp: 300,
         dateOfOrigin: 1974,
         emoji: ["🎭", "🐉", "👊", "🔥"],
         abilities: [
@@ -1177,7 +1177,7 @@ const ironFist = new Person({
         role: "Duelista",
         eyeColor: ["Marrón"],
         hairColor: ["Negro"],
-        hp: 250,
+        hp: 300,
         dateOfOrigin: 1974,
         emoji: ["🎭", "🐉", "👊", "🔥"],
         abilities: [
@@ -1195,7 +1195,7 @@ const ironFist = new Person({
         role: "Duelliste",
         eyeColor: ["Marron"],
         hairColor: ["Noir"],
-        hp: 250,
+        hp: 300,
         dateOfOrigin: 1974,
         emoji: ["🎭", "🐉", "👊", "🔥"],
         abilities: [
@@ -1213,7 +1213,7 @@ const ironFist = new Person({
         role: "Duellant",
         eyeColor: ["Braun"],
         hairColor: ["Schwarz"],
-        hp: 250,
+        hp: 300,
         dateOfOrigin: 1974,
         emoji: ["🎭", "🐉", "👊", "🔥"],
         abilities: [
@@ -1231,7 +1231,7 @@ const ironFist = new Person({
         role: "决斗者",
         eyeColor: ["棕色"],
         hairColor: ["黑色"],
-        hp: 250,
+        hp: 300,
         dateOfOrigin: 1974,
         emoji: ["🎭", "🐉", "👊", "🔥"],
         abilities: [
