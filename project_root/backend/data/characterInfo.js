@@ -798,6 +798,94 @@ const theThing = new Person({
     }
 });
 
+const emmaFrost = new Person({
+    en: {
+        name: "Emma Frost",
+        gender: "Female",
+        species: "Mutant",
+        affiliation: "X-Men",
+        role: "Vanguard",
+        eyeColor: ["Blue"],
+        hairColor: ["Blonde"],
+        hp: 650,
+        dateOfOrigin: 1980,
+        emoji: ["🧠", "💋", "❄️", "💎"],
+        abilities: [
+            "TELEPATHIC PULSE", "PSIONIC SEDUCTION", "DIAMOND FORM",
+            "PSYCHIC SPEAR", "MIND'S AEGIS"
+        ],
+        ult: "PSIONIC SEDUCTION"
+    },
+    es: {  // Spanish
+        name: "Emma Frost",
+        gender: "Femenina",
+        species: "Mutante",
+        affiliation: "X-Men",
+        role: "Vanguardia",
+        eyeColor: ["Azul"],
+        hairColor: ["Rubio"],
+        hp: 650,
+        dateOfOrigin: 1980,
+        emoji: ["🧠", "💋", "❄️", "💎"],
+        abilities: [
+            "PULSO TELEPÁTICO", "SEDUCCIÓN PSIONICA", "FORMA DE DIAMANTE",
+            "LANZA PSÍQUICA", "ÉGIDA DE LA MENTE"
+        ],
+        ult: "SEDUCCIÓN PSIONICA"
+    },
+    fr: {  // French
+        name: "Emma Frost",
+        gender: "Femelle",
+        species: "Mutant",
+        affiliation: "X-Men",
+        role: "Avant-garde",
+        eyeColor: ["Bleu"],
+        hairColor: ["Blond"],
+        hp: 650,
+        dateOfOrigin: 1980,
+        emoji: ["🧠", "💋", "❄️", "💎"],
+        abilities: [
+            "IMPULSION TÉLÉPATHIQUE", "SÉDUCTION PSIONIQUE", "FORME DE DIAMANT",
+            "LANCE PSYCHIQUE", "L'ÉGIDE DE L'ESPRIT"
+        ],
+        ult: "SÉDUCTION PSIONIQUE"
+    },
+    de: {  // German
+        name: "Emma Frost",
+        gender: "Femelle",
+        species: "Mutant",
+        affiliation: "X-Men",
+        role: "Avantgarde",
+        eyeColor: ["Blau"],
+        hairColor: ["Blond"],
+        hp: 650,
+        dateOfOrigin: 1980,
+        emoji: ["🧠", "💋", "❄️", "💎"],
+        abilities: [
+            "TELEPATHISCHER IMPULS", "PSIONISCHE VERFÜHRUNG", "DIAMANTFORM",
+            "PSYCHISCHER SPEER", "DIE ÄGIDE DES GEISTES"
+        ],
+        ult: "PSIONISCHE VERFÜHRUNG"
+    },
+    zh: {  // Mandarin (Simplified Chinese)
+        name: "艾玛·弗罗斯特",
+        gender: "费梅勒",
+        species: "突变体",
+        affiliation: "X战警",
+        role: "先锋派",
+        eyeColor: ["蓝色"],
+        hairColor: ["金发"],
+        hp: 650,
+        dateOfOrigin: 1980,
+        emoji: ["🧠", "💋", "❄️", "💎"],
+        abilities: [
+            "心灵感应脉冲", "灵能诱惑", "钻石形状",
+            "心灵之矛", "精神之盾"
+        ],
+        ult: "灵能诱惑"
+    }
+});
+
 const blackPanther = new Person({
     en: {
         name: "Black Panther",
@@ -3304,6 +3392,7 @@ export const characters = [
     peniParker,
     venom,
     theThing,
+    emmaFrost,
     blackPanther,
     blackWidow,
     hawkeye,
