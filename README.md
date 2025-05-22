@@ -1,6 +1,6 @@
 # 💼 Project Showcase – RIVALDLE WEBSITE
 
-This project is a **public showcase** of my work and technical skills. It is intended for educational, portfolio, and demonstration purposes only.
+This project is a **public showcase** of our work and technical skills. It is intended for educational, portfolio, and demonstration purposes only.
 
 ## 🚫 Usage Restrictions
 
