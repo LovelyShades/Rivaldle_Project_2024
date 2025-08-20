@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/character_info', (req, res) => {
   res.json(characters);
-  });
+});
 
 app.get('/date', (req, res) => {
   res.json(lastUpdatedDate);
@@ -109,7 +109,9 @@ app.get('/character_ability', (req, res) => {
 
 
 // Start the server and automatically open the browser
-const port = process.env.PORT || 3000;
- app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
- });
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+  open(`http://localhost:${PORT}`);  // <-- auto opens in browser
+});
+
