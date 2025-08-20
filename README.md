@@ -43,7 +43,7 @@ This project is **not intended for reuse** but serves as a **public sample** for
 ### Run Locally
 ```bash
 # Clone the repository
-git clone https://github.com/LovelyShades/Rivaldle.git
+git clone https://github.com/LovelyShades/Rivaldle_Website.git
 cd Rivaldle
 
 # Install dependencies
