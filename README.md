@@ -27,13 +27,13 @@ This project is **not intended for reuse** but serves as a **public sample** for
 
 ---
 ### 🎬 Showcase
-![Background Change](public/images/Background_change.gif)  
+![Background Change](public/images/gifs/Background_change.gif)  
 *Dynamic background transitions*
 
-![Using Clue](public/images/Using_clue.gif)  
+![Using Clue](public/images/gifs/Using_clue.gif)  
 *Gameplay using a clue system*
 
-![Victory](public/images/Victory.gif)  
+![Victory](public/images/gifs/Victory.gif)  
 *Victory screen animation*
 
 ## 🧰 Tech Stack
