@@ -61,9 +61,7 @@ This repository is for viewing and reference only:
 ❌ You may not integrate this project into personal, academic, or commercial work
 
 🧱 Project Structure
-php
-Copy
-Edit
+
 root_/
 │
 ├── backend/         # character data and information
@@ -75,6 +73,7 @@ root_/
 │   ├── fonts/
 │   └── js/
 └── README.md        # documentation
+
 📚 What This Project Demonstrates
 Ability to structure a web project with clean separation of concerns
 
