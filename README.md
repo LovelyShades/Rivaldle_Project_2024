@@ -99,14 +99,6 @@ Enhanced Rival logo/title design
 
 Team collaboration and division of responsibilities
 
-🛣️ Future Showcase Enhancements
-Add sample screenshots of game screens
-
-Include a short gameplay demo (GIF/video)
-
-Expand documentation on design choices and challenges
-
-Provide a developer reflection on collaboration workflow
 
 📄 License
 This project is shared under a Custom No-Use License:
