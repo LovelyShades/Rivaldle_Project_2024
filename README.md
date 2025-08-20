@@ -23,6 +23,7 @@ This project is **not intended for reuse** but serves as a **public sample** for
   - Custom **borders**  
   - Add-on styling for the **Rival logo and title**  
 - Demonstrates teamwork and code collaboration  
+- Deployed to the cloud using **AWS EC2** for hosting and demonstration  
 
 ---
 
@@ -117,16 +118,3 @@ Luke Lyons — backend logic, data management, collaborative development
 
 © 2025 Alanna Matundan & Luke Lyons. All rights reserved.
 
-
----
-
-✨ Now Rivaldle is documented just like your **Cyclone** and **Champion Battle Game** READMEs:  
-- Badges ✅  
-- Features/Highlights ✅  
-- Tech Stack ✅  
-- Getting Started ✅  
-- Usage Policy ✅  
-- Project Structure ✅  
-- What I Learned/Demonstrates ✅  
-- Future Enhancements ✅  
-- License + Authors ✅ 
