@@ -36,6 +36,7 @@ This project is **not intended for reuse** but serves as a **public sample** for
 ![Victory](project_root/public/_images/gifs/Victory.gif)  
 *Victory screen animation*
 
+---
 ## 🧰 Tech Stack
 - **Languages:** JavaScript, HTML5, CSS3  
 - **Platform:** Web (browser-based)  
