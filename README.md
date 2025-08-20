@@ -1,28 +1,133 @@
-# 💼 Project Showcase – Rivaldle
+# 💼 Rivaldle – Project Showcase
 
-This project is a **public showcase** of our work and technical skills. It is intended for educational, portfolio, and demonstration purposes only.
+[![Language](https://img.shields.io/badge/Language-JavaScript-orange.svg)]() 
+[![Platform](https://img.shields.io/badge/Platform-Web-blue.svg)]() 
+[![Status](https://img.shields.io/badge/Status-Showcase-lightgrey.svg)]()
 
-## 🚫 Usage Restrictions
+**Rivaldle** is a portfolio project built to demonstrate **technical skills, modular design, and collaborative problem-solving**.  
+It functions as a web-based showcase of logic implementation, UI design, and structured project organization.  
 
-**Unauthorized commercial use, redistribution, or modification of this code is strictly prohibited.**  
-All rights are reserved to the original author.
+This project is **not intended for reuse** but serves as a **public sample** for hiring managers, collaborators, and educators to evaluate.  
 
-> 🔒 While the repository is public for hiring and educational review, the contents remain the intellectual property of Alanna Matundan & Luke Lyons. You may view the code, but not use it in your own projects unless explicit permission is granted.
+> **Authors:** Alanna Matundan & Luke Lyons  
+> **Purpose:** Portfolio · Educational Review · Demonstration Only  
 
-## 📄 License
+---
 
-This project is shared under a **Custom No-Use License**:
-- ✅ You may view and reference the code.
-- ❌ You may not copy, reuse, or distribute it.
-- ❌ You may not use this project as part of your own work (academic, personal, or commercial).
+## ✨ Highlights
+- Organized **multi-folder architecture** for clarity and maintainability  
+- Backend system for **character data and information storage**  
+- Multiple JavaScript files under `pages/` for each game mode  
+- Public assets (`images`, `css`, `fonts`, `js`) for easy resource management  
+- Complete UI/UX design by **Alanna Matundan**, including:
+  - Custom **borders**  
+  - Add-on styling for the **Rival logo and title**  
+- Demonstrates teamwork and code collaboration  
 
-**If you're interested in using any part of this project or collaborating, feel free to contact me: rosealanna18@gmail.com**
+---
 
-## 👩‍💻 Authors
+## 🧰 Tech Stack
+- **Languages:** JavaScript, HTML5, CSS3  
+- **Platform:** Web (browser-based)  
+- **Structure:** Modular with separate `backend`, `pages`, and `public` directories  
+- **Version Control:** Git + GitHub  
 
-Created and maintained by Alanna Matundan and Luke Lyons  
+---
+
+## 🚀 Getting Started
+### Prerequisites
+- Modern browser (Chrome, Firefox, Edge recommended)  
+- Node.js + npm (for dependency management)  
+
+### Run Locally
+```bash
+# Clone the repository
+git clone https://github.com/yourname/Rivaldle.git
+cd Rivaldle
+
+# Install dependencies
+npm install
+
+# Start local server
+npm start
+
+📖 Usage Policy
+This repository is for viewing and reference only:
+
+✅ You may view the source code for educational review
+
+❌ You may not copy, reuse, or redistribute any code or assets
+
+❌ You may not integrate this project into personal, academic, or commercial work
+
+🧱 Project Structure
+php
+Copy
+Edit
+root_/
+│
+├── backend/         # character data and information
+├── node_modules/    # npm dependencies
+├── pages/           # JavaScript files for each game mode
+├── public/          # images, css, fonts, js (static assets)
+│   ├── images/
+│   ├── css/
+│   ├── fonts/
+│   └── js/
+└── README.md        # documentation
+📚 What This Project Demonstrates
+Ability to structure a web project with clean separation of concerns
+
+Implementation of character data handling in a backend module
+
+Creation of multi-mode gameplay logic across modular JS files
+
+Application of UI/UX design principles:
+
+Custom borders
+
+Enhanced Rival logo/title design
+
+Team collaboration and division of responsibilities
+
+🛣️ Future Showcase Enhancements
+Add sample screenshots of game screens
+
+Include a short gameplay demo (GIF/video)
+
+Expand documentation on design choices and challenges
+
+Provide a developer reflection on collaboration workflow
+
+📄 License
+This project is shared under a Custom No-Use License:
+
+✅ You may view and reference the code
+
+❌ You may not copy, reuse, or redistribute it
+
+❌ You may not use it in personal, academic, or commercial projects
+
+For collaboration or licensing inquiries, please contact:
+📧 rosealanna18@gmail.com
+
+👩‍💻 Authors
+Alanna Matundan — frontend design, borders, logo/title enhancements, project structuring
+
+Luke Lyons — backend logic, data management, collaborative development
+
+© 2025 Alanna Matundan & Luke Lyons. All rights reserved.
 
 
 ---
 
-© 2025 Alanna Matundan & Luke Lyons. All rights reserved.
+✨ Now Rivaldle is documented just like your **Cyclone** and **Champion Battle Game** READMEs:  
+- Badges ✅  
+- Features/Highlights ✅  
+- Tech Stack ✅  
+- Getting Started ✅  
+- Usage Policy ✅  
+- Project Structure ✅  
+- What I Learned/Demonstrates ✅  
+- Future Enhancements ✅  
+- License + Authors ✅ 
