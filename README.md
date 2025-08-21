@@ -41,7 +41,7 @@ This project is **not intended for reuse** but serves as a **public sample** for
 <p align="center">
   <img src="project_root/public/_images/gifs/Victory.gif"  alt="Victory"><br>
   <em>Victory screen animation</em>
-</p>*
+</p>
 
 ---
 ## 🧰 Tech Stack
