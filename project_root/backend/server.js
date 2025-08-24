@@ -33,7 +33,7 @@ function checkAndResetCharacters() {
     daily_ability_character = characters[Math.floor(Math.random() * characters.length)];
     daily_character_ability = Math.floor(Math.random() * daily_ability_character.translations['en'].abilities.length);
     lastUpdatedDate = today;
-    console.log('Daily characters reset for the new day! last udated day is:', lastUpdatedDate);
+    console.log('Daily characters reset for the new day! last updated day is:', lastUpdatedDate);
   }
   dayTracker += 1;
 }
