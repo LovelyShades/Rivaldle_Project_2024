@@ -1,4 +1,4 @@
-# 💼 Rivaldle – Project Showcase
+# 💼 Rivaldle – Project Showcase 
 
 [![Language](https://img.shields.io/badge/Language-JavaScript-orange.svg)]() 
 [![Platform](https://img.shields.io/badge/Platform-Web-blue.svg)]() 
